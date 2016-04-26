@@ -494,13 +494,13 @@
 
   /* Make the logo the same color as the text around it */
   header h2 a {
-    color: inherit !important; /* !important to override .orange and .purple */
+    color: rgb(7, 12, 13) !important; /* !important to override .orange and .purple */
   }
   header h2 a[href]:hover,
   header h2 a[href]:active,
   header h2 a[href]:focus {
     opacity: 0.65;
-    color: inherit !important;
+    color: rgb(7, 12, 13) !important;
   }
   header h2 svg {
     fill: currentColor;
@@ -662,17 +662,10 @@
   footer {
     position: relative;
   }
-  @media (min-width: 60em) {
-    footer form {
-      position: absolute;
-      top: 1.5em;
-      right: 1.5em;
-      margin: 0;
-    }
-  }
-  @media (min-width: 70em) {
-    footer form {
-      margin-right: 4em; /* 88px / 22px */
+
+  @media (min-width: 50em) {
+    footer form label {
+      font-size: 2.5em;
     }
   }
 
