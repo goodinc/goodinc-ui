@@ -170,6 +170,15 @@
   .purple main h2 {
     color: rgb(168, 46, 255); /* @purple */
   }
+  .green main h2 {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow main h2 {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red main h2 {
+    color: rgb(239, 20, 93); /* @red */
+  }
 
   .home .articles h2,
   .home .featured-project-list h2,
@@ -255,6 +264,15 @@
   .purple a {
     color: rgb(168, 46, 255); /* @purple */
   }
+  .green a {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow a {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red a {
+    color: rgb(239, 20, 93); /* @red */
+  }
   a[href]:hover,
   a[href]:active,
   a[href]:focus {
@@ -305,6 +323,27 @@
     background-color: rgb(168, 46, 255); /* @purple */
     color: white;
   }
+  .green button,
+  .green .action a,
+  .green a .action span,
+  .green header > ul > li > a {
+    background-color: rgb(48, 217, 101); /* @green */
+    color: white;
+  }
+  .yellow button,
+  .yellow .action a,
+  .yellow a .action span,
+  .yellow header > ul > li > a {
+    background-color: rgb(255, 214, 13); /* @yellow */
+    color: inherit;
+  }
+  .red button,
+  .red .action a,
+  .red a .action span,
+  .red header > ul > li > a {
+    background-color: rgb(239, 20, 93); /* @red */
+    color: white;
+  }
 
   header[style] ul a {
     background-color: rgba(0, 207, 172, 0.8); /* @teal */
@@ -331,6 +370,33 @@
   .purple header[style] ul a[href]:active,
   .purple header[style] ul a[href]:focus {
     background-color: rgb(168, 46, 255); /* @purple */
+  }
+
+  .green header[style] ul a {
+    background-color: rgba(48, 217, 101, 0.8); /* @green */
+  }
+  .green header[style] ul a[href]:hover,
+  .green header[style] ul a[href]:active,
+  .green header[style] ul a[href]:focus {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+
+  .yellow header[style] ul a {
+    background-color: rgba(255, 214, 13, 0.8); /* @yellow */
+  }
+  .yellow header[style] ul a[href]:hover,
+  .yellow header[style] ul a[href]:active,
+  .yellow header[style] ul a[href]:focus {
+    background-color: rgb(255, 214, 13); /* @yellow */
+  }
+
+  .red header[style] ul a {
+    background-color: rgba(239, 20, 93, 0.8); /* @yellow */
+  }
+  .red header[style] ul a[href]:hover,
+  .red header[style] ul a[href]:active,
+  .red header[style] ul a[href]:focus {
+    background-color: rgb(239, 20, 93); /* @red */
   }
 
   button:hover,
@@ -828,6 +894,15 @@
     .orange main > nav:after {
       background-color: rgb(255, 80, 26); /* @orange */
     }
+    .green main > nav:after {
+      background-color: rgb(48, 217, 101); /* @green */
+    }
+    .yellow main > nav:after {
+      background-color: rgb(255, 214, 13); /* @yellow */
+    }
+    .red main > nav:after {
+      background-color: rgb(239, 20, 93); /* @red */
+    }
   }
   main > nav a[href]:not(.active) {
     color: inherit;
@@ -877,6 +952,21 @@
     margin: 0;
     padding-bottom: 0.1527777778em; /* (44px / 36px) / 8 */
     border-bottom: 0.1em solid rgb(0, 207, 172); /* @teal */
+  }
+  .purple .featured-project-list li h2 {
+    border-bottom-color: rgb(168, 46, 255); /* @purple */
+  }
+  .orange .featured-project-list li h2 {
+    border-bottom-color: rgb(255, 80, 26); /* @orange */
+  }
+  .green .featured-project-list li h2 {
+    border-bottom-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .featured-project-list li h2 {
+    border-bottom-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .featured-project-list li h2 {
+    border-bottom-color: rgb(239, 20, 93); /* @red */
   }
   .featured-project-list li p {
     font-size: 0.8181818182em; /* 18px / 22px */
@@ -1116,6 +1206,15 @@
   .orange .team-member > h3:after {
     color: rgb(255, 80, 26); /* @orange */
   }
+  .green .team-member > h3:after {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .team-member > h3:after {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red  .team-member > h3:after {
+    color: rgb(239, 20, 93); /* @red */
+  }
   @media (min-width: 60em) {
     .team-member:after {
       content: "";
@@ -1173,6 +1272,15 @@
   }
   .orange .projects .intro {
     background-color: rgb(255, 80, 26); /* @orange */
+  }
+  .green .projects .intro {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .projects .intro {
+    background-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .projects .intro {
+    background-color: rgb(239, 20, 93); /* @red */
   }
   .projects .intro a {
     color: inherit;
@@ -1252,6 +1360,15 @@
   .purple .projects h1 + svg {
     color: rgb(168, 46, 255); /* @purple */
   }
+  .green .projects h1 + svg {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .projects h1 + svg {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .projects h1 + svg {
+    color: rgb(239, 20, 93); /* @red */
+  }
   .community > h1 + p,
   .projects h1 + svg + p {
     font-size: 1.5454545455em; /* 34px / 22px */
@@ -1274,6 +1391,18 @@
   .purple .community > h1 + p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .green .community > h1 + p,
+  .green .projects h1 + svg + p {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .community > h1 + p,
+  .yellow .projects h1 + svg + p {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .community > h1 + p,
+  .red .projects h1 + svg + p {
+    color: rgb(239, 20, 93); /* @red */
   }
   @media (min-width: 50em) {
     .projects h1 + svg {
@@ -1562,6 +1691,15 @@
   }
   .purple .meta ul {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .green .meta ul {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .meta ul {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .meta ul {
+    color: rgb(239, 20, 93); /* @red */
   }
   .projects .intro .meta ul {
     color: inherit;
