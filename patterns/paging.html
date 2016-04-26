@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GOOD</title>
+
+  <script src="https://use.typekit.net/kqm6slz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+
+  <style>
+    pre {
+      font-size: 0.75em;
+    }
+  </style>
+
+  <style>
+    /* =Paging
+  ----------------------------------------------- */
+  .pagination {
+    border-top: 1px solid rgb(218, 220, 224); /* @magnesium */
+    position: relative;
+    padding: 1.25em 1.25em 0;
+    text-align: center;
+    margin-bottom: 1.75em; /* @line-height */
+  }
+  .pagination:after {
+    /* @clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .pagination ul {
+    max-width: none;
+  }
+  .pagination ul,
+  .pagination li {
+    /* @reset-list-style */
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  .pagination ul {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pagination li {
+    display: inline-block;
+  }
+  .pagination li a {
+    color: rgb(153, 153, 153); /* @nickel */
+    text-decoration: none;
+  }
+  .pagination .next a,
+  .pagination .previous a {
+    color: white;
+  }
+  .pagination li a:hover,
+  .pagination li a:active,
+  .pagination li a:focus {
+    color: rgb(0, 1, 2); /* @midnight */
+  }
+  .pagination a {
+    display: inline-block;
+    padding: 0.5625em 0.875em; /* @line-height / 4      @line-height / 2 */
+    color: rgb(83, 83, 83); /* @steel */
+    text-decoration: none;
+  }
+  .pagination li.active a {
+    color: rgb(0, 1, 2); /* @midnight */
+  }
+  .pagination .previous {
+    margin-right : 0.875em;
+  }
+  .pagination .next {
+    float: right;
+    margin-left  : 0.875em;
+  }
+  @media (max-width: 39.9em) {
+    .pagination {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .pagination li {
+      font-size: 0.75em; /* 14px / @font-size */
+    }
+    .pagination .previous {
+      margin-right : 0.4375em;
+    }
+    .pagination .next {
+      margin-left  : 0.4375em;
+    }
+    .pagination a {
+      padding: 0.4375em;
+    }
+  }
+  .pagination .next:last-child {
+    margin-left: 0;
+  }
+  .pagination .previous:first-child:last-child {
+    margin-right: 0;
+  }
+  </style>
+</head>
+<body style="margin: 1.5em">
+
+<section>
+  <h1 style="margin-bottom: 0">Pagination</h1>
+  <p>For long lists, like blog posts</p>
+
+  <!--
+  <pre><code>&lt;nav class=&quot;pagination&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;next&quot;&gt;
+      &lt;a href=&quot;…&quot; title=&quot;Next Page&quot;&gt;Next&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;previous&quot;&gt;
+      &lt;a href=&quot;…&quot; title=&quot;Previous Page&quot;&gt;Prev&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;…&quot; title=&quot;Page 1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;…&quot; title=&quot;Page 2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;…&quot; title=&quot;Page 3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+-->
+
+  <section>
+    <h2>Examples</h2>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="active"><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li><a href="" title="Page 5">5</a></li>
+        <li><a href="" title="Page 6">6</a></li>
+        <li><a href="" title="Page 7">7</a></li>
+        <li><a href="" title="Page 8">8</a></li>
+        <li><a href="" title="Page 9">9</a></li>
+        <li><a href="" title="Page 10">10</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+        <li><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li><a href="" title="Page 5">5</a></li>
+        <li class="active"><a href="" title="Page 6">6</a></li>
+        <li><a href="" title="Page 7">7</a></li>
+        <li><a href="" title="Page 8">8</a></li>
+        <li><a href="" title="Page 9">9</a></li>
+        <li><a href="" title="Page 10">10</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+        <li><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li><a href="" title="Page 5">5</a></li>
+        <li><a href="" title="Page 6">6</a></li>
+        <li><a href="" title="Page 7">7</a></li>
+        <li><a href="" title="Page 8">8</a></li>
+        <li><a href="" title="Page 9">9</a></li>
+        <li class="active"><a href="" title="Page 10">10</a></li>
+      </ul>
+    </nav>
+
+    <h3>5 Pages</h3>
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="active"><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li><a href="" title="Page 5">5</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+        <li><a href="" title="Page 1">1</a></li>
+        <li class="active"><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li><a href="" title="Page 5">5</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+        <li><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+        <li><a href="" title="Page 3">3</a></li>
+        <li><a href="" title="Page 4">4</a></li>
+        <li class="active"><a href="" title="Page 5">5</a></li>
+      </ul>
+    </nav>
+
+    <h3>2 Pages</h3>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="active"><a href="" title="Page 1">1</a></li>
+        <li><a href="" title="Page 2">2</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+        <li><a href="" title="Page 1">1</a></li>
+        <li class="active"><a href="" title="Page 2">2</a></li>
+      </ul>
+    </nav>
+
+    <h3>2 Pages (alternate)</h3>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="next action">
+          <a href="" title="Next Page">Next</a>
+        </li>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="pagination">
+      <ul>
+        <li class="previous action">
+          <a href="" title="Previous Page">Prev</a>
+        </li>
+      </ul>
+    </nav>
+
+  </section>
+
+
+
+</body>
+</html>

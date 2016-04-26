@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GOOD</title>
+
+  <script src="https://use.typekit.net/kqm6slz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+</head>
+<body style="margin: 1.5em">
+
+  <h1>Form</h1>
+
+  <section class="error-message" role="status" style="padding: 1.5em; color: white; background-color: rgb(255, 49, 59); /* @watermelon */">
+    <h2 style="margin: 0;">
+      Oops! We’ll need your name and email address before we can send a message.
+    </h2>
+  </section>
+
+  <form action="" method="post">
+    <p>
+      <label>
+        <span>Name</span><br />
+        <input name="first_name" type="text" />
+      </label>
+    </p>
+    <p style="color: rgb(255, 49, 59); /* @watermelon */">
+      <label>
+        <span>Email</span><br />
+        <input name="email" type="email" />
+      </label>
+    </p>
+    <p class="validation-message" style="color: rgb(255, 49, 59); /* @watermelon */">
+      Oops! That email address isn’t valid.
+    </p>
+    <p>
+      <label>
+        <span>What are you looking to do?</span><br />
+        <textarea></textarea>
+      </label>
+    </p>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+
+</body>
+</html>
