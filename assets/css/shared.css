@@ -65,7 +65,7 @@
   }
 
   /* Make new HTML elements look nice in older browsers */
-  main, section, article, aside, nav, header, footer, figure {
+  main, section, article, aside, nav, header, footer, figure, figcaption {
     display: block;
   }
 
@@ -151,7 +151,9 @@
   }
   main h2 {
     color: rgb(0, 207, 172); /* @teal */
+    /*
     padding-top: 0.375em;
+    */
     font-weight: 900; /* @extra-bold */
     display: table;
   }
@@ -228,8 +230,9 @@
   }
   figure img {
     display: block;
+    border: 1px solid rgb(204, 204, 204);
   }
-  figure p {
+  figcaption {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 0.7272727273em; /* 16px / 22px */
     line-height: 1.375; /* 22px / 16px */
@@ -1427,21 +1430,37 @@
   /* =Project Details
   ----------------------------------------------- */
 
-  .project-details .intro {
+  .project-details .details div ~ div {
+    margin-top: 3em;
+  }
+  .project-details .intro > div:first-child{
     font-size: 1.5em; /* 33px / 22px */
     line-height: 1.3333333333; /* 44px / 33px */
   }
-  .project-details .intro p {
+  .project-details .intro > div:first-child p {
     margin-top: 0;
     max-width: 20em;
   }
 
+  .project-details .details {
+    margin-top: 3em;
+  }
+  .project-details .details h2 {
+    margin-top: 0;
+  }
+
   @media (min-width: 60em) {
-    .project-details .intro {
+    .project-details .intro:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .project-details .intro > div:first-child {
       width: 45%;
       float: left;
     }
     .project-details .meta {
+      margin-top: 0;
       width: 45%;
       float: right;
     }
@@ -1463,6 +1482,7 @@
       column-gap           : 5em;
       column-width         : 10em;
     }
+    /* KUDOS: http://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element#answer-7785711 */
     .project-details .meta div {
       -webkit-column-break-inside: avoid; /* Chrome, Safari */
       page-break-inside: avoid;           /* Theoretically FF 20+ */
@@ -1472,31 +1492,53 @@
     .project-details .meta h2:first-child {
       margin-top: 0;
     }
-    .project-details figure {
+
+    .project-details .details:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .project-details .details > div {
+      float: left;
+      clear: left;
+      width: 45%;
+    }
+    .project-details .details > div p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-details .details figure {
+      margin-top: 0;
       float: right;
       clear: right;
       width: 45%; /* image-width */
     }
-    .project-details figure {
+    .project-details .details figure ~ figure {
+      margin-top: 3em;
+    }
+    .project-details .details figure {
       margin-bottom: 0;
     }
-    .project-details figure img {
+    .project-details .details figure img {
       width: 100%;
-      height: 12em;
-      object-fit: cover;
-    }
-    .project-details figure + h2 + p {
-      width: 45%;
     }
   }
 
+  .project-details .highlights {
+    margin-top: 3em;
+  }
   .project-details .highlights + figure {
     float: none;
     width: auto;
     max-width: none;
   }
-  .project-details .highlights + figure img {
+  .project-details .highlights + figure img,
+  .project-details .highlights + figure iframe {
+
+    /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
     height: 24em;
+    height: 70vh;
+
     margin-left: -1.5em;
     margin-right: -1.5em;
     width: calc(100% + 3em);
@@ -1504,7 +1546,8 @@
     object-fit: cover;
   }
   @media (min-width: 60em) {
-    .project-details .highlights + figure img {
+    .project-details .highlights + figure img,
+    .project-details .highlights + figure iframe {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       width: calc(100% + 8em); /* margin x 2 */
@@ -1520,7 +1563,7 @@
   .purple .meta ul {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .intro .meta ul {
+  .projects .intro .meta ul {
     color: inherit;
     opacity: 0.6;
   }
@@ -1543,9 +1586,8 @@
   .project-details .highlights h2 {
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
-    margin-top: 2.4em;
     font-weight: bold;
-    margin-bottom: 0;
+    margin: 0;
     padding-top: 0.3em;
     position: relative;
   }
@@ -1561,7 +1603,6 @@
     .project-details .highlights h2 {
       font-size: 3.7272727273em; /* 82px / 22px */
       line-height: 1.2073170732em; /* 99px / 82px */
-      margin-top: 2.4146341464em;
     }
   }
   .project-details .highlights .primary,
@@ -1593,11 +1634,14 @@
     }
   }
   .project-details .highlights .secondary {
-    margin-top: 3em;
+    margin-top: 1.5em;
     margin-bottom: 3em;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(166, 180, 184);
     font-weight: 600;
+  }
+  .project-details .highlights .secondary a {
+    font-style: inherit;
   }
   .project-details .highlights .secondary,
   .project-details .highlights .secondary li {
@@ -1629,7 +1673,7 @@
       width: 45%;
       float: left;
     }
-    .project-details .highlights .secondary {
+    .project-details .highlights .primary + .secondary {
       margin-top: 1.5em;
       width: 45%;
       float: right;
