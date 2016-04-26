@@ -493,14 +493,22 @@
   ----------------------------------------------- */
 
   /* Make the logo the same color as the text around it */
-  header h2 a {
+  header h2 a,
+  header h2 a[href]:hover,
+  header h2 a[href]:active,
+  header h2 a[href]:focus {
     color: rgb(7, 12, 13) !important; /* !important to override .orange and .purple */
   }
   header h2 a[href]:hover,
   header h2 a[href]:active,
   header h2 a[href]:focus {
     opacity: 0.65;
-    color: rgb(7, 12, 13) !important;
+  }
+  header[style] h2 a,
+  header[style] h2 a[href]:hover,
+  header[style] h2 a[href]:active,
+  header[style] h2 a[href]:focus  {
+    color: white !important;
   }
   header h2 svg {
     fill: currentColor;
