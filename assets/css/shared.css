@@ -239,7 +239,6 @@
   }
   figure img {
     display: block;
-    border: 1px solid rgb(204, 204, 204);
   }
   figcaption {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
@@ -1222,7 +1221,7 @@
       display: table;
       clear: both;
     }
-    .team-member p {
+    .team-member .details {
       width: 60%;
       float: left;
     }
