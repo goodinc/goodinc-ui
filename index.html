@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web Prototype / GOOD</title>
+  <title>User Interface / GOOD Inc</title>
   <style type="text/css">
     html, body, #outer-outer-container, #outer-container {
       height: 100%;
@@ -15,40 +15,30 @@
       background: rgb(244, 245, 244);
       color: rgb(0, 1, 0); /* @text-color */
     }
-    header h1 {
-      margin-bottom: 0;
-    }
-    header h1 a,
-    header h1 a:visited {
-      color: inherit;
-    }
-    header h2 {
-      margin-top: 0;
-      font-style: normal;
-      color: #999;
-    }
-    a[href] {
+    a {
       color: rgb(110, 160, 26); /* @link-color */
       text-decoration: none;
     }
-    a[href]:hover,
-    a[href]:active,
-    a[href]:focus {
-      text-decoration: underline;
+    a:hover,
+    a:active,
+    a:focus {
     }
-    a[href]:visited {
+    a:visited {
       color: #333;
     }
-    ul, li {
-      margin-left: 0;
-      padding-left: 0;
+    a h2 {
+      text-decoration: underline;
     }
-    h3 {
+    h1 {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    h2 {
       margin-bottom: 0;
     }
-    ul {
-      margin-top: 0.5em;
-      padding-left: 0.5em;
+    h2 + p {
+      margin-top: 0;
+      max-width: 25em;
     }
     #container {
       margin: 50px auto;
@@ -67,97 +57,30 @@
       float: left;
       margin-right: 3em;
     }
-    li {
-      color: #bbb;
-    }
-    .new a {
-      color: #a93c44;
-    }
   </style>
 </head>
-<body>
+<body class="standard">
   <div id="outer-outer-container">
     <div id="outer-container">
       <div id="container">
 
         <header>
-          <h1>GOOD</h1>
-          <h2>Web Prototype</h2>
+          <h1 style="margin-bottom: 0">GOOD Inc</h1>
+          <p style="margin-top: 0em">User Interface</p>
         </header>
 
         <section>
           <section>
-            <h2>Start</h2>
-            <ul>
-              <li><a href="home.html">Home</a></li>
-              <li><a href="marketing.html">Marketing Page</a></li>
-            </ul>
+            <a href="patterns/">
+              <h2>Web Patterns</h2>
+              <p>Reusable HTML &amp; CSS, for new pages</p>
+            </a>
           </section>
           <section>
-            <h2>About</h2>
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="philosophy.html">Philosophy</a></li>
-              <li><a href="history.html">History</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Community</h2>
-            <ul>
-              <li><a href="community.html">Team</a></li>
-              <li><a href="audience.html">Audience</a></li>
-              <li><a href="clients.html">Clients</a></li>
-              <li><a href="leaders.html">Leaders</a></li>
-            </ul>
-            <ul>
-              <li><a href="team-member.html">Team Member</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Projects</h2>
-            <ul>
-              <li><a href="projects.html">All</a></li>
-              <li><a href="projects-insights.html">Insights + Strategy</a></li>
-              <li><a href="projects-programs.html">Programs + Campaigns</a></li>
-              <li><a href="projects-storytelling.html">Storytelling + Branding</a></li>
-              <li><a href="projects-reach.html">Reach + Engagement</a></li>
-            </ul>
-            <ul>
-              <li><a href="project-details.html">Project Details</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>News</h2>
-            <ul>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="reports.html">Reports</a></li>
-              <li><a href="press.html">Press</a></li>
-            </ul>
-          </section>
-          <section>
-            <h2>Contact</h2>
-            <ul>
-              <li><a href="partnerships.html">Partnerships</a></li>
-              <li><a href="careers.html">Careers</a></li>
-              <li><a href="contact.html">Questions</a></li>
-              <li><a href="subscribe.html">Subscribe</a></li>
-            </ul>
-            <ul>
-              <li><a href="confirmation.html">Confirmation</a></li>
-            </ul>
-          </section>
-        </section>
-
-        <header style="clear: both; padding-top: 3em">
-          <h2>Style Guide</h2>
-        </header>
-
-        <section>
-          <section>
-            <ul>
-              <li><a href="style-guide/text.html">Text</a></li>
-              <li><a href="style-guide/buttons.html">Buttons</a></li>
-            </ul>
+            <a href="prototype/">
+              <h2>Web Prototype</h2>
+              <p>Example of patterns in use</p>
+            </a>
           </section>
         </section>
 
