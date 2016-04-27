@@ -513,7 +513,7 @@
   header h3 {
     position: absolute;
     margin-top: 1em;
-    left: 14em;
+    left: 10em;
     z-index: 3; /* Just above the h1:first-child element */
 
     font-weight: 900;
@@ -521,6 +521,11 @@
     line-height: 1.8333333333; /* 22px / 12px */
     text-transform: uppercase;
     letter-spacing: 0.1em;
+  }
+  @media (min-width: 70em) {
+    header h3 {
+      left: 14em;
+    }
   }
 
 
