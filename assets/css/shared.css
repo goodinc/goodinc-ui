@@ -1088,31 +1088,34 @@
     font-style: italic;
     margin: 0;
     padding-bottom: 0.1527777778em; /* (44px / 36px) / 8 */
-    border-bottom: 0.1em solid rgb(0, 207, 172); /* @teal */
+    text-decoration: underline;
   }
   .tangerine .featured-project-list li h2 {
-    border-bottom-color: rgb(255, 80, 26); /* @tangerine */
+    color: rgb(255, 80, 26); /* @tangerine */
   }
   .orange .featured-project-list li h2 {
-    border-bottom-color: rgb(249, 132, 12); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple .featured-project-list li h2 {
-    border-bottom-color: rgb(168, 46, 255); /* @purple */
+    color: rgb(168, 46, 255); /* @purple */
   }
   .blue .featured-project-list li h2 {
-    border-bottom-color: rgb(0, 157, 255); /* @blue */
+    color: rgb(0, 157, 255); /* @blue */
   }
   .teal .featured-project-list li h2 {
-    border-bottom-color: rgb(0, 207, 172); /* @teal */
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green .featured-project-list li h2 {
-    border-bottom-color: rgb(48, 217, 101); /* @green */
+    color: rgb(48, 217, 101); /* @green */
   }
   .yellow .featured-project-list li h2 {
-    border-bottom-color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(255, 214, 13); /* @yellow */
   }
   .red .featured-project-list li h2 {
-    border-bottom-color: rgb(239, 20, 93); /* @red */
+    color: rgb(239, 20, 93); /* @red */
+  }
+  .featured-project-list li h2 span {
+    color: white;
   }
   .featured-project-list li p {
     font-size: 0.8181818182em; /* 18px / 22px */
