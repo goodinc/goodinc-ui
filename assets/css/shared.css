@@ -153,11 +153,20 @@
     width: calc(100% + 4em); /* 88px / 22px */
     margin-left: -4em;
   }
+  .tangerine main h2 {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
   .orange main h2 {
-    color: rgb(255, 80, 26); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple main h2 {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue main h2 {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal main h2 {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green main h2 {
     color: rgb(48, 217, 101); /* @green */
@@ -246,11 +255,20 @@
     color: rgb(0, 207, 172); /* @teal */
     font-style: italic;
   }
+  .tangerine a {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
   .orange a {
-    color: rgb(255, 80, 26); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple a {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue a {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal a {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green a {
     color: rgb(48, 217, 101); /* @green */
@@ -297,11 +315,18 @@
   header > ul > li > a {
     padding: 0.8888888889em 1.5555555556em;  /* 11px / 18px*/     /* 22px / 18px */
   }
+  .tangerine button,
+  .tangerine .action a,
+  .tangerine a .action span,
+  .tangerine header > ul > li > a {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+    color: white;
+  }
   .orange button,
   .orange .action a,
   .orange a .action span,
   .orange header > ul > li > a {
-    background-color: rgb(255, 80, 26); /* @orange */
+    background-color: rgb(249, 132, 12); /* @orange */
     color: white;
   }
   .purple button,
@@ -309,6 +334,20 @@
   .purple a .action span,
   .purple header > ul > li > a {
     background-color: rgb(168, 46, 255); /* @purple */
+    color: white;
+  }
+  .blue button,
+  .blue .action a,
+  .blue a .action span,
+  .blue header > ul > li > a {
+    background-color: rgb(0, 157, 255); /* @blue */
+    color: white;
+  }
+  .teal button,
+  .teal .action a,
+  .teal a .action span,
+  .teal header > ul > li > a {
+    background-color: rgb(0, 207, 172); /* @teal */
     color: white;
   }
   .green button,
@@ -342,13 +381,22 @@
     background-color: rgb(0, 207, 172); /* @teal */
   }
 
+  .tangerine header[style] ul a {
+    background-color: rgba(255, 80, 26, 0.8); /* @tangerine */
+  }
+  .tangerine header[style] ul a[href]:hover,
+  .tangerine header[style] ul a[href]:active,
+  .tangerine header[style] ul a[href]:focus {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+
   .orange header[style] ul a {
-    background-color: rgba(255, 80, 26, 0.8); /* @orange */
+    background-color: rgba(249, 132, 12, 0.8); /* @orange */
   }
   .orange header[style] ul a[href]:hover,
   .orange header[style] ul a[href]:active,
   .orange header[style] ul a[href]:focus {
-    background-color: rgb(255, 80, 26); /* @orange */
+    background-color: rgb(249, 132, 12); /* @orange */
   }
 
   .purple header[style] ul a {
@@ -358,6 +406,24 @@
   .purple header[style] ul a[href]:active,
   .purple header[style] ul a[href]:focus {
     background-color: rgb(168, 46, 255); /* @purple */
+  }
+
+  .blue header[style] ul a {
+    background-color: rgba(0, 157, 255, 0.8); /* @blue */
+  }
+  .blue header[style] ul a[href]:hover,
+  .blue header[style] ul a[href]:active,
+  .blue header[style] ul a[href]:focus {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+
+  .teal header[style] ul a {
+    background-color: rgba(0, 207, 172, 0.8); /* @teal */
+  }
+  .teal header[style] ul a[href]:hover,
+  .teal header[style] ul a[href]:active,
+  .teal header[style] ul a[href]:focus {
+    background-color: rgb(0, 207, 172); /* @teal */
   }
 
   .green header[style] ul a {
@@ -379,7 +445,7 @@
   }
 
   .red header[style] ul a {
-    background-color: rgba(239, 20, 93, 0.8); /* @yellow */
+    background-color: rgba(239, 20, 93, 0.8); /* @red */
   }
   .red header[style] ul a[href]:hover,
   .red header[style] ul a[href]:active,
@@ -902,11 +968,20 @@
       height: 1px;
       background-color: rgb(0, 207, 172); /* @teal */
     }
+    .tangerine main > nav:after {
+      background-color: rgb(255, 80, 26); /* @tangerine */
+    }
+    .orange main > nav:after {
+      background-color: rgb(249, 132, 12); /* @orange */
+    }
     .purple main > nav:after {
       background-color: rgb(168, 46, 255); /* @purple */
     }
-    .orange main > nav:after {
-      background-color: rgb(255, 80, 26); /* @orange */
+    .blue main > nav:after {
+      background-color: rgb(0, 157, 255); /* @blue */
+    }
+    .teal main > nav:after {
+      background-color: rgb(0, 207, 172); /* @teal */
     }
     .green main > nav:after {
       background-color: rgb(48, 217, 101); /* @green */
@@ -967,11 +1042,20 @@
     padding-bottom: 0.1527777778em; /* (44px / 36px) / 8 */
     border-bottom: 0.1em solid rgb(0, 207, 172); /* @teal */
   }
+  .tangerine .featured-project-list li h2 {
+    border-bottom-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .featured-project-list li h2 {
+    border-bottom-color: rgb(249, 132, 12); /* @orange */
+  }
   .purple .featured-project-list li h2 {
     border-bottom-color: rgb(168, 46, 255); /* @purple */
   }
-  .orange .featured-project-list li h2 {
-    border-bottom-color: rgb(255, 80, 26); /* @orange */
+  .blue .featured-project-list li h2 {
+    border-bottom-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .featured-project-list li h2 {
+    border-bottom-color: rgb(0, 207, 172); /* @teal */
   }
   .green .featured-project-list li h2 {
     border-bottom-color: rgb(48, 217, 101); /* @green */
@@ -1214,11 +1298,20 @@
       color: rgb(0, 207, 172); /* @teal */
     }
   }
+  .tangerine .team-member > h3:after {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .team-member > h3:after {
+    color: rgb(249, 132, 12); /* @orange */
+  }
   .purple .team-member > h3:after {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .orange .team-member > h3:after {
-    color: rgb(255, 80, 26); /* @orange */
+  .blue .team-member > h3:after {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .team-member > h3:after {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green .team-member > h3:after {
     color: rgb(48, 217, 101); /* @green */
@@ -1281,11 +1374,20 @@
     background-color: rgb(0, 207, 172); /* @teal */
     color: white;
   }
+  .tangerine .projects .intro {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .projects .intro {
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
   .purple .projects .intro {
     background-color: rgb(168, 46, 255); /* @purple */
   }
-  .orange .projects .intro {
-    background-color: rgb(255, 80, 26); /* @orange */
+  .blue .projects .intro {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .projects .intro {
+    background-color: rgb(0, 207, 172); /* @teal */
   }
   .green .projects .intro {
     background-color: rgb(48, 217, 101); /* @green */
@@ -1368,11 +1470,20 @@
     position: absolute;
     z-index: -1;
   }
+  .tangerine .projects h1 + svg {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
   .orange .projects h1 + svg {
-    color: rgb(255, 80, 26); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple .projects h1 + svg {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .projects h1 + svg {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .projects h1 + svg {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green .projects h1 + svg {
     color: rgb(48, 217, 101); /* @green */
@@ -1392,13 +1503,25 @@
     max-width: 22em;
     color: rgb(0, 207, 172); /* @teal */
   }
+  .tangerine main > h1:first-child + p,
+  .tangerine .projects h1 + svg + p {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
   .orange main > h1:first-child + p,
   .orange .projects h1 + svg + p {
-    color: rgb(255, 80, 26); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple main > h1:first-child + p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue main > h1:first-child + p,
+  .blue .projects h1 + svg + p {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal main > h1:first-child + p,
+  .teal .projects h1 + svg + p {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green main > h1:first-child + p,
   .green .projects h1 + svg + p {
@@ -1694,11 +1817,20 @@
   .meta ul {
     color: rgb(0, 207, 172); /* @teal */
   }
+  .tangerine .meta ul {
+    color: rgb(249, 132, 12); /* @orange */
+  }
   .orange .meta ul {
-    color: rgb(255, 80, 26); /* @orange */
+    color: rgb(249, 132, 12); /* @orange */
   }
   .purple .meta ul {
     color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .meta ul {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .meta ul {
+    color: rgb(0, 207, 172); /* @teal */
   }
   .green .meta ul {
     color: rgb(48, 217, 101); /* @green */
