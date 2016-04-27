@@ -868,7 +868,7 @@
   main {
     min-height: 50vh;
   }
-  main > h1:first-child {
+  main > h1.section {
     /* @hidden-accessible */
     position: absolute;
     left: -9999px;
@@ -1494,7 +1494,7 @@
   .red .projects h1 + svg {
     color: rgb(239, 20, 93); /* @red */
   }
-  main > h1 + p,
+  main > h1.section + p,
   .projects h1 + svg + p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
@@ -1503,35 +1503,35 @@
     max-width: 22em;
     color: rgb(0, 207, 172); /* @teal */
   }
-  .tangerine main > h1:first-child + p,
+  .tangerine main > h1.section + p,
   .tangerine .projects h1 + svg + p {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange main > h1:first-child + p,
+  .orange main > h1.section + p,
   .orange .projects h1 + svg + p {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple main > h1:first-child + p,
+  .purple main > h1.section + p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue main > h1:first-child + p,
+  .blue main > h1.section + p,
   .blue .projects h1 + svg + p {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal main > h1:first-child + p,
+  .teal main > h1.section + p,
   .teal .projects h1 + svg + p {
     color: rgb(0, 207, 172); /* @teal */
   }
-  .green main > h1:first-child + p,
+  .green main > h1.section + p,
   .green .projects h1 + svg + p {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow main > h1:first-child + p,
+  .yellow main > h1.section + p,
   .yellow .projects h1 + svg + p {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red main > h1:first-child + p,
+  .red main > h1.section + p,
   .red .projects h1 + svg + p {
     color: rgb(239, 20, 93); /* @red */
   }
@@ -1549,7 +1549,7 @@
       max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
     }
   }
-  main h1 + p span,
+  main h1:first-child + p span,
   .projects h1 + svg + p span {
     color: black;
   }
