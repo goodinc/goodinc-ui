@@ -93,6 +93,19 @@
     .featured-project-list a[href]:focus {
       color: white;
     }
+    body:hover .featured-project-list .meta,
+    body:hover .featured-project-list .more {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    body:hover .featured-project-list a:hover  .meta,
+    body:hover .featured-project-list a:active .meta,
+    body:hover .featured-project-list a:focus  .meta,
+    body:hover .featured-project-list a:hover  .more,
+    body:hover .featured-project-list a:active .more,
+    body:hover .featured-project-list a:focus  .more {
+      opacity: 1;
+    }
     .featured-project-list a {
       /*
       position: absolute;
