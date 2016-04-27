@@ -72,26 +72,6 @@
   /* =Color
   ----------------------------------------------- */
   body {
-    background: rgb(244, 254, 252);
-  }
-  .orange {
-    background: rgb(254, 252, 244);
-  }
-  .purple {
-    background: rgb(252, 244, 254);
-  }
-
-  body {
-    background: rgb(245, 255, 253);
-  }
-  .orange {
-    background: rgb(255, 253, 245);
-  }
-  .purple {
-    background: rgb(253, 245, 255);
-  }
-
-  body {
     background: rgb(250, 255, 254);
   }
   .orange {
@@ -99,6 +79,15 @@
   }
   .purple {
     background: rgb(254, 250, 255);
+  }
+  .green {
+    background: rgb(249, 255, 254);
+  }
+  .yellow {
+    background: rgb(255, 254, 249);
+  }
+  .red {
+    background: rgb(255, 249, 254);
   }
 
 
