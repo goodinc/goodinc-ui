@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/css/shared.css" />
 
   <style>
+    /*
     header[style] {
       position: absolute;
       width: 100%;
@@ -22,8 +23,8 @@
     header[style]:before {
       display: none;
     }
+    */
 
-    /*
     header[style] {
       position: static;
       height: 0;
@@ -34,14 +35,31 @@
       display: none;
     }
     header[style] > h2 {
-      
+      top: 1.5em;
+      left: 1.5em;
+    }
+    header[style] > ul {
+      top: 1.5em;
+    }
+    @media (min-width: 70em) {
+      header[style] > h2 {
+        top: 2.2727272727em; /* 50px / 22px */
+        left: 4em; /* 88px / 22px */
+      }
+      header[style] > ul {
+        top: 2.2727272727em; /* 50px / 22px */
+      }
     }
     header[style] > h2,
     header[style] > ul,
     header[style] + main > h1:first-child {
+      position: absolute;
+    }
+    header[style].fixed > h2,
+    header[style].fixed > ul,
+    header[style].fixed + main > h1:first-child {
       position: fixed;
     }
-    */
 
     main {
       padding-top: 0;
@@ -117,6 +135,9 @@
     }
     .red .featured-project-list a .more {
       color: rgb(239, 20, 93); /* @red */
+    }
+    .featured-project-list a .more {
+      color: inherit !important;
     }
     .featured-project-list a .more:after {
       display: inline-block;
@@ -493,6 +514,92 @@
 </footer>
 
 <script src="../assets/js/color.js"></script>
+
+<script>
+(function() {
+
+  // If we’ve moved past the featured items
+
+  var lastFeaturedItem = document.querySelector('.featured-project-list > li:last-child');
+  var featuredItemsHeight;
+  var header = document.querySelector('header');
+  var logo = header.querySelector('h2');
+  var nav = header.querySelector('ul');
+  var headline = document.querySelector('header[style] + main > h1:first-child');
+  var logoOffsetTop;
+  var navOffsetTop;
+  var headlineOffsetTop;
+
+  // Switch the header to position absolute
+  // Calculate the current position of the header elements and apply them as “top” styles
+
+  // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+  function getScrollY() {
+    var supportPageOffset = window.pageXOffset !== undefined;
+    var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+    return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  }
+
+  function getAbsolutePositionY(element) {
+    if (element.parentNode && element.parentNode.offsetTop) {
+      return getAbsolutePositionY(element.parentNode) + element.offsetTop;
+    } else {
+      return element.offsetTop;
+    }
+  }
+
+  function updateContentHeight() {
+    featuredItemsHeight = getAbsolutePositionY(lastFeaturedItem);
+    logo.style.top = null;
+    nav.style.top = null;
+    headline.style.top = null;
+    logoOffsetTop = logo.offsetTop;
+    navOffsetTop = nav.offsetTop;
+    headlineOffsetTop = headline.offsetTop;
+  }
+
+  function updatePositions() {
+    var scrollY = getScrollY();
+    if (scrollY > featuredItemsHeight) {
+      header.className = header.className.replace(/fixed/g, '');
+      console.log('logo.getBoundingClientRect().top: ' + (logo.offsetTop));
+      console.log('headline.getBoundingClientRect().top: ' + (headline.offsetTop));
+      logo.style.top = (logoOffsetTop + featuredItemsHeight) + 'px';
+      nav.style.top = (navOffsetTop + featuredItemsHeight) + 'px';
+      headline.style.top = (headlineOffsetTop + featuredItemsHeight) + 'px';
+    } else {
+      header.className += ' fixed';
+      logo.style.top = null;
+      nav.style.top = null;
+      headline.style.top = null;
+    }
+  }
+
+  updateContentHeight();
+  updatePositions();
+
+  window.addEventListener('scroll', updatePositions, false);
+
+  /* OPTIONAL: Handle slow loading content and and resizing windows.
+  ----------------------------------------------- */
+  window.addEventListener('load', function() {
+    updateContentHeight();
+    updatePositions();
+  }, false);
+
+  (function() {
+    var throttle;
+    window.addEventListener('resize', function() {
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        updateContentHeight();
+        updatePositions();
+      }, 100);
+    }, false);
+  })();
+
+})();
+</script>
 
 </body>
 </html>
