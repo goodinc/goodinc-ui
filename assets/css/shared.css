@@ -821,8 +821,6 @@
 
   aside a.subscribe {
     color: inherit;
-    position: relative;
-    z-index: 1;
   }
   aside a.subscribe {
     margin: 3em 0;
@@ -2087,9 +2085,29 @@
     margin-left: auto;
     margin-right: auto;
   }
-  @media (min-width: 60em) {
+  @media (max-width: 64.99999em) {
+    .about aside {
+      text-align: center;
+    }
+    .about aside a.subscribe {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+    }
+    .about aside a.subscribe svg {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media (min-width: 65em) {
+    .about aside a.subscribe {
+      position: relative;
+      z-index: 1;
+    }
     .about aside {
       margin-top: -20em;
+      margin-bottom: -3.75em;
     }
   }
   blockquote p {
