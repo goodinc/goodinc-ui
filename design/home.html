@@ -22,6 +22,27 @@
     header[style]:before {
       display: none;
     }
+
+    /*
+    header[style] {
+      position: static;
+      height: 0;
+      min-height: 0;
+      padding: 0;
+    }
+    header[style]:before {
+      display: none;
+    }
+    header[style] > h2 {
+      
+    }
+    header[style] > h2,
+    header[style] > ul,
+    header[style] + main > h1:first-child {
+      position: fixed;
+    }
+    */
+
     main {
       padding-top: 0;
     }
@@ -73,6 +94,30 @@
       text-align: right;
       max-width: 90%;
     }
+    .tangerine .featured-project-list a .more {
+      color: rgb(255, 80, 26); /* @tangerine */
+    }
+    .orange .featured-project-list a .more {
+      color: rgb(249, 132, 12); /* @orange */
+    }
+    .purple .featured-project-list a .more {
+      color: rgb(168, 46, 255); /* @purple */
+    }
+    .blue .featured-project-list a .more {
+      color: rgb(0, 157, 255); /* @blue */
+    }
+    .teal .featured-project-list a .more {
+      color: rgb(0, 207, 172); /* @teal */
+    }
+    .green .featured-project-list a .more {
+      color: rgb(48, 217, 101); /* @green */
+    }
+    .yellow .featured-project-list a .more {
+      color: rgb(255, 214, 13); /* @yellow */
+    }
+    .red .featured-project-list a .more {
+      color: rgb(239, 20, 93); /* @red */
+    }
     .featured-project-list a .more:after {
       display: inline-block;
       content: "→";
@@ -105,9 +150,41 @@
         padding-bottom: 15vh;
       }
     }
+
+    .home .intro svg {
+      max-width: 100%;
+      width: 24em;
+      height: 24em;
+      position: absolute;
+      z-index: -1;
+    }
+    .tangerine .home .intro svg {
+      color: rgb(255, 80, 26); /* @tangerine */
+    }
+    .orange .home .intro svg {
+      color: rgb(249, 132, 12); /* @orange */
+    }
+    .purple .home .intro svg {
+      color: rgb(168, 46, 255); /* @purple */
+    }
+    .blue .home .intro svg {
+      color: rgb(0, 157, 255); /* @blue */
+    }
+    .teal .home .intro svg {
+      color: rgb(0, 207, 172); /* @teal */
+    }
+    .green .home .intro svg {
+      color: rgb(48, 217, 101); /* @green */
+    }
+    .yellow .home .intro svg {
+      color: rgb(255, 214, 13); /* @yellow */
+    }
+    .red .home .intro svg {
+      color: rgb(239, 20, 93); /* @red */
+    }
   </style>
 </head>
-<body class="teal">
+<body class="purple">
 
 <header style="">
   <h2>
@@ -205,10 +282,8 @@
   </ul>
 
   <div class="intro">
-    <p>GOOD helps brands apply creativity to purpose — producing breakthrough programs and innovative content that resonate with an active, influential audience.</p>
-
     <figure>
-      <svg viewBox="0 0 594.4 594.4" width="594" height="594" style="max-width: 100%">
+      <svg viewBox="0 0 594.4 594.4" width="594" height="594">
         <style type="text/css">
           .st0{opacity:0.6;fill:none;stroke:currentColor;stroke-miterlimit:10;}
           .st1{opacity:0.2;fill:none;stroke:currentColor;stroke-miterlimit:10;}
@@ -233,6 +308,8 @@
         <text transform="matrix(1 0 0 1 370.0959 336.7617)" class="st9"><tspan x="0" y="0" class="st8 st4 st5 st6">Society’s </tspan><tspan x="12.3" y="22.5" class="st8 st4 st5 st6">Needs</tspan></text>
       </svg>
     </figure>
+
+    <p><span>GOOD helps brands apply creativity to purpose — producing breakthrough programs and innovative content that resonate with an active, influential audience.</span></p>
 
     <ul>
       <li>

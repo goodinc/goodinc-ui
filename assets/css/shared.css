@@ -1063,10 +1063,6 @@
 
   /* =Home
   ----------------------------------------------- */
-  .home .intro p:first-child {
-    font-size: 1.5em; /* 33px / 22px */
-    line-height: 1.3333333333; /* 44px / 33px */
-  }
 
   .featured-project-list,
   .featured-project-list li {
@@ -1620,6 +1616,7 @@
   .red .projects h1 + svg {
     color: rgb(239, 20, 93); /* @red */
   }
+  .home .intro p,
   main > h1.section + p,
   .projects h1 + svg + p {
     font-size: 1.5454545455em; /* 34px / 22px */
@@ -1629,34 +1626,42 @@
     max-width: 22em;
     color: rgb(0, 207, 172); /* @teal */
   }
+  .tangerine .home .intro p,
   .tangerine main > h1.section + p,
   .tangerine .projects h1 + svg + p {
     color: rgb(255, 80, 26); /* @tangerine */
   }
+  .orange .home .intro p,
   .orange main > h1.section + p,
   .orange .projects h1 + svg + p {
     color: rgb(249, 132, 12); /* @orange */
   }
+  .purple .home .intro p,
   .purple main > h1.section + p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
   }
+  .blue .home .intro p,
   .blue main > h1.section + p,
   .blue .projects h1 + svg + p {
     color: rgb(0, 157, 255); /* @blue */
   }
+  .teal .home .intro p,
   .teal main > h1.section + p,
   .teal .projects h1 + svg + p {
     color: rgb(0, 207, 172); /* @teal */
   }
+  .green .home .intro p,
   .green main > h1.section + p,
   .green .projects h1 + svg + p {
     color: rgb(48, 217, 101); /* @green */
   }
+  .yellow .home .intro p,
   .yellow main > h1.section + p,
   .yellow .projects h1 + svg + p {
     color: rgb(255, 214, 13); /* @yellow */
   }
+  .red .home .intro p,
   .red main > h1.section + p,
   .red .projects h1 + svg + p {
     color: rgb(239, 20, 93); /* @red */
@@ -1675,9 +1680,10 @@
       max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
     }
   }
+  .home .intro p span,
   main h1:first-child + p span,
   .projects h1 + svg + p span {
-    color: black;
+    color: rgb(41, 53, 56);
   }
   /*
     .projects .intro > p:first-child span {
@@ -2010,32 +2016,38 @@
       line-height: 1.2073170732em; /* 99px / 82px */
     }
   }
+  .home .intro ul,
+  .home .intro li,
   .project-details .highlights .primary,
   .project-details .highlights .primary li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
+  .home .intro li + li,
   .project-details .highlights .primary li + li {
     margin-top: 1.5em;
   }
+  .home .intro li b,
   .project-details .highlights .primary li b {
     display: block;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
+    font-weight: 500;
   }
+  .home .intro li span,
   .project-details .highlights .primary li span {
     display: block;
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
+    font-style: italic
   }
   @media (min-width: 50em) {
     .project-details .highlights .primary li b {
       font-size: 3.7272727273em; /* 82px / 22px */
 
       /* SHIM: Attempt to line up the primary and secondary content */
-      line-height: 0.9390243902em; /* 77px / 82px */
+      line-height: 1.0731707317em; /* 88px / 82px */
     }
   }
   .project-details .highlights .secondary {
