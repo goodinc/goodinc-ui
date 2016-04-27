@@ -138,7 +138,7 @@
   h4, h5, h6 {
     font-size: inherit;
   }
-  main h2 {
+  .project-details h2 {
     color: rgb(0, 207, 172); /* @teal */
     /*
     padding-top: 0.375em;
@@ -146,49 +146,41 @@
     font-weight: 900; /* @extra-bold */
     display: table;
   }
-  main h2:before {
+  .project-details h2:before {
     content: "";
     display: block;
     border-top: 2px solid;
     width: calc(100% + 4em); /* 88px / 22px */
     margin-left: -4em;
   }
-  .tangerine main h2 {
+  .tangerine .project-details h2 {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange main h2 {
+  .orange .project-details h2 {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple main h2 {
+  .purple .project-details h2 {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue main h2 {
+  .blue .project-details h2 {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal main h2 {
+  .teal .project-details h2 {
     color: rgb(0, 207, 172); /* @teal */
   }
-  .green main h2 {
+  .green .project-details h2 {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow main h2 {
+  .yellow .project-details h2 {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red main h2 {
+  .red .project-details h2 {
     color: rgb(239, 20, 93); /* @red */
   }
 
-  .home .articles h2,
-  .home .featured-project-list h2,
-  .meta h2 {
-    padding-top: 0;
-  }
-  .project-details .highlights h2,
-  aside.related h2 {
+  .project-details .highlights h2 {
     display: block;
   }
-  .home .articles h2:before,
-  .home .featured-project-list h2:before,
   .meta h2:before {
     display: none;
   }
@@ -197,8 +189,7 @@
     width: auto;
     margin-left: 0;
   }
-  main .meta h2,
-  .home .featured-project-list h2 {
+  main .meta h2 {
     color: inherit;
   }
 
