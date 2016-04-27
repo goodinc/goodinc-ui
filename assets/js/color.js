@@ -3,13 +3,17 @@
   // Measure the height of the content area (header + main)
   // As the user scrolls down, adjust the page background color opacity between 0 (scrolled all the way up) and 0.3 (scrolled all the way down)
 
-  var contentHeight = document.getElementsByTagName('header')[0].offsetHeight + document.getElementsByTagName('main')[0].offsetHeight;
 
   // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
   function getScrollY() {
     var supportPageOffset = window.pageXOffset !== undefined;
     var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
     return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  }
+
+  var contentHeight;
+  function updateContentHeight() {
+    contentHeight = document.getElementsByTagName('header')[0].offsetHeight + document.getElementsByTagName('main')[0].offsetHeight;
   }
 
   function updateBackground() {
@@ -45,10 +49,30 @@
       default:
         rgb = '255, 255, 255';
     }
-    document.body.style.backgroundColor = 'rgba(' + rgb + ', ' + opacity + ')'; // @green
+    document.body.style.backgroundColor = 'rgba(' + rgb + ', ' + opacity + ')';
   }
 
-  window.addEventListener('load', updateBackground, false);
+  updateContentHeight();
+
   window.addEventListener('scroll', updateBackground, false);
+
+
+  /* OPTIONAL: Handle slow loading content and and resizing windows.
+  ----------------------------------------------- */
+  window.addEventListener('load', function() {
+    updateContentHeight();
+    updateBackground();
+  }, false);
+
+  (function() {
+    var throttle;
+    window.addEventListener('resize', function() {
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        updateContentHeight();
+        updateBackground();
+      }, 100);
+    }, false);
+  })();
 
 })();
