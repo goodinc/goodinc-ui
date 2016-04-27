@@ -25,6 +25,7 @@
     font: 100%/1.5 "freight-text-pro", Georgia, serif; /* @freight-text */
     margin: 0;
     padding: 0;
+    background-color: white;
     color: rgb(42, 53, 56);
   }
 
@@ -71,13 +72,23 @@
 
   /* =Color
   ----------------------------------------------- */
+  /*
   body {
     background: rgb(250, 255, 254);
+  }
+  .tangerine {
+    background: rgb(255, 254, 250);
   }
   .orange {
     background: rgb(255, 254, 250);
   }
   .purple {
+    background: rgb(254, 250, 255);
+  }
+  .blue {
+    background: rgb(254, 250, 255);
+  }
+  .teal {
     background: rgb(254, 250, 255);
   }
   .green {
@@ -89,6 +100,11 @@
   .red {
     background: rgb(255, 249, 254);
   }
+  */
+
+
+
+
 
 
   /* =Type
