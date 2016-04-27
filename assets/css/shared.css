@@ -150,6 +150,9 @@
   h2, h3 {
     font-size: 1.0909090909em; /* 24px / 22px */
     line-height: 1.375; /* 33px / 24px  */
+
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px */
   }
   h4, h5, h6 {
     font-size: inherit;
@@ -573,6 +576,12 @@
   header[style] h2 a[href]:focus  {
     color: white !important;
   }
+  header h2 {
+    font-size: inherit;
+    margin-top: 0;
+    position: absolute;
+    z-index: 3; /* Just above the h1:first-child element */
+  }
   header h2 svg {
     fill: currentColor;
 
@@ -580,15 +589,10 @@
     width: 4em; /* 88px / 22px */
     height: 2.2727272727em; /* 50px / 22px */
   }
-  header h2 {
-    margin-top: 0;
-    position: absolute;
-    z-index: 3; /* Just above the h1:first-child element */
-  }
   header h3 {
     position: absolute;
     margin-top: 1em;
-    left: 10em;
+    left: 9.5em;
     z-index: 3; /* Just above the h1:first-child element */
 
     font-weight: 900;
@@ -599,7 +603,7 @@
   }
   @media (min-width: 70em) {
     header h3 {
-      left: 14em;
+      left: 13em;
     }
   }
 
@@ -1264,6 +1268,8 @@
   }
   .community .team > h3 {
     font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
   .experimental .community .clients > h1 + p {
     font-size: 1.5454545455em; /* 34px / 22px */
@@ -2081,6 +2087,7 @@
   /* =About
   ----------------------------------------------- */
   .about .text {
+    margin-top: 3em;
     max-width: 28em;
     margin-left: auto;
     margin-right: auto;
@@ -2109,6 +2116,14 @@
       margin-top: -20em;
       margin-bottom: -3.75em;
     }
+  }
+  blockquote,
+  blockquote + .byline {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .about .quote blockquote,
+  .about .quote blockquote + .byline {
+    color: inherit;
   }
   blockquote p {
     font-size: 1.5454545455em; /* 34px / 22px */
@@ -2174,5 +2189,35 @@
       margin-bottom: 0;
     }
   }
+
+
+  /* =Philosophy
+  ----------------------------------------------- */
+  .experimental .philosophy h2 {
+    position: absolute;
+
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px */
+
+    max-width: calc(50% - 28em);
+  }
+  .experimental .philosophy .text {
+    margin-top: 3em;
+  }
+  .philosophy .text p,
+  .philosophy .quote blockquote p {
+    max-width: 28em;
+  }
+  .philosophy .quote blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .philosophy .text,
+  .philosophy .quote {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+
 
 
