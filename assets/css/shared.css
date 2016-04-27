@@ -266,6 +266,7 @@
   }
   .yellow a {
     color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
   }
   .red a {
     color: rgb(239, 20, 93); /* @red */
@@ -948,6 +949,9 @@
       width: 1px;
       height: 1.5em;
       background-color: currentColor;
+    }
+    .yellow main > nav a:after {
+      color: rgb(255, 214, 13); /* @yellow */
     }
 
     main > nav:after {
