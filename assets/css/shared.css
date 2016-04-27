@@ -195,8 +195,6 @@
 
   .projects .list dt {
     margin-top: 1.5em;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
-    font-weight: bold;
   }
 
   .projects .list dl,
@@ -207,9 +205,12 @@
   .meta li {
     margin-top: 0.3055555556em; /* (22px / 18px) / 4 */
   }
+  blockquote + .byline,
   .projects .list dt,
   .meta h2,
   .meta h3 {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
     text-transform: uppercase;
@@ -760,20 +761,26 @@
   footer .map ul {
     margin-top: 0;
   }
+  aside .subscribe,
   footer .subscribe {
     display: block;
     margin: 1.5em 0;
     text-decoration: none;
     font-style: inherit;
   }
+  aside .subscribe h2,
+  aside .subscribe h3,
+  aside .subscribe p,
   footer .subscribe h2,
   footer .subscribe h3,
   footer .subscribe p {
     margin: 0;
   }
+  aside .subscribe h3,
   footer .subscribe h3 {
     font-weight: inherit;
   }
+  aside .subscribe p,
   footer .subscribe p {
     margin-top: 0.75em;
   }
@@ -787,12 +794,24 @@
   footer .map {
     max-width: none;
   }
+  aside .subscribe h2,
+  aside .subscribe h3,
   footer .subscribe h2,
   footer .subscribe h3,
   footer .map > li {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
   }
+
+  aside .subscribe.daily-good {
+    color: rgb(192, 204, 207);
+  }
+  aside .subscribe.daily-good svg {
+    margin-top: 0.375em;
+    display: block;
+    fill: currentColor;
+  }
+
   footer .map > li ul {
     margin-top: 1.2222222222em;
   }
@@ -2028,4 +2047,73 @@
   .press a[href] h3 {
     text-decoration: underline;
   }
+
+
+  /* =About
+  ----------------------------------------------- */
+  blockquote p {
+    font-size: 1.5454545455em; /* 34px / 22px */
+    line-height: 1.2941176471; /* 44px / 34px */
+  }
+  blockquote + .byline {
+    text-align: right;
+  }
+  .about .quote {
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: white;
+    padding: 1.5em;
+    margin-bottom: -2.2727272727em; /* 50px / 22px */
+  }
+  .about .quote:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .about .quote > * {
+    position: relative;
+    z-index: 1; /* Just above the header[style]:before element */
+  }
+  .about .quote blockquote,
+  .about .quote blockquote + .byline {
+    max-width: 38.25em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about .quote .media-kit {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    max-width: 10em;
+  }
+  @media (min-width: 70em) {
+    .about .quote {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+      padding: 4em;
+    }
+  }
+  @media (min-aspect-ratio: 1/1) {
+    .about .quote {
+      padding-top: 15em;
+      padding-bottom: 15em;
+      padding-top: 30vh;
+      padding-bottom: 30vh;
+    }
+    .about .quote .media-kit {
+      position: absolute;
+      bottom: 4em;
+      left: 4em;
+      margin-bottom: 0;
+    }
+  }
+
 
