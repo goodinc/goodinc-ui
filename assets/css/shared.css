@@ -208,7 +208,8 @@
     width: auto;
     margin-left: 0;
   }
-  main .meta h2 {
+  main .meta h2,
+  main.project-details .meta h2 {
     color: inherit;
   }
 
@@ -1218,6 +1219,71 @@
     opacity: 0.65;
   }
 
+  .good-can-help {
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+  }
+  .good-can-help {
+    margin-bottom: -1.5em;
+  }
+  .good-can-help {
+    padding: 3em 1.5em;
+  }
+  @media (min-width: 70em) {
+    .good-can-help {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+    }
+    .good-can-help {
+      margin-bottom: -2.2727272727em;
+    }
+    .good-can-help {
+      padding: 6em 4em; /* 50px / 22px */     /* 88px / 22px */
+    }
+  }
+
+  .good-can-help {
+    background-color: rgb(168, 46, 255); /* @purple */
+    color: white;
+  }
+  .good-can-help h2,
+  .good-can-help ul {
+    font-weight: bold;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px */
+  }
+  .good-can-help h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+  .good-can-help ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .good-can-help ul,
+  .good-can-help li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .good-can-help li {
+    text-transform: lowercase;
+  }
+  .good-can-help a {
+    color: inherit;
+    font-style: normal;
+  }
+  .good-can-help a span {
+    color: rgb(41, 53, 56);
+  }
+  .good-can-help a:hover,
+  .good-can-help a:active,
+  .good-can-help a:focus {
+    color: white;
+  }
+
 
   /* =Community
   ----------------------------------------------- */
@@ -1902,7 +1968,8 @@
     color: inherit;
     opacity: 0.6;
   }
-  .meta h2 {
+  .meta h2,
+  .meta h3 {
     border-top-width: 0;
     font-weight: bold;
     color: inherit;

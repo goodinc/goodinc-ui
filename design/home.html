@@ -22,10 +22,6 @@
     header[style]:before {
       display: none;
     }
-    main > h1:first-child {
-      position: absolute;
-      display: none;
-    }
     main {
       padding-top: 0;
     }
@@ -33,10 +29,10 @@
       margin-top: 0;
       max-width: none;
     }
-    .featured-project-list li + li {
+    .featured-project-list > li + li {
       margin-top: 0;
     }
-    .featured-project-list li {
+    .featured-project-list > li {
       display: block;
       margin-left: -1.5em; /* main padding */
       margin-right: -1.5em;
@@ -47,46 +43,51 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      min-height: 85vh;
+      padding-top: 45vh;
+      padding-bottom: 5vh;
     }
     .featured-project-list a h1 {
       margin-bottom: 0.5em;
-    }
-    .featured-project-list a h1 {
-      position: absolute;
-    }
-    .featured-project-list a h1.hover {
-      position: static;
-      opacity: 0;
-    }
-    .featured-project-list a h1.hover {
     }
     .featured-project-list a[href]:hover,
     .featured-project-list a[href]:active,
     .featured-project-list a[href]:focus {
       color: white;
     }
-    .featured-project-list a[href]:hover  h1,
-    .featured-project-list a[href]:active h1,
-    .featured-project-list a[href]:focus  h1 {
-      opacity: 0;
-    }
-    .featured-project-list a[href]:hover  h1.hover,
-    .featured-project-list a[href]:active h1.hover,
-    .featured-project-list a[href]:focus  h1.hover {
-      transition: opacity 0.6s;
-      opacity: 1;
-    }
     .featured-project-list a {
+      /*
       position: absolute;
-      z-index: 1;
       bottom: 3em;
       bottom: 20vh;
+      display: table;
+      */
+      position: relative;
+      z-index: 1;
       color: white;
     }
-    .featured-project-list li:before {
+    .featured-project-list a .meta ul {
+      color: inherit;
+    }
+    .featured-project-list a .more {
+      color: rgb(0, 207, 172); /* @teal */
+      text-align: right;
+      max-width: 90%;
+    }
+    .featured-project-list a .more:after {
+      display: inline-block;
+      content: "→";
+      border: 2px solid;
+      width: 3em;
+      line-height: 3em;
+      border-radius: 50%;
+      text-align: center;
+      font-style: normal;
+      margin-left: 0.75em;
+    }
+    .featured-project-list > li:before {
       content: "";
-      background-color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.25);    
+      background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40));
       position: absolute;
       top: 0;
       left: 0;
@@ -95,11 +96,13 @@
       z-index: 0;
     }
     @media (min-width: 70em) {
-      .featured-project-list li {
+      .featured-project-list > li {
         margin-left: -4em; /* 88px / 22px */
         margin-right: -4em;
         width: calc(100% + 8em); /* margin x 2 */
         padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+        padding-top: 45vh;
+        padding-bottom: 15vh;
       }
     }
   </style>
@@ -154,32 +157,47 @@
 -->
 
   <ul class="featured-project-list">
-    <li style="background-image: url(../assets/images/girl-scouts.jpg)">
+    <li style="background-image: url(../assets/images/sports-matter.png)">
       <a href="project-details.html">
-        <h1>Do good better.</h1>
-        <h1 class="hover">Programs + Campaigns</h1>
-        <h2>Girl Scouts – ToGetHerThere</h2>
-        <p>Creating an innovative $1 billion, six-year fundraising social impact campaign.</p>
+        <h2>DICK’s – Sports Matter</h2>
+        <p>A community-based solution to expanding &amp; supporting youth sports teams facing extreme financial challenges.</p>
+
+        <div class="meta">
+          <h3>Competency</h3>
+          <ul>
+            <li>Insights + Strategy</li>
+          </ul>
+        </div>
 
         <p class="more">View Project</p>
       </a>
     </li>
-    <li style="background-image: url(../assets/images/sports-matter.png)">
+    <li style="background-image: url(../assets/images/girl-scouts.jpg)">
       <a href="project-details.html">
-        <h1>Do good better.</h1>
-        <h1 class="hover">Creativity + Impact</h1>
-        <h2>DICK’s – Sports Matter</h2>
-        <p>A community-based solution to expanding &amp; supporting youth sports teams facing extreme financial challenges.</p>
+        <h2>Girl Scouts – ToGetHerThere</h2>
+        <p>Creating an innovative $1 billion, six-year fundraising social impact campaign.</p>
+
+        <div class="meta">
+          <h3>Competency</h3>
+          <ul>
+            <li>Insights + Strategy</li>
+          </ul>
+        </div>
 
         <p class="more">View Project</p>
       </a>
     </li>
     <li style="background-image: url(../assets/images/earth-to-paris.png)">
       <a href="project-details.html">
-        <h1>Do good better.</h1>
-        <h1 class="hover">Storytelling + Design</h1>
         <h2>Earth to Paris</h2>
         <p>Forging the most ambitious climate agreement in history.</p>
+
+        <div class="meta">
+          <h3>Competency</h3>
+          <ul>
+            <li>Insights + Strategy</li>
+          </ul>
+        </div>
 
         <p class="more">View Project</p>
       </a>
@@ -190,7 +208,7 @@
     <p>GOOD helps brands apply creativity to purpose — producing breakthrough programs and innovative content that resonate with an active, influential audience.</p>
 
     <figure>
-      <svg viewBox="0 0 594.4 594.4" width="594" height="594">
+      <svg viewBox="0 0 594.4 594.4" width="594" height="594" style="max-width: 100%">
         <style type="text/css">
           .st0{opacity:0.6;fill:none;stroke:currentColor;stroke-miterlimit:10;}
           .st1{opacity:0.2;fill:none;stroke:currentColor;stroke-miterlimit:10;}
@@ -307,21 +325,23 @@
     </ul>
   </div>
 
-  <div>
-    <h3>Good can help you</h3>
+  <section class="good-can-help">
+    <h2>GOOD can help you…</h2>
+    <!--
     <ul>
       <li><a href="projects-insights.html">understand opportunities for impact</a></li>
       <li><a href="projects-programs.html">build breakthrough programs</a></li>
       <li><a href="projects-storytelling.html">create amazing stories</a></li>
       <li><a href="projects-reach.html">engage GOOD’s audience &amp; beyond</a></li>
     </ul>
+    -->
     <ul>
-      <li><a href="projects-insights.html">build a program</a></li>
-      <li><a href="projects-programs.html">tell a story</a></li>
-      <li><a href="projects-storytelling.html">reach our audience</a></li>
-      <li><a href="projects-reach.html">unleash your goodness</a></li>
+      <li><a href="projects-programs.html"><span>Build a program</span></a></li>
+      <li><a href="projects-storytelling.html"><span>Tell a story</span></a></li>
+      <li><a href="projects-reach.html"><span>Reach our audience</span></a></li>
+      <li><a href="projects-insights.html"><span>Unleash your goodness</span></a></li>
     </ul>
-  </div>
+  </section>
 
 </main>
 
