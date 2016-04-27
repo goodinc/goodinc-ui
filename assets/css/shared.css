@@ -2067,6 +2067,16 @@
 
   /* =About
   ----------------------------------------------- */
+  .about .text {
+    max-width: 28em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 60em) {
+    .about aside {
+      margin-top: -20em;
+    }
+  }
   blockquote p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
