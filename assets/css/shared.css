@@ -186,7 +186,7 @@
     padding-top: 0;
   }
   .project-details .highlights h2,
-  .project-details .more h2 {
+  aside.related h2 {
     display: block;
   }
   .home .articles h2:before,
@@ -195,7 +195,7 @@
     display: none;
   }
   .project-details .highlights h2:before,
-  .project-details .more h2:before {
+  aside.related h2:before {
     width: auto;
     margin-left: 0;
   }
@@ -1732,7 +1732,7 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .project-details .more h2,
+  aside.related h2,
   .project-details .highlights h2 {
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
@@ -1741,7 +1741,7 @@
     padding-top: 0.3em;
     position: relative;
   }
-  .project-details .more h2:before,
+  aside.related h2:before,
   .project-details .highlights h2:before {
     position: absolute;
     width: 100%;
@@ -1749,7 +1749,7 @@
     left: 0;
   }
   @media (min-width: 50em) {
-    .project-details .more h2,
+    aside.related h2,
     .project-details .highlights h2 {
       font-size: 3.7272727273em; /* 82px / 22px */
       line-height: 1.2073170732em; /* 99px / 82px */
@@ -1831,29 +1831,32 @@
   }
 
   /*
-  .project-details .more ul,
-  .project-details .more li {
+  aside.related ul,
+  aside.related li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .project-details .more ul {
+  aside.related ul {
     max-width: none;
     margin-left: -1.5em;
     margin-right: -1.5em;
   }
-  .project-details .more li img {
+  aside.related li img {
     display: block;
   }
   */
-  .project-details .more li {
+  aside.related {
+    margin-top: 3em;
+  }
+  aside.related li {
     /*
     display: inline-block;
     vertical-align: top;
     margin: 1.5em;
     */
   }
-  .project-details .more a {
+  aside.related a {
     /*
     color: inherit;
     text-decoration: none;
