@@ -797,16 +797,24 @@
   main {
     min-height: 50vh;
   }
+  main > h1:first-child {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
 
 
   /* =Sub Navigation
   ----------------------------------------------- */
   main > nav {
     margin-top: 4.5em;
+    margin-top: 3em;
   }
+  /*
   main > h1 + nav {
     margin-top: -3em;
   }
+  */
   main > h1 + h3 {
     margin-top: -1.5em;
   }
@@ -1370,7 +1378,7 @@
   .red .projects h1 + svg {
     color: rgb(239, 20, 93); /* @red */
   }
-  .community > h1 + p,
+  main > h1 + p,
   .projects h1 + svg + p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
@@ -1379,29 +1387,23 @@
     max-width: 22em;
     color: rgb(0, 207, 172); /* @teal */
   }
-  .community > h1 {
-    margin-bottom: 0;
-  }
-  .community > h1 + p {
-    margin-top: 0.3235294118em; /* 11px / 34px */
-  }
-  .orange .community > h1 + p,
+  .orange main > h1:first-child + p,
   .orange .projects h1 + svg + p {
     color: rgb(255, 80, 26); /* @orange */
   }
-  .purple .community > h1 + p,
+  .purple main > h1:first-child + p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .green .community > h1 + p,
+  .green main > h1:first-child + p,
   .green .projects h1 + svg + p {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .community > h1 + p,
+  .yellow main > h1:first-child + p,
   .yellow .projects h1 + svg + p {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .community > h1 + p,
+  .red main > h1:first-child + p,
   .red .projects h1 + svg + p {
     color: rgb(239, 20, 93); /* @red */
   }
@@ -1419,7 +1421,7 @@
       max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
     }
   }
-  .community h1 + p span,
+  main h1 + p span,
   .projects h1 + svg + p span {
     color: black;
   }
