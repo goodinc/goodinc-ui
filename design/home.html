@@ -149,15 +149,17 @@
     .red .featured-project-list a .more {
       color: rgb(239, 20, 93); /* @red */
     }
+    /*
     .featured-project-list a .more {
       color: inherit !important;
     }
+    */
     .featured-project-list a .more:after {
       display: inline-block;
       content: "→";
       border: 2px solid;
-      width: 3em;
-      line-height: 3em;
+      width: 3.75em;
+      line-height: 3.75em;
       border-radius: 50%;
       text-align: center;
       font-style: normal;
@@ -192,26 +194,31 @@
     }
 
     /* Copied from the projects list */
+    /*
     @media (min-width: 60em) {
       .featured-project-list .meta,
       .featured-project-list .more {
+        margin: 0;
         position: absolute;
-        top: -0.375em;
+        top: 3em;
         right: 12em;
       }
       .featured-project-list .more {
         right: 1.5em;
       }
     }
+    */
     @media (min-width: 70em) {
       .featured-project-list .meta,
       .featured-project-list .more {
+        margin: 0;
         position: absolute;
-        top: 0.65em;
+        top: 1.6em;
         right: 30%;
       }
       .featured-project-list .more {
         right: 10%;
+        top: 0.5em;
       }
     }
 
@@ -277,7 +284,7 @@
     }
   </style>
 </head>
-<body class="purple">
+<body class="teal">
 
 <header style="">
   <h2>
@@ -496,7 +503,7 @@
   </div>
 
   <section class="good-can-help">
-    <h2>GOOD can help you…</h2>
+    <h2>GOOD can help you</h2>
     <!--
     <ul>
       <li><a href="projects-insights.html">understand opportunities for impact</a></li>

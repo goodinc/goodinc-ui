@@ -1409,9 +1409,37 @@
   }
 
   .good-can-help {
-    background-color: rgb(168, 46, 255); /* @purple */
+    background-color: rgb(102, 102, 102);
     color: white;
   }
+
+  .tangerine .good-can-help {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .good-can-help { 
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .good-can-help {
+    background-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .good-can-help {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .good-can-help {
+    background-color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .good-can-help {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .good-can-help {
+    background-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .good-can-help {
+    background-color: rgb(239, 20, 93); /* @red */
+  }
+
+
+
   .good-can-help h2,
   .good-can-help ul {
     font-weight: bold;
@@ -1423,6 +1451,9 @@
     margin-top: 0;
     margin-bottom: 0;
     opacity: 0.8;
+  }
+  .good-can-help h2:after {
+    content: "…";
   }
   .good-can-help ul {
     margin-top: 0;
@@ -1449,6 +1480,15 @@
   .good-can-help a:focus {
     color: white;
   }
+
+  /*
+  @media (min-width: 60em) {
+    .good-can-help h2:after {
+      content: none;
+    }
+
+  }
+  */
 
 
   /* =Community
