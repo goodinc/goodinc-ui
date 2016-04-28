@@ -2275,11 +2275,9 @@ margin-bottom: -1.5em;
     padding-top: 0.3em;
     position: relative;
   }
-  /*
-  aside.related h2 {
-    color: rgb(26, 36, 38) !important;
+  aside.related h2 span {
+    color: rgb(26, 36, 38);
   }
-  */
   aside.related h2:before,
   .project-details .highlights h2:before {
     position: absolute;
