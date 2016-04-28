@@ -163,8 +163,7 @@
   h4, h5, h6 {
     font-size: inherit;
   }
-  .project-details h2 {
-    color: rgb(0, 207, 172); /* @teal */
+  .project-details .details h2 {
     /*
     padding-top: 0.375em;
     */
@@ -173,35 +172,53 @@
     font-size: 1.0909090909em; /* 24px / 22px */
     line-height: 1.375; /* 33px / 24px  */
   }
-  .project-details h2:before {
+  aside.related h2:before,
+  .project-details .highlights h2:before,
+  .project-details .details h2:before {
     content: "";
     display: block;
     border-top: 2px solid;
     width: calc(100% + 4em); /* 88px / 22px */
     margin-left: -4em;
   }
-  .tangerine .project-details h2 {
+  .tangerine aside.related h2,
+  .tangerine .project-details .details h2,
+  .tangerine .project-details .highlights h2 {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .project-details h2 {
+  .orange aside.related h2,
+  .orange .project-details .details h2,
+  .orange .project-details .highlights h2 {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .project-details h2 {
+  .purple aside.related h2,
+  .purple .project-details .details h2,
+  .purple .project-details .highlights h2 {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .project-details h2 {
+  .blue aside.related h2,
+  .blue .project-details .details h2,
+  .blue .project-details .highlights h2 {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .project-details h2 {
+  .teal aside.related h2,
+  .teal .project-details .details h2,
+  .teal .project-details .highlights h2 {
     color: rgb(0, 207, 172); /* @teal */
   }
-  .green .project-details h2 {
+  .green aside.related h2,
+  .green .project-details .details h2,
+  .green .project-details .highlights h2 {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .project-details h2 {
+  .yellow aside.related h2,
+  .yellow .project-details .details h2,
+  .yellow .project-details .highlights h2 {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .project-details h2 {
+  .red aside.related h2,
+  .red .project-details .details h2,
+  .red .project-details .highlights h2 {
     color: rgb(239, 20, 93); /* @red */
   }
 
@@ -691,21 +708,29 @@
     }
   }
 
+  header + main > .header h1 {
+    margin-bottom: 0;
+  }
+  header + main > .header h2 {
+    margin-top: 0.375em;
+  }
+
   @media (min-width: 20em) {
+    header[style] + main > .header,
     header[style] + main > h1:first-child {
       margin-top: 0;
       position: absolute;
       top: 2.4269662921em;
       z-index: 2; /* Just above the main navigation */
-    }
-    header[style] + main > h1:first-child {
       margin-right: 3em;
+      color: white;
     }
+    header[style] + main > .header {
+      top: 6em;
+    }
+    header[style] + main > .header + p,
     header[style] + main > h1:first-child + p {
       margin-top: 0;
-    }
-    header[style] + main > h1:first-child {
-      color: white;
     }
   }
 
@@ -2107,7 +2132,10 @@ margin-bottom: -1.5em;
   .project-details .details div ~ div {
     margin-top: 3em;
   }
-  .project-details .intro > div:first-child{
+  .project-details .intro {
+    margin-top: 1.5em;
+  }
+  .project-details .intro > div:first-child {
     font-size: 1.5em; /* 33px / 22px */
     line-height: 1.3333333333; /* 44px / 33px */
   }
@@ -2374,6 +2402,9 @@ margin-bottom: -1.5em;
       content: "";
       display: table;
       clear: both;
+    }
+    .project-details .highlights .secondary {
+      margin-bottom: 0;
     }
     .project-details .highlights .primary {
       margin-top: 1.5em;
