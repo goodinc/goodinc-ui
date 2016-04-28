@@ -170,6 +170,8 @@
     */
     font-weight: 900; /* @extra-bold */
     display: table;
+    font-size: 1.0909090909em; /* 24px / 22px */
+    line-height: 1.375; /* 33px / 24px  */
   }
   .project-details h2:before {
     content: "";
