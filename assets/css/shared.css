@@ -54,11 +54,13 @@
     }
   }
 
+  /*
   @media (min-width: 2000px) and (min-height: 1000px) {
     header ul {
       font-size: 1.5em;
     }
   }
+  */
 
   /* Shrink images to fit the available space */
   img {
@@ -2366,8 +2368,8 @@
       margin-bottom: -3.75em;
     }
   }
-  blockquote,
-  blockquote + .byline {
+  .green blockquote,
+  .green blockquote + .byline {
     color: rgb(48, 217, 101); /* @green */
   }
   .about .quote blockquote,
@@ -2378,7 +2380,7 @@
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
   }
-  blockquote + .byline {
+  .about .quote blockquote + .byline {
     text-align: right;
   }
   .about .quote {
