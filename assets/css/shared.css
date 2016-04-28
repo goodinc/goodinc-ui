@@ -205,6 +205,7 @@
     color: rgb(239, 20, 93); /* @red */
   }
 
+  aside.related h2,
   .project-details .highlights h2 {
     display: block;
   }
@@ -1163,7 +1164,10 @@
 
   main > nav.pagination {
     margin-bottom: 3em;
+    text-align: center;
   }
+  main > nav.tags:after,
+  main > nav.tags a:after,
   main > nav.pagination:after,
   main > nav.pagination a:after {
     display: none;
@@ -2271,6 +2275,11 @@ margin-bottom: -1.5em;
     padding-top: 0.3em;
     position: relative;
   }
+  /*
+  aside.related h2 {
+    color: rgb(26, 36, 38) !important;
+  }
+  */
   aside.related h2:before,
   .project-details .highlights h2:before {
     position: absolute;
@@ -2388,7 +2397,7 @@ margin-bottom: -1.5em;
   }
   */
   aside.related {
-    margin-top: 3em;
+    margin-top: 9em;
   }
   aside.related li {
     /*
