@@ -185,6 +185,9 @@
       }
     }
 
+    .home .intro figure {
+      margin: 0;
+    }
     .home .intro svg {
       max-width: 100%;
       max-width: calc(100% - 3em);
@@ -216,6 +219,30 @@
     }
     .red .home .intro svg {
       color: rgb(239, 20, 93); /* @red */
+    }
+
+    @media (min-width: 50em) {
+      .home .intro p {
+        padding-top: 6em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .home .intro ul {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 33em;
+        color: rgb(114, 126, 130);
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .home .intro li {
+        width: 15em;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .home .intro li,
+      .home .intro li + li {
+        margin-top: 1.5em;
+      }
     }
   </style>
 </head>
@@ -435,15 +462,15 @@
         </a>
       </li>
     </ul>
-
-    <nav class="pagination">
-      <ul>
-        <li><a href="" class="active">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">Next Page »</a></li>
-      </ul>
-    </nav>
   </div>
+
+  <nav class="pagination">
+    <ul>
+      <li><a href="" class="active">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">Next Page »</a></li>
+    </ul>
+  </nav>
 
   <section class="good-can-help">
     <h2>GOOD can help you…</h2>
