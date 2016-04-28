@@ -702,6 +702,7 @@
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     background-color: rgb(26, 36, 38);
     color: rgb(192, 204, 207);
+    padding-bottom: 6em;
   }
   footer a {
     color: inherit !important; /* !important to override .orange and .purple */
@@ -760,11 +761,90 @@
     position: relative;
   }
 
-  @media (min-width: 50em) {
+  footer form {
+    margin-bottom: 3em;
+  }
+  footer form label {
+    font-weight: bold;
+  }
+
+  footer form p {
+    max-width: none;
+  }
+  footer form label span {
+    font-size: inherit;
+  }
+  footer button {
+    vertical-align: text-bottom;
+  }
+  footer select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    background-color: transparent;
+    color: inherit;
+    border-width: 0 0 2px 0;
+    border-radius: 0;
+  }
+  @media (max-width: 30em) {
+    footer select,
+    footer button {
+      display: block;
+      width: 100%;
+    }
+    footer button {
+      margin-top: 0.75em;
+    }
+  }
+  @media (min-width: 30em) {
+    footer select {
+      width: calc(100vw - 20em);
+    }
+  }
+  @media (min-width: 60em) {
     footer form label {
       font-size: 2.5em;
     }
+    footer select {
+      width: auto;
+    }
   }
+  @media (min-width: 70em) {
+    footer select {
+      width: calc(100vw - 12em);
+    }
+  }
+
+
+  .tangerine footer select {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange footer select {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple footer select{
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue footer select {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal footer select {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green footer select {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow footer select {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red footer select {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
 
   footer ul,
   footer li {
