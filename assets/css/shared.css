@@ -1551,25 +1551,45 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    font-size: 1.5454545455em; /* 34px / 22px */
+    line-height: 1.2941176471; /* 44px / 34px */
   }
   .experimental .community .clients > h1 + p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
   }
 
+  .community .team .text {
+    margin-bottom: 3em;
+    max-width: 28em;
+  }
   @media (min-width: 60em) {
+    .community .team {
+      margin-top: 3em;
+    }
     .community .clients > h1,
     .community .team > h1,
+    .community .team > h2,
     .community .team > h3 {
       margin-top: 0;
       margin-bottom: 0;
       float: left;
+    }
+    .community .team > h2 {
+      max-width: 5em;
+    }
+    .community .team > h3 {
+      max-width: 7em;
     }
     .community .clients > h1 + p {
       margin-left: 5.8235294116em; /* 9 / 1.5454545455 */
     }
     .community .team > h1 + p {
       margin-left: 9em;
+    }
+    .community .team .text {
+      margin-left: 12.681818182em; /* 15.5 x 0.8181818182 */
+      margin-left: 14em;
     }
     .community .team .list {
       margin-left: 15.5em;
@@ -1837,7 +1857,7 @@
     line-height: 1.2941176471; /* 44px / 34px */
     text-decoration: underline;
     text-decoration-width: 2px;
-    max-width: 22em;
+    max-width: 17em;
     color: rgb(0, 207, 172); /* @teal */
   }
   .tangerine .home .intro p,
