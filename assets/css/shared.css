@@ -894,7 +894,7 @@
       margin-left: 2%;
     }
   }
-  @media (min-width: 100em) {
+  @media (min-width: 80em) {
     footer .subscribe {
       width: 18%;
     }
@@ -903,6 +903,18 @@
     }
     footer .map > li {
       width: 22%;
+      margin-left: 2%;
+    }
+  }
+  @media (min-width: 100em) {
+    footer .subscribe {
+      width: 15%;
+    }
+    footer .map {
+      width: 83%;
+    }
+    footer .map > li {
+      width: 17%;
       margin-left: 2%;
     }
   }
@@ -1196,6 +1208,30 @@
     float: left;
     font-weight: normal;
     margin-right: 0.25em;
+  }
+  .tangerine .articles li h2 {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .articles li h2 {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .articles li h2 {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .articles li h2 {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .articles li h2 {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .articles li h2 {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .articles li h2 {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .articles li h2 {
+    color: rgb(239, 20, 93); /* @red */
   }
   .articles li h2:after {
     content: " /";
