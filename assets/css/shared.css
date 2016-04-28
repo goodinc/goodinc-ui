@@ -806,24 +806,30 @@
       margin-top: 0.75em;
     }
   }
+  /*
   @media (min-width: 30em) {
     footer select {
       width: calc(100vw - 20em);
     }
   }
+  */
   @media (min-width: 60em) {
     footer form label {
       font-size: 2.5em;
     }
+    /*
     footer select {
       width: auto;
     }
+    */
   }
+  /*
   @media (min-width: 70em) {
     footer select {
       width: calc(100vw - 12em);
     }
   }
+  */
 
 
   .tangerine footer select {
@@ -2322,6 +2328,7 @@ margin-bottom: -1.5em;
     margin-bottom: 3em;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(166, 180, 184);
+    color: rgba(0, 0, 0, 0.3);
     font-weight: 600;
   }
   .project-details .highlights .secondary a {
