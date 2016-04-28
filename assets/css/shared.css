@@ -234,6 +234,15 @@
   .meta li {
     margin-top: 0.3055555556em; /* (22px / 18px) / 4 */
   }
+  .meta li a {
+    font-style: inherit;
+    text-decoration: inherit;
+  }
+  .meta li a:hover,
+  .meta li a:active,
+  .meta li a:focus {
+    text-decoration: underline;
+  }
   blockquote + .byline,
   .projects .list dt,
   .meta h2,
