@@ -1855,20 +1855,33 @@
   .home .intro p,
   main > h1.section + p,
   .projects h1 + svg + p {
-    margin-top: 3em;
-
+    font-size: 1.5454545455em; /* 34px / 22px */
+    line-height: 1.2941176471; /* 44px / 34px */
+    text-decoration: underline;
+    text-decoration-width: 2px;
+    max-width: 11em;
+    color: rgb(0, 207, 172); /* @teal */
 
 /* SHIM */
 margin-bottom: -1.5em;
 
 
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-    text-decoration: underline;
-    text-decoration-width: 2px;
-    max-width: 17em;
-    color: rgb(0, 207, 172); /* @teal */
   }
+
+  @media (min-width: 40em) {
+    .home .intro p,
+    main > h1.section + p,
+    .projects h1 + svg + p {
+      margin-top: 3em;
+      max-width: 17em;
+
+/* SHIM */
+margin-bottom: -1.5em;
+
+
+    }
+  }
+
   .home .intro p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -2421,10 +2434,14 @@ margin-bottom: -1.5em;
   /* =About
   ----------------------------------------------- */
   .about .text {
-    margin-top: 3em;
     max-width: 28em;
     margin-left: auto;
     margin-right: auto;
+  }
+  @media (min-width: 40em) {
+    .about .text {
+      margin-top: 3em;
+    }
   }
   @media (max-width: 64.99999em) {
     .about aside {
