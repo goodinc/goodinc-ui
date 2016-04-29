@@ -2633,29 +2633,31 @@ margin-bottom: -1.5em;
       margin-top: 3em;
     }
   }
+  /*
   @media (max-width: 64.99999em) {
-    .about aside {
+    .philosophy aside {
       text-align: center;
     }
-    .about aside a.subscribe {
+    .philosophy aside a.subscribe {
       display: inline-block;
       vertical-align: bottom;
       margin-left: 1.5em;
       margin-right: 1.5em;
     }
-    .about aside a.subscribe svg {
+    .philosophy aside a.subscribe svg {
       margin-left: auto;
       margin-right: auto;
     }
   }
+  */
   @media (min-width: 65em) {
-    .about aside a.subscribe {
+    .philosophy aside a.subscribe {
       position: relative;
       z-index: 1;
     }
-    .about aside {
+    .philosophy aside {
       margin-top: -20em;
-      margin-bottom: -3.75em;
+      margin-bottom: -6.75em;
       max-width: calc(50% - 14em);
     }
   }
