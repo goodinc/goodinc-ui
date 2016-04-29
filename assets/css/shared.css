@@ -132,7 +132,6 @@
   font-size: 66px;
   font-size: 48px;
   font-size: 36px;
-  font-size: 34px;
   font-size: 32px;
   font-size: 22px;
   font-size: 18px;
@@ -170,6 +169,9 @@
   h3 {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+
+    font-family: inherit;
+    font-weight: inherit;
   }
   h4, h5, h6 {
     font-size: inherit;
@@ -303,6 +305,13 @@
     margin-top: 0.6875em; /* 11px / 16px */
     margin-bottom: 0.6875em;
     color: rgb(114, 126, 130);
+  }
+  p.primary {
+    font-size: 1.5454545455em; /* 34px / 22px */
+    line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
 
 
@@ -642,6 +651,7 @@
     left: 9.5em;
     z-index: 3; /* Just above the h1:first-child element */
 
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: 900;
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
@@ -1633,25 +1643,27 @@
   /* =Community
   ----------------------------------------------- */
 
-  .community .team .list,
-  .community .team .list li {
+  .team-member-list ul,
+  .team-member-list li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .community .team .list {
+
+  .team-member-list ul {
     max-width: none;
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
     margin-left: -1.5em;
     margin-right: -1.5em;
   }
-  .community .team .list li a {
+
+  .team-member-list li a {
     color: inherit;
     font-style: inherit;
     text-decoration: inherit;
   }
-  .community .team .list li {
+  .team-member-list li {
     display: inline-block;
     vertical-align: top;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
@@ -1660,12 +1672,13 @@
     padding: 1.5em;
     text-align: center;
   }
-  .community .team .list li h3 {
+  .team-member-list li h3 {
     margin: 0;
     font-size: inherit;
     line-height: inherit;
+    font-weight: bold;
   }
-  .community .team .list li p {
+  .team-member-list li p {
     margin: 0;
     font-style: italic;
     opacity: 0.6;
@@ -1683,21 +1696,37 @@
     line-height: inherit;
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
-  }
-  .experimental .community .clients > h1 + p {
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
 
+  .community .clients .text,
   .community .team .text {
     margin-bottom: 3em;
     max-width: 28em;
   }
+
+  .community .quote {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+
   @media (min-width: 60em) {
+    .community .clients,
     .community .team {
       margin-top: 3em;
+      padding-bottom: 3em;
+    }
+    .community .clients:after,
+    .community .team:after {
+      content: "";
+      display: table;
+      clear: both;
     }
     .community .clients > h1,
+    .community .clients > h2,
     .community .team > h1,
     .community .team > h2,
     .community .team > h3 {
@@ -1705,27 +1734,20 @@
       margin-bottom: 0;
       float: left;
     }
+    .community .clients > h2,
     .community .team > h2 {
       max-width: 5em;
     }
     .community .team > h3 {
       max-width: 7em;
     }
-    .community .clients > h1 + p {
-      margin-left: 5.8235294116em; /* 9 / 1.5454545455 */
-    }
     .community .team > h1 + p {
       margin-left: 9em;
     }
+    .community .clients .text,
     .community .team .text {
       margin-left: 12.681818182em; /* 15.5 x 0.8181818182 */
       margin-left: 14em;
-    }
-    .community .team .list {
-      margin-left: 15.5em;
-    }
-    .community .team .list {
-      margin-top: -1.5em;
     }
   }
   .community .clients > h1,
@@ -1743,7 +1765,7 @@
 
 
   .team-member img,
-  .community .team .list img {
+  .team-member-list img {
     border-radius: 50%;
   }
 
@@ -1758,6 +1780,9 @@
     margin-top: 0;
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
   .team-member > h3 {
     margin-bottom: 0;
@@ -1985,6 +2010,10 @@
   .projects h1 + svg + p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+
     text-decoration: underline;
     text-decoration-width: 2px;
     max-width: 11em;
@@ -2453,6 +2482,9 @@ margin-bottom: -1.5em;
   .home .intro li b {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
   .home .intro li span,
   .project-details .highlights .primary li span {
@@ -2627,22 +2659,48 @@ margin-bottom: -1.5em;
       max-width: calc(50% - 14em);
     }
   }
-  .green blockquote,
-  .green blockquote + .byline {
+
+  .tangerine .quote {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .quote {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .quote {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .quote {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .quote {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .quote {
     color: rgb(48, 217, 101); /* @green */
   }
-  .about .quote blockquote,
-  .about .quote blockquote + .byline {
+  .yellow .quote {
+    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .quote {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+  .quote[style] blockquote,
+  .quote[style] blockquote + .byline {
     color: inherit;
   }
   blockquote p {
     font-size: 1.5454545455em; /* 34px / 22px */
     line-height: 1.2941176471; /* 44px / 34px */
+
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
-  .about .quote blockquote + .byline {
+  .quote[style] blockquote + .byline {
     text-align: right;
   }
-  .about .quote {
+  .quote[style] {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
     background-size: cover;
@@ -2653,7 +2711,7 @@ margin-bottom: -1.5em;
     padding: 1.5em;
     margin-bottom: -2.2727272727em; /* 50px / 22px */
   }
-  .about .quote:before {
+  .quote[style]:before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -2663,36 +2721,36 @@ margin-bottom: -1.5em;
     height: 100%;
     z-index: 0;
   }
-  .about .quote > * {
+  .quote[style] > * {
     position: relative;
     z-index: 1; /* Just above the header[style]:before element */
   }
-  .about .quote blockquote,
-  .about .quote blockquote + .byline {
+  .quote[style] blockquote,
+  .quote[style] blockquote + .byline {
     max-width: 38.25em;
     margin-left: auto;
     margin-right: auto;
   }
-  .about .quote .media-kit {
+  .quote[style] .media-kit {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
     max-width: 10em;
   }
   @media (min-width: 70em) {
-    .about .quote {
+    .quote[style] {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       padding: 4em;
     }
   }
   @media (min-aspect-ratio: 1/1) {
-    .about .quote {
+    .quote[style] {
       padding-top: 15em;
       padding-bottom: 15em;
       padding-top: 30vh;
       padding-bottom: 30vh;
     }
-    .about .quote .media-kit {
+    .quote[style] .media-kit {
       position: absolute;
       bottom: 4em;
       left: 4em;
@@ -2718,15 +2776,57 @@ margin-bottom: -1.5em;
   .philosophy .quote blockquote p {
     max-width: 28em;
   }
-  .philosophy .quote blockquote {
+  .quote blockquote {
     margin-left: 0;
     margin-right: 0;
   }
-  .philosophy .text,
   .philosophy .quote {
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
+    max-width: 40em;
+    margin-top: 4.5em;
+    margin-bottom: 4.5em;
+  }
+
+
+  @media (min-width: 60em) {
+    .philosophy .text,
+    .philosophy .quote {
+      /*
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 28em;
+      */
+      margin-left: calc(50% - 14em);
+    }
+    .philosophy .quote {
+      margin-left: calc(50% - 20em);
+    }
+    .philosophy {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+
+    .philosophy .text > p:first-child {
+      margin-top: 0;
+    }
+    .philosophy > h2,
+    .philosophy > h3 {
+      margin-top: 0;
+      position: absolute;
+      width: calc(50% - 9em);
+    }
+    .team-member-list {
+      margin-left: calc(50% - 14em);
+    }
+    .team-member-list ul {
+      margin-top: -1.5em;
+    }
+    .philosophy > h3 {
+      width: calc(50% - 12em);
+      font-style: italic;
+    }
+    .philosophy > h2 {
+      float: left;
+    }
   }
 
 
