@@ -341,7 +341,7 @@
   a[href]:hover,
   a[href]:active,
   a[href]:focus {
-    color: black;
+    color: rgb(42, 53, 56);
   }
 
   /* For Internet Explorer */
@@ -525,7 +525,7 @@
   header > ul > li > a[href]:hover,
   header > ul > li > a[href]:active,
   header > ul > li > a[href]:focus {
-    background-color: black;
+    background-color: rgb(42, 53, 56);
     color: white;
   }
 
@@ -913,6 +913,17 @@
     color: rgb(239, 20, 93); /* @red */
   }
 
+  footer form label {
+    position: relative;
+    display: inline-block;
+    margin-right: 0.375em;
+  }
+  footer form svg {
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 0.875em;
+    right: 0;
+  }
 
   footer ul,
   footer li {
@@ -1031,7 +1042,7 @@
   aside a.subscribe:hover .action span,
   aside a.subscribe:active .action span,
   aside a.subscribe:focus .action span {
-    background-color: black;
+    background-color: rgb(42, 53, 56);
   }
 
   aside .subscribe.daily-good {
@@ -2326,7 +2337,7 @@ margin-bottom: -1.5em;
   }
 
   .meta ul {
-    color: rgb(0, 207, 172); /* @teal */
+    color: rgb(114, 126, 130);
   }
   .tangerine .meta ul {
     color: rgb(249, 132, 12); /* @orange */
@@ -2357,6 +2368,20 @@ margin-bottom: -1.5em;
     color: inherit;
     opacity: 0.6;
   }
+
+  .meta ul.skills {
+    color: rgb(114, 126, 130);
+  }
+  .meta .skills li {
+    display: inline;
+  }
+  .meta .skills li:after {
+    content: ", ";
+  }
+  .meta .skills li:last-child:after {
+    content: "";
+  }
+
   .meta h2,
   .meta h3 {
     border-top-width: 0;
@@ -2366,7 +2391,9 @@ margin-bottom: -1.5em;
   }
   .meta ul {
     margin-top: 0;
+    margin-bottom: 2.4444444444em; /* .meta line height x 2 */
   }
+
   .meta ul,
   .meta li {
     list-style: none;
@@ -2593,6 +2620,7 @@ margin-bottom: -1.5em;
     .about aside {
       margin-top: -20em;
       margin-bottom: -3.75em;
+      max-width: calc(50% - 14em);
     }
   }
   .green blockquote,
