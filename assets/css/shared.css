@@ -1968,6 +1968,8 @@
   }
   .projects .intro > h3 {
     margin: 0;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333;
     text-transform: lowercase;
@@ -2197,6 +2199,8 @@ margin-bottom: -1.5em;
   }
   .projects .list li h3 {
     margin: 0;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333; /* 55px / 48px*/
   }
