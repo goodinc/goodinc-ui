@@ -2659,11 +2659,9 @@ margin-bottom: -1.5em;
     font-style: inherit;
     color: inherit;
   }
-  /*
   .press a[href] h3 {
     text-decoration: underline;
   }
-  */
 
   .press li h3 {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
