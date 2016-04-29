@@ -307,9 +307,6 @@
     color: rgb(114, 126, 130);
   }
   p.primary {
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -782,6 +779,7 @@
   footer a[href]:focus {
     color: white;
   }
+
   footer button, 
   footer .action span, 
   footer .action a {
@@ -796,7 +794,7 @@
   footer .action a[href]:hover,
   footer .action a[href]:active,
   footer .action a[href]:focus {
-    background-color: black !important;
+    background-color: rgb(114, 126, 130) !important;
   }
 
   footer .contact {
@@ -1471,6 +1469,8 @@
 
   .articles li h2,
   .articles li h3 {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
     margin: 0;
@@ -1509,6 +1509,8 @@
   }
   .articles li p {
     margin: 0.75em 0 0;
+    color: rgb(114, 126, 130);
+    color: rgba(0, 0, 0, 0.5);
   }
   .articles li a {
     display: block;
@@ -1692,11 +1694,6 @@
   }
   .community .team > h3 {
     font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -1778,9 +1775,6 @@
   .team-member > h3,
   .team-member > h3 + p {
     margin-top: 0;
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -2010,9 +2004,6 @@
   .home .intro p,
   main > h1.section + p,
   .projects h1 + svg + p {
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
 
@@ -2484,9 +2475,6 @@ margin-bottom: -1.5em;
     font-weight: 500;
   }
   .home .intro li b {
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -2601,6 +2589,57 @@ margin-bottom: -1.5em;
   }
 
 
+  /* =Reports
+  ----------------------------------------------- */
+  .reports,
+  .reports li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .reports li + li {
+    margin-top: 0.75em;
+  }
+  .reports a {
+    font-style: inherit;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+  }
+  .reports a span {
+    color: rgb(42, 53, 56);
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .reports.download li + li {
+    margin-top: 1.5em;
+  }
+  .reports.download a i {
+    display: inline-block;
+    border: 2px solid;
+    width: 3.75em;
+    line-height: 3.75em;
+    border-radius: 50%;
+    text-align: center;
+    font-style: normal;
+    margin-right: 0.75em;
+    font-size: 0.5em;
+    color: rgb(42, 53, 56);
+    color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    margin-top: -0.5em;
+    margin-left: -5em
+  }
+  /*
+  .reports.download a {
+    position: relative;
+    padding-left: 2.5em;
+  }
+  */
+  .reports.download a svg {
+  }
+
+
   /* =Press
   ----------------------------------------------- */
   .press,
@@ -2620,8 +2659,18 @@ margin-bottom: -1.5em;
     font-style: inherit;
     color: inherit;
   }
+  /*
   .press a[href] h3 {
     text-decoration: underline;
+  }
+  */
+
+  .press li h3 {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+    margin: 0;
   }
 
 
@@ -2697,9 +2746,6 @@ margin-bottom: -1.5em;
     color: inherit;
   }
   blockquote p {
-    font-size: 1.5454545455em; /* 34px / 22px */
-    line-height: 1.2941176471; /* 44px / 34px */
-
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
