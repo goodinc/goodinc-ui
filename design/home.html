@@ -55,13 +55,8 @@
     header[style] + main > h1:first-child {
       position: absolute;
     }
-    /*
     header[style].fixed > h2,
     header[style].fixed > ul,
-    header[style].fixed + main > h1:first-child {
-      position: fixed;
-    }
-    */
     header[style].fixed + main > h1:first-child {
       position: fixed;
     }
@@ -631,11 +626,11 @@
   var lastFeaturedItem = document.querySelector('.featured-project-list > li:last-child');
   var featuredItemsHeight;
   var header = document.querySelector('header');
-  //var logo = header.querySelector('h2');
-  //var nav = header.querySelector('ul');
+  var logo = header.querySelector('h2');
+  var nav = header.querySelector('ul');
   var headline = document.querySelector('header[style] + main > h1:first-child');
-  //var logoOffsetTop;
-  //var navOffsetTop;
+  var logoOffsetTop;
+  var navOffsetTop;
   var headlineOffsetTop;
 
   // Switch the header to position absolute
@@ -658,11 +653,11 @@
 
   function updateContentHeight() {
     featuredItemsHeight = getAbsolutePositionY(lastFeaturedItem);
-    //logo.style.top = null;
-    //nav.style.top = null;
+    logo.style.top = null;
+    nav.style.top = null;
     headline.style.top = null;
-    //logoOffsetTop = logo.offsetTop;
-    //navOffsetTop = nav.offsetTop;
+    logoOffsetTop = logo.offsetTop;
+    navOffsetTop = nav.offsetTop;
     headlineOffsetTop = headline.offsetTop;
   }
 
@@ -670,15 +665,13 @@
     var scrollY = getScrollY();
     if (scrollY > featuredItemsHeight) {
       header.className = header.className.replace(/fixed/g, '');
-      //console.log('logo.getBoundingClientRect().top: ' + (logo.offsetTop));
-      //console.log('headline.getBoundingClientRect().top: ' + (headline.offsetTop));
-      //logo.style.top = (logoOffsetTop + featuredItemsHeight) + 'px';
-      //nav.style.top = (navOffsetTop + featuredItemsHeight) + 'px';
+      logo.style.top = (logoOffsetTop + featuredItemsHeight) + 'px';
+      nav.style.top = (navOffsetTop + featuredItemsHeight) + 'px';
       headline.style.top = (headlineOffsetTop + featuredItemsHeight) + 'px';
     } else {
       header.className += ' fixed';
-      //logo.style.top = null;
-      //nav.style.top = null;
+      logo.style.top = null;
+      nav.style.top = null;
       headline.style.top = null;
     }
   }
