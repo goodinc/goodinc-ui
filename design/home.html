@@ -154,16 +154,19 @@
       color: inherit !important;
     }
     */
-    .featured-project-list a .more:after {
+    .featured-project-list a .more span {
       display: inline-block;
-      content: "→";
       border: 2px solid;
-      width: 3.75em;
-      line-height: 3.75em;
+      width: 4.55em;
+      line-height: 4.55em;
       border-radius: 50%;
       text-align: center;
       font-style: normal;
-      margin-left: 0.75em;
+      margin-left: 1em;
+    }
+    .featured-project-list a .more span svg {
+      font-size: 0.75em;
+      vertical-align: middle;
     }
     .featured-project-list > li:before {
       content: "";
@@ -218,7 +221,7 @@
       }
       .featured-project-list .more {
         right: 10%;
-        top: 0.5em;
+        top: 0.125em;
       }
     }
 
@@ -334,7 +337,7 @@
 -->
 
   <ul class="featured-project-list">
-    <li style="background-image: url(../assets/images/case-studies/sports-matter.png)">
+    <li style="background-image: url(../assets/images/projects/sports-matter.png)">
       <a href="project-details.html">
         <h2><span>DICK’s – Sports Matter</span></h2>
         <p>A community-based solution to expanding &amp; supporting youth sports teams facing extreme financial challenges.</p>
@@ -346,10 +349,17 @@
           </ul>
         </div>
 
-        <p class="more">View Project</p>
+        <p class="more">
+          View Project
+          <span>
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M22,12c0-0.2-0.1-0.4-0.2-0.6l-9.4-8.2C12.2,3.1,12,3,11.8,3c-0.2,0-0.4,0.1-0.6,0.2l-0.5,0.5c-0.2,0.2-0.3,0.4-0.3,0.6 c0,0.2,0.1,0.4,0.3,0.6l7,5.9l-15,0.1c-0.2,0-0.4,0.1-0.5,0.3C2.1,11.3,2,11.5,2,11.7v0.6c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.5,0.3 h15l-7,6.1c-0.2,0.1-0.3,0.3-0.3,0.5s0.1,0.4,0.3,0.6l0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.3c0.2,0,0.4-0.1,0.6-0.3l9.4-8.2 C21.9,12.4,22,12.2,22,12z"></path>
+            </path>
+          </svg>
+        </p>
       </a>
     </li>
-    <li style="background-image: url(../assets/images/case-studies/girl-scouts.jpg)">
+    <li style="background-image: url(../assets/images/projects/girl-scouts.jpg)">
       <a href="project-details.html">
         <h2><span>Girl Scouts – ToGetHerThere</span></h2>
         <p>Creating an innovative $1 billion, six-year fundraising social impact campaign.</p>
@@ -361,10 +371,17 @@
           </ul>
         </div>
 
-        <p class="more">View Project</p>
+        <p class="more">
+          View Project
+          <span>
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M22,12c0-0.2-0.1-0.4-0.2-0.6l-9.4-8.2C12.2,3.1,12,3,11.8,3c-0.2,0-0.4,0.1-0.6,0.2l-0.5,0.5c-0.2,0.2-0.3,0.4-0.3,0.6 c0,0.2,0.1,0.4,0.3,0.6l7,5.9l-15,0.1c-0.2,0-0.4,0.1-0.5,0.3C2.1,11.3,2,11.5,2,11.7v0.6c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.5,0.3 h15l-7,6.1c-0.2,0.1-0.3,0.3-0.3,0.5s0.1,0.4,0.3,0.6l0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.3c0.2,0,0.4-0.1,0.6-0.3l9.4-8.2 C21.9,12.4,22,12.2,22,12z"></path>
+            </path>
+          </svg>
+        </p>
       </a>
     </li>
-    <li style="background-image: url(../assets/images/case-studies/earth-to-paris.png)">
+    <li style="background-image: url(../assets/images/projects/earth-to-paris.png)">
       <a href="project-details.html">
         <h2><span>Earth to Paris</span></h2>
         <p>Forging the most ambitious climate agreement in history.</p>
@@ -376,7 +393,14 @@
           </ul>
         </div>
 
-        <p class="more">View Project</p>
+        <p class="more">
+          View Project
+          <span>
+            <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M22,12c0-0.2-0.1-0.4-0.2-0.6l-9.4-8.2C12.2,3.1,12,3,11.8,3c-0.2,0-0.4,0.1-0.6,0.2l-0.5,0.5c-0.2,0.2-0.3,0.4-0.3,0.6 c0,0.2,0.1,0.4,0.3,0.6l7,5.9l-15,0.1c-0.2,0-0.4,0.1-0.5,0.3C2.1,11.3,2,11.5,2,11.7v0.6c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.5,0.3 h15l-7,6.1c-0.2,0.1-0.3,0.3-0.3,0.5s0.1,0.4,0.3,0.6l0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.3c0.2,0,0.4-0.1,0.6-0.3l9.4-8.2 C21.9,12.4,22,12.2,22,12z"></path>
+            </path>
+          </svg>
+        </p>
       </a>
     </li>
   </ul>
