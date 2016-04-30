@@ -1159,6 +1159,10 @@
     margin-top: 4.5em;
     margin-top: 3em;
   }
+  main > h1.section + p + nav {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+  }
   /*
   main > h1 + nav {
     margin-top: -3em;
@@ -2022,7 +2026,7 @@ margin-bottom: -1.5em;
     .home .intro p,
     main > h1.section + p,
     .projects h1 + svg + p {
-      margin-top: 3em;
+      margin-top: 2.25em;
       max-width: 17em;
 
 /* SHIM */
@@ -2836,6 +2840,14 @@ margin-bottom: -1.5em;
     margin-bottom: 4.5em;
   }
 
+  .philosophy > h2.byline {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: italic;
+  }
+
 
   @media (min-width: 60em) {
     .philosophy .text,
@@ -2863,6 +2875,9 @@ margin-bottom: -1.5em;
       margin-top: 0;
       position: absolute;
       width: calc(50% - 10em);
+    }
+    .philosophy > h2.byline {
+      width: calc(50% - 20em);
     }
     .team-member-list {
       margin-left: calc(50% - 14em);
