@@ -1781,13 +1781,26 @@
     margin-top: 0;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
   }
   .team-member > h3 {
     margin-bottom: 0;
+    font-weight: bold;
   }
   .team-member > h3 + p {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-style: italic;
+  }
+  .team-member h4 {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 0.5454545455em; /* 12px / 22px */
+    line-height: 1.8333333333; /* 22px / 12px */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+  }
+  .team-member h4 + p {
+    margin-top: 0;
   }
   @media (min-width: 50em) {
     .team-member > h3 {
