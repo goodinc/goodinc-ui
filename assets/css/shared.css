@@ -2682,10 +2682,12 @@ margin-bottom: -1.5em;
     color: rgb(42, 53, 56);
     color: rgba(0, 0, 0, 0.8);
   }
+  /*
   .reports.download li + li {
     margin-top: 1.5em;
   }
-  .reports.download a i {
+  */
+  .reports a i {
     display: inline-block;
     border: 2px solid;
     width: 3.75em;
@@ -2694,12 +2696,20 @@ margin-bottom: -1.5em;
     text-align: center;
     font-style: normal;
     margin-right: 0.75em;
-    font-size: 0.5em;
+    font-size: 0.375em;
     color: rgb(42, 53, 56);
     color: rgba(0, 0, 0, 0.25);
     position: absolute;
-    margin-top: -0.5em;
-    margin-left: -5em
+    margin-left: -5em;
+    margin-top: -0.375em;
+  }
+  .reports .download {
+    margin-left: 3em;
+  }
+  @media (min-width: 70em) {
+    .reports .download {
+      margin-left: 0;
+    }
   }
   /*
   .reports.download a {
