@@ -1669,15 +1669,74 @@
     font-style: inherit;
     text-decoration: inherit;
   }
+  .team-member-list ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   .team-member-list li {
-    display: inline-block;
-    vertical-align: top;
+    float: left;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(41, 53, 56);
-    max-width: 10em;
+    width: 100%;
     padding: 1.5em;
     text-align: center;
+    box-sizing: border-box;
   }
+  /*
+  .team-member-list li img {
+    width: 15em;
+    height: 15em;
+  }
+  */
+  .team-member-list li h3,
+  .team-member-list li p {
+    max-width: none;
+  }
+  .team-member-list li img {
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+  }
+  @media (min-width: 20em) {
+    .team-member-list li {
+      width: 50%;
+    }
+    .team-member-list li:nth-child(2n+1) {
+      clear: both;
+    }
+  }
+  @media (min-width: 60em) {
+    .team-member-list li {
+      width: 33.333%;
+    }
+    .team-member-list li:nth-child(2n+1) {
+      clear: none;
+    }
+    .team-member-list li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+  @media (min-width: 120em) {
+    .team-member-list li {
+      width: 25%;
+    }
+    .team-member-list li:nth-child(2n+1) {
+      clear: none;
+    }
+    .team-member-list li:nth-child(3n+1) {
+      clear: none;
+    }
+    .team-member-list li:nth-child(4n+1) {
+      clear: both;
+    }
+  }
+
+  .team-member img,
+  .team-member-list img {
+    border-radius: 50%;
+  }
+
   .team-member-list li h3 {
     margin: 0;
     font-size: inherit;
@@ -1764,11 +1823,6 @@
     margin-bottom: 3em;
   }
 
-
-  .team-member img,
-  .team-member-list img {
-    border-radius: 50%;
-  }
 
 
   /* =Team Member
