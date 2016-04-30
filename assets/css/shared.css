@@ -1706,7 +1706,7 @@
       clear: both;
     }
   }
-  @media (min-width: 60em) {
+  @media (min-width: 40em) {
     .team-member-list li {
       width: 33.333%;
     }
@@ -1717,7 +1717,7 @@
       clear: both;
     }
   }
-  @media (min-width: 120em) {
+  @media (min-width: 60em) {
     .team-member-list li {
       width: 25%;
     }
@@ -2916,7 +2916,7 @@ margin-bottom: -1.5em;
   }
 
 
-  @media (min-width: 60em) {
+  @media (min-width: 82.5em) {
     .philosophy .text,
     .philosophy .quote {
       /*
