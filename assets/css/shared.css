@@ -641,7 +641,8 @@
     margin-top: 7.5em;
   }
   header[style] ~ main,
-  nav + main {
+  nav + main,
+  main.project-details {
     margin-top: 0;
   }
   @media (min-width: 50em) {
@@ -2829,6 +2830,15 @@ margin-bottom: -1.5em;
   .project-details .details div ~ div {
     margin-top: 3em;
   }
+
+  .project-details .intro {
+    margin-top: 4em;
+  }
+
+  header[style] ~ main.project-details .intro {
+    margin-top: 0;
+  }
+
   .project-details .intro > div:first-child {
     font-size: 1.5em; /* 33px / 22px */
     line-height: 1.3333333333; /* 44px / 33px */
@@ -3164,11 +3174,18 @@ margin-bottom: -1.5em;
   aside.related {
     margin-top: 3em;
   }
+  .highlights + aside.related {
+    margin-top: 1.5em;
+  }
   @media (min-width: 70em) {
     aside.related {
       margin-top: 8em;
     }
+    .highlights + aside.related {
+      margin-top: 4em;
+    }
   }
+
   aside.related li {
     /*
     display: inline-block;
