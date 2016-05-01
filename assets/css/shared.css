@@ -782,7 +782,7 @@
   header + nav h3 {
     margin-top: 0;
     position: absolute;
-    top: 4.25em;
+    top: 3.125em;
     left: 9.5em;
     z-index: 3; /* Just above the h1:first-child element */
 
@@ -796,6 +796,7 @@
   @media (min-width: 70em) {
     header + h3,
     header + nav h3 {
+      top: 4.25em;
       left: 13em;
     }
   }
@@ -2255,6 +2256,8 @@ margin-bottom: -1.5em;
   }
   body > nav p {
     margin: 0;
+    margin-bottom: 0.6111111111em; /* 22px / 36px */
+    margin-right: 3em;
   }
 
   @media (min-width: 40em) {
@@ -3002,7 +3005,7 @@ margin-bottom: -1.5em;
   .quote[style] blockquote + .byline {
     text-align: right;
   }
-  main .quote[style] {
+  .standard .quote[style] {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
     background-size: cover;
@@ -3040,7 +3043,7 @@ margin-bottom: -1.5em;
     max-width: 10em;
   }
   @media (min-width: 70em) {
-    main .quote[style] {
+    .standard .quote[style] {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       margin-bottom: -4em;
@@ -3048,7 +3051,7 @@ margin-bottom: -1.5em;
     }
   }
   @media (min-aspect-ratio: 1/1) {
-    main .quote[style] {
+    .standard .quote[style] {
       padding-top: 15em;
       padding-bottom: 15em;
       padding-top: 30vh;
