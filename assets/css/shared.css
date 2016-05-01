@@ -630,7 +630,13 @@
     }
   */
 
-
+  /* SHIM: This happens to fit the current navigation */
+  main {
+    margin-top: 6em;
+  }
+  nav + main {
+    margin-top: 0;
+  }
 
 
   /* =Standard
@@ -657,6 +663,12 @@
   .standard .quote blockquote p {
     max-width: 28em;
   }
+
+  /* SHIM: For the about page, with no headline */
+  .standard .body p:first-child {
+    margin-top: 0;
+  }
+
   .quote blockquote {
     margin-left: 0;
     margin-right: 0;
