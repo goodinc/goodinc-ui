@@ -3472,3 +3472,280 @@ margin-bottom: -1.5em;
   }
 
 
+  /* =Home
+  ----------------------------------------------- */
+
+  /*
+  header[style] {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+  header[style]:before {
+    display: none;
+  }
+  */
+
+  header.home[style] {
+    position: static;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+  }
+  header.home[style]:before {
+    display: none;
+  }
+  header.home[style] > h2 {
+    top: 1.5em;
+    left: 1.5em;
+  }
+  header.home[style] > ul {
+    top: 1.5em;
+  }
+  @media (min-width: 70em) {
+    header.home[style] > h2 {
+      top: 2.2727272727em; /* 50px / 22px */
+      left: 4em; /* 88px / 22px */
+    }
+    header.home[style] > ul {
+      top: 2.2727272727em; /* 50px / 22px */
+    }
+  }
+  header.home[style] > h2,
+  header.home[style] > ul,
+  header.home[style] + main > h1:first-child {
+    position: absolute;
+  }
+  header.home[style].fixed > h2,
+  header.home[style].fixed > ul,
+  header.home[style].fixed + main > h1:first-child {
+    position: fixed;
+  }
+
+  main.home {
+    padding-top: 0;
+  }
+  .featured-project-list {
+    margin-top: 0;
+    max-width: none;
+  }
+  .featured-project-list > li + li {
+    margin-top: 0;
+  }
+  .featured-project-list > li {
+    display: block;
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+    width: calc(100% + 3em); /* margin x 2 */
+    padding: 1.5em;
+    box-sizing: border-box;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 45vh;
+    padding-bottom: 5vh;
+  }
+  .featured-project-list a h1 {
+    margin-bottom: 0.5em;
+  }
+  .featured-project-list a[href]:hover,
+  .featured-project-list a[href]:active,
+  .featured-project-list a[href]:focus {
+    color: white;
+  }
+  body:hover .featured-project-list .meta,
+  body:hover .featured-project-list .more {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  body:hover .featured-project-list a:hover  .meta,
+  body:hover .featured-project-list a:active .meta,
+  body:hover .featured-project-list a:focus  .meta,
+  body:hover .featured-project-list a:hover  .more,
+  body:hover .featured-project-list a:active .more,
+  body:hover .featured-project-list a:focus  .more {
+    opacity: 1;
+  }
+  .featured-project-list a {
+    /*
+    position: absolute;
+    bottom: 3em;
+    bottom: 20vh;
+    display: table;
+    */
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+  .featured-project-list a .meta ul {
+    color: inherit;
+  }
+  .featured-project-list a .more {
+    color: rgb(0, 207, 172); /* @teal */
+    text-align: right;
+    max-width: 90%;
+  }
+  .tangerine .featured-project-list a .more {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .featured-project-list a .more {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .featured-project-list a .more {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .featured-project-list a .more {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .featured-project-list a .more {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .featured-project-list a .more {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .featured-project-list a .more {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .featured-project-list a .more {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  /*
+  .featured-project-list a .more {
+    color: inherit !important;
+  }
+  */
+  .featured-project-list a .more span {
+    display: inline-block;
+    border: 2px solid;
+    width: 4.55em;
+    line-height: 4.55em;
+    border-radius: 50%;
+    text-align: center;
+    font-style: normal;
+    margin-left: 1em;
+  }
+  .featured-project-list a .more span svg {
+    font-size: 0.75em;
+    vertical-align: middle;
+  }
+  .featured-project-list > li:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.25);    
+    background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  @media (min-width: 70em) {
+    .featured-project-list > li {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+      width: calc(100% + 8em); /* margin x 2 */
+      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding-top: 50vh;
+      padding-bottom: 30vh;
+    }
+  }
+
+
+  .featured-project-list a {
+    display: block;
+    position: relative;
+  }
+
+  /* Copied from the projects list */
+  /*
+  @media (min-width: 60em) {
+    .featured-project-list .meta,
+    .featured-project-list .more {
+      margin: 0;
+      position: absolute;
+      top: 3em;
+      right: 12em;
+    }
+    .featured-project-list .more {
+      right: 1.5em;
+    }
+  }
+  */
+  @media (min-width: 70em) {
+    .featured-project-list .meta,
+    .featured-project-list .more {
+      margin: 0;
+      position: absolute;
+      top: 1.6em;
+      right: 30%;
+    }
+    .featured-project-list .more {
+      right: 10%;
+      top: 0.125em;
+    }
+  }
+
+
+  .home .intro figure {
+    margin: 0;
+  }
+  .home .intro svg {
+    max-width: 100%;
+    max-width: calc(100% - 3em);
+    width: 24em;
+    height: 24em;
+    position: absolute;
+    z-index: -1;
+  }
+  .tangerine .home .intro svg {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .home .intro svg {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .home .intro svg {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .home .intro svg {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .home .intro svg {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .home .intro svg {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .home .intro svg {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .home .intro svg {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+  @media (min-width: 50em) {
+    .home .intro p {
+      margin-left: calc(50% - 5em);
+      padding-top: 1.5em;
+    }
+    .home .intro ul {
+      margin-left: calc(50% - 9em);
+      max-width: 35.5em;
+      color: rgb(114, 126, 130);
+      color: rgba(0, 0, 0, 0.5);
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .home .intro li {
+      width: 15em;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .home .intro li,
+    .home .intro li + li {
+      margin: 0.75em;
+    }
+  }
+
