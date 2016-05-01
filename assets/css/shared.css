@@ -714,6 +714,31 @@
     font-family: inherit;
     font-style: italic;
   }
+  .tangerine .standard > h2.byline {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .standard > h2.byline {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .standard > h2.byline{
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .standard > h2.byline {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .standard > h2.byline {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .standard > h2.byline {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .standard > h2.byline {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .standard > h2.byline {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
 
   .standard > h1,
   .standard > .section h1 {
@@ -795,6 +820,16 @@
     .standard > h3 {
       width: calc(50% - 9.25em);
       font-style: italic;
+    }
+  }
+
+  .standard.news h1 + .body {
+    margin-bottom: 3em;
+  }
+
+  @media (min-width: 70em) {
+    .standard.news h1 + .body {
+      margin-bottom: 8em;
     }
   }
 
@@ -2810,11 +2845,16 @@ margin-bottom: -1.5em;
   .project-details .highlights {
     margin-top: 3em;
   }
+  figure.movie {
+    width: auto;
+    max-width: none;
+  }
   .project-details .highlights + figure {
     float: none;
     width: auto;
     max-width: none;
   }
+  figure.movie iframe,
   .project-details .highlights + figure img,
   .project-details .highlights + figure iframe {
 
@@ -2829,12 +2869,20 @@ margin-bottom: -1.5em;
     object-fit: cover;
   }
   @media (min-width: 60em) {
+    figure.movie iframe,
     .project-details .highlights + figure img,
     .project-details .highlights + figure iframe {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       width: calc(100% + 8em); /* margin x 2 */
     }
+  }
+
+  .body figure {
+    max-width: 28em;
+  }
+  .body figure img {
+    width: 100%;
   }
 
   .meta ul {
@@ -3079,7 +3127,7 @@ margin-bottom: -1.5em;
     font-weight: bold;
   }
   @media (min-width: 110em) {
-    .reports a {
+    .experimental .reports a {
       font-size: 1.6363636364em; /* 36px / 22px */
       line-height: 1.2222222222; /* 44px / 36px */
     }
@@ -3106,8 +3154,8 @@ margin-bottom: -1.5em;
     color: rgb(42, 53, 56);
     color: rgba(0, 0, 0, 0.25);
     position: absolute;
-    margin-left: -5em;
-    margin-top: -0.375em;
+    margin-left: -5.5em;
+    margin-top: 0.25em;
   }
   .reports .download {
     margin-left: 3em;
