@@ -1302,9 +1302,6 @@
 
   /* =Sub Navigation
   ----------------------------------------------- */
-  body > nav {
-    margin-top: 1.5em;
-  }
   body > nav p + nav {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
@@ -1324,13 +1321,17 @@
     padding-left: 0;
   }
   body > nav ul {
-    margin: 0;
+    margin-top: 3em;
+    margin-bottom: 0;
     max-width: none;
   }
   body > nav a {
     display: block;
   }
   @media (min-width: 60em) {
+    body > nav {
+      margin-top: 1.5em;
+    }
     /*
     body > nav {
       text-align: center;
