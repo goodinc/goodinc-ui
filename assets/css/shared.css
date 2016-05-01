@@ -1131,7 +1131,11 @@
     border-width: 0 0 2px 0;
     border-radius: 0;
   }
-  @media (max-width: 30em) {
+  @media (max-width: 35em) {
+    footer form {
+      margin-left: 0;
+      margin-right: 0;
+    }
     footer select,
     footer button {
       display: block;
@@ -1634,16 +1638,91 @@
     opacity: 0.65;
   }
 
-  body > nav.pagination {
+
+  /* =Pagination
+  ----------------------------------------------- */
+
+  main > nav ul,
+  main > nav li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  main > nav ul {
+    margin: 0;
+    max-width: none;
+  }
+  main > nav p + ul {
+    margin-top: 3em;
+  }
+  main > nav a {
+    display: block;
+    text-decoration: underline;
+  }
+  @media (min-width: 70em) {
+    main > nav ul {
+      margin: 0;
+    }
+    main > nav ul {
+      margin-left: -0.375em;
+      margin-right: -0.375em;
+    }
+    main > nav li {
+      display: inline-block;
+    }
+    main > nav a {
+      padding: 1.5em 0.375em;
+    }
+  }
+  @media (min-width: 60em) {
+    main > nav {
+      margin-top: 1.5em;
+    }
+  }
+  @media (min-width: 80em) {
+    main > nav ul {
+      margin-left: -0.75em !important;
+      margin-right: -0.75em !important;
+    }
+    main > nav a {
+      padding: 1.5em 0.75em !important;
+    }
+  }
+  @media (min-width: 90em) {
+    main > nav ul {
+      margin-left: -1.5em !important;
+      margin-right: -1.5em !important;
+    }
+    main > nav a {
+      padding: 1.5em !important;
+    }
+  }
+  main > nav a {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-style: inherit;
+    text-transform: lowercase;
+    position: relative;
+  }
+
+  main > nav a[href]:not(.active) {
+    color: inherit;
+  }
+  main > nav a[href]:not(.active):after {
+    display: none;
+  }
+  main > nav a[href]:not(.active):hover,
+  main > nav a[href]:not(.active):active,
+  main > nav a[href]:not(.active):focus {
+    opacity: 0.65;
+  }
+
+  main > nav.pagination {
     margin-bottom: 3em;
     text-align: center;
   }
-  body > nav.tags:after,
-  body > nav.tags a:after,
-  body > nav.pagination:after,
-  body > nav.pagination a:after {
-    display: none;
-  }
+
+
   /*
   body > nav.pagination .previous:before {
     content: "← ";
@@ -3296,7 +3375,7 @@ margin-bottom: -1.5em;
     position: relative;
     color: white;
     padding: 1.5em;
-    margin-bottom: -1.5em;
+    margin-bottom: -3em;
     max-width: none;
   }
   .quote[style]:before {
