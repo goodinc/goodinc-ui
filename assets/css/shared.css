@@ -632,7 +632,7 @@
 
   /* SHIM: This happens to fit the current navigation */
   main {
-    margin-top: 6em;
+    margin-top: 7.5em;
   }
   nav + main {
     margin-top: 0;
