@@ -1974,7 +1974,7 @@
     margin-right: -1.5em;
   }
   .good-can-help {
-    margin-bottom: -1.5em;
+    margin-bottom: -3em;
   }
   .good-can-help {
     padding: 3em 1.5em;
@@ -2022,15 +2022,24 @@
     background-color: rgb(239, 20, 93); /* @red */
   }
 
-
-
   .good-can-help h2,
   .good-can-help ul {
     font-weight: bold;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
-    font-size: 2.1818181818em; /* 48px / 22px */
-    line-height: 1.1458333333; /* 55px / 48px */
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
   }
+
+  @media (min-width: 40em) {
+    .good-can-help h2,
+    .good-can-help ul {
+      font-weight: bold;
+      font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+      font-size: 2.1818181818em; /* 48px / 22px */
+      line-height: 1.1458333333; /* 55px / 48px */
+    }
+  }
+
   .good-can-help h2 {
     margin-top: 0;
     margin-bottom: 0;
@@ -2068,9 +2077,6 @@
   @media (min-width: 60em) {
     .good-can-help {
       text-align: center;
-    }
-    .good-can-help h2:after {
-      content: none;
     }
     .good-can-help h2,
     .good-can-help ul {
