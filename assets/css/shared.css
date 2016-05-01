@@ -1475,7 +1475,9 @@
   }
   body > nav a {
     display: block;
+    /*
     text-decoration: underline;
+    */
   }
   @media (min-width: 20em) {
     /*
@@ -2756,7 +2758,7 @@ margin-bottom: -1.5em;
     list-style: none;
   }
   .projects .list {
-    margin-top: 0;
+    margin-top: 1px;
     padding: 0;
     max-width: none;
     background-color: rgb(225, 225, 225);
