@@ -42,7 +42,7 @@
     }
   }
 
-  @media (min-width: 1000px) and (min-height: 50px) {
+  @media (min-width: 1000px) and (min-height: 500px) {
     body {
       font-size: 137.5%; /* 22px / 16px */
     }
@@ -263,11 +263,15 @@
     margin-top: 1.5em;
   }
 
-  .projects .list dl,
-  .meta {
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
+  @media (min-width: 1000px) and (min-height: 500px) {
+    .projects .list dl,
+    .meta {
+      font-size: 0.8181818182em; /* 18px / 22px */
+      line-height: 1.2222222222; /* 22px / 18px */
+    }
   }
+
+
   .meta li {
     margin-top: 0.3055555556em; /* (22px / 18px) / 4 */
   }
@@ -286,11 +290,13 @@
   .meta h3 {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
-    font-size: 0.6666666667em; /* 12px / 18px */
-    line-height: 1.8333333333; /* 22px / 12px */
+    font-size: 0.7777777778em; /* 14px / 18px */
+    line-height: 1.5714285714; /* 22px / 14px */
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
+
+
   .meta {
     margin-top: 1.8333333333em; /* 1.5 / (18px / 22px) */
   }
