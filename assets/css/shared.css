@@ -796,6 +796,7 @@
   }
   header + h1,
   header + h3,
+  header + nav h1,
   header + nav h3 {
     margin-top: 0;
     position: absolute;
@@ -813,6 +814,7 @@
   @media (min-width: 70em) {
     header + h1,
     header + h3,
+    header + nav h1,
     header + nav h3 {
       top: 4.25em;
       left: 13em;
