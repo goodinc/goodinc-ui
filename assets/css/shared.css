@@ -311,6 +311,11 @@
     line-height: 1.2222222222; /* 44px / 36px */
   }
 
+  .phrase {
+    /* avoid line break */
+    display: inline-block;
+  }
+
 
   /* =Links
   ----------------------------------------------- */
@@ -586,16 +591,25 @@
   -----------------------------------------------
   ----------------------------------------------- */
 
+  body > nav,
   main,
   header,
   footer > div {
     padding: 1.5em;
   }
   @media (min-width: 70em) {
+    body > nav,
     main,
     header,
     footer > div {
-      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding: 4em; /* 88px / 22px */
+    }
+    header {
+      padding-top: 2.2727272727em; /* 50px / 22px */
+    }
+    body > nav {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
   /*
@@ -606,6 +620,125 @@
       margin-right: auto;
     }
   */
+
+
+
+
+  /* =Standard
+  -----------------------------------------------
+  Headline on the left, text on the right
+  ----------------------------------------------- */
+  .standard .team-member-list,
+  .standard .body,
+  .standard .quote {
+    margin-bottom: 4em;
+  }
+  .standard .body:last-child,
+  .standard .quote:last-child {
+    margin-bottom: 0;
+  }
+  .standard .body p,
+  .standard .quote blockquote p {
+    max-width: 28em;
+  }
+  .quote blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .standard .quote {
+    max-width: 40em;
+    margin-top: 4.5em;
+    margin-bottom: 4.5em;
+  }
+
+  main > h1 {
+    margin-top: 0;
+  }
+
+  .standard > h2.byline {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: italic;
+  }
+
+  .standard > h1 {
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px */
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 82.5em) {
+    .team-member-list ul {
+      margin-top: -1.5em;
+    }
+
+    .standard .body,
+    .standard .quote,
+    .standard .team-member-list {
+      /*
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 28em;
+      */
+      margin-left: calc(50% - 14em);
+    }
+    .standard .quote {
+      margin-left: calc(50% - 20em);
+    }
+    /*
+    .standard {
+
+    }
+    .standard {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+    */
+    nav + .standard {
+      margin-top: 0;
+    }
+
+    .standard .body > p:first-child {
+      margin-top: 0;
+    }
+
+    .standard > h1,
+    .standard > h2,
+    .standard > section > h2,
+    .standard > h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      /*
+      border: 1px solid blue;
+      position: absolute;
+      */
+      float: left;
+      width: calc(50% - 8em);
+    }
+    .standard section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .standard > h2.byline {
+      width: calc(50% - 20em);
+    }
+    .standard > h3 {
+      width: calc(50% - 9.25em);
+      font-style: italic;
+    }
+  }
+  @media (min-width: 100em) {
+    .experimental .standard > h1 {
+      font-size: 3.7272727273em; /* 82px / 22px */
+      line-height: 1.2073170732em; /* 99px / 82px */
+      width: calc(50% - 5em);
+    }
+  }
+
+
 
 
   /* =Header
@@ -629,9 +762,12 @@
   header[style] h2 a[href]:focus  {
     color: white !important;
   }
+  header {
+    min-height: 2.2727272727em; /* 50px / 22px */
+  }
   header h2 {
     font-size: inherit;
-    margin-top: 0;
+    margin: 0;
     position: absolute;
     z-index: 3; /* Just above the h1:first-child element */
   }
@@ -642,9 +778,11 @@
     width: 4em; /* 88px / 22px */
     height: 2.2727272727em; /* 50px / 22px */
   }
-  header h3 {
+  header + h3,
+  header + nav h3 {
+    margin-top: 0;
     position: absolute;
-    margin-top: 1em;
+    top: 4.25em;
     left: 9.5em;
     z-index: 3; /* Just above the h1:first-child element */
 
@@ -656,7 +794,8 @@
     letter-spacing: 0.1em;
   }
   @media (min-width: 70em) {
-    header h3 {
+    header + h3,
+    header + nav h3 {
       left: 13em;
     }
   }
@@ -680,7 +819,8 @@
     background-size: cover;
     color: white;
     position: relative;
-    min-height: 25em; /* 550px / 22px */
+    min-height: 24em;
+    min-height: 70vh;
     box-sizing: border-box;
   }
   header[style]:before {
@@ -707,7 +847,7 @@
     padding-left: 0;
   }
   header ul {
-    margin-top: 0;
+    margin: 0;
     text-align: right;
     max-width: none;
   }
@@ -726,16 +866,16 @@
     }
   }
 
-  header + main > .header h1 {
+  header ~ main > .header h1 {
     margin-bottom: 0;
   }
-  header + main > .header h2 {
+  header ~ main > .header h2 {
     margin-top: 0.375em;
   }
 
   @media (min-width: 20em) {
-    header[style] + main > .header,
-    header[style] + main > h1:first-child {
+    header[style] ~ main > .header,
+    header[style] ~ main > h1:first-child {
       margin-top: 0;
       position: absolute;
       top: 2.4269662921em;
@@ -743,11 +883,15 @@
       margin-right: 3em;
       color: white;
     }
-    header[style] + main > .header {
+    header[style] + h3,
+    header[style] + nav h3 {
+      color: white;
+    }
+    header[style] ~ main > .header {
       top: 6em;
     }
-    header[style] + main > .header + p,
-    header[style] + main > h1:first-child + p {
+    header[style] ~ main > .header + p,
+    header[style] ~ main > h1:first-child + p {
       margin-top: 0;
     }
   }
@@ -759,7 +903,6 @@
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     background-color: rgb(26, 36, 38);
     color: rgb(192, 204, 207);
-    padding-bottom: 6em;
   }
 
   footer a,
@@ -838,6 +981,9 @@
 
   footer form p {
     max-width: none;
+  }
+  footer form:first-child > p:first-child {
+    margin-top: 0;
   }
   footer form label span {
     font-size: inherit;
@@ -1155,11 +1301,10 @@
 
   /* =Sub Navigation
   ----------------------------------------------- */
-  main > nav {
-    margin-top: 4.5em;
-    margin-top: 3em;
+  body > nav {
+    margin-top: 1.5em;
   }
-  main > h1.section + p + nav {
+  body > nav p + nav {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }
@@ -1171,58 +1316,58 @@
   main > h1 + h3 {
     margin-top: -1.5em;
   }
-  main > nav ul,
-  main > nav li {
+  body > nav ul,
+  body > nav li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  main > nav ul {
+  body > nav ul {
+    margin: 0;
     max-width: none;
   }
-  main > nav a {
+  body > nav a {
     display: block;
-    text-decoration: underline;
   }
   @media (min-width: 60em) {
     /*
-    main > nav {
+    body > nav {
       text-align: center;
     }
     */
-    main > nav ul {
+    body > nav ul {
       margin: 0;
     }
-    main > nav ul {
+    body > nav ul {
       margin-left: -0.375em;
       margin-right: -0.375em;
     }
-    main > nav li {
+    body > nav li {
       display: inline-block;
     }
-    main > nav a {
+    body > nav a {
       padding: 1.5em 0.375em;
     }
   }
   @media (min-width: 80em) {
-    main > nav ul {
+    body > nav ul {
       margin-left: -0.75em;
       margin-right: -0.75em;
     }
-    main > nav a {
+    body > nav a {
       padding: 1.5em 0.75em;
     }
   }
   @media (min-width: 90em) {
-    main > nav ul {
+    body > nav ul {
       margin-left: -1.5em;
       margin-right: -1.5em;
     }
-    main > nav a {
+    body > nav a {
       padding: 1.5em;
     }
   }
-  main > nav a {
+  body > nav a {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-style: inherit;
@@ -1230,7 +1375,7 @@
     position: relative;
   }
   @media (min-width: 60em) {
-    main > nav a:after {
+    body > nav a:after {
       content: "";
       display: block;
       position: absolute;
@@ -1240,11 +1385,7 @@
       height: 1.5em;
       background-color: currentColor;
     }
-    .yellow main > nav a:after {
-      color: rgb(255, 214, 13); /* @yellow */
-    }
-
-    main > nav:after {
+    body > nav:after {
       content: "";
       display: block;
       position: absolute;
@@ -1253,58 +1394,58 @@
       height: 1px;
       background-color: rgb(0, 207, 172); /* @teal */
     }
-    .tangerine main > nav:after {
+    .tangerine > nav:after {
       background-color: rgb(255, 80, 26); /* @tangerine */
     }
-    .orange main > nav:after {
+    .orange > nav:after {
       background-color: rgb(249, 132, 12); /* @orange */
     }
-    .purple main > nav:after {
+    .purple > nav:after {
       background-color: rgb(168, 46, 255); /* @purple */
     }
-    .blue main > nav:after {
+    .blue > nav:after {
       background-color: rgb(0, 157, 255); /* @blue */
     }
-    .teal main > nav:after {
+    .teal > nav:after {
       background-color: rgb(0, 207, 172); /* @teal */
     }
-    .green main > nav:after {
+    .green > nav:after {
       background-color: rgb(48, 217, 101); /* @green */
     }
-    .yellow main > nav:after {
+    .yellow > nav:after {
       background-color: rgb(255, 214, 13); /* @yellow */
     }
-    .red main > nav:after {
+    .red > nav:after {
       background-color: rgb(239, 20, 93); /* @red */
     }
   }
-  main > nav a[href]:not(.active) {
+  body > nav a[href]:not(.active) {
     color: inherit;
   }
-  main > nav a[href]:not(.active):after {
+  body > nav a[href]:not(.active):after {
     display: none;
   }
-  main > nav a[href]:not(.active):hover,
-  main > nav a[href]:not(.active):active,
-  main > nav a[href]:not(.active):focus {
+  body > nav a[href]:not(.active):hover,
+  body > nav a[href]:not(.active):active,
+  body > nav a[href]:not(.active):focus {
     opacity: 0.65;
   }
 
-  main > nav.pagination {
+  body > nav.pagination {
     margin-bottom: 3em;
     text-align: center;
   }
-  main > nav.tags:after,
-  main > nav.tags a:after,
-  main > nav.pagination:after,
-  main > nav.pagination a:after {
+  body > nav.tags:after,
+  body > nav.tags a:after,
+  body > nav.pagination:after,
+  body > nav.pagination a:after {
     display: none;
   }
   /*
-  main > nav.pagination .previous:before {
+  body > nav.pagination .previous:before {
     content: "← ";
   }
-  main > nav.pagination .next:after {
+  body > nav.pagination .next:after {
     content: " →";
   }
   */
@@ -1428,6 +1569,7 @@
     max-width: none;
     margin-left: -1.5em;
     margin-right: -1.5em;
+    margin-bottom: -1.5em;
   }
   /*
   .articles:after {
@@ -1547,7 +1689,7 @@
       margin-right: -4em;
     }
     .good-can-help {
-      margin-bottom: -2.2727272727em;
+      margin-bottom: -4em;
     }
     .good-can-help {
       padding: 6em 4em; /* 50px / 22px */     /* 88px / 22px */
@@ -1662,6 +1804,20 @@
     line-height: 1.2222222222; /* 22px / 18px */
     margin-left: -1.5em;
     margin-right: -1.5em;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    /*
+    -webkit-flex-direction: row;
+            flex-direction: row;
+
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+            */
+
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 
   .team-member-list li a {
@@ -1669,13 +1825,17 @@
     font-style: inherit;
     text-decoration: inherit;
   }
+  /*
   .team-member-list ul:after {
     content: "";
     display: table;
     clear: both;
   }
+  */
   .team-member-list li {
+    /*
     float: left;
+    */
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(41, 53, 56);
     width: 100%;
@@ -1689,7 +1849,7 @@
     height: 15em;
   }
   */
-  .team-member-list li h3,
+  .team-member-list li h4,
   .team-member-list li p {
     max-width: none;
   }
@@ -1702,25 +1862,30 @@
     .team-member-list li {
       width: 50%;
     }
+    /*
     .team-member-list li:nth-child(2n+1) {
       clear: both;
     }
+    */
   }
   @media (min-width: 40em) {
     .team-member-list li {
       width: 33.333%;
     }
+    /*
     .team-member-list li:nth-child(2n+1) {
       clear: none;
     }
     .team-member-list li:nth-child(3n+1) {
       clear: both;
     }
+    */
   }
   @media (min-width: 60em) {
     .team-member-list li {
       width: 25%;
     }
+    /*
     .team-member-list li:nth-child(2n+1) {
       clear: none;
     }
@@ -1730,6 +1895,7 @@
     .team-member-list li:nth-child(4n+1) {
       clear: both;
     }
+    */
   }
 
   .team-member img,
@@ -1737,7 +1903,7 @@
     border-radius: 50%;
   }
 
-  .team-member-list li h3 {
+  .team-member-list li h4 {
     margin: 0;
     font-size: inherit;
     line-height: inherit;
@@ -1754,11 +1920,6 @@
   .community .clients > h1 {
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333; /* 55px / 48px */
-  }
-  .community .team > h3 {
-    font-family: inherit;
-    font-size: 1.6363636364em; /* 36px / 22px */
-    line-height: 1.2222222222; /* 44px / 36px */
   }
 
   .community .clients .text,
@@ -1827,24 +1988,25 @@
 
   /* =Team Member
   ----------------------------------------------- */
-  .team-member nav {
-    margin-bottom: 2.25em;
+  .team-member .image {
+    margin-bottom: 1.5em;
   }
-  .team-member > h3,
-  .team-member > h3 + p {
+  .team-member > h1,
+  .team-member > h1 + p {
     margin-top: 0;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    margin-bottom: 1.2222222222em;
   }
-  .team-member > h3 {
+  .team-member > h1 {
     margin-bottom: 0;
     font-weight: bold;
   }
-  .team-member > h3 + p {
+  .team-member > h1 + p {
     font-style: italic;
   }
-  .team-member h4 {
+  .team-member .details h2 {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.5454545455em; /* 12px / 22px */
@@ -1853,41 +2015,42 @@
     letter-spacing: 0.1em;
     margin-bottom: 0;
   }
-  .team-member h4 + p {
+  .team-member .details p:first-child,
+  .team-member .details h2 + p {
     margin-top: 0;
   }
   @media (min-width: 50em) {
-    .team-member > h3 {
+    .team-member > h1 {
       float: left;
       margin-right: 0.25em;
     }
-    .team-member > h3:after {
+    .team-member > h1:after {
       content: " – ";
       color: rgb(0, 207, 172); /* @teal */
     }
   }
-  .tangerine .team-member > h3:after {
+  .tangerine .team-member > h1:after {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .orange .team-member > h3:after {
+  .orange .team-member > h1:after {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .team-member > h3:after {
+  .purple .team-member > h1:after {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .team-member > h3:after {
+  .blue .team-member > h1:after {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .team-member > h3:after {
+  .teal .team-member > h1:after {
     color: rgb(0, 207, 172); /* @teal */
   }
-  .green .team-member > h3:after {
+  .green .team-member > h1:after {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .team-member > h3:after {
+  .yellow .team-member > h1:after {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red  .team-member > h3:after {
+  .red  .team-member > h1:after {
     color: rgb(239, 20, 93); /* @red */
   }
   @media (min-width: 60em) {
@@ -1897,6 +2060,7 @@
       clear: both;
     }
     .team-member .details {
+      margin-top: 6em;
       width: 60%;
       float: left;
     }
@@ -1938,6 +2102,10 @@
 
   /* =Projects
   ----------------------------------------------- */
+  main.projects {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .projects .intro {
     background-color: rgb(0, 207, 172); /* @teal */
     color: white;
@@ -2000,13 +2168,13 @@
     }
   }
 
+  .projects .list {
+    margin-bottom: 0;
+  }
   .projects .intro,
   .projects .list {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
-  }
-  .projects .list {
-    margin-bottom: -1.5em;
   }
   .projects .intro,
   .projects .list li a {
@@ -2017,9 +2185,6 @@
     .projects .list {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
-    }
-    .projects .list {
-      margin-bottom: -2.2727272727em;
     }
     .projects .intro,
     .projects .list li a {
@@ -2073,7 +2238,7 @@
     color: rgb(239, 20, 93); /* @red */
   }
   .home .intro p,
-  main > h1.section + p,
+  body > nav p,
   .projects h1 + svg + p {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
@@ -2088,10 +2253,13 @@ margin-bottom: -1.5em;
 
 
   }
+  body > nav p {
+    margin: 0;
+  }
 
   @media (min-width: 40em) {
     .home .intro p,
-    main > h1.section + p,
+    body > nav p,
     .projects h1 + svg + p {
       margin-top: 2.25em;
       max-width: 17em;
@@ -2101,6 +2269,10 @@ margin-bottom: -1.5em;
 
 
     }
+    body > nav p {
+      margin-top: 0;
+      margin-bottom: 0.6111111111em; /* 22px / 36px */
+    }
   }
 
   .home .intro p {
@@ -2109,42 +2281,42 @@ margin-bottom: -1.5em;
     max-width: 22em;
   }
   .tangerine .home .intro p,
-  .tangerine main > h1.section + p,
+  .tangerine > nav p,
   .tangerine .projects h1 + svg + p {
     color: rgb(255, 80, 26); /* @tangerine */
   }
   .orange .home .intro p,
-  .orange main > h1.section + p,
+  .orange > nav p,
   .orange .projects h1 + svg + p {
     color: rgb(249, 132, 12); /* @orange */
   }
   .purple .home .intro p,
-  .purple main > h1.section + p,
+  .purple > nav p,
   .purple .projects h1 + svg + p {
     color: rgb(168, 46, 255); /* @purple */
   }
   .blue .home .intro p,
-  .blue main > h1.section + p,
+  .blue > nav p,
   .blue .projects h1 + svg + p {
     color: rgb(0, 157, 255); /* @blue */
   }
   .teal .home .intro p,
-  .teal main > h1.section + p,
+  .teal > nav p,
   .teal .projects h1 + svg + p {
     color: rgb(0, 207, 172); /* @teal */
   }
   .green .home .intro p,
-  .green main > h1.section + p,
+  .green > nav p,
   .green .projects h1 + svg + p {
     color: rgb(48, 217, 101); /* @green */
   }
   .yellow .home .intro p,
-  .yellow main > h1.section + p,
+  .yellow > nav p,
   .yellow .projects h1 + svg + p {
     color: rgb(255, 214, 13); /* @yellow */
   }
   .red .home .intro p,
-  .red main > h1.section + p,
+  .red > nav p,
   .red .projects h1 + svg + p {
     color: rgb(239, 20, 93); /* @red */
   }
@@ -2163,7 +2335,7 @@ margin-bottom: -1.5em;
     }
   }
   .home .intro p span,
-  main h1:first-child + p span,
+  body > nav p span,
   .projects h1 + svg + p span {
     color: rgb(41, 53, 56);
   }
@@ -2308,9 +2480,6 @@ margin-bottom: -1.5em;
 
   .project-details .details div ~ div {
     margin-top: 3em;
-  }
-  .project-details .intro {
-    margin-top: 1.5em;
   }
   .project-details .intro > div:first-child {
     font-size: 1.5em; /* 33px / 22px */
@@ -2767,29 +2936,29 @@ margin-bottom: -1.5em;
   }
   /*
   @media (max-width: 64.99999em) {
-    .philosophy aside {
+    .standard aside {
       text-align: center;
     }
-    .philosophy aside a.subscribe {
+    .standard aside a.subscribe {
       display: inline-block;
       vertical-align: bottom;
       margin-left: 1.5em;
       margin-right: 1.5em;
     }
-    .philosophy aside a.subscribe svg {
+    .standard aside a.subscribe svg {
       margin-left: auto;
       margin-right: auto;
     }
   }
   */
   @media (min-width: 65em) {
-    .philosophy aside a.subscribe {
+    .standard aside a.subscribe {
       position: relative;
       z-index: 1;
     }
-    .philosophy aside {
+    .standard aside {
       margin-top: -20em;
-      margin-bottom: -6.75em;
+      margin-bottom: -5.5em;
       max-width: calc(50% - 14em);
     }
   }
@@ -2827,11 +2996,13 @@ margin-bottom: -1.5em;
   blockquote p {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+    margin-top: 1.2222222222em;
+    margin-bottom: 1.2222222222em;
   }
   .quote[style] blockquote + .byline {
     text-align: right;
   }
-  .quote[style] {
+  main .quote[style] {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
     background-size: cover;
@@ -2840,7 +3011,8 @@ margin-bottom: -1.5em;
     position: relative;
     color: white;
     padding: 1.5em;
-    margin-bottom: -2.2727272727em; /* 50px / 22px */
+    margin-bottom: -1.5em;
+    max-width: none;
   }
   .quote[style]:before {
     content: "";
@@ -2868,14 +3040,15 @@ margin-bottom: -1.5em;
     max-width: 10em;
   }
   @media (min-width: 70em) {
-    .quote[style] {
+    main .quote[style] {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
+      margin-bottom: -4em;
       padding: 4em;
     }
   }
   @media (min-aspect-ratio: 1/1) {
-    .quote[style] {
+    main .quote[style] {
       padding-top: 15em;
       padding-bottom: 15em;
       padding-top: 30vh;
@@ -2888,88 +3061,5 @@ margin-bottom: -1.5em;
       margin-bottom: 0;
     }
   }
-
-
-  /* =Philosophy
-  ----------------------------------------------- */
-  .experimental .philosophy h2 {
-    position: absolute;
-
-    font-size: 2.1818181818em; /* 48px / 22px */
-    line-height: 1.1458333333; /* 55px / 48px */
-
-    max-width: calc(50% - 28em);
-  }
-  .experimental .philosophy .text {
-    margin-top: 3em;
-  }
-  .philosophy .text p,
-  .philosophy .quote blockquote p {
-    max-width: 28em;
-  }
-  .quote blockquote {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .philosophy .quote {
-    max-width: 40em;
-    margin-top: 4.5em;
-    margin-bottom: 4.5em;
-  }
-
-  .philosophy > h2.byline {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    font-style: italic;
-  }
-
-
-  @media (min-width: 82.5em) {
-    .philosophy .text,
-    .philosophy .quote {
-      /*
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 28em;
-      */
-      margin-left: calc(50% - 14em);
-    }
-    .philosophy .quote {
-      margin-left: calc(50% - 20em);
-    }
-    .philosophy {
-      margin-top: 3em;
-      padding-bottom: 3em;
-    }
-
-    .philosophy .text > p:first-child {
-      margin-top: 0;
-    }
-    .philosophy > h2,
-    .philosophy > h3 {
-      margin-top: 0;
-      position: absolute;
-      width: calc(50% - 10em);
-    }
-    .philosophy > h2.byline {
-      width: calc(50% - 20em);
-    }
-    .team-member-list {
-      margin-left: calc(50% - 14em);
-    }
-    .team-member-list ul {
-      margin-top: -1.5em;
-    }
-    .philosophy > h3 {
-      width: calc(50% - 12em);
-      font-style: italic;
-    }
-    .philosophy > h2 {
-      float: left;
-    }
-  }
-
 
 
