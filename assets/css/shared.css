@@ -971,7 +971,7 @@
   }
   header[style] > ul {
     position: relative;
-    z-index: 1; /* Just above the header[style]:before element */
+    z-index: 2; /* Just above the header[style]:before element and the featured-project-list */
   }
   header[style] a {
     color: inherit;
@@ -3541,7 +3541,7 @@ margin-bottom: -1.5em;
   .featured-project-list > li + li {
     margin-top: 0;
   }
-  .featured-project-list > li {
+  .featured-project-list > li a {
     display: block;
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
@@ -3555,6 +3555,10 @@ margin-bottom: -1.5em;
     padding-top: 45vh;
     padding-bottom: 5vh;
   }
+  .featured-project-list > li a div {
+    position: relative;
+    z-index: 1;
+  }
   .featured-project-list a h1 {
     margin-bottom: 0.5em;
   }
@@ -3563,11 +3567,15 @@ margin-bottom: -1.5em;
   .featured-project-list a[href]:focus {
     color: white;
   }
+  body:hover .featured-project-list > li a:after,
   body:hover .featured-project-list .meta,
   body:hover .featured-project-list .more {
     opacity: 0;
     transition: opacity 0.2s;
   }
+  body:hover .featured-project-list > li a:hover:after,
+  body:hover .featured-project-list > li a:active:after,
+  body:hover .featured-project-list > li a:focus:after,
   body:hover .featured-project-list a:hover  .meta,
   body:hover .featured-project-list a:active .meta,
   body:hover .featured-project-list a:focus  .meta,
@@ -3638,9 +3646,18 @@ margin-bottom: -1.5em;
     font-size: 0.75em;
     vertical-align: middle;
   }
-  .featured-project-list > li:before {
+  .featured-project-list > li a:before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.25);    
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .featured-project-list > li a:after {
+    content: "";  
     background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40));
     position: absolute;
     top: 0;
@@ -3650,7 +3667,7 @@ margin-bottom: -1.5em;
     z-index: 0;
   }
   @media (min-width: 70em) {
-    .featured-project-list > li {
+    .featured-project-list > li a {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       width: calc(100% + 8em); /* margin x 2 */
