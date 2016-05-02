@@ -394,7 +394,8 @@
 
   // If we’ve moved past the featured items
 
-  var lastFeaturedItem = document.querySelector('.featured-project-list > li:last-child');
+  var featuredItems = document.querySelectorAll('.featured-project-list > li');
+  var lastFeaturedItem = featuredItems[featuredItems.length - 1];
   var featuredItemsHeight;
   var header = document.querySelector('header');
   var logo = header.querySelector('h2');
@@ -403,6 +404,7 @@
   var logoOffsetTop;
   var navOffsetTop;
   var headlineOffsetTop;
+  var featuredItemTopPositions = [];
 
   // Switch the header to position absolute
   // Calculate the current position of the header elements and apply them as “top” styles
@@ -430,6 +432,11 @@
     logoOffsetTop = logo.offsetTop;
     navOffsetTop = nav.offsetTop;
     headlineOffsetTop = headline.offsetTop;
+
+    for (var index = 0; index < featuredItems.length; index++) {
+      console.log(featuredItems[index]);
+      featuredItemTopPositions[index] = getAbsolutePositionY(featuredItems[index]);
+    }
   }
 
   function updatePositions() {
@@ -447,10 +454,32 @@
     }
   }
 
+  function updateOpacity() {
+
+    for (var index = 0; index < featuredItems.length; index++) {
+
+      // If the next item is fully visible, show its name
+      if (scrollY > featuredItemTopPositions[index] - 600 && scrollY < featuredItemTopPositions[index] + 50) {
+        featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
+
+      // Else hide it
+      } else if (index < featuredItems.length - 1) { // unless this is the last item
+        if (featuredItems[index].className.indexOf('hidden-text') < 0) {
+          featuredItems[index].className += ' hidden-text';
+        }
+      }
+    }
+
+  }
+
   updateContentHeight();
   updatePositions();
+  updateOpacity();
 
-  window.addEventListener('scroll', updatePositions, false);
+  window.addEventListener('scroll', function() {
+    updatePositions();
+    updateOpacity();
+  }, false);
 
   /*
   http://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
@@ -474,6 +503,7 @@
   window.addEventListener('load', function() {
     updateContentHeight();
     updatePositions();
+    updateOpacity();
   }, false);
 
   (function() {
@@ -483,6 +513,7 @@
       throttle = setTimeout(function() {
         updateContentHeight();
         updatePositions();
+        updateOpacity();
       }, 100);
     }, false);
   })();

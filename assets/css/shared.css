@@ -3532,6 +3532,13 @@ margin-bottom: -1.5em;
     position: fixed;
   }
 
+  .featured-project-list > li a div {
+    transition: opacity 0.2s;
+  }
+  .featured-project-list > li.hidden-text a div {
+    opacity: 0;
+  }
+
   main.home {
     padding-top: 0;
   }
