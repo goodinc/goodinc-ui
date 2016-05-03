@@ -1444,6 +1444,41 @@
   }
   */
 
+  @media (min-width: 40em) {
+    footer div:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer .map,
+    footer .map.locations {
+      float: right;
+    }
+  }
+  @media (false) and (min-width: 40em) {
+    footer .map.locations {
+      display: -webkit-flex;
+      display:         flex;
+
+      /*
+      -webkit-flex-direction: row;
+              flex-direction: row;
+              */
+
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    footer .map.locations li {
+      flex-basis: 23.5%;
+      width: auto;
+      margin-left: 0;
+    }
+  }
+
+
   /* Contact links */
   footer .good-can-help {
     background-color: transparent !important;
