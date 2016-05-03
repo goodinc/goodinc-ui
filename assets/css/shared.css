@@ -1368,6 +1368,8 @@
   footer .map > li ul {
     margin-top: 1.2222222222em;
   }
+
+  footer .map > li p,
   footer .map > li li {
     margin-top: 0.6111111111em;
     font-weight: 300;
@@ -1379,7 +1381,9 @@
   footer .map > li {
     margin-bottom: 1.5em;
   }
-  footer .map > li > a {
+  footer .map > li > a,
+  footer .map > li > h4 {
+    margin-top: 0;
     border-top: 1px solid;
     border-top-color: rgba(192, 204, 207, 0.25);
     padding-top: 0.6111111111em;
@@ -1425,6 +1429,7 @@
       margin-left: 2%;
     }
   }
+  /*
   @media (min-width: 100em) {
     footer .subscribe {
       width: 15%;
@@ -1437,6 +1442,7 @@
       margin-left: 2%;
     }
   }
+  */
 
   /* Contact links */
   footer .good-can-help {
