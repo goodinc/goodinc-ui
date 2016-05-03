@@ -3538,6 +3538,11 @@ margin-bottom: -1.5em;
   .featured-project-list > li.hidden-text a div {
     opacity: 0;
   }
+  .featured-project-list > li.hidden-text a:hover div,
+  .featured-project-list > li.hidden-text a:active div,
+  .featured-project-list > li.hidden-text a:focus div {
+    opacity: 1;
+  }
 
   main.home {
     padding-top: 0;

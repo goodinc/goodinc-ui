@@ -459,11 +459,12 @@
     for (var index = 0; index < featuredItems.length; index++) {
 
       // If the next item is fully visible, show its name
-      if (scrollY > featuredItemTopPositions[index] - 600 && scrollY < featuredItemTopPositions[index] + 50) {
+      var itemHeight = featuredItems[index].offsetHeight;
+      if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
         featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
 
       // Else hide it
-      } else if (index < featuredItems.length - 1) { // unless this is the last item
+      } else { // unless this is the last item
         if (featuredItems[index].className.indexOf('hidden-text') < 0) {
           featuredItems[index].className += ' hidden-text';
         }
