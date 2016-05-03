@@ -1478,6 +1478,12 @@
     color: rgb(239, 20, 93) !important; /* @red */
   }
 
+  footer .good-can-help a:hover,
+  footer .good-can-help a:active,
+  footer .good-can-help a:focus {
+    color: white !important;
+  }
+
 
   /* =Main
   ----------------------------------------------- */
