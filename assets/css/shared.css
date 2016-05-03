@@ -1450,6 +1450,9 @@
       display: table;
       clear: both;
     }
+    footer .subscribe {
+      float: left;
+    }
     footer .map,
     footer .map.locations {
       float: right;
@@ -2861,8 +2864,10 @@ margin-bottom: -1.5em;
     margin-top: 1px;
     padding: 0;
     max-width: none;
+    /*
     background-color: rgb(225, 225, 225);
     background-color: #F9EBFF;
+    */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -2879,19 +2884,69 @@ margin-bottom: -1.5em;
     font-style: normal;
     color: inherit;
     background-color: rgb(230, 250, 240);
+    background-color: rgb(228, 234, 237);
+    background-color: transparent;
   }
+  /*
   .orange .projects .list li a {
     background-color: rgb(250, 240, 230);
   }
   .purple .projects .list li a {
     background-color: rgb(240, 230, 250);
   }
+  */
+  /*
   .projects .list li a:hover,
   .projects .list li a:active,
   .projects .list li a:focus {
     background-color: transparent;
     color: white;
   }
+  */
+
+  .tangerine .projects .list li a:hover,
+  .tangerine .projects .list li a:active,
+  .tangerine .projects .list li a:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .projects .list li a:hover,
+  .orange .projects .list li a:active,
+  .orange .projects .list li a:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .projects .list li a:hover,
+  .purple .projects .list li a:active,
+  .purple .projects .list li a:focus {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .projects .list li a:hover,
+  .blue .projects .list li a:active,
+  .blue .projects .list li a:focus {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .projects .list li a:hover,
+  .teal .projects .list li a:active,
+  .teal .projects .list li a:focus {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green .projects .list li a:hover,
+  .green .projects .list li a:active,
+  .green .projects .list li a:focus {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .projects .list li a:hover,
+  .yellow .projects .list li a:active,
+  .yellow .projects .list li a:focus {
+    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .projects .list li a:hover,
+  .red .projects .list li a:active,
+  .red .projects .list li a:focus {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+
   .projects .list li h3 {
     margin: 0;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
@@ -2908,30 +2963,61 @@ margin-bottom: -1.5em;
   .projects .list dd {
     margin-left: 0;
   }
-  @media (min-width: 60em) {
-    .projects .list li {
-      position: relative;
-    }
-    .projects .list dl {
-      position: absolute;
-      top: -0.375em;
-      right: 12em;
-    }
-    .projects .list dl + dl {
-      right: 1.5em;
-    }
-  }
+  /*
   @media (min-width: 70em) {
     .projects .list li {
       position: relative;
     }
     .projects .list dl {
       position: absolute;
-      top: 0.65em;
-      right: 15em;
+      top: -0.375em;
+      left: 70%;
     }
     .projects .list dl + dl {
-      right: 3em;
+      left: auto;
+      right: 1.5em;
+    }
+  }
+  @media (min-width: 60em) {
+    .projects .list li {
+      position: relative;
+    }
+    .projects .list dl {
+      position: absolute;
+      top: 0.65em;
+      left: 70%;
+    }
+    .projects .list dl + dl {
+      left: 85%;
+    }
+  }
+  */
+  @media (min-width: 70em) {
+    .projects .list li a {
+      display: block;
+      position: relative;
+      padding-right: 40%;
+    }
+    .projects .list dl {
+      position: absolute;
+      top: 0.65em;
+      left: 60%;
+    }
+    .projects .list dl + dl {
+      left: 80%;
+    }
+  }
+  @media (min-width: 80em) {
+    .projects .list li {
+      position: relative;
+    }
+    .projects .list dl {
+      position: absolute;
+      top: 0.65em;
+      left: 60%;
+    }
+    .projects .list dl + dl {
+      left: 80%;
     }
   }
 
