@@ -1438,6 +1438,46 @@
     }
   }
 
+  /* Contact links */
+  footer .good-can-help {
+    background-color: transparent !important;
+    margin-top: -6em;
+    margin-bottom: -3em;
+  }
+  footer .good-can-help a {
+    text-decoration: underline;
+    text-transform: none;
+    color: inherit !important; /* @green */
+  }
+  footer .good-can-help a span {
+    color: inherit !important;
+  }
+
+  .tangerine footer .good-can-help a {
+    color: rgb(249, 132, 12) !important; /* @orange */
+  }
+  .orange footer .good-can-help a {
+    color: rgb(249, 132, 12) !important; /* @orange */
+  }
+  .purple footer .good-can-help a {
+    color: rgb(168, 46, 255) !important; /* @purple */
+  }
+  .blue footer .good-can-help a {
+    color: rgb(0, 157, 255) !important; /* @blue */
+  }
+  .teal footer .good-can-help a {
+    color: rgb(0, 207, 172) !important; /* @teal */
+  }
+  .green footer .good-can-help a {
+    color: rgb(48, 217, 101) !important; /* @green */
+  }
+  .yellow footer .good-can-help a {
+    color: rgb(255, 214, 13) !important; /* @yellow */
+  }
+  .red footer .good-can-help a {
+    color: rgb(239, 20, 93) !important; /* @red */
+  }
+
 
   /* =Main
   ----------------------------------------------- */
