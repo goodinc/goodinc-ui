@@ -1543,7 +1543,7 @@
   /* Contact links */
   footer .good-can-help {
     background-color: transparent !important;
-    margin-top: -0em;
+    margin-top: -1.5em;
     margin-bottom: -0em;
   }
   @media (min-width: 70em) {
