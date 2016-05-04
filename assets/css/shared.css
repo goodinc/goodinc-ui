@@ -1079,11 +1079,13 @@
 
 
   /* OPTIONAL: Make the navigation a little smaller on tiny screens */
+  /*
   @media (max-width: 30em) {
     header ul {
       font-size: 0.75em;
     }
   }
+  */
 
   header ~ main > .header h1 {
     margin-bottom: 0;
@@ -2878,7 +2880,6 @@ margin-bottom: -1.5em;
   body > nav p {
     margin: 0;
     margin-bottom: 0.6111111111em; /* 22px / 36px */
-    margin-right: 3em;
   }
 
   @media (min-width: 40em) {
