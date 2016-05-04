@@ -1920,9 +1920,11 @@
   .featured-project-list {
     margin-bottom: 3em;
   }
+  /*
   .featured-project-list li + li {
     margin-top: 3em;
   }
+  */
   .featured-project-list li h2 {
     font-family: inherit;
     font-size: 1.6363636364em; /* 36px / 22px */
@@ -3864,11 +3866,16 @@ margin-bottom: -1.5em;
   }
   .featured-project-list a .meta ul {
     color: inherit;
+    margin-bottom: 0;
   }
   .featured-project-list a .more {
     color: rgb(0, 207, 172); /* @teal */
     text-align: right;
+    /*
     max-width: 90%;
+    */
+    margin-top: 0;
+    max-width: none;
   }
   .tangerine .featured-project-list a .more {
     color: rgb(255, 80, 26); /* @tangerine */
@@ -3996,7 +4003,7 @@ margin-bottom: -1.5em;
       margin: 0;
       position: absolute;
       top: 1.575em;
-      right: 40%;
+      left: 50%;
     }
     .featured-project-list .more {
       right: 10%;
@@ -4006,15 +4013,26 @@ margin-bottom: -1.5em;
 
 
   .home .intro figure {
-    margin: 0;
+    margin: -6em 0 -4.5em;
   }
-  .home .intro svg {
+  .home .intro figure svg {
     max-width: 100%;
     max-width: calc(100% - 3em);
     width: 24em;
     height: 24em;
-    position: absolute;
-    z-index: -1;
+  }
+  @media (min-width: 50em) {
+    .home .intro {
+      position: relative;
+    }
+    .home .intro figure {
+      margin: 0;
+    }
+    .home .intro figure svg {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+    }
   }
   .tangerine .home .intro svg {
     color: rgb(255, 80, 26); /* @tangerine */
