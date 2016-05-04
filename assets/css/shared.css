@@ -385,7 +385,7 @@
   button,
   .action a,
   a .action span,
-  header > ul > li > a {
+  header .nav li > a {
     display: inline-block;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
@@ -401,62 +401,62 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
   }
-  header > ul > li > a {
+  header .nav li > a {
     padding: 0.8888888889em 1.5555555556em;  /* 11px / 18px*/     /* 22px / 18px */
   }
   .tangerine button,
   .tangerine .action a,
   .tangerine a .action span,
-  .tangerine header > ul > li > a {
+  .tangerine header .nav li > a {
     background-color: rgb(255, 80, 26); /* @tangerine */
     color: white;
   }
   .orange button,
   .orange .action a,
   .orange a .action span,
-  .orange header > ul > li > a {
+  .orange header .nav li > a {
     background-color: rgb(249, 132, 12); /* @orange */
     color: white;
   }
   .purple button,
   .purple .action a,
   .purple a .action span,
-  .purple header > ul > li > a {
+  .purple header .nav li > a {
     background-color: rgb(168, 46, 255); /* @purple */
     color: white;
   }
   .blue button,
   .blue .action a,
   .blue a .action span,
-  .blue header > ul > li > a {
+  .blue header .nav li > a {
     background-color: rgb(0, 157, 255); /* @blue */
     color: white;
   }
   .teal button,
   .teal .action a,
   .teal a .action span,
-  .teal header > ul > li > a {
+  .teal header .nav li > a {
     background-color: rgb(0, 207, 172); /* @teal */
     color: white;
   }
   .green button,
   .green .action a,
   .green a .action span,
-  .green header > ul > li > a {
+  .green header .nav li > a {
     background-color: rgb(48, 217, 101); /* @green */
     color: white;
   }
   .yellow button,
   .yellow .action a,
   .yellow a .action span,
-  .yellow header > ul > li > a {
+  .yellow header .nav li > a {
     background-color: rgb(255, 214, 13); /* @yellow */
     color: inherit;
   }
   .red button,
   .red .action a,
   .red a .action span,
-  .red header > ul > li > a {
+  .red header .nav li > a {
     background-color: rgb(239, 20, 93); /* @red */
     color: white;
   }
@@ -551,10 +551,10 @@
   a .action span:hover,
   a .action span:active,
   a .action span:focus,
-  header > ul > li.active > a,
-  header > ul > li > a[href]:hover,
-  header > ul > li > a[href]:active,
-  header > ul > li > a[href]:focus {
+  header .nav li.active > a,
+  header .nav li > a[href]:hover,
+  header .nav li > a[href]:active,
+  header .nav li > a[href]:focus {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill-opacity="0.1"></rect></svg>');
     color: white;
   }
@@ -567,10 +567,10 @@
   .yellow a .action span:hover,
   .yellow a .action span:active,
   .yellow a .action span:focus,
-  .yellow header > ul > li.active > a,
-  .yellow header > ul > li > a[href]:hover,
-  .yellow header > ul > li > a[href]:active,
-  .yellow header > ul > li > a[href]:focus {
+  .yellow header .nav li.active > a,
+  .yellow header .nav li > a[href]:hover,
+  .yellow header .nav li > a[href]:active,
+  .yellow header .nav li > a[href]:focus {
     color: inherit;
   }
 
@@ -956,10 +956,76 @@
 
   /* =Navigation
   ----------------------------------------------- */
-  header > ul {
+  header > .nav {
     position: absolute;
     right: 0;
     z-index: 1;
+    text-align: right;
+  }
+
+  /*
+  header .nav h3 {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 0.375em;
+    text-align: right;
+  }
+  */
+
+  header .nav label {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 0.125em 0.25em;
+    margin-bottom: 0.375em;
+  }
+
+  header .nav input {
+    position: absolute;
+    left: -9999px;
+  }
+  header .nav input:not(:checked) ~ ul {
+    display: none;
+  }
+
+  @media (max-width: 30em) {
+    header .nav {
+      top: 0;
+    }
+  }
+  @media (min-width: 30em) {
+    header .nav input,
+    header .nav label {
+      display: none;
+    }
+    header .nav input:not(:checked) ~ ul {
+      display: block;
+    }
+  }
+
+  .tangerine header .nav label {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange header .nav label {
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple header .nav label {
+    background-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue header .nav label {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal header .nav label {
+    background-color: rgb(0, 207, 172); /* @teal */
+  }
+  .green header .nav label {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow header .nav label {
+    background-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red header .nav label {
+    background-color: rgb(239, 20, 93); /* @red */
   }
 
   header {
@@ -1004,10 +1070,10 @@
     text-align: right;
     max-width: none;
   }
-  header > ul > li + li {
+  header .nav li + li {
     margin-top: 0.375em;
   }
-  header > ul > li li a {
+  header .nav li li a {
     margin-right: 0.375em;
   }
 
