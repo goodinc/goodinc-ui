@@ -70,7 +70,7 @@
 -->
 
   <ul class="featured-project-list">
-    <li style="background-image: url(../assets/images/projects/earth-to-paris.png)">
+    <li style="background-image: url(../assets/images/projects/earth-to-paris.png)" class="teal">
       <a href="project-details.html">
         <div>
           <h2><span>Earth to Paris</span></h2>
@@ -94,7 +94,7 @@
         </div>
       </a>
     </li>
-    <li style="background-image: url(../assets/images/projects/sports-matter.png)">
+    <li style="background-image: url(../assets/images/projects/sports-matter.png)" class="tangerine">
       <a href="project-details.html">
         <div>
           <h2><span>DICK’s – Sports Matter</span></h2>
@@ -118,7 +118,7 @@
         </div>
       </a>
     </li>
-    <li style="background-image: url(../assets/images/projects/girl-scouts-2.jpg)">
+    <li style="background-image: url(../assets/images/projects/girl-scouts-2.jpg)" class="green">
       <a href="project-details.html">
         <div>
           <h2><span>Girl Scouts – ToGetHerThere</span></h2>
@@ -390,6 +390,9 @@
 
 <script>
 (function() {
+
+return;
+
   var colors = ['tangerine', 'orange', 'purple', 'blue', 'teal', 'green', 'yellow', 'red'];
 
   // KUDOS: http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range#answer-1527820
@@ -481,6 +484,7 @@
       var itemHeight = featuredItems[index].offsetHeight;
       if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
         featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
+        document.body.className = featuredItems[index].className;
 
       // Else hide it
       } else { // unless this is the last item
@@ -488,6 +492,7 @@
           featuredItems[index].className += ' hidden-text';
         }
       }
+
     }
 
   }
