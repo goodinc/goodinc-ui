@@ -1078,12 +1078,17 @@
       color: white;
     }
     header[style] ~ main > .header {
-      top: 9em;
+      top: 10em;
     }
     header[style] ~ main > .header + p,
     header[style] ~ main > h1:first-child + p {
       margin-top: 0;
     }
+  }
+
+  /* SHIM: Avoid colliding with the navigation */
+  .project-details .header {
+    margin-right: 6em;
   }
 
 
