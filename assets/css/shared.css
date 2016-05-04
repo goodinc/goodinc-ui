@@ -1021,7 +1021,41 @@
 
   header ~ main > .header h1 {
     margin-bottom: 0;
+    text-decoration: underline;
   }
+  header ~ main > .header h1 span {
+    color: rgb(42, 53, 56);
+    color: rgba(0, 0, 0, 0.8);
+  }
+  header[style] ~ main > .header h1 span {
+    color: white;
+  }
+
+  .tangerine header ~ main > .header h1 {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange header ~ main > .header h1 {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple header ~ main > .header h1 {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue header ~ main > .header h1 {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal header ~ main > .header h1 {
+    color: rgb(0, 207, 172); /* @teal */
+  }
+  .green header ~ main > .header h1 {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow header ~ main > .header h1 {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red header ~ main > .header h1 {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
   header ~ main > .header h2 {
     margin-top: 0.375em;
     font-style: italic;
@@ -1044,7 +1078,7 @@
       color: white;
     }
     header[style] ~ main > .header {
-      top: 6em;
+      top: 9em;
     }
     header[style] ~ main > .header + p,
     header[style] ~ main > h1:first-child + p {
