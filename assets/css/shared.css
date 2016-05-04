@@ -987,6 +987,15 @@
   header .nav input:not(:checked) ~ ul {
     display: none;
   }
+  header .nav .icon.hide {
+    display: none;
+  }
+  header .nav input:checked ~ label .icon.show {
+    display: none;
+  }
+  header .nav input:checked ~ label .icon.hide {
+    display: inline;
+  }
 
   @media (max-width: 30em) {
     header .nav {
