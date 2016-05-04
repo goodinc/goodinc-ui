@@ -2719,6 +2719,9 @@
   .projects .list li a {
     padding: 1.5em;
   }
+  .projects .intro {
+    padding-bottom: 3em;
+  }
   @media (min-width: 70em) {
     .projects .intro,
     .projects .list {
@@ -2727,7 +2730,10 @@
     }
     .projects .intro,
     .projects .list li a {
-      padding: 2.2727272727em 4em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+    }
+    .projects .intro {
+      padding-bottom: 4em;
     }
   }
   .projects .intro h2 {
