@@ -2727,7 +2727,7 @@
     }
     .projects .intro,
     .projects .list li a {
-      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding: 2.2727272727em 4em 4em; /* 50px / 22px */     /* 88px / 22px */
     }
   }
   .projects .intro h2 {
