@@ -3913,7 +3913,7 @@ margin-bottom: -1.5em;
     }
   }
   header.home[style] > h2,
-  header.home[style] > ul,
+  header.home[style] > .nav,
   header.home[style] + main > h1:first-child {
     position: absolute;
   }
