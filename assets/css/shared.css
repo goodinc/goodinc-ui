@@ -2043,11 +2043,22 @@
     display: block;
     margin-bottom: 0.75em;
     width: 100%;
-    height: 15em;
-    object-fit: cover;
+  }
+
+  /* SHIM: Only show the first few articles on the home page */
+  @media (max-width: 59.9em) {
+    .articles li.hidden-on-small-screens {
+      display: none;
+    }
   }
 
   @media (min-width: 60em) {
+    @supports (object-fit: cover) {
+      .articles li img {
+        height: 15em;
+        object-fit: cover;
+      }
+    }
     .articles li {
       display: inline-block;
       vertical-align: top;
