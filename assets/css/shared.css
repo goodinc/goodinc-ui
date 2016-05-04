@@ -2238,9 +2238,22 @@
       display: inline-block;
       vertical-align: top;
     }
+    .good-can-help h2 {
+      text-align: right;
+    }
     .good-can-help ul {
       margin-left: 0.75em;
       text-align: left;
+    }
+
+    /* SHIM: Attempt to line up the two “good can help” sections on the home page. */
+    .home .good-can-help h2,
+    .home ~ footer .good-can-help h2 {
+      min-width: 50%;
+    }
+    .home .good-can-help ul,
+    .home ~ footer .good-can-help ul {
+      min-width: 45%;
     }
   }
 
