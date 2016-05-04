@@ -1431,7 +1431,6 @@
   footer .map > li p,
   footer .map > li li {
     margin-top: 0.6111111111em;
-    font-weight: 300;
   }
   footer li a {
     text-decoration: none;
@@ -3383,7 +3382,7 @@ margin-bottom: -1.5em;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(166, 180, 184);
     color: rgba(0, 0, 0, 0.5);
-    font-weight: 600;
+    font-weight: bold;
   }
   .project-details .highlights .secondary a {
     font-style: inherit;
