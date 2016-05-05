@@ -1069,7 +1069,7 @@
   /* SHIM: Make more space for the page title on tiny screens */
   @media (max-width: 20em) {
     header[style] {
-      min-height: 80vh;
+      min-height: 85vh;
     }
   }
 
