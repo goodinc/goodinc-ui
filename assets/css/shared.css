@@ -330,6 +330,12 @@
     margin-bottom: 0.9166666667em;
   }
 
+  p.note {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    font-style: italic;
+  }
+
   .phrase {
     /* avoid line break */
     display: inline-block;
