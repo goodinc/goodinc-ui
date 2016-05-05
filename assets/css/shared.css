@@ -2301,7 +2301,7 @@
     opacity: 0.8;
   }
   .good-can-help h2:after {
-    content: "…";
+    content: ":";
   }
   .good-can-help ul {
     margin-top: 0;
