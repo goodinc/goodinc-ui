@@ -705,7 +705,8 @@
       margin-bottom: 4em;
     }
     .standard .team-member-list:last-of-type,
-    .standard .quote {
+    .standard .quote,
+    .standard figure {
       margin-bottom: 8em;
     }
   }
@@ -3998,6 +3999,7 @@ margin-bottom: -1.5em;
   .featured-project-list a[href]:focus {
     color: white;
   }
+  /*
   body:hover .featured-project-list > li a:after,
   body:hover .featured-project-list .meta,
   body:hover .featured-project-list .more {
@@ -4015,6 +4017,7 @@ margin-bottom: -1.5em;
   body:hover .featured-project-list a:focus  .more {
     opacity: 1;
   }
+  */
   .featured-project-list a .meta ul {
     color: inherit;
     margin-bottom: 0;
