@@ -960,8 +960,14 @@
   header > .nav {
     position: absolute;
     right: 0;
+    top: 1.5em;
     z-index: 3; /* Just above the page title on the articles page */
     text-align: right;
+  }
+  @media (min-width: 60em) {
+    header > .nav {
+      top: 2.2727272727em; /* 50px / 22px */
+    }
   }
 
   /*
