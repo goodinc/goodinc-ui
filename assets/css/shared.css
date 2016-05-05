@@ -157,7 +157,7 @@
     margin-top: 0.6em; /* 33px / 55px */
     margin-bottom: 0.6em;
   }
-  @media (min-width: 50em) {
+  @media (min-width: 70em) {
     h1 {
       font-size: 3.7272727273em; /* 82px / 22px */
       line-height: 1.2073170732em; /* 99px / 82px */
@@ -1063,11 +1063,14 @@
     min-height: 70vh;
     box-sizing: border-box;
   }
-  @media (max-width: 25em) {
+
+  /* SHIM: Make more space for the page title on tiny screens */
+  @media (max-width: 20em) {
     header[style] {
-      min-height: 85vh;
+      min-height: 80vh;
     }
   }
+
   header[style]:before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
