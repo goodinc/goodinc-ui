@@ -626,21 +626,6 @@
     }
   */
 
-  /* SHIM: This happens to fit the current navigation */
-  main {
-    margin-top: 7.5em;
-  }
-  header[style] ~ main,
-  nav + main,
-  main.project-details {
-    margin-top: 0;
-  }
-  @media (min-width: 50em) {
-    main {
-      margin-top: 0;
-    }
-  }
-
   main h1:first-child {
     margin-top: 0;
   }
