@@ -541,6 +541,9 @@
   form {
     margin-top: 3em;
   }
+  h1 + form {
+    margin-top: 0;
+  }
 
   input[type="text"],
   input[type="email"],
@@ -1541,9 +1544,14 @@
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
     font-style: italic;
+    max-width: 10em;
+  }
+  aside .subscribe.daily-good form {
+    margin-top: 0;
   }
   aside .subscribe.daily-good input {
     margin-bottom: 0.375em;
+    max-width: 10em;
   }
 
   footer .map > li ul {
