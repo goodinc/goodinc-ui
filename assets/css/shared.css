@@ -1183,12 +1183,20 @@
       margin-top: 0;
     }
   }
+  @media (min-height: 50em) {
+    header[style] ~ main > .header {
+      top: 12em;
+      margin-right: 8em;
+      top: 25vh;
+    }
+    header[style] ~ main > h1:first-child {
+      top: 7em;
+    }
+  }
   @media (min-width: 70em) {
     header[style] ~ main > .header {
       margin-right: 4em;
       top: 10em;
-    }
-    header[style] ~ main > h1:first-child {
     }
   }
   @media (min-width: 70em) and (min-aspect-ratio: 1/1) {
@@ -4143,6 +4151,12 @@ margin-bottom: -1.5em;
     width: 100%;
     height: 100%;
     z-index: 0;
+  }
+  @media (min-height: 50em) {
+    .featured-project-list > li a {
+      padding-top: 49vh;
+      padding-bottom: 34vh;
+    }
   }
   @media (min-width: 70em) {
     .featured-project-list > li {
