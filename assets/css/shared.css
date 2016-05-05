@@ -3327,7 +3327,7 @@ margin-bottom: -1.5em;
   .project-details .highlights {
     margin-top: 3em;
   }
-  figure.movie {
+  .standard > figure {
     width: auto;
     max-width: none;
   }
@@ -3336,32 +3336,34 @@ margin-bottom: -1.5em;
     width: auto;
     max-width: none;
   }
-  figure.movie iframe,
+  .standard > figure img,
+  .standard > figure iframe,
   .project-details .highlights + figure img,
   .project-details .highlights + figure iframe {
-
-    /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
-    height: 24em;
-    height: 70vh;
 
     margin-left: -1.5em;
     margin-right: -1.5em;
     width: calc(100% + 3em);
     max-width: none;
   }
-  main > figure.movie:last-child {
+  .standard > figure.movie:last-child {
     margin-bottom: -3em;
   }
+  .standard > figure iframe,
+  .project-details .highlights + figure iframe {
+
+    /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
+    height: 24em;
+    height: 70vh;
+  }
   @media (min-width: 60em) {
-    figure.movie iframe,
+    .standard > figure img,
+    .standard > figure iframe,
     .project-details .highlights + figure img,
     .project-details .highlights + figure iframe {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
       width: calc(100% + 8em); /* margin x 2 */
-    }
-    main > figure.movie:last-child {
-      margin-bottom: -8em;
     }
   }
 
