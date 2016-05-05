@@ -876,7 +876,7 @@
     font-size: inherit;
     margin: 0;
     position: absolute;
-    z-index: 3; /* Just above the h1:first-child element */
+    z-index: 4; /* Just above the main navigation */
   }
   header h2 svg {
     fill: currentColor;
@@ -916,14 +916,39 @@
   /* =Navigation
   ----------------------------------------------- */
   header > .nav {
-    position: absolute;
-    right: 0;
-    top: 1.5em;
+    position: relative;
     z-index: 3; /* Just above the page title on the articles page */
     text-align: right;
   }
-  @media (min-width: 60em) {
+
+  /* SHIM: This is wrapped in @supports so it will be ignored by old android and iOS phones, which have trouble with the “:checked” rules. */
+  @supports (position: absolute) {
     header > .nav {
+      position: absolute;
+      right: 0;
+      top: 1.5em;
+    }
+  }
+
+  /* SHIM: Always position the nav absolutely on big screens */
+  @media (min-width: 30em) {
+    header > .nav {
+      position: absolute;
+      right: 0;
+      top: 1.5em;
+    }
+  }
+
+  /* SHIM: Always position the nav absolutely on the home page */
+  header.home > .nav {
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+  }
+
+  @media (min-width: 60em) {
+    header > .nav,
+    header.home > .nav {
       top: 2.2727272727em; /* 50px / 22px */
     }
   }
@@ -961,31 +986,42 @@
     position: absolute;
     left: -9999px;
   }
-  header .nav input:not(:checked) ~ ul {
+
+  header .nav label {
     display: none;
-  }
-  header .nav .icon.hide {
-    display: none;
-  }
-  header .nav input:checked ~ label .icon.show {
-    display: none;
-  }
-  header .nav input:checked ~ label .icon.hide {
-    display: inline;
   }
 
-  @media (max-width: 30em) {
-    header .nav {
-      top: 0;
-    }
-  }
-  @media (min-width: 30em) {
-    header .nav input,
+  /* SHIM: This is wrapped in @supports so it will be ignored by old android and iOS phones, which have trouble with the “:checked” rules. */
+  @supports (position: absolute) {
     header .nav label {
-      display: none;
+      display: inline-block;
     }
     header .nav input:not(:checked) ~ ul {
-      display: block;
+      display: none;
+    }
+    header .nav .icon.hide {
+      display: none;
+    }
+    header .nav input:checked ~ label .icon.show {
+      display: none;
+    }
+    header .nav input:checked ~ label .icon.hide {
+      display: inline;
+    }
+
+    @media (max-width: 30em) {
+      header .nav {
+        top: 0;
+      }
+    }
+    @media (min-width: 30em) {
+      header .nav input,
+      header .nav label {
+        display: none;
+      }
+      header .nav input:not(:checked) ~ ul {
+        display: block;
+      }
     }
   }
 
@@ -1009,6 +1045,7 @@
   }
   .yellow header .nav label {
     background-color: rgb(255, 214, 13); /* @yellow */
+    color: inherit;
   }
   .red header .nav label {
     background-color: rgb(239, 20, 93); /* @red */
@@ -2426,11 +2463,14 @@
   .team-member-list li p {
     max-width: none;
   }
+
+  /* SHIM: This is prefixed with “main” so IE8 will ignore it. (This is optional. Feel free to simplify.) */
   main .team-member-list li img {
     width: 100%;
     max-width: 15em;
     height: auto;
   }
+
   @media (min-width: 20em) {
     .team-member-list li {
       width: 50%;
