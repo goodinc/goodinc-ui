@@ -2074,6 +2074,7 @@
   .featured-project-list li h2 span {
     color: white;
   }
+
   .featured-project-list li p {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
@@ -4059,6 +4060,32 @@ margin-bottom: -1.5em;
     color: inherit !important;
   }
   */
+
+  .featured-project-list a .more,
+  .featured-project-list a h2,
+  .featured-project-list a h2 span {
+    transition: color 0.2s;
+  }
+  /*
+  .featured-project-list a:hover  .more,
+  .featured-project-list a:active .more,
+  .featured-project-list a:focus  .more {
+    color: white !important;
+  }
+  */
+  /*
+  .featured-project-list a:hover  h2,
+  .featured-project-list a:active h2,
+  .featured-project-list a:focus  h2 {
+    color: white !important;
+  }
+  */
+  .featured-project-list a:hover  h2 span,
+  .featured-project-list a:active h2 span,
+  .featured-project-list a:focus  h2 span {
+    color: inherit;
+  }
+
   .featured-project-list a .more span {
     display: inline-block;
     border: 2px solid;

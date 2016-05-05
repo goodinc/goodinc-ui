@@ -20,7 +20,7 @@
   <meta name="msapplication-TileImage" content="../assets/images/mstile-310x310.png" />
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
 </head>
-<body class="orange">
+<body class="teal">
 
 <header class="home" style="">
   <h2>
@@ -474,7 +474,6 @@ return;
     headlineOffsetTop = headline.offsetTop;
 
     for (var index = 0; index < featuredItems.length; index++) {
-      console.log(featuredItems[index]);
       featuredItemTopPositions[index] = getAbsolutePositionY(featuredItems[index]);
     }
   }
@@ -502,12 +501,12 @@ return;
       var itemHeight = featuredItems[index].offsetHeight;
       if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
         featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
-        document.body.className = featuredItems[index].className;
+        //document.body.className = featuredItems[index].className;
 
       // Else hide it
       } else { // unless this is the last item
         if (featuredItems[index].className.indexOf('hidden-text') < 0) {
-          featuredItems[index].className += ' hidden-text';
+          //featuredItems[index].className += ' hidden-text';
         }
       }
 
