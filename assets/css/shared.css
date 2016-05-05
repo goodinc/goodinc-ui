@@ -538,6 +538,10 @@
 
   /* =Forms
   ----------------------------------------------- */
+  form {
+    margin-top: 3em;
+  }
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -696,35 +700,41 @@
   }
 
 
-  .standard > h2.byline {
+  .standard > .header h2.byline {
     font-size: inherit;
     line-height: inherit;
     font-weight: inherit;
     font-family: inherit;
     font-style: italic;
+    margin: 0;
   }
-  .tangerine .standard > h2.byline {
+  .standard > .header p {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    margin-top: 0.3055555556em; /* line height / 4 */
+  }
+  .tangerine .standard > .header h2.byline {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .standard > h2.byline {
+  .orange .standard > .header h2.byline {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .standard > h2.byline{
+  .purple .standard > .header h2.byline{
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .standard > h2.byline {
+  .blue .standard > .header h2.byline {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .standard > h2.byline {
+  .teal .standard > .header h2.byline {
     color: rgb(0, 207, 172); /* @teal */
   }
-  .green .standard > h2.byline {
+  .green .standard > .header h2.byline {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .standard > h2.byline {
+  .yellow .standard > .header h2.byline {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .standard > h2.byline {
+  .red .standard > .header h2.byline {
     color: rgb(239, 20, 93); /* @red */
   }
 
@@ -785,6 +795,7 @@
 
     .standard > h1,
     .standard > h2,
+    .standard > .header,
     .standard > .section > h1,
     .standard > section > h2,
     .standard > h3 {
@@ -803,7 +814,8 @@
       display: table;
       clear: both;
     }
-    .standard > h2.byline {
+    .standard > .header,
+    .standard > p.date {
       width: calc(50% - 20em);
     }
     .standard > h3 {
