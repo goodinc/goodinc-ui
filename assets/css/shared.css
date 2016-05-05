@@ -1718,7 +1718,7 @@
     text-decoration: underline;
     */
   }
-  @media (min-width: 20em) {
+  @media (min-width: 21em) {
     /*
     body > nav {
       text-align: center;
@@ -1789,7 +1789,7 @@
     position: relative;
   }
 
-  @media (min-width: 20em) {
+  @media (min-width: 21em) {
     body > nav:not(.projects) a:after {
       content: "";
       display: block;
@@ -2426,7 +2426,7 @@
   .team-member-list li p {
     max-width: none;
   }
-  .team-member-list li img {
+  main .team-member-list li img {
     width: 100%;
     max-width: 15em;
     height: auto;
