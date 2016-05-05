@@ -220,6 +220,16 @@
     </ul>
   </div>
 
+  <section class="good-can-help">
+    <h2>GOOD can help you</h2>
+    <ul>
+      <li><a href="projects-insights.html"><span>understand impact</span></a></li>
+      <li><a href="projects-programs.html"><span>build programs</span></a></li>
+      <li><a href="projects-storytelling.html"><span>create stories</span></a></li>
+      <li><a href="projects-reach.html"><span>engage audiences</span></a></li>
+    </ul>
+  </section>
+
   <div class="recent">
     <h1>Lately at GOOD…</h1>
 
@@ -282,16 +292,6 @@
       </li>
     </ul>
   </div>
-
-  <section class="good-can-help">
-    <h2>GOOD can help you</h2>
-    <ul>
-      <li><a href="projects-insights.html"><span>understand impact</span></a></li>
-      <li><a href="projects-programs.html"><span>build programs</span></a></li>
-      <li><a href="projects-storytelling.html"><span>create stories</span></a></li>
-      <li><a href="projects-reach.html"><span>engage audiences</span></a></li>
-    </ul>
-  </section>
 
 </main>
 
@@ -501,7 +501,7 @@ return;
       var itemHeight = featuredItems[index].offsetHeight;
       if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
         featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
-        //document.body.className = featuredItems[index].className;
+        document.body.className = featuredItems[index].className;
 
       // Else hide it
       } else { // unless this is the last item
