@@ -503,15 +503,44 @@
     background-color: rgba(239, 20, 93, 0.8); /* @red */
   }
 
+  .tangerine header .nav h6 a {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange header .nav h6 a {
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple header .nav h6 a {
+    background-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue header .nav h6 a {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal header .nav h6 a {
+    background-color: rgb(0, 207, 172); /* @teal */
+  }
+  .green header .nav h6 a {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow header .nav h6 a {
+    background-color: rgb(255, 214, 13); /* @yellow */
+    color: inherit;
+  }
+  .red header .nav h6 a {
+    background-color: rgb(239, 20, 93); /* @red */
+  }
+
   button:hover,
   button:active,
   button:focus,
   .action a[href]:hover,
   .action a[href]:active,
   .action a[href]:focus,
-  a .action span:hover,
-  a .action span:active,
-  a .action span:focus,
+  a[href] .action span:hover,
+  a[href] .action span:active,
+  a[href] .action span:focus,
+  header .nav h6 a[href]:hover,
+  header .nav h6 a[href]:active,
+  header .nav h6 a[href]:focus,
   header .nav li.active > a,
   header .nav li > a[href]:hover,
   header .nav li > a[href]:active,
@@ -525,9 +554,12 @@
   .yellow .action a[href]:hover,
   .yellow .action a[href]:active,
   .yellow .action a[href]:focus,
-  .yellow a .action span:hover,
-  .yellow a .action span:active,
-  .yellow a .action span:focus,
+  .yellow a[href] .action span:hover,
+  .yellow a[href] .action span:active,
+  .yellow a[href] .action span:focus,
+  .yellow header .nav h6 a[href]:hover,
+  .yellow header .nav h6 a[href]:active,
+  .yellow header .nav h6 a[href]:focus,
   .yellow header .nav li.active > a,
   .yellow header .nav li > a[href]:hover,
   .yellow header .nav li > a[href]:active,
@@ -1050,31 +1082,7 @@
   }
 
 
-  .tangerine header .nav h6 a {
-    background-color: rgb(255, 80, 26); /* @tangerine */
-  }
-  .orange header .nav h6 a {
-    background-color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple header .nav h6 a {
-    background-color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue header .nav h6 a {
-    background-color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal header .nav h6 a {
-    background-color: rgb(0, 207, 172); /* @teal */
-  }
-  .green header .nav h6 a {
-    background-color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow header .nav h6 a {
-    background-color: rgb(255, 214, 13); /* @yellow */
-    color: inherit;
-  }
-  .red header .nav h6 a {
-    background-color: rgb(239, 20, 93); /* @red */
-  }
+
 
   header {
     padding-right: 0;
