@@ -19,35 +19,24 @@
   function updateBackground() {
     var scrollY = getScrollY();
     var opacity = (scrollY / contentHeight) * 0.3;
-    var rgb;
+    var rgb = '255, 255, 255';
 
-    switch (document.body.className) {
-      case 'tangerine':
-        rgb = '255, 80, 26'; /* @tangerine */
-        break;
-      case 'orange':
-        rgb = '249, 132, 12'; /* @orange */
-        break;
-      case 'purple':
-        rgb = '168, 46, 255'; /* @purple */
-        break;
-      case 'blue':
-        rgb = '0, 157, 255'; /* @blue */
-        break;
-      case 'teal':
-        rgb = '48, 217, 101'; /* @teal */
-        break;
-      case 'green':
-        rgb = '48, 217, 101'; /* @green */
-        break;
-      case 'yellow':
-        rgb = '255, 214, 13'; /* @yellow */
-        break;
-      case 'red':
-        rgb = '239, 20, 93'; /* @red */
-        break;
-      default:
-        rgb = '255, 255, 255';
+    if (document.body.className.indexOf('tangerine') >= 0) {
+      rgb = '255, 80, 26'; /* @tangerine */
+    } else if (document.body.className.indexOf('orange') >= 0) { 
+      rgb = '249, 132, 12'; /* @orange */
+    } else if (document.body.className.indexOf('purple') >= 0) { 
+      rgb = '168, 46, 255'; /* @purple */
+    } else if (document.body.className.indexOf('blue') >= 0) { 
+      rgb = '0, 157, 255'; /* @blue */
+    } else if (document.body.className.indexOf('teal') >= 0) { 
+      rgb = '48, 217, 101'; /* @teal */
+    } else if (document.body.className.indexOf('green') >= 0) { 
+      rgb = '48, 217, 101'; /* @green */
+    } else if (document.body.className.indexOf('yellow') >= 0) { 
+      rgb = '255, 214, 13'; /* @yellow */
+    } else if (document.body.className.indexOf('red') >= 0) { 
+      rgb = '239, 20, 93'; /* @red */
     }
     document.body.style.backgroundColor = 'rgba(' + rgb + ', ' + opacity + ')';
   }
