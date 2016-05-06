@@ -3336,6 +3336,7 @@ margin-bottom: -1.5em;
       float: right;
     }
 
+@supports(false) {
     .project-details .meta {
       -webkit-column-count : 99;  /* Arbitrarily large number */
       -webkit-column-gap   : 5em;
@@ -3360,6 +3361,26 @@ margin-bottom: -1.5em;
       break-inside: avoid-column;         /* IE 11 */
       display:table;                      /* Actually FF 20+ */
     }
+}
+    .project-details .meta {
+      display: -webkit-flex;
+      display:         flex;
+
+      /*
+      -webkit-flex-direction: row;
+              flex-direction: row;
+              */
+
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .project-details .meta div {
+      width: 50%;
+    }
+
     .project-details .meta h2:first-child {
       margin-top: 0;
     }
