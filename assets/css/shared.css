@@ -925,15 +925,16 @@
   }
 
   /* SHIM: This is wrapped in @supports so it will be ignored by old android and iOS phones, which have trouble with the “:checked” rules. */
-  @supports (position: absolute) {
+  /*@supports (position: absolute) {*/
     header > .nav {
       position: absolute;
       right: 0;
       top: 1.5em;
     }
-  }
+   /*}*/
 
   /* SHIM: Always position the nav absolutely on big screens */
+  /*
   @media (min-width: 30em) {
     header > .nav {
       position: absolute;
@@ -941,6 +942,7 @@
       top: 1.5em;
     }
   }
+  */
 
   /* SHIM: Always position the nav absolutely on the home page */
   /*
@@ -1114,14 +1116,6 @@
   }
 
 
-  /* OPTIONAL: Make the navigation a little smaller on tiny screens */
-  /*
-  @media (max-width: 30em) {
-    header ul {
-      font-size: 0.75em;
-    }
-  }
-  */
 
   header ~ main > .header h1 {
     margin-bottom: 0;
@@ -4322,6 +4316,7 @@ margin-bottom: -1.5em;
   }
   */
 
+
   main.home {
     margin-top: 0;
   }
@@ -4339,11 +4334,9 @@ margin-bottom: -1.5em;
     min-height: 80vh;
   }
 
-  @supports (position: absolute) {
-    .has-header-image header h2 a,
-    body.has-header-image > h3 {
-      color: white !important;
-    }
+  .has-header-image header h2 a,
+  body.has-header-image > h3 {
+    color: white !important;
   }
   .has-header-image main > .header {
     background-color: rgb(42, 53, 56);
@@ -4410,6 +4403,7 @@ margin-bottom: -1.5em;
     padding: 0;
     min-height: 0;
   }
+  /*
   header > .nav {
     position: static;
   }
@@ -4423,6 +4417,7 @@ margin-bottom: -1.5em;
       position: absolute;
     }
   }
+  */
 
   main {
     margin-top: 4.5em;
@@ -4475,4 +4470,47 @@ margin-bottom: -1.5em;
     margin-top: 0;
   }
   */
+
+
+
+  /* OPTIONAL: Make the navigation a little smaller on tiny screens that don’t understand @supports */
+  @media (max-width: 30em) {
+    /*
+    header > .nav {
+      font-size: 0.75em;
+    }
+    */
+    main > .header {
+      padding-right: 5em;
+    }
+  }
+  @media (max-width: 50em) {
+    header + main h1:first-child,
+    header + h1 + main h1:first-child,
+    header + h3 + main h1:first-child {
+      margin-top: 2.25em;
+      margin-right: 2em;
+    }
+  }
+  body > nav p {
+    margin-right: 2.25em;
+  }
+  @supports (position: absolute) {
+    header > .nav {
+      font-size: inherit;
+    }
+    main > .header {
+      padding-right: 0;
+    }
+    header + main h1:first-child,
+    header + h1 + main h1:first-child,
+    header + h3 + main h1:first-child {
+      margin-top: 0;
+      margin-right: 0;
+    }
+    body > nav p {
+      margin-right: 0;
+    }
+  }
+
 
