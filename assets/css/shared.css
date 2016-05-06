@@ -3791,7 +3791,7 @@ margin-bottom: -1.5em;
     }
   }
   */
-  @media (min-width: 65em) {
+  @media (min-width: 82.5em) {
     .standard aside .subscribe {
       position: relative;
       z-index: 1;
