@@ -926,11 +926,11 @@
 
   /* SHIM: This is wrapped in @supports so it will be ignored by old android and iOS phones, which have trouble with the “:checked” rules. */
   /*@supports (position: absolute) {*/
-    header > .nav {
-      position: absolute;
-      right: 0;
-      top: 1.5em;
-    }
+  header > .nav {
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+  }
    /*}*/
 
   /* SHIM: Always position the nav absolutely on big screens */
@@ -981,7 +981,7 @@
     z-index: -1;
   }
   */
-  header .nav label {
+  header .nav h6 a {
     display: inline-block;
     background-color: black;
     color: white;
@@ -989,18 +989,11 @@
     margin-bottom: 0.375em;
   }
 
-  header .nav input {
-    position: absolute;
-    left: -9999px;
-  }
-
-  header .nav label {
-    display: none;
-  }
 
   /* SHIM: This is wrapped in @supports so it will be ignored by old android and iOS phones, which have trouble with the “:checked” rules. */
+  /*
   @supports (position: absolute) {
-    header .nav label {
+    header .nav h6 a {
       display: inline-block;
     }
     header .nav input:not(:checked) ~ ul {
@@ -1016,14 +1009,9 @@
       display: inline;
     }
 
-    @media (max-width: 30em) {
-      header .nav {
-        top: 0;
-      }
-    }
     @media (min-width: 30em) {
       header .nav input,
-      header .nav label {
+      header .nav h6 a {
         display: none;
       }
       header .nav input:not(:checked) ~ ul {
@@ -1031,30 +1019,61 @@
       }
     }
   }
+  */
+  @media (max-width: 30em) {
+    .scripted-nav header .nav {
+      top: 0;
+    }
+  }
+  .nav h6 {
+    margin: 0;
+    display: none;
+  }
+  header .nav .icon.show {
+    display: none;
+  }
+  header .nav .icon.hide {
+    display: inline;
+  }
+  header .nav.hidden .icon.show {
+    display: inline;
+  }
+  header .nav.hidden .icon.hide {
+    display: none;
+  }
+  @media (max-width: 30em) {
+    .scripted-nav h6 {
+      display: block;
+    }
+    header .nav.hidden ul {
+      display: none;
+    }
+  }
 
-  .tangerine header .nav label {
+
+  .tangerine header .nav h6 a {
     background-color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange header .nav label {
+  .orange header .nav h6 a {
     background-color: rgb(249, 132, 12); /* @orange */
   }
-  .purple header .nav label {
+  .purple header .nav h6 a {
     background-color: rgb(168, 46, 255); /* @purple */
   }
-  .blue header .nav label {
+  .blue header .nav h6 a {
     background-color: rgb(0, 157, 255); /* @blue */
   }
-  .teal header .nav label {
+  .teal header .nav h6 a {
     background-color: rgb(0, 207, 172); /* @teal */
   }
-  .green header .nav label {
+  .green header .nav h6 a {
     background-color: rgb(48, 217, 101); /* @green */
   }
-  .yellow header .nav label {
+  .yellow header .nav h6 a {
     background-color: rgb(255, 214, 13); /* @yellow */
     color: inherit;
   }
-  .red header .nav label {
+  .red header .nav h6 a {
     background-color: rgb(239, 20, 93); /* @red */
   }
 
@@ -4495,22 +4514,21 @@ margin-bottom: -1.5em;
   body > nav p {
     margin-right: 2.25em;
   }
-  @supports (position: absolute) {
-    header > .nav {
-      font-size: inherit;
-    }
-    main > .header {
-      padding-right: 0;
-    }
-    header + main h1:first-child,
-    header + h1 + main h1:first-child,
-    header + h3 + main h1:first-child {
-      margin-top: 0;
-      margin-right: 0;
-    }
-    body > nav p {
-      margin-right: 0;
-    }
+
+  .scripted-nav header > .nav {
+    font-size: inherit;
+  }
+  .scripted-nav main > .header {
+    padding-right: 0;
+  }
+  .scripted-nav header + main h1:first-child,
+  .scripted-nav header + h1 + main h1:first-child,
+  .scripted-nav header + h3 + main h1:first-child {
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .scripted-nav > nav p {
+    margin-right: 0;
   }
 
 
