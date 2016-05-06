@@ -22,7 +22,7 @@
   ----------------------------------------------- */
 
   body {
-    font: 100%/1.5 "freight-text-pro", Georgia, serif; /* @freight-text */
+    font: 100%/1.5 "Freight Text W01", Georgia, serif; /* @freight-text */
     margin: 0;
     padding: 0;
     background-color: white;
@@ -149,7 +149,7 @@
     max-width: 33em;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
   }
   h1 {
     font-size: 2.5em; /* 55px / 22px */
@@ -284,7 +284,7 @@
   .projects .list dt,
   .meta h2,
   .meta h3 {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
@@ -316,7 +316,7 @@
     display: block;
   }
   figcaption {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 0.7272727273em; /* 16px / 22px */
     line-height: 1.375; /* 22px / 16px */
     margin-top: 0.6875em; /* 11px / 16px */
@@ -393,7 +393,7 @@
   a .action span,
   header .nav li > a {
     display: inline-block;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
@@ -548,7 +548,7 @@
   input[type="text"],
   input[type="email"],
   textarea {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-family: inherit;
     font-size: inherit;
     width: 15em;
@@ -573,14 +573,14 @@
   }
   .experimental label span {
     font-weight: bold;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
   label span {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
     font-weight: bold;
@@ -898,7 +898,7 @@
     left: 9.5em;
     z-index: 3; /* Just above the h1:first-child element */
 
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: 900;
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
@@ -1162,7 +1162,7 @@
     margin-top: 0.375em;
     font-style: italic;
     font-weight: inherit;
-    font-family: "freight-text-pro", Georgia, serif; /* @freight-text */
+    font-family: "Freight Text W01", Georgia, serif; /* @freight-text */
   }
 
   @media (min-width: 20em) {
@@ -1220,7 +1220,7 @@
   /* =Footer
   ----------------------------------------------- */
   footer {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     background-color: rgb(26, 36, 38);
     color: rgb(192, 204, 207);
   }
@@ -1494,7 +1494,7 @@
   footer .subscribe h3 {
     font-weight: inherit;
     font-style: italic;
-    font-family: "freight-text-pro", Georgia, serif; /* @freight-text */
+    font-family: "Freight Text W01", Georgia, serif; /* @freight-text */
   }
   aside .subscribe p,
   footer .subscribe p {
@@ -1827,7 +1827,7 @@
     }
   }
   body > nav a {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-style: inherit;
     text-transform: lowercase;
@@ -1995,7 +1995,7 @@
     }
   }
   main > nav a {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-style: inherit;
     text-transform: lowercase;
@@ -2214,7 +2214,7 @@
 
   .articles li h2,
   .articles li h3 {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
@@ -2328,7 +2328,7 @@
   .good-can-help h2,
   .good-can-help ul {
     font-weight: bold;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -2337,7 +2337,7 @@
     .good-can-help h2,
     .good-can-help ul {
       font-weight: bold;
-      font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+      font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
       font-size: 2.1818181818em; /* 48px / 22px */
       line-height: 1.1458333333; /* 55px / 48px */
     }
@@ -2454,7 +2454,7 @@
     /*
     float: left;
     */
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(41, 53, 56);
     width: 100%;
     padding: 1.5em;
@@ -2617,7 +2617,7 @@
     margin-top: 0;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     margin-bottom: 1.2222222222em;
   }
   .team-member > h1 {
@@ -2628,7 +2628,7 @@
     font-style: italic;
   }
   .team-member .details h2 {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.5454545455em; /* 12px / 22px */
     line-height: 1.8333333333; /* 22px / 12px */
@@ -2888,7 +2888,7 @@
   }
   .projects .intro > h3 {
     margin: 0;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333;
@@ -3176,7 +3176,7 @@ margin-bottom: -1.5em;
 
   .projects .list li h3 {
     margin: 0;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333; /* 55px / 48px*/
@@ -3549,7 +3549,7 @@ margin-bottom: -1.5em;
   .project-details .highlights .secondary {
     margin-top: 1.5em;
     margin-bottom: 3em;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(166, 180, 184);
     color: rgba(0, 0, 0, 0.5);
     font-weight: bold;
@@ -3667,7 +3667,7 @@ margin-bottom: -1.5em;
   }
   .reports a {
     font-style: inherit;
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
   }
   @media (min-width: 110em) {
@@ -3754,7 +3754,7 @@ margin-bottom: -1.5em;
   }
 
   .press li h3 {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
