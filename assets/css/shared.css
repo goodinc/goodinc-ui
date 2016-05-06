@@ -2039,9 +2039,21 @@
 
   main > nav.pagination {
     margin-bottom: 3em;
-    text-align: center;
+  }
+  @media (min-width: 25em) {
+    main > nav.pagination {
+      text-align: center;
+    }
   }
 
+
+  main > nav.tags h3 {
+    font-style: italic;
+  }
+  main > nav.tags a {
+    padding-top: 0.25em !important;
+    padding-bottom: 0.25em !important;
+  }
 
   /*
   body > nav.pagination .previous:before {
