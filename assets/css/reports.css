@@ -1,0 +1,45 @@
+
+
+  /* =Reports
+  ----------------------------------------------- */
+  .reports,
+  .reports li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .reports li + li {
+    margin-top: 0.75em;
+  }
+  .reports a {
+    font-style: inherit;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+  }
+  .reports a span {
+    color: rgb(41, 53, 56); /* @tin */
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .reports a i {
+    display: inline-block;
+    border: 2px solid;
+    width: 3.75em;
+    line-height: 3.75em;
+    border-radius: 50%;
+    text-align: center;
+    font-style: normal;
+    margin-right: 0.75em;
+    font-size: 0.375em;
+    color: rgb(41, 53, 56); /* @tin */
+    color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    margin-left: -5.5em;
+  }
+  .reports .download {
+    margin-left: 3em;
+  }
+  @media (min-width: 70em) {
+    .reports .download {
+      margin-left: 0;
+    }
+  }

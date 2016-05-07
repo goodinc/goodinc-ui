@@ -1,0 +1,178 @@
+
+  /* =Buttons
+  ----------------------------------------------- */
+  button,
+  .action a, /* For emphasized links */
+  a .action span, /* For linked blocks of text, like the .subscribe element */
+  header .nav li a {
+    display: inline-block;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    padding: 0.6111111111em 1.2222222222em;  /* 11px / 18px*/     /* 22px / 18px */
+    text-decoration: none;
+    font-style: inherit;
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+    color: white;
+    border-width: 0;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  header .nav li a {
+    padding: 0.8888888889em 1.5555555556em;  /* 11px / 18px*/     /* 22px / 18px */
+  }
+  header[style] ul a {
+    background-color: rgba(0, 207, 172, 0.8); /* @teal */
+  }
+
+  button:hover,
+  button:active,
+  button:focus,
+  .action a[href]:hover,
+  .action a[href]:active,
+  .action a[href]:focus,
+  a[href] .action span:hover,
+  a[href] .action span:active,
+  a[href] .action span:focus,
+  header .nav h6 a[href]:hover,
+  header .nav h6 a[href]:active,
+  header .nav h6 a[href]:focus,
+  header .nav li a[href]:hover,
+  header .nav li a[href]:active,
+  header .nav li a[href]:focus {
+    /* Darken the button color by placing a black, semi-transparent image on top if it. */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill-opacity="0.1"></rect></svg>');
+    color: white;
+  }
+
+  /* OPTIONAL: Make buttons match the selected color of the page. */
+  .tangerine button,
+  .tangerine .action a,
+  .tangerine a .action span,
+  .tangerine header .nav li a {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+    color: white;
+  }
+  .orange button,
+  .orange .action a,
+  .orange a .action span,
+  .orange header .nav li a {
+    background-color: rgb(249, 132, 12); /* @orange */
+    color: white;
+  }
+  .purple button,
+  .purple .action a,
+  .purple a .action span,
+  .purple header .nav li a {
+    background-color: rgb(168, 46, 255); /* @purple */
+    color: white;
+  }
+  .blue button,
+  .blue .action a,
+  .blue a .action span,
+  .blue header .nav li a {
+    background-color: rgb(0, 157, 255); /* @blue */
+    color: white;
+  }
+  .teal button,
+  .teal .action a,
+  .teal a .action span,
+  .teal header .nav li a {
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+    color: white;
+  }
+  .green button,
+  .green .action a,
+  .green a .action span,
+  .green header .nav li a {
+    background-color: rgb(48, 217, 101); /* @green */
+    color: white;
+  }
+  .yellow button,
+  .yellow .action a,
+  .yellow a .action span,
+  .yellow header .nav li a {
+    background-color: rgb(255, 214, 13); /* @yellow */
+    color: inherit;
+  }
+  .red button,
+  .red .action a,
+  .red a .action span,
+  .red header .nav li a {
+    background-color: rgb(239, 20, 93); /* @red */
+    color: white;
+  }
+
+  /* Use black text on yellow buttons, since white is hard to read. */
+  .yellow button:hover,
+  .yellow button:active,
+  .yellow button:focus,
+  .yellow .action a[href]:hover,
+  .yellow .action a[href]:active,
+  .yellow .action a[href]:focus,
+  .yellow a[href] .action span:hover,
+  .yellow a[href] .action span:active,
+  .yellow a[href] .action span:focus,
+  .yellow header .nav h6 a[href]:hover,
+  .yellow header .nav h6 a[href]:active,
+  .yellow header .nav h6 a[href]:focus,
+  .yellow header .nav li a[href]:hover,
+  .yellow header .nav li a[href]:active,
+  .yellow header .nav li a[href]:focus {
+    color: inherit;
+  }
+
+  /* The navigation is slightly transparent when it appears above an image. */
+  .tangerine header[style] ul a {
+    background-color: rgba(255, 80, 26, 0.8); /* @tangerine */
+  }
+  .orange header[style] ul a {
+    background-color: rgba(249, 132, 12, 0.8); /* @orange */
+  }
+  .purple header[style] ul a {
+    background-color: rgba(168, 46, 255, 0.8); /* @purple */
+  }
+  .blue header[style] ul a {
+    background-color: rgba(0, 157, 255, 0.8); /* @blue */
+  }
+  .teal header[style] ul a {
+    background-color: rgba(0, 207, 172, 0.8); /* @teal */
+  }
+  .green header[style] ul a {
+    background-color: rgba(48, 217, 101, 0.8); /* @green */
+  }
+  .yellow header[style] ul a {
+    background-color: rgba(255, 214, 13, 0.8); /* @yellow */
+  }
+  .red header[style] ul a {
+    background-color: rgba(239, 20, 93, 0.8); /* @red */
+  }
+
+  /* For the navigation button on small screens. */
+  .tangerine header .nav h6 a {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange header .nav h6 a {
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple header .nav h6 a {
+    background-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue header .nav h6 a {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal header .nav h6 a {
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green header .nav h6 a {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow header .nav h6 a {
+    background-color: rgb(255, 214, 13); /* @yellow */
+    color: inherit;
+  }
+  .red header .nav h6 a {
+    background-color: rgb(239, 20, 93); /* @red */
+  }

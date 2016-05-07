@@ -1,0 +1,246 @@
+
+
+
+  /* =Header
+  ----------------------------------------------- */
+
+  /* Make the logo the same color as the text around it */
+  header h2 a,
+  header h2 a[href]:hover,
+  header h2 a[href]:active,
+  header h2 a[href]:focus {
+    color: rgb(7, 12, 13) !important; /* @tungsten */ /* !important to override colors like .orange and .purple */
+  }
+  header h2 a[href]:hover,
+  header h2 a[href]:active,
+  header h2 a[href]:focus {
+    color: rgb(114, 126, 130) !important; /* @nickel */
+  }
+  header[style] h2 a {
+    color: white !important;
+  }
+  header[style] h2 a[href]:hover,
+  header[style] h2 a[href]:active,
+  header[style] h2 a[href]:focus  {
+    color: white !important;
+    opacity: 0.7;
+  }
+  header {
+    min-height: 2.2727272727em; /* 50px / 22px */
+  }
+  header h2 {
+    font-size: inherit;
+    margin: 0;
+    position: absolute;
+    z-index: 4; /* Just above the main navigation */
+  }
+  header h2 svg {
+    fill: currentColor;
+
+    /* Make the logo scale up with the text */
+    width: 4em; /* 88px / 22px */
+    height: 2.2727272727em; /* 50px / 22px */
+  }
+  header + h1,
+  header + h3,
+  header + nav h1,
+  header + nav h3 {
+    margin-top: 0;
+    position: absolute;
+    top: 3.125em;
+    left: 9.5em;
+    z-index: 3; /* Just above the h1:first-child element */
+
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: 900;
+    font-size: 0.6666666667em; /* 12px / 18px */
+    line-height: 1.8333333333; /* 22px / 12px */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  @media (min-width: 70em) {
+    header + h1,
+    header + h3,
+    header + nav h1,
+    header + nav h3 {
+      top: 4.25em;
+      left: 13em;
+    }
+  }
+
+
+
+  /* =Header (experimental)
+  ----------------------------------------------- */
+
+  main.home {
+    margin-top: 0;
+  }
+  main > .header {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: -6em -1.5em 0;
+    padding: 6em 1.5em 0;
+    box-sizing: border-box;
+  }
+  .has-header-image main > .header {
+    min-height: 20em;
+    min-height: 80vh;
+  }
+
+  .has-header-image header h2 a,
+  body.has-header-image > h3 {
+    color: white !important;
+  }
+  .has-header-image main > .header {
+    background-color: rgb(41, 53, 56); /* @tin */
+  }
+  main > .header[style] {
+    color: white;
+    padding-bottom: 3em;
+    /*
+    min-height: 80vh;
+    */
+  }
+  @media (min-width: 70em) {
+    main > .header {
+      margin: -8em -4em 0;
+      padding: 8em 4em 0;
+    }
+    main > .header[style] {
+      padding-bottom: 4em;
+    }
+  }
+  main > .header[style]:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  main > .header[style] > * {
+    position: relative;
+    z-index: 1;
+  }
+  main > .header[style] h1 span {
+    color: white !important;
+  }
+
+  main > .header + .standard {
+    margin-top: 1.5em;
+  }
+  @media (min-width: 70em) {
+    main > .header + .standard {
+      margin-top: 4em;
+    }
+  }
+
+  header h2 {
+    top: 1.5em;
+    left: 1.5em;
+  }
+  @media (min-width: 70em) {
+    header h2 {
+      top: 2.2727272727em; /* 50px / 22px */
+      left: 4em; /* 88px / 22px */
+    }
+  }
+
+  header h2 {
+    position: absolute;
+
+  }
+  header {
+    padding: 0;
+    min-height: 0;
+  }
+
+
+  main {
+    margin-top: 4.5em;
+  }
+  @media (min-width: 70em) {
+    main {
+      margin-top: 4em;
+    }
+  }
+
+  body > header + nav {
+    margin-top: 4.5em;
+  }
+  @media (min-width: 70em) {
+    body > header + nav {
+      margin-top: 8em;
+    }
+  }
+  nav + main {
+    margin-top: 0;
+  }
+
+
+
+  /* OPTIONAL: Limit the width of the headlines for aesthetic reasons. */
+  main > .header h1 {
+    max-width: 12em;
+  }
+  main > .header h2 {
+    max-width: 20.5em;
+  }
+
+  /* SHIM: Prevent the nav from colliding with the headlines */
+  @media (min-width: 30em) and (max-width: 90em) {
+    main > .header {
+      padding-right: 10em;
+    }
+  }
+  @media (min-width: 30em) and (max-width: 70em) {
+    main > .header {
+      padding-right: 8em;
+    }
+  }
+
+
+  /* OPTIONAL: Make the navigation a little smaller on tiny screens that don’t understand @supports */
+  @media (max-width: 30em) {
+    /*
+    header > .nav {
+      font-size: 0.75em;
+    }
+    */
+    main > .header {
+      padding-right: 5em;
+    }
+  }
+  @media (max-width: 50em) {
+    header + main h1:first-child,
+    header + h1 + main h1:first-child,
+    header + h3 + main h1:first-child {
+      margin-top: 2.25em;
+      margin-right: 2em;
+    }
+  }
+  body > nav p {
+    margin-right: 2.25em;
+  }
+
+  .scripted-nav header > .nav {
+    font-size: inherit;
+  }
+  .scripted-nav main > .header {
+    padding-right: 0;
+  }
+  .scripted-nav header + main h1:first-child,
+  .scripted-nav header + h1 + main h1:first-child,
+  .scripted-nav header + h3 + main h1:first-child {
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .scripted-nav > nav p {
+    margin-right: 0;
+  }
+

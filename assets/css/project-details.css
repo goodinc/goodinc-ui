@@ -1,0 +1,417 @@
+
+  /* =Project Details
+  ----------------------------------------------- */
+
+
+  .project-details .details h2 {
+    font-weight: 900; /* @extra-bold */
+    display: table;
+    font-size: 1.0909090909em; /* 24px / 22px */
+    line-height: 1.375; /* 33px / 24px  */
+  }
+  aside.related h2:before,
+  .project-details .highlights h2:before,
+  .project-details .details h2:before {
+    content: "";
+    display: block;
+    border-top: 2px solid;
+    width: calc(100% + 4em); /* 88px / 22px */
+    margin-left: -4em;
+  }
+  .tangerine aside.related h2,
+  .tangerine .project-details .details h2,
+  .tangerine .project-details .highlights h2 {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange aside.related h2,
+  .orange .project-details .details h2,
+  .orange .project-details .highlights h2 {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple aside.related h2,
+  .purple .project-details .details h2,
+  .purple .project-details .highlights h2 {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue aside.related h2,
+  .blue .project-details .details h2,
+  .blue .project-details .highlights h2 {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal aside.related h2,
+  .teal .project-details .details h2,
+  .teal .project-details .highlights h2 {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green aside.related h2,
+  .green .project-details .details h2,
+  .green .project-details .highlights h2 {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow aside.related h2,
+  .yellow .project-details .details h2,
+  .yellow .project-details .highlights h2 {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red aside.related h2,
+  .red .project-details .details h2,
+  .red .project-details .highlights h2 {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+  aside.related h2,
+  .project-details .highlights h2 {
+    display: block;
+  }
+  .project-details .highlights h2:before,
+  aside.related h2:before {
+    width: auto;
+    margin-left: 0;
+  }
+
+
+  .project-details .details div ~ div {
+    margin-top: 3em;
+  }
+
+  .project-details .intro {
+    margin-top: 1.5em;
+  }
+  @media (min-width: 70em) {
+    .project-details .intro {
+      margin-top: 4em;
+    }
+  }
+
+  header[style] ~ main.project-details .intro {
+    margin-top: 0;
+  }
+
+  .project-details .intro > div:first-child {
+    font-size: 1.5em; /* 33px / 22px */
+    line-height: 1.3333333333; /* 44px / 33px */
+  }
+  .project-details .intro > div:first-child p {
+    margin-top: 0;
+    max-width: 20em;
+  }
+
+  .project-details .details {
+    margin-top: 3em;
+  }
+  .project-details .details h2 {
+    margin-top: 0;
+  }
+
+  @media (min-width: 60em) {
+    .project-details .intro:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .project-details .intro > div:first-child {
+      width: 45%;
+      float: left;
+    }
+    .project-details .meta {
+      margin-top: 0;
+      width: 45%;
+      float: right;
+    }
+
+    .project-details .meta {
+      display: -webkit-flex;
+      display:         flex;
+
+      /*
+      -webkit-flex-direction: row;
+              flex-direction: row;
+              */
+
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .project-details .meta div,
+    .project-details .meta section {
+      width: 50%;
+    }
+
+    .project-details .meta h2:first-child {
+      margin-top: 0;
+    }
+
+    .project-details .details:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .project-details .details > div {
+      /*
+      float: left;
+      clear: left;
+      */
+      width: 45%;
+    }
+    .project-details .details > div p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-details .details figure {
+      margin-top: 0;
+      float: right;
+      clear: right;
+      width: 45%; /* image-width */
+    }
+    .project-details .details figure ~ figure {
+      margin-top: 3em;
+    }
+    .project-details .details figure {
+      margin-bottom: 0;
+    }
+    .project-details .details figure img {
+      width: 100%;
+    }
+  }
+
+  .project-details .highlights {
+    margin-top: 3em;
+  }
+  .standard > figure {
+    width: auto;
+    max-width: none;
+  }
+  .project-details .highlights + figure {
+    float: none;
+    width: auto;
+    max-width: none;
+  }
+  .standard > figure img,
+  .standard > figure iframe,
+  .project-details .highlights + figure img,
+  .project-details .highlights + figure iframe {
+
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    width: calc(100% + 3em);
+    max-width: none;
+  }
+  .standard > figure.movie:last-child {
+    margin-bottom: -3em;
+  }
+  .standard > figure iframe,
+  .project-details .highlights + figure iframe {
+
+    /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
+    height: 24em;
+    height: 70vh;
+  }
+  @media (min-width: 60em) {
+    .standard > figure img,
+    .standard > figure iframe,
+    .project-details .highlights + figure img,
+    .project-details .highlights + figure iframe {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+      width: calc(100% + 8em); /* margin x 2 */
+    }
+  }
+
+  .body figure {
+    max-width: 28em;
+  }
+  .body figure img {
+    width: 100%;
+  }
+
+  .meta ul {
+    color: rgb(114, 126, 130); /* @nickel */
+  }
+  .tangerine .meta ul {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .meta ul {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .meta ul {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .meta ul {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .meta ul {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .meta ul {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .meta ul {
+    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .meta ul {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  .projects .intro .meta ul {
+    color: inherit;
+    opacity: 0.6;
+  }
+
+  .meta ul.skills {
+    color: rgb(114, 126, 130); /* @nickel */
+  }
+  .meta .skills li {
+    display: inline;
+  }
+  .meta .skills li:after {
+    content: ", ";
+  }
+  .meta .skills li:last-child:after {
+    content: "";
+  }
+
+  .meta h2,
+  .meta h3 {
+    border-top-width: 0;
+    font-weight: bold;
+    color: inherit;
+    margin-bottom: 0;
+  }
+  .meta ul {
+    margin-top: 0;
+    margin-bottom: 2.4444444444em; /* .meta line height x 2 */
+  }
+
+  .meta ul,
+  .meta li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  aside.related h2,
+  .project-details .highlights h2 {
+    font-size: 2.5em; /* 55px / 22px */
+    line-height: 1.2em; /* 66px / 55px */
+    font-weight: bold;
+    margin: 0;
+    padding-top: 0.3em;
+    position: relative;
+  }
+  aside.related h2 span {
+    color: rgb(26, 36, 38); /* @thorium */
+  }
+  aside.related h2:before,
+  .project-details .highlights h2:before {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top-width: 4px;
+  }
+  @media (min-width: 50em) {
+    aside.related h2,
+    .project-details .highlights h2 {
+      font-size: 3.7272727273em; /* 82px / 22px */
+      line-height: 1.2073170732em; /* 99px / 82px */
+    }
+  }
+  .home .intro ul,
+  .home .intro li,
+  .project-details .highlights .primary,
+  .project-details .highlights .primary li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .home .intro li + li,
+  .project-details .highlights .primary li + li {
+    margin-top: 1.5em;
+  }
+  .home .intro li b,
+  .project-details .highlights .primary li b {
+    display: block;
+    font-size: 2.5em; /* 55px / 22px */
+    line-height: 1.2em; /* 66px / 55px */
+    font-weight: 500;
+  }
+  .home .intro li b {
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+  }
+  .home .intro li span,
+  .project-details .highlights .primary li span {
+    display: block;
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    font-style: italic
+  }
+
+  /* SHIM: Don’t let the stats get too small. */
+  @media (max-width: 1000px), (max-height: 500px) {
+    .home .intro li span,
+    .project-details .highlights .primary li span {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  @media (min-width: 50em) {
+    .project-details .highlights .primary li b {
+      font-size: 3.7272727273em; /* 82px / 22px */
+
+      /* SHIM: Attempt to line up the primary and secondary content */
+      line-height: 1.0731707317em; /* 88px / 82px */
+    }
+  }
+  .project-details .highlights .secondary {
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    color: rgb(166, 180, 184); /* @aluminum */
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+  }
+  .project-details .highlights .secondary a {
+    font-style: inherit;
+  }
+  .project-details .highlights .secondary,
+  .project-details .highlights .secondary li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .project-details .highlights .secondary li {
+    position: relative;
+    padding-left: 0.75em;
+    max-width: 20em;
+  }
+  .project-details .highlights .secondary li + li {
+    margin-top: 0.75em;
+  }
+  .project-details .highlights .secondary li:before {
+    content: "—";
+    position: absolute;
+    margin-left: -0.75em;
+  }
+  @media (min-width: 60em) {
+    .project-details .highlights:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .project-details .highlights .secondary {
+      margin-bottom: 0;
+    }
+    .project-details .highlights .primary {
+      margin-top: 1.5em;
+      width: 45%;
+      float: left;
+    }
+    .project-details .highlights .primary + .secondary {
+      margin-top: 1.5em;
+      width: 45%;
+      float: right;
+    }
+  }

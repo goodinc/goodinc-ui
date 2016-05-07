@@ -1,0 +1,47 @@
+
+
+
+  /* =Layout
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  body > nav,
+  main,
+  header,
+  footer > div {
+    padding: 1.5em;
+  }
+  main {
+    padding-bottom: 3em;
+  }
+  @media (min-width: 70em) {
+    body > nav,
+    main,
+    header,
+    footer > div {
+      padding: 4em; /* 88px / 22px */
+    }
+    header {
+      padding-top: 2.2727272727em; /* 50px / 22px */
+    }
+    body > nav {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    main {
+      padding-bottom: 8em;
+    }
+  }
+  /*
+    main,
+    footer > div {
+      max-width: 54em; @line-height x 36
+      margin-left: auto;
+      margin-right: auto;
+    }
+  */
+
+  main h1:first-child {
+    margin-top: 0;
+  }

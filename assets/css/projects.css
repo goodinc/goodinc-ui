@@ -1,0 +1,361 @@
+
+
+  /* =Projects
+  ----------------------------------------------- */
+  main.projects {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .projects .intro {
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+    color: white;
+  }
+  .tangerine .projects .intro {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+    background-color: rgb(201, 50, 4); /* @dark-tangerine */
+  }
+  .orange .projects .intro {
+    background-color: rgb(249, 132, 12); /* @orange */
+    background-color: rgb(214, 98, 0); /* @dark-orange */
+  }
+  .purple .projects .intro {
+    background-color: rgb(168, 46, 255); /* @purple */
+    background-color: rgb(126, 34, 191); /* @dark-purple */
+  }
+  .blue .projects .intro {
+    background-color: rgb(0, 157, 255); /* @blue */
+    background-color: rgb(0, 129, 209); /* @dark-blue */
+  }
+  .teal .projects .intro {
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .projects .intro {
+    background-color: rgb(48, 217, 101); /* @green */
+    background-color: rgb(39, 179, 83); /* @dark-green */
+  }
+  .yellow .projects .intro {
+    background-color: rgb(255, 214, 13); /* @yellow */
+    background-color: rgb(230, 189, 0); /* @dark-yellow */
+    color: inherit;
+  }
+  .red .projects .intro {
+    background-color: rgb(239, 20, 93); /* @red */
+    background-color: rgb(184, 9, 65); /* @dark-red */
+  }
+  .projects .intro a {
+    color: inherit;
+    opacity: 0.6;
+  }
+  .projects .intro a:hover,
+  .projects .intro a:active,
+  .projects .intro a:focus {
+    opacity: 1;
+  }
+
+  @media (min-width: 60em) {
+    .projects .intro:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .projects .intro .details {
+      width: 70%;
+      float: left;
+    }
+    .projects .intro .meta {
+      width: 25%;
+      float: right;
+    }
+  }
+
+  .projects .list {
+    margin-bottom: 0;
+  }
+  .projects .intro,
+  .projects .list {
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+  }
+  .projects .intro,
+  .projects .list li a {
+    padding: 1.5em;
+  }
+  .projects .intro {
+    padding-bottom: 3em;
+  }
+  @media (min-width: 70em) {
+    .projects .intro,
+    .projects .list {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+    }
+    .projects .intro,
+    .projects .list li a {
+      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+    }
+    .projects .intro {
+      padding-bottom: 4em;
+    }
+  }
+  .projects .intro h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
+  }
+  .projects .intro > h3 {
+    margin: 0;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333;
+    text-transform: lowercase;
+    opacity: 0.3;
+  }
+  .projects h1 + svg {
+    color: rgb(0, 207, 172); /* @dark-teal */
+    max-width: 100%;
+    width: 24em;
+    height: 24em;
+    position: absolute;
+    z-index: -1;
+  }
+  .tangerine .projects h1 + svg {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .projects h1 + svg {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .projects h1 + svg {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .projects h1 + svg {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .projects h1 + svg {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .projects h1 + svg {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .projects h1 + svg {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .projects h1 + svg {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  .home .intro p,
+  body > nav p,
+  .projects h1 + svg + p {
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+
+    text-decoration: underline;
+    text-decoration-width: 2px;
+    max-width: 11em;
+    color: rgb(0, 207, 172); /* @dark-teal */
+
+/* SHIM */
+margin-bottom: -1.5em;
+
+
+  }
+  body > nav p {
+    margin: 0;
+    margin-bottom: 0.6111111111em; /* 22px / 36px */
+  }
+
+  @media (min-width: 40em) {
+    .home .intro p,
+    body > nav p,
+    .projects h1 + svg + p {
+      margin-top: 2.25em;
+      max-width: 17em;
+
+/* SHIM */
+margin-bottom: -1.5em;
+
+
+    }
+    body > nav p {
+      margin-top: 0;
+      margin-bottom: 0.6111111111em; /* 22px / 36px */
+    }
+  }
+
+  .home .intro p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    max-width: 22em;
+  }
+  .tangerine .home .intro p,
+  .tangerine > nav p,
+  .tangerine .projects h1 + svg + p {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .home .intro p,
+  .orange > nav p,
+  .orange .projects h1 + svg + p {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .home .intro p,
+  .purple > nav p,
+  .purple .projects h1 + svg + p {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .home .intro p,
+  .blue > nav p,
+  .blue .projects h1 + svg + p {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .home .intro p,
+  .teal > nav p,
+  .teal .projects h1 + svg + p {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .home .intro p,
+  .green > nav p,
+  .green .projects h1 + svg + p {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .home .intro p,
+  .yellow > nav p,
+  .yellow .projects h1 + svg + p {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .home .intro p,
+  .red > nav p,
+  .red .projects h1 + svg + p {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  @media (min-width: 50em) {
+    .projects h1 + svg {
+      top: 3em;
+      left: 4em; /* 88px / 22px */
+    }
+    .projects h1,
+    .projects h1 + svg + p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .projects h1 {
+      max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
+    }
+  }
+  .home .intro p span,
+  body > nav p span,
+  .projects h1 + svg + p span {
+    color: rgb(41, 53, 57);
+  }
+  .projects .intro ul {
+    margin-bottom: 0;
+  }
+
+  .projects .list,
+  .projects .list li {
+    list-style: none;
+  }
+  .projects .list {
+    margin-top: 1px;
+    padding: 0;
+    max-width: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .projects .list li {
+    margin-left: 0;
+  }
+  .projects .list li + li {
+    border-top: 2px solid white;
+  }
+  .projects .list li a {
+    display: block;
+    text-decoration: none;
+    font-style: normal;
+    color: inherit;
+    background-color: rgb(230, 250, 240);
+    background-color: rgb(228, 234, 237);
+    background-color: transparent;
+  }
+
+  .tangerine .projects .list li a:hover,
+  .tangerine .projects .list li a:active,
+  .tangerine .projects .list li a:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .projects .list li a:hover,
+  .orange .projects .list li a:active,
+  .orange .projects .list li a:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .projects .list li a:hover,
+  .purple .projects .list li a:active,
+  .purple .projects .list li a:focus {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .projects .list li a:hover,
+  .blue .projects .list li a:active,
+  .blue .projects .list li a:focus {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .projects .list li a:hover,
+  .teal .projects .list li a:active,
+  .teal .projects .list li a:focus {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .projects .list li a:hover,
+  .green .projects .list li a:active,
+  .green .projects .list li a:focus {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .projects .list li a:hover,
+  .yellow .projects .list li a:active,
+  .yellow .projects .list li a:focus {
+    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .projects .list li a:hover,
+  .red .projects .list li a:active,
+  .red .projects .list li a:focus {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+
+  .projects .list li h3 {
+    margin: 0;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px*/
+  }
+  .projects .list dl {
+    margin-bottom: 0;
+  }
+  .projects .list dt {
+    margin-top: 1.5em;
+  }
+  .projects .list dd {
+    margin-left: 0;
+  }
+
+  @supports (display: flex) or (display: -webkit-flex) {
+    @media (min-width: 40em) {
+      .projects .list li a {
+        display: -webkit-flex;
+        display:         flex;
+      }
+      .projects .list li a h3,
+      .projects .list li a dl,
+      .projects .list li a dt {
+        margin: 0;
+      }
+      .projects .list li a h3 {
+        width: 50%;
+      }
+      .projects .list li a dl {
+        margin-top: 0.25em;
+        width: 20%;
+        margin-left: 5%;
+      }
+    }
+  }

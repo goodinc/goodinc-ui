@@ -1,0 +1,135 @@
+
+  .good-can-help {
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+  }
+  .good-can-help {
+    margin-top: 1.5em;
+  }
+  .good-can-help {
+    padding: 3em 1.5em;
+  }
+  @media (min-width: 70em) {
+    .good-can-help {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+    }
+    .good-can-help {
+      margin-top: 4em;
+    }
+    .good-can-help {
+      padding: 6em 4em; /* 50px / 22px */     /* 88px / 22px */
+    }
+  }
+
+  .good-can-help {
+    background-color: rgb(102, 102, 102);
+    color: white;
+  }
+
+  .tangerine .good-can-help {
+    background-color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .good-can-help { 
+    background-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .good-can-help {
+    background-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .good-can-help {
+    background-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .good-can-help {
+    background-color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .good-can-help {
+    background-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .good-can-help {
+    background-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .good-can-help {
+    background-color: rgb(239, 20, 93); /* @red */
+  }
+ 
+  .good-can-help h2,
+  .good-can-help ul {
+    font-weight: bold;
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+  }
+
+  @media (min-width: 40em) {
+    .good-can-help h2,
+    .good-can-help ul {
+      font-weight: bold;
+      font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+      font-size: 2.1818181818em; /* 48px / 22px */
+      line-height: 1.1458333333; /* 55px / 48px */
+    }
+  }
+
+  .good-can-help h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+  .good-can-help h2:after {
+    content: ":";
+  }
+  .good-can-help ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .good-can-help ul,
+  .good-can-help li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .good-can-help li {
+    text-transform: lowercase;
+  }
+  .good-can-help a {
+    color: inherit;
+    font-style: normal;
+  }
+  .good-can-help a span {
+    color: rgb(41, 53, 57);
+  }
+  .good-can-help a:hover span,
+  .good-can-help a:active span,
+  .good-can-help a:focus span {
+    color: white;
+  }
+
+  @media (min-width: 60em) {
+    .good-can-help {
+      text-align: center;
+    }
+    .good-can-help h2,
+    .good-can-help ul {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .good-can-help h2 {
+      text-align: right;
+    }
+    .good-can-help ul {
+      margin-left: 0.75em;
+      text-align: left;
+    }
+
+    /* SHIM: Attempt to line up the two “good can help” sections on the home page. */
+    /*
+    .home .good-can-help h2,
+    .home ~ footer .good-can-help h2 {
+      min-width: 50%;
+    }
+    .home .good-can-help ul,
+    .home ~ footer .good-can-help ul {
+      min-width: 45%;
+    }
+    */
+  }

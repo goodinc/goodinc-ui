@@ -1,0 +1,44 @@
+
+  /* =Forms
+  ----------------------------------------------- */
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    width: 15em;
+    max-width: 100%;
+    padding: 0.1875em 0.5em;
+    line-height: 1.5;
+    min-height: 1.5em;
+    box-sizing: border-box;
+    display: inline-block;
+    background: white;
+    border: 0.0625em solid rgb(192, 204, 208); /* @silver */
+  }
+  textarea {
+    width: 25em;
+    height: 10em;
+  }
+  label > span:first-child {
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    font-weight: bold;
+  }
+
+  /* For the “GOOD Society” page */
+  form {
+    margin-top: 3em;
+  }
+  p.note {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    font-style: italic;
+  }
+
+  /* For the “Ask a Question” page */
+  h1 + form {
+    margin-top: 0;
+  }

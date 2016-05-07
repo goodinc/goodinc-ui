@@ -1,0 +1,32 @@
+
+
+  /* =Press
+  ----------------------------------------------- */
+  .press,
+  .press li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .press li {
+    margin-top: 3em;
+  }
+  .press li p:last-child {
+    margin-bottom: 0;
+  }
+  .press a {
+    text-decoration: none;
+    font-style: inherit;
+    color: inherit;
+  }
+  .press a[href] h3 {
+    text-decoration: underline;
+  }
+
+  .press li h3 {
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+    margin: 0;
+  }

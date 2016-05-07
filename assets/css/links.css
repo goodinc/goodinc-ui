@@ -1,0 +1,45 @@
+
+  /* =Links
+  ----------------------------------------------- */
+  a {
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+    color: rgb(0, 207, 172); /* @dark-teal */
+    font-style: italic;
+  }
+  a[href]:hover,
+  a[href]:active,
+  a[href]:focus {
+    color: rgb(41, 53, 56); /* @tin */
+  }
+
+  /* For Internet Explorer */
+  a img {
+    border-width: 0;
+  }
+
+  /* OPTIONAL: Make links match the selected color of the page. */
+  .tangerine a {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange a {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple a {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue a {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal a {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green a {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow a {
+    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red a {
+    color: rgb(239, 20, 93); /* @red */
+  }

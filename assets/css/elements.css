@@ -1,0 +1,55 @@
+
+
+  /* =Elements
+  -----------------------------------------------
+  -----------------------------------------------
+  ----------------------------------------------- */
+
+  body {
+    font: 100%/1.5 "Freight Text W01", Georgia, serif; /* @freight-text */
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: rgb(41, 53, 56); /* @tin */
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media (min-width: 200px) and (min-height: 100px) {
+    body {
+      font-size: 112.5%;
+    }
+  }
+
+  @media (min-width: 500px) and (min-height: 250px) {
+    body {
+      font-size: 125%;
+    }
+  }
+
+  /* Type, padding, and margins are based on this screen size. */
+  @media (min-width: 1000px) and (min-height: 500px) {
+    body {
+      font-size: 137.5%; /* 22px */
+    }
+  }
+
+  @media (min-width: 1500px) and (min-height: 750px) {
+    body {
+      font-size: 150%;
+    }
+  }
+
+  /* Shrink images to fit the available space */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  iframe {
+    max-width: 100%;
+  }
+
+  /* Make new HTML elements look nice in older browsers */
+  main, section, article, aside, nav, header, footer, figure, figcaption {
+    display: block;
+  }
+

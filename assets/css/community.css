@@ -1,0 +1,153 @@
+
+
+  /* =Community
+  ----------------------------------------------- */
+
+  .team-member-list ul,
+  .team-member-list li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .team-member-list ul {
+    max-width: none;
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+
+  .team-member-list li a {
+    color: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+  }
+
+  .team-member-list li {
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    color: rgb(41, 53, 57);
+    width: 100%;
+    padding: 1.5em;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .team-member-list li h4,
+  .team-member-list li p {
+    max-width: none;
+  }
+
+  /* SHIM: This is prefixed with “main” so IE8 will ignore it. */
+  main .team-member-list li img {
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+  }
+
+  @media (min-width: 20em) {
+    .team-member-list li {
+      width: 50%;
+    }
+  }
+  @media (min-width: 40em) {
+    .team-member-list li {
+      width: 33.333%;
+    }
+  }
+  @media (min-width: 60em) {
+    .team-member-list li {
+      width: 25%;
+    }
+  }
+
+  .team-member img,
+  .team-member-list img {
+    border-radius: 50%;
+  }
+
+  .team-member-list li h4 {
+    margin: 0.75em 0 0 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
+  }
+  .team-member-list li p {
+    margin: 0;
+    font-style: italic;
+    opacity: 0.6;
+  }
+
+
+  .community .team > h1,
+  .community .clients > h1 {
+    font-size: 2.1818181818em; /* 48px / 22px */
+    line-height: 1.1458333333; /* 55px / 48px */
+  }
+
+  .community .clients .text,
+  .community .team .text {
+    margin-bottom: 3em;
+    max-width: 28em;
+  }
+
+  .community .quote {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+
+  @media (min-width: 60em) {
+    .community .clients,
+    .community .team {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+    .community .clients:after,
+    .community .team:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .community .clients > h1,
+    .community .clients > h2,
+    .community .team > h1,
+    .community .team > h2,
+    .community .team > h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      float: left;
+    }
+    .community .clients > h2,
+    .community .team > h2 {
+      max-width: 5em;
+    }
+    .community .team > h3 {
+      max-width: 7em;
+    }
+    .community .team > h1 + p {
+      margin-left: 9em;
+    }
+    .community .clients .text,
+    .community .team .text {
+      margin-left: 12.681818182em; /* 15.5 x 0.8181818182 */
+      margin-left: 14em;
+    }
+  }
+  .community .clients > h1,
+  .community .team > h1 {
+    position: absolute;
+    left: -9999px;
+  }
+  .community .clients > h1 + p {
+    margin-left: 0;
+  }
+  .community .team > h1 + p {
+    margin-left: 0;
+    margin-bottom: 3em;
+  }
