@@ -3285,7 +3285,7 @@ margin-bottom: -1.5em;
   }
   */
   @supports (display: flex) or (display: -webkit-flex) {
-    @media (min-width: 70em) {
+    @media (min-width: 40em) {
       .projects .list li a {
         display: -webkit-flex;
         display:         flex;
