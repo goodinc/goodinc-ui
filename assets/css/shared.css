@@ -4326,13 +4326,16 @@ margin-bottom: -1.5em;
 
 
   .home .intro figure {
-    margin: -6em 0 -4.5em;
+    margin: -6em -1.5em -4.5em;
+    overflow: hidden;
   }
   .home .intro figure svg {
-    max-width: 100%;
-    max-width: calc(100% - 3em);
     width: 24em;
     height: 24em;
+    /*
+    max-width: 100%;
+    max-width: calc(100% - 3em);
+    */
   }
   @media (min-width: 50em) {
     .home .intro {
