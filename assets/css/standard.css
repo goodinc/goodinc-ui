@@ -52,6 +52,12 @@
     max-width: 40em;
   }
 
+  .standard .body figure {
+    max-width: 28em;
+  }
+  .standard .body figure img {
+    width: 100%;
+  }
 
   .standard > .header h2.byline {
     font-size: inherit;

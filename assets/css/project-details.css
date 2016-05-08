@@ -2,7 +2,6 @@
   /* =Project Details
   ----------------------------------------------- */
 
-
   .project-details .details h2 {
     font-weight: 900; /* @extra-bold */
     display: table;
@@ -68,7 +67,6 @@
     width: auto;
     margin-left: 0;
   }
-
 
   .project-details .details div ~ div {
     margin-top: 3em;
@@ -211,13 +209,6 @@
     }
   }
 
-  .body figure {
-    max-width: 28em;
-  }
-  .body figure img {
-    width: 100%;
-  }
-
   .meta ul {
     color: rgb(114, 126, 130); /* @nickel */
   }
@@ -330,6 +321,7 @@
   .home .intro li b {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+    font-weight: inherit;
   }
   .home .intro li span,
   .project-details .highlights .primary li span {
@@ -406,3 +398,26 @@
       float: right;
     }
   }
+
+
+  /* “More from GOOD” */
+  aside.related {
+    margin-top: 3em;
+  }
+  .highlights + aside.related {
+    margin-top: 1.5em;
+  }
+  @media (min-width: 70em) {
+    aside.related {
+      margin-top: 8em;
+    }
+    .highlights + aside.related {
+      margin-top: 4em;
+    }
+  }
+
+  aside.related a {
+    font-style: italic;
+    font-size: 1.6363636364em; /* 36px / 22px */
+  }
+

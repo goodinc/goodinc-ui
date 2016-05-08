@@ -3,6 +3,7 @@
   /* =Aside
   ----------------------------------------------- */
 
+  /* For the about page */
   @media (min-width: 82.5em) {
     .standard aside .subscribe {
       position: relative;
@@ -13,24 +14,4 @@
       margin-bottom: -4em;
       max-width: calc(50% - 14em);
     }
-  }
-
-  aside.related {
-    margin-top: 3em;
-  }
-  .highlights + aside.related {
-    margin-top: 1.5em;
-  }
-  @media (min-width: 70em) {
-    aside.related {
-      margin-top: 8em;
-    }
-    .highlights + aside.related {
-      margin-top: 4em;
-    }
-  }
-
-  aside.related a {
-    font-style: italic;
-    font-size: 1.6363636364em; /* 36px / 22px */
   }
