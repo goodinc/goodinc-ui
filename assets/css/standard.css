@@ -216,3 +216,20 @@
       width: calc(50% - 5em);
     }
   }
+
+
+  /* =Aside
+  ----------------------------------------------- */
+
+  /* For the about page */
+  @media (min-width: 82.5em) {
+    .standard aside .subscribe {
+      position: relative;
+      z-index: 1;
+    }
+    .standard aside {
+      margin-top: -10em;
+      margin-bottom: -4em;
+      max-width: calc(50% - 14em);
+    }
+  }

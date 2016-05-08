@@ -118,6 +118,7 @@
     }
 
     .project-details .meta {
+      /* @flex-box-wrap */
       display: -webkit-flex;
       display:         flex;
 
@@ -268,6 +269,7 @@
 
   .meta ul,
   .meta li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -303,6 +305,7 @@
   .home .intro li,
   .project-details .highlights .primary,
   .project-details .highlights .primary li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;

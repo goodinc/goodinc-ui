@@ -82,6 +82,7 @@
 
   footer ul,
   footer li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -392,6 +393,7 @@
   }
   footer .legal ul,
   footer .legal li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;

@@ -4,6 +4,7 @@
 
   .featured-project-list,
   .featured-project-list li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -106,6 +107,7 @@
   }
   .articles,
   .articles li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;

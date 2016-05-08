@@ -5,6 +5,7 @@
 
   .team-member-list ul,
   .team-member-list li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
@@ -17,6 +18,7 @@
     margin-left: -1.5em;
     margin-right: -1.5em;
 
+    /* @flex-box-wrap */
     display: -webkit-flex;
     display:         flex;
 
@@ -84,70 +86,3 @@
   }
 
 
-  .community .team > h1,
-  .community .clients > h1 {
-    font-size: 2.1818181818em; /* 48px / 22px */
-    line-height: 1.1458333333; /* 55px / 48px */
-  }
-
-  .community .clients .text,
-  .community .team .text {
-    margin-bottom: 3em;
-    max-width: 28em;
-  }
-
-  .community .quote {
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
-  }
-
-  @media (min-width: 60em) {
-    .community .clients,
-    .community .team {
-      margin-top: 3em;
-      padding-bottom: 3em;
-    }
-    .community .clients:after,
-    .community .team:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    .community .clients > h1,
-    .community .clients > h2,
-    .community .team > h1,
-    .community .team > h2,
-    .community .team > h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-      float: left;
-    }
-    .community .clients > h2,
-    .community .team > h2 {
-      max-width: 5em;
-    }
-    .community .team > h3 {
-      max-width: 7em;
-    }
-    .community .team > h1 + p {
-      margin-left: 9em;
-    }
-    .community .clients .text,
-    .community .team .text {
-      margin-left: 12.681818182em; /* 15.5 x 0.8181818182 */
-      margin-left: 14em;
-    }
-  }
-  .community .clients > h1,
-  .community .team > h1 {
-    position: absolute;
-    left: -9999px;
-  }
-  .community .clients > h1 + p {
-    margin-left: 0;
-  }
-  .community .team > h1 + p {
-    margin-left: 0;
-    margin-bottom: 3em;
-  }

@@ -84,6 +84,7 @@
   }
   .good-can-help ul,
   .good-can-help li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;

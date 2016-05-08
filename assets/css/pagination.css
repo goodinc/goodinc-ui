@@ -1,70 +1,35 @@
 
 
-  /* =Pagination
+  /* =Pagination & Tags
   ----------------------------------------------- */
 
+  /* For the blog and press pages */
+  main > nav {
+    margin-top: 3em;
+  }
+  main > nav + nav {
+    margin-top: 6em;
+  }
   main > nav ul,
   main > nav li {
+    /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
   main > nav ul {
     max-width: none;
-  }
-  main > nav p + ul {
-    margin-top: 3em;
-  }
-  main > nav a {
-    display: block;
-    text-decoration: underline;
-  }
-  @media (min-width: 25em) {
-    main > nav ul {
-      margin: 0;
-    }
-    main > nav ul {
-      margin-left: -0.375em;
-      margin-right: -0.375em;
-    }
-    main > nav li {
-      display: inline-block;
-    }
-    main > nav a {
-      padding: 1.5em 0.375em;
-    }
-  }
-  @media (min-width: 60em) {
-    main > nav {
-      margin-top: 1.5em;
-    }
-  }
-  @media (min-width: 80em) {
-    main > nav ul {
-      margin-left: -0.75em !important;
-      margin-right: -0.75em !important;
-    }
-    main > nav a {
-      padding: 1.5em 0.75em !important;
-    }
-  }
-  @media (min-width: 90em) {
-    main > nav ul {
-      margin-left: -1.5em !important;
-      margin-right: -1.5em !important;
-    }
-    main > nav a {
-      padding: 1.5em !important;
-    }
+    margin: 0;
   }
   main > nav a {
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-style: inherit;
     text-transform: lowercase;
-    position: relative;
+    display: block;
   }
 
+  /* Emphasize the active page */
   main > nav a[href]:not(.active) {
     color: inherit;
   }
@@ -77,30 +42,45 @@
     opacity: 0.65;
   }
 
-  main > nav.pagination {
-    margin-bottom: 3em;
-  }
-  @media (min-width: 25em) {
-    main > nav.pagination {
-      text-align: center;
-    }
-  }
-
-
+  /* Tags */
   main > nav.tags h3 {
     font-style: italic;
-  }
-  main > nav.tags a {
-    padding-top: 0.25em !important;
-    padding-bottom: 0.25em !important;
+    max-width: none;
   }
 
-  /*
-  body > nav.pagination .previous:before {
-    content: "← ";
+  @media (min-width: 25em) {
+    main > nav {
+      text-align: center;
+    }
+    main > nav li {
+      display: inline-block;
+    }
+    main > nav ul {
+      margin-left: -0.375em;
+      margin-right: -0.375em;
+    }
+    main > nav a {
+      padding-left: 0.375em;
+      padding-right: 0.375em;
+    }
   }
-  body > nav.pagination .next:after {
-    content: " →";
+  @media (min-width: 50em) {
+    main > nav ul {
+      margin-left: -0.75em;
+      margin-right: -0.75em;
+    }
+    main > nav a {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
   }
-  */
-
+  @media (min-width: 75em) {
+    main > nav ul {
+      margin-left: -1.5em;
+      margin-right: -1.5em;
+    }
+    main > nav a {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+  }
