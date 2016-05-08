@@ -31,11 +31,11 @@
 
 @import url('elements.css');
 @import url('type.css');
-@import url('icons.css');
 @import url('links.css');
 @import url('buttons.css');
 @import url('meta-data.css');
 @import url('forms.css');
+@import url('quote.css');
 
 @import url('layout.css');
 @import url('main.css');
@@ -49,14 +49,12 @@
 @import url('projects.css');
 @import url('project-details.css');
 
-@import url('community.css');
-@import url('client-list.css');
-@import url('quote.css');
-@import url('reports.css');
-
+@import url('team.css');
 @import url('team-member.css');
 
+@import url('clients.css');
+@import url('reports.css');
+
 @import url('home.css');
-@import url('good-can-help.css');
 
 

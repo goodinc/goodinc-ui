@@ -1,6 +1,6 @@
 
 
-  /* =Community
+  /* =Team
   ----------------------------------------------- */
 
   .team-member-list ul,
@@ -10,12 +10,11 @@
     margin-left: 0;
     padding-left: 0;
   }
-
   .team-member-list ul {
     max-width: none;
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
-    margin-left: -1.5em;
+    margin-left: -1.5em; /* item padding */
     margin-right: -1.5em;
 
     /* @flex-box-wrap */
@@ -25,13 +24,6 @@
     -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
   }
-
-  .team-member-list li a {
-    color: inherit;
-    font-style: inherit;
-    text-decoration: inherit;
-  }
-
   .team-member-list li {
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     color: rgb(41, 53, 57);
@@ -40,12 +32,32 @@
     text-align: center;
     box-sizing: border-box;
   }
+  .team-member-list li a {
+    color: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+  }
+  .team-member img,
+  .team-member-list img {
+    border-radius: 50%;
+  }
   .team-member-list li h4,
   .team-member-list li p {
     max-width: none;
   }
+  .team-member-list li h4 {
+    margin: 0.75em 0 0 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
+  }
+  .team-member-list li p {
+    margin: 0;
+    font-style: italic;
+    opacity: 0.6;
+  }
 
-  /* SHIM: This is prefixed with “main” so IE8 will ignore it. */
+  /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
   main .team-member-list li img {
     width: 100%;
     max-width: 15em;
@@ -67,22 +79,3 @@
       width: 25%;
     }
   }
-
-  .team-member img,
-  .team-member-list img {
-    border-radius: 50%;
-  }
-
-  .team-member-list li h4 {
-    margin: 0.75em 0 0 0;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: bold;
-  }
-  .team-member-list li p {
-    margin: 0;
-    font-style: italic;
-    opacity: 0.6;
-  }
-
-
