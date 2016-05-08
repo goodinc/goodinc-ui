@@ -32,36 +32,36 @@
     text-align: center;
     box-sizing: border-box;
   }
-  .team-member-list li a {
+  .team-member-list a {
     color: inherit;
     font-style: inherit;
     text-decoration: inherit;
   }
-  .team-member img,
   .team-member-list img {
     border-radius: 50%;
   }
-  .team-member-list li h4,
-  .team-member-list li p {
+
+  /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
+  main .team-member-list img {
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+  }
+
+  .team-member-list h4,
+  .team-member-list p {
     max-width: none;
   }
-  .team-member-list li h4 {
+  .team-member-list h4 {
     margin: 0.75em 0 0 0;
     font-size: inherit;
     line-height: inherit;
     font-weight: bold;
   }
-  .team-member-list li p {
+  .team-member-list p {
     margin: 0;
     font-style: italic;
     opacity: 0.6;
-  }
-
-  /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
-  main .team-member-list li img {
-    width: 100%;
-    max-width: 15em;
-    height: auto;
   }
 
   @media (min-width: 20em) {

@@ -29,6 +29,7 @@
   .projects .list dt,
   .meta h2,
   .meta h3 {
+    /* @small-caps */
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.6666666667em; /* 12px / 18px */

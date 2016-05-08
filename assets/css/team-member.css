@@ -5,6 +5,9 @@
   .team-member .image {
     margin-bottom: 1.5em;
   }
+  .team-member .image img {
+    border-radius: 50%;
+  }
   .team-member > h1,
   .team-member > h1 + p {
     margin-top: 0;
@@ -21,12 +24,14 @@
     font-style: italic;
   }
   .team-member .details h2 {
+    /* @small-caps */
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-weight: bold;
     font-size: 0.5454545455em; /* 12px / 22px */
     line-height: 1.8333333333; /* 22px / 12px */
     text-transform: uppercase;
     letter-spacing: 0.1em;
+
     margin-bottom: 0;
   }
   .team-member .details p:first-child,

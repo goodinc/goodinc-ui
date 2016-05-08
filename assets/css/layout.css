@@ -8,7 +8,6 @@
 
   body > nav,
   main,
-  header,
   footer > div {
     padding: 1.5em; /* @tiny-page-margin */
   }
@@ -18,12 +17,8 @@
   @media (min-width: 70em) {
     body > nav,
     main,
-    header,
     footer > div {
       padding: 4em; /* 88px / 22px */ /* @page-margin */
-    }
-    header {
-      padding-top: 2.2727272727em; /* 50px / 22px */ /* @page-margin-top */
     }
     body > nav {
       padding-top: 0;
