@@ -71,3 +71,9 @@
     display: inline-block;
   }
 
+  /* For non “.standard” pages like blog, reports and press */
+  main h1:first-child {
+    margin-top: 0;
+  }
+
+

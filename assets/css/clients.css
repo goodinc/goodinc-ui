@@ -10,7 +10,7 @@
     padding-left: 0;
   }
   .client-list {
-    margin-left: -1.5em; /* @page-margin */
+    margin-left: -1.5em; /* @tiny-page-margin */
     margin-right: -1.5em;
     max-width: none;
 
@@ -37,7 +37,7 @@
   /* Three columns */
   @media (max-width: 50em) {
     .client-list li img {
-      width: calc(33.333vw - 3em); /* @page-margin x 2 = 3em */
+      width: calc(33.333vw - 3em); /* @tiny-page-margin x 2 = 3em */
       height: calc(20vw - 3em);
     }
   }
