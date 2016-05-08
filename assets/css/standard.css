@@ -194,15 +194,21 @@
   }
 
   .standard.news > h1 {
+    /* @tiny-header-1 */
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
+
     margin-bottom: 0.6em;
   }
+
+  /* Make headlines in the news section larger (since the content contains a lot of large type) */
   @media (min-width: 50em) {
     .standard.news > h1 {
-      font-size: 3.7272727273em; /* 82px / 22px */
-      line-height: 1.2073170732em; /* 99px / 82px */
-      margin-bottom: 0.4024390244em; /* 33px / 82px */
+      /* @header-1 */
+      font-size: 3.6363636364em; /* 80px / 22px */
+      line-height: 1.2375em; /* 99px / 80px */
+
+      margin-bottom: 0.4125em; /* 33px / 80px */
       width: calc(50% - 5em);
     }
   }
@@ -210,9 +216,11 @@
   @media (min-width: 110em) {
     .standard > h1,
     .standard > .section h1 {
-      font-size: 3.7272727273em; /* 82px / 22px */
-      line-height: 1.2073170732em; /* 99px / 82px */
-      margin-bottom: 0.4024390244em; /* 33px / 82px */
+      /* @header-1 */
+      font-size: 3.6363636364em; /* 80px / 22px */
+      line-height: 1.2375em; /* 99px / 80px */
+
+      margin-bottom: 0.4125em; /* 33px / 80px */
       width: calc(50% - 5em);
     }
   }

@@ -428,6 +428,8 @@
   .good-can-help ul {
     font-weight: bold;
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+
+    /* @header-3 */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
   }
@@ -437,6 +439,8 @@
     .good-can-help ul {
       font-weight: bold;
       font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+
+      /* @header-2 */
       font-size: 2.1818181818em; /* 48px / 22px */
       line-height: 1.1458333333; /* 55px / 48px */
     }

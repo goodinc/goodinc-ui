@@ -140,10 +140,6 @@
       clear: both;
     }
     .project-details .details > div {
-      /*
-      float: left;
-      clear: left;
-      */
       width: 45%;
     }
     .project-details .details > div p:last-child {
@@ -297,8 +293,9 @@
   @media (min-width: 50em) {
     aside.related h2,
     .project-details .highlights h2 {
-      font-size: 3.7272727273em; /* 82px / 22px */
-      line-height: 1.2073170732em; /* 99px / 82px */
+      /* @header-1 */
+      font-size: 3.6363636364em; /* 80px / 22px */
+      line-height: 1.2375em; /* 99px / 80px */
     }
   }
   .home .intro ul,
@@ -322,8 +319,10 @@
     font-weight: bold;
   }
   .home .intro li b {
+    /* @header-3 */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+
     font-weight: inherit;
   }
   .home .intro li span,
@@ -345,10 +344,11 @@
 
   @media (min-width: 50em) {
     .project-details .highlights .primary li b {
-      font-size: 3.7272727273em; /* 82px / 22px */
+      /* @header-1 */
+      font-size: 3.6363636364em; /* 80px / 22px */
+      line-height: 1.2375em; /* 99px / 80px */
 
-      /* SHIM: Attempt to line up the primary and secondary content */
-      line-height: 1.0731707317em; /* 88px / 82px */
+      font-weight: normal;
     }
   }
   .project-details .highlights .secondary {

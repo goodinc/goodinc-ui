@@ -12,28 +12,36 @@
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
   }
   h1 {
+    /* @tiny-header-1 */
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
+
     margin-top: 0.6em; /* 33px / 55px */
     margin-bottom: 0.6em;
   }
   @media (min-width: 70em) {
     h1 {
-      font-size: 3.7272727273em; /* 82px / 22px */
-      line-height: 1.2073170732em; /* 99px / 82px */
-      margin-top: 0.4024390244em; /* 33px / 82px */
-      margin-bottom: 0.4024390244em;
+      /* @header-1 */
+      font-size: 3.6363636364em; /* 80px / 22px */
+      line-height: 1.2375em; /* 99px / 80px */
+
+      margin-top: 0.4125em; /* 33px / 80px */
+      margin-bottom: 0.4125em;
     }
   }
   h2 {
+    /* @header-2 */
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333; /* 55px / 48px */
+
     margin-top: 0.6875em; /* 33px / 48px */
     margin-bottom: 0.6875em;
   }
   h3 {
+    /* @header-3 */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
+
     margin-top: 0.9166666667em; /* 33px / 36px */
     margin-bottom: 0.9166666667em;
 
