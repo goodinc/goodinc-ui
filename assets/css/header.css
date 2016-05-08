@@ -52,7 +52,7 @@
     z-index: 3; /* Just above the h1:first-child element */
 
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
     font-size: 0.6666666667em; /* 12px / 18px */
     line-height: 1.8333333333; /* 22px / 12px */
     text-transform: uppercase;

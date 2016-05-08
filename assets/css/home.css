@@ -34,7 +34,7 @@
     color: rgb(0, 157, 255); /* @blue */
   }
   .teal .featured-project-list li h2 {
-    color: rgb(0, 207, 172); /* @dark-teal */
+    color: rgb(0, 240, 200); /* @teal */
   }
   .green .featured-project-list li h2 {
     color: rgb(48, 217, 101); /* @green */
@@ -93,7 +93,7 @@
     border-color: rgb(0, 157, 255); /* @blue */
   }
   .teal .recent {
-    border-color: rgb(0, 207, 172); /* @dark-teal */
+    border-color: rgb(0, 240, 200); /* @teal */
   }
   .green .recent {
     border-color: rgb(48, 217, 101); /* @green */
@@ -194,7 +194,7 @@
     color: rgb(48, 217, 101); /* @green */
   }
   .yellow .articles li h2 {
-    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
   }
   .red .articles li h2 {
     color: rgb(239, 20, 93); /* @red */
@@ -329,7 +329,7 @@
     margin-bottom: 0;
   }
   .featured-project-list a .more {
-    color: rgb(0, 207, 172); /* @dark-teal */
+    color: rgb(0, 240, 200); /* @teal */
     text-align: right;
 
     max-width: none;
@@ -347,7 +347,7 @@
     color: rgb(0, 157, 255); /* @blue */
   }
   .teal .featured-project-list a .more {
-    color: rgb(0, 207, 172); /* @dark-teal */
+    color: rgb(0, 240, 200); /* @teal */
   }
   .green .featured-project-list a .more {
     color: rgb(48, 217, 101); /* @green */
@@ -522,7 +522,7 @@
     color: rgb(48, 217, 101); /* @green */
   }
   .yellow .home .intro svg {
-    color: rgb(255, 214, 13); /* @yellow */
+    color: rgb(230, 189, 0); /* @dark-yellow */
   }
   .red .home .intro svg {
     color: rgb(239, 20, 93); /* @red */

@@ -40,7 +40,7 @@
     }
     .team-member > h1:after {
       content: " – ";
-      color: rgb(0, 207, 172); /* @dark-teal */
+      color: rgb(0, 240, 200); /* @teal */
     }
   }
   .tangerine .team-member > h1:after {
@@ -56,7 +56,7 @@
     color: rgb(0, 157, 255); /* @blue */
   }
   .teal .team-member > h1:after {
-    color: rgb(0, 207, 172); /* @dark-teal */
+    color: rgb(0, 240, 200); /* @teal */
   }
   .green .team-member > h1:after {
     color: rgb(48, 217, 101); /* @green */

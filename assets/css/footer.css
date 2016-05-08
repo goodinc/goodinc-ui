@@ -30,7 +30,8 @@
   footer button, 
   footer .action span, 
   footer .action a {
-    background-color: rgb(55, 72, 77) !important; /* @magnesium */
+    background-color: rgb(55, 72, 77) !important; /* @magnesium */ /* !important to override the selected page color */
+    color: white !important;
   }
   footer button:hover,
   footer button:active,
@@ -42,10 +43,11 @@
   footer .action a[href]:active,
   footer .action a[href]:focus {
     background-color: rgb(114, 126, 130) !important; /* @nickel */
+    color: white !important;
   }
 
   footer .contact {
-    font-weight: 900;
+    font-weight: 900; /* @extra-bold */
   }
 
   @media (min-width: 30em) {
@@ -76,121 +78,7 @@
     position: relative;
   }
 
-  footer form {
-    margin-bottom: 3em;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  footer form label {
-    font-weight: bold;
-  }
 
-  footer form p {
-    max-width: none;
-    margin: 0;
-  }
-  footer form label span {
-    font-size: inherit;
-  }
-  footer button {
-    vertical-align: text-bottom;
-  }
-
-  /* KUDOS: http://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript */
-  footer select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    background-color: transparent;
-    color: inherit;
-    border-width: 0 0 2px 0;
-    border-radius: 0;
-  }
-  @media (max-width: 35em) {
-    footer form {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    footer select,
-    footer button {
-      display: block;
-      width: 100%;
-    }
-    footer button {
-      margin-top: 0.75em;
-    }
-  }
-  footer select {
-    padding-right: 1.5em;
-  }
-  /*
-  @media (min-width: 30em) {
-    footer select {
-      width: calc(100vw - 20em);
-    }
-  }
-  */
-  @media (min-width: 60em) {
-    footer form label {
-      font-size: 2.1818181818em; /* 48px / 22px */
-      line-height: 1.1458333333; /* 55px / 48px */
-    }
-    /*
-    footer select {
-      width: auto;
-    }
-    */
-  }
-  /*
-  @media (min-width: 70em) {
-    footer select {
-      width: calc(100vw - 12em);
-    }
-  }
-  */
-
-
-  .tangerine footer select {
-    color: rgb(255, 80, 26); /* @tangerine */
-  }
-  .orange footer select {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple footer select{
-    color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue footer select {
-    color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal footer select {
-    color: rgb(0, 207, 172); /* @dark-teal */
-  }
-  .green footer select {
-    color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow footer select {
-    color: rgb(255, 214, 13); /* @yellow */
-  }
-  .red footer select {
-    color: rgb(239, 20, 93); /* @red */
-  }
-
-  footer form label {
-    position: relative;
-    display: inline-block;
-    margin-right: 0.375em;
-  }
-  footer form svg {
-    font-size: 0.375em;
-    position: absolute;
-    bottom: 0.875em;
-    right: 0;
-  }
 
   footer ul,
   footer li {

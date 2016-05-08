@@ -136,7 +136,7 @@
     color: rgb(0, 157, 255); /* @blue */
   }
   .teal header ~ main > .header h1 {
-    color: rgb(0, 207, 172); /* @dark-teal */
+    color: rgb(0, 240, 200); /* @teal */
   }
   .green header ~ main > .header h1 {
     color: rgb(48, 217, 101); /* @green */
