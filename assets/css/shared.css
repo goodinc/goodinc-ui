@@ -605,6 +605,9 @@
     margin-bottom: -3em;
     max-width: none;
   }
+  .standard .quote[style]:last-child {
+    margin-bottom: -3em;
+  }
   .quote[style]:before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
@@ -3469,7 +3472,7 @@
   }
   .featured-project-list > li a {
     display: block;
-    padding: 15em 1.5em;
+    padding: 15em 1.5em 1.5em;
     box-sizing: border-box;
     position: relative;
 
