@@ -69,9 +69,6 @@
   /* =Header (experimental)
   ----------------------------------------------- */
 
-  main.home {
-    margin-top: 0;
-  }
   main > .header {
     background-position: center;
     background-size: cover;

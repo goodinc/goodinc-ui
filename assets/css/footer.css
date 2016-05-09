@@ -1,14 +1,29 @@
 
-
-
   /* =Footer
+  -----------------------------------------------
+  -----------------------------------------------
   ----------------------------------------------- */
   footer {
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     background-color: rgb(26, 36, 38); /* @thorium */
     color: rgb(192, 204, 207); /* @silver */
+    position: relative;
   }
 
+  footer ul,
+  footer li {
+    /* @reset-list */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  footer li a {
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  /* Links */
   footer a,
   .tangerine footer a,
   .orange    footer a,
@@ -20,13 +35,13 @@
   .red       footer a {
     color: inherit;
   }
-
   footer a[href]:hover,
   footer a[href]:active,
   footer a[href]:focus {
     color: white;
   }
 
+  /* Buttons */
   footer button, 
   footer .action span, 
   footer .action a {
@@ -46,48 +61,9 @@
     color: white !important;
   }
 
-  footer .contact {
-    font-weight: 900; /* @extra-bold */
-  }
 
-  @media (min-width: 30em) {
-    footer .contact {
-      font-size: 2.1818181818em; /* 48px / 22px */
-      line-height: 1.1458333333; /* 55px / 48px */
-    }
-  }
-
-  footer .contact h2,
-  footer .contact p {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-  }
-  footer .contact h2 {
-    margin-top: 0;
-    color: rgb(55, 72, 77); /* @magnesium */
-  }
-  footer .contact p {
-    margin-bottom: 0;
-  }
-  footer .contact p a {
-    font-style: normal;
-    text-decoration: none;
-  }
-  footer {
-    position: relative;
-  }
-
-
-
-  footer ul,
-  footer li {
-    /* @reset-list */
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
+  /* =Social
+  ----------------------------------------------- */
   .social {
     margin-top: 0.75em;
   }
@@ -131,7 +107,6 @@
   .red .social li a {
     background-color: rgb(239, 20, 93); /* @red */
   }
-
   footer .social li a {
     color: rgb(26, 36, 38) !important; /* @thorium */ /* Important to override colors like .tangerine and .red */
     background-color: rgb(192, 204, 207) !important; /* @silver */
@@ -144,15 +119,18 @@
   }
 
 
-  footer .map ul {
-    margin-top: 0;
-  }
+  /* =Subscribe
+  ----------------------------------------------- */
   aside .subscribe,
   footer .subscribe {
     display: block;
     margin: 1.5em 0;
     text-decoration: none;
     font-style: inherit;
+  }
+  aside .subscribe {
+    color: inherit;
+    margin: 3em 0;
   }
   aside .subscribe h2,
   aside .subscribe h3,
@@ -162,6 +140,14 @@
   footer .subscribe h3,
   footer .subscribe p {
     margin: 0;
+  }
+  aside .subscribe h2,
+  aside .subscribe h3,
+  footer .subscribe h2,
+  footer .subscribe h3,
+  footer .map > li {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
   }
   aside .subscribe h3,
   footer .subscribe h3 {
@@ -173,37 +159,13 @@
   footer .subscribe p {
     margin-top: 0.75em;
   }
-  footer .contact h2 {
-    margin-bottom: 0;
-  }
-  footer .contact p {
-    margin-top: 0;
-  }
-
-  footer .map {
-    max-width: none;
-  }
-  aside .subscribe h2,
-  aside .subscribe h3,
-  footer .subscribe h2,
-  footer .subscribe h3,
-  footer .map > li {
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
-  }
-
-  aside .subscribe {
-    color: inherit;
-  }
-  aside .subscribe {
-    margin: 3em 0;
-  }
   aside .subscribe:hover .action span,
   aside .subscribe:active .action span,
   aside .subscribe:focus .action span {
     background-color: rgb(41, 53, 56); /* @tin */
   }
 
+  /* Daily GOOD (for the about page) */
   aside .subscribe.daily-good h2 {
     color: rgb(192, 204, 207); /* @silver */
     color: rgba(0, 0, 0, 0.33);
@@ -227,17 +189,21 @@
     max-width: 10em;
   }
 
+
+  /* =Map
+  ----------------------------------------------- */
+  footer .map {
+    max-width: none;
+  }
+  footer .map ul {
+    margin-top: 0;
+  }
   footer .map > li ul {
     margin-top: 1.2222222222em;
   }
-
   footer .map > li p,
   footer .map > li li {
     margin-top: 0.6111111111em;
-  }
-  footer li a {
-    text-decoration: none;
-    font-style: normal;
   }
   footer .map > li {
     margin-bottom: 1.5em;
@@ -251,7 +217,6 @@
     font-weight: bold;
     display: block;
   }
-
   @media (min-width: 40em) {
     footer .subscribe,
     footer .map,
@@ -272,6 +237,20 @@
       margin-left: 2%;
     }
   }
+  @media (min-width: 40em) {
+    footer div:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer .subscribe {
+      float: left;
+    }
+    footer .map,
+    footer .map.locations {
+      float: right;
+    }
+  }
   @media (min-width: 60em) {
     footer .map > li {
       width: 29%;
@@ -290,46 +269,12 @@
       margin-left: 2%;
     }
   }
-  /*
-  @media (min-width: 100em) {
-    footer .subscribe {
-      width: 15%;
-    }
-    footer .map {
-      width: 83%;
-    }
-    footer .map > li {
-      width: 17%;
-      margin-left: 2%;
-    }
-  }
-  */
-
-  @media (min-width: 40em) {
-    footer div:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    footer .subscribe {
-      float: left;
-    }
-    footer .map,
-    footer .map.locations {
-      float: right;
-    }
-  }
 
 
+  /* =Legal
+  ----------------------------------------------- */
   footer .legal {
     clear: both;
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
-  }
-
-
-  footer .legal {
-    margin: 0;
     padding-top: 4em;
     font-size: 0.6363636364em; /* 14px / 22px */
     line-height: 1.5714285714; /* 22px / 14px */
@@ -370,16 +315,13 @@
 
   /* =GOOD can help
   ----------------------------------------------- */
-
   .good-can-help {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
-  }
-  .good-can-help {
     margin-top: 1.5em;
-  }
-  .good-can-help {
     padding: 3em 1.5em;
+    background-color: rgb(102, 102, 102);
+    color: white;
   }
   @media (min-width: 70em) {
     .good-can-help {
@@ -393,12 +335,6 @@
       padding: 6em 4em; /* 50px / 22px */     /* 88px / 22px */
     }
   }
-
-  .good-can-help {
-    background-color: rgb(102, 102, 102);
-    color: white;
-  }
-
   .tangerine .good-can-help {
     background-color: rgb(255, 80, 26); /* @tangerine */
   }
@@ -511,9 +447,7 @@
     */
   }
 
-
-
-  /* Contact links */
+  /* When “.good-can-help” appears in the footer, change the colors */
   footer .good-can-help {
     background-color: transparent !important;
     margin-top: -1.5em;
@@ -533,7 +467,6 @@
   footer .good-can-help a span {
     color: inherit !important;
   }
-
   .tangerine footer .good-can-help a {
     color: rgb(249, 132, 12) !important; /* @orange */
   }
