@@ -2684,12 +2684,13 @@
   .standard > figure.movie:last-child {
     margin-bottom: -3em;
   }
-  .standard > figure iframe,
-  .project-details .highlights + figure iframe {
+  @supports (min-height: 70vh) { /* SHIM: Hide this rule from older browsers, like Safari on iOS 8 (which has trouble with viewport units). */
+    .standard > figure iframe,
+    .project-details .highlights + figure iframe {
 
-    /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
-    height: 24em;
-    height: 70vh;
+      /* TBD: Should this be based on the aspect ratio of the movie or the viewport? */
+      height: 70vh;
+    }
   }
   @media (min-width: 60em) {
     .standard > figure img,
