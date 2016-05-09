@@ -1019,7 +1019,15 @@
     font-size: inherit;
   }
   .scripted-nav main > .header {
-    padding-right: 0;
+    padding-right: 1.5em;
+  }
+  @media (min-width: 70em) {
+    .scripted-nav main > .header {
+      padding-right: 4em;
+    }
+  }
+  .scripted-nav main > .header {
+    padding-right: 1.5em;
   }
   .scripted-nav header + main h1:first-child,
   .scripted-nav header + h1 + main h1:first-child,
