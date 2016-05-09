@@ -6,6 +6,9 @@
   main > h1 + h3 {
     margin-top: -1.5em;
   }
+  body > nav p {
+    margin-right: 2.25em;
+  }
   body > nav ul,
   body > nav li {
     /* @reset-list */

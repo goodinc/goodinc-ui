@@ -143,9 +143,6 @@
       margin-right: 2em;
     }
   }
-  body > nav p {
-    margin-right: 2.25em;
-  }
 
   .scripted-nav header > .nav {
     font-size: inherit;
