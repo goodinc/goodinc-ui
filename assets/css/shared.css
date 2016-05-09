@@ -3598,12 +3598,6 @@
     height: 100%;
     z-index: 0;
   }
-  @media (min-height: 50em) {
-    .featured-project-list > li a {
-      padding-top: 49vh;
-      padding-bottom: 34vh;
-    }
-  }
   @media (min-width: 70em) {
     .featured-project-list > li {
       margin-left: -4em; /* 88px / 22px */
