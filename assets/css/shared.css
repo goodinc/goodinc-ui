@@ -992,23 +992,10 @@
     max-width: 20.5em;
   }
 
-  /* SHIM: Prevent the headline from colliding with the site navigation */
-  @media (min-width: 30em) and (max-width: 90em) {
-    main > .header {
-      padding-right: 10em;
-    }
-  }
-  @media (min-width: 30em) and (max-width: 70em) {
-    main > .header {
-      padding-right: 8em;
-    }
-  }
-
-  /* OPTIONAL: Make the navigation a little smaller on tiny screens that don’t understand @supports */
-  @media (max-width: 30em) {
-    main > .header {
-      padding-right: 5em;
-    }
+  /* Prevent the headline from colliding with the site navigation */
+  body > nav,
+  main > .header {
+    padding-right: 6em;
   }
   @media (max-width: 50em) {
     header + main h1:first-child,
@@ -1025,13 +1012,15 @@
   .scripted-nav main > .header {
     padding-right: 1.5em;
   }
-  @media (min-width: 70em) {
-    .scripted-nav main > .header {
-      padding-right: 4em;
-    }
-  }
+  .scripted-nav > nav,
   .scripted-nav main > .header {
     padding-right: 1.5em;
+  }
+  @media (min-width: 70em) {
+    .scripted-nav > nav,
+    .scripted-nav main > .header {
+      padding-right: 4em; /* 88px / 22px */ /* @page-margin */
+    }
   }
   .scripted-nav header + main h1:first-child,
   .scripted-nav header + h1 + main h1:first-child,
