@@ -3257,18 +3257,16 @@
 
 
   /* =Home
-  ----------------------------------------------- */
-  @media (min-width: 20em) {
-    main.home > h1:first-child {
-      margin-top: 0;
-      position: absolute;
-      top: 2em;
-      z-index: 2; /* Just above the main navigation */
-      color: white;
-    }
-    main.home h1:first-child + p {
-      margin-top: 0;
-    }
+----------------------------------------------- */
+  main.home > h1:first-child {
+    margin-top: 0;
+    position: absolute;
+    top: 2em;
+    z-index: 2; /* Just above the main navigation */
+    color: white;
+  }
+  main.home h1:first-child + p {
+    margin-top: 0;
   }
   @media (min-height: 50em) {
     main.home > h1:first-child {
@@ -3471,14 +3469,18 @@
   }
   .featured-project-list > li a {
     display: block;
-    padding: 1.5em;
+    padding: 15em 1.5em;
     box-sizing: border-box;
     position: relative;
-    padding-top: 45vh;
-    padding-bottom: 5vh;
 
     z-index: 1;
     color: white;
+  }
+  @media (min-height: 30em) {
+    .featured-project-list > li a {
+      padding-top: 45vh;
+      padding-bottom: 5vh;
+    }
   }
   .featured-project-list > li a div {
     position: relative;
