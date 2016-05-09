@@ -615,8 +615,10 @@
     .standard .quote[style] {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
-      margin-bottom: -8em;
       padding: 4em;
+    }
+    .standard .quote[style]:last-child {
+      margin-bottom: -8em;
     }
   }
   @media (min-aspect-ratio: 1/1) {
