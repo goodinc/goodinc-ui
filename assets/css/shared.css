@@ -3172,6 +3172,11 @@
     color: rgb(41, 53, 56); /* @tin */
     color: rgba(0, 0, 0, 0.8);
   }
+  .reports a:hover span,
+  .reports a:active span,
+  .reports a:focus span {
+    color: inherit;
+  }
   .reports a i {
     display: inline-block;
     border: 2px solid;
@@ -3195,6 +3200,52 @@
       margin-left: 0;
     }
   }
+
+  .reports a span {
+    transition: color 0.2s;
+  }
+
+  .tangerine .reports a[href]:hover,
+  .tangerine .reports a[href]:active,
+  .tangerine .reports a[href]:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .reports a[href]:hover,
+  .orange .reports a[href]:active,
+  .orange .reports a[href]:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .reports a[href]:hover,
+  .purple .reports a[href]:active,
+  .purple .reports a[href]:focus {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .reports a[href]:hover,
+  .blue .reports a[href]:active,
+  .blue .reports a[href]:focus {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .reports a[href]:hover,
+  .teal .reports a[href]:active,
+  .teal .reports a[href]:focus {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .reports a[href]:hover,
+  .green .reports a[href]:active,
+  .green .reports a[href]:focus {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow  .reports a[href]:hover,
+  .yellow .reports a[href]:active,
+  .yellow .reports a[href]:focus {
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .reports a[href]:hover,
+  .red .reports a[href]:active,
+  .red .reports a[href]:focus {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
 
 
   /* =Home
