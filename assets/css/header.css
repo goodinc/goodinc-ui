@@ -1,6 +1,23 @@
 
-  /* =Header
+  /* =Header (Site)
+  -----------------------------------------------
+  (logo and navigation)
   ----------------------------------------------- */
+
+  header h2 {
+    font-size: inherit;
+    margin: 0;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    z-index: 4; /* Just above the main navigation */
+  }
+  @media (min-width: 70em) {
+    header h2 {
+      top: 2.2727272727em; /* 50px / 22px */
+      left: 4em; /* 88px / 22px */
+    }
+  }
 
   /* Make the logo the same color as the text around it */
   header h2 a,
@@ -13,21 +30,6 @@
   header h2 a[href]:active,
   header h2 a[href]:focus {
     color: rgb(114, 126, 130) !important; /* @nickel */
-  }
-  header[style] h2 a {
-    color: white !important;
-  }
-  header[style] h2 a[href]:hover,
-  header[style] h2 a[href]:active,
-  header[style] h2 a[href]:focus  {
-    color: white !important;
-    opacity: 0.7;
-  }
-  header h2 {
-    font-size: inherit;
-    margin: 0;
-    position: absolute;
-    z-index: 4; /* Just above the main navigation */
   }
   header h2 svg {
     fill: currentColor;
@@ -65,10 +67,10 @@
   }
 
 
-
-  /* =Header (experimental)
+  /* =Header (Page)
+  -----------------------------------------------
+  (headline and sub-headline)
   ----------------------------------------------- */
-
   main > .header {
     background-position: center;
     background-size: cover;
@@ -78,11 +80,12 @@
     padding: 6em 1.5em 0;
     box-sizing: border-box;
   }
+
+  /* Some pages have a background image behind the header */
   .has-header-image main > .header {
     min-height: 20em;
     min-height: 80vh;
   }
-
   .has-header-image header h2 a,
   body.has-header-image > h3 {
     color: white !important;
@@ -90,38 +93,11 @@
   .has-header-image main > .header {
     background-color: rgb(41, 53, 56); /* @tin */
   }
-  main > .header[style] {
-    color: white;
-    padding-bottom: 3em;
-    /*
-    min-height: 80vh;
-    */
-  }
   @media (min-width: 70em) {
     main > .header {
       margin: -8em -4em 0;
       padding: 8em 4em 0;
     }
-    main > .header[style] {
-      padding-bottom: 4em;
-    }
-  }
-  main > .header[style]:before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  main > .header[style] > * {
-    position: relative;
-    z-index: 1;
-  }
-  main > .header[style] h1 span {
-    color: white !important;
   }
 
   main > .header + .standard {
@@ -133,27 +109,6 @@
     }
   }
 
-  header h2 {
-    top: 1.5em;
-    left: 1.5em;
-  }
-  @media (min-width: 70em) {
-    header h2 {
-      top: 2.2727272727em; /* 50px / 22px */
-      left: 4em; /* 88px / 22px */
-    }
-  }
-
-  header h2 {
-    position: absolute;
-
-  }
-
-
-
-
-
-
   /* OPTIONAL: Limit the width of the headlines for aesthetic reasons. */
   main > .header h1 {
     max-width: 12em;
@@ -162,7 +117,7 @@
     max-width: 20.5em;
   }
 
-  /* SHIM: Prevent the nav from colliding with the headlines */
+  /* SHIM: Prevent the headline from colliding with the site navigation */
   @media (min-width: 30em) and (max-width: 90em) {
     main > .header {
       padding-right: 10em;
@@ -174,14 +129,8 @@
     }
   }
 
-
   /* OPTIONAL: Make the navigation a little smaller on tiny screens that don’t understand @supports */
   @media (max-width: 30em) {
-    /*
-    header > .nav {
-      font-size: 0.75em;
-    }
-    */
     main > .header {
       padding-right: 5em;
     }
