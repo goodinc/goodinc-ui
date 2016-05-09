@@ -929,9 +929,10 @@
   }
 
   /* Some pages have a background image behind the header */
-  .has-header-image main > .header {
-    min-height: 20em;
-    min-height: 80vh;
+  @supports (min-height: 80vh) { /* SHIM: Hide this rule from older browsers, like Safari on iOS 8 (which has trouble with viewport units). */
+    .has-header-image main > .header {
+      min-height: 80vh;
+    }
   }
   .has-header-image header h2 a,
   body.has-header-image > h3 {
