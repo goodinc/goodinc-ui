@@ -3270,7 +3270,7 @@
   }
   @media (min-height: 50em) {
     main.home > h1:first-child {
-      top: 6em;
+      top: 2em;
     }
   }
   @media (min-width: 70em) and (min-aspect-ratio: 1/1) {
@@ -3606,7 +3606,7 @@
       margin-right: -4em;
     }
     .featured-project-list > li a {
-      padding: 2.2727272727em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding: 15em 4em; /* 50px / 22px */     /* 88px / 22px */
       padding-top: 49vh;
       padding-bottom: 34vh;
     }
