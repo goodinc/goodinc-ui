@@ -771,6 +771,7 @@
     font-style: inherit;
     text-decoration: inherit;
   }
+  /*
   .articles li a img {
     transition: opacity 0.2s;
   }
@@ -778,6 +779,47 @@
   .articles li a:active img,
   .articles li a:focus img {
     opacity: 0.65;
+  }
+  */,
+  .tangerine .articles li a[href]:hover,
+  .tangerine .articles li a[href]:active,
+  .tangerine .articles li a[href]:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .articles li a[href]:hover,
+  .orange .articles li a[href]:active,
+  .orange .articles li a[href]:focus {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .articles li a[href]:hover,
+  .purple .articles li a[href]:active,
+  .purple .articles li a[href]:focus {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .articles li a[href]:hover,
+  .blue .articles li a[href]:active,
+  .blue .articles li a[href]:focus {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .articles li a[href]:hover,
+  .teal .articles li a[href]:active,
+  .teal .articles li a[href]:focus {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green .articles li a[href]:hover,
+  .green .articles li a[href]:active,
+  .green .articles li a[href]:focus {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow  .articles li a[href]:hover,
+  .yellow .articles li a[href]:active,
+  .yellow .articles li a[href]:focus {
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red .articles li a[href]:hover,
+  .red .articles li a[href]:active,
+  .red .articles li a[href]:focus {
+    color: rgb(239, 20, 93); /* @red */
   }
 
 
