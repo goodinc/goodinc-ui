@@ -523,6 +523,9 @@
     line-height: 1.2222222222; /* 22px / 18px */
     font-style: italic;
   }
+  p.note + form {
+    margin-top: 3em;
+  }
 
   /* For the “Ask a Question” page */
   h1 + form {
