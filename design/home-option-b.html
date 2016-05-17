@@ -18,6 +18,22 @@
   <!-- for Windows 8 -->
   <meta name="msapplication-TileImage" content="../assets/images/mstile-310x310.png" />
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
+
+  <style>
+    /*
+    @media (min-width: 70em) {
+      body {
+        -webkit-scroll-snap-type: mandatory;
+        -webkit-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+            -ms-scroll-snap-type: mandatory;
+            -ms-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+                scroll-snap-type: mandatory;
+                scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+      }
+    }
+    */
+  </style>
+
 </head>
 <body class="teal has-header-image">
 
@@ -414,7 +430,306 @@
 
 <script src="../assets/js/color.js"></script>
 
-<script src="../assets/js/home.js"></script>
+<script>
+  
+/* OPTIONAL: Make the header sticky as you scroll until the content area is in view */
+
+(function() {
+
+  // If we’ve moved past the featured items
+
+  var featuredItems = document.querySelectorAll('.featured-project-list > li');
+  var lastFeaturedItem = featuredItems[featuredItems.length - 1];
+  var featuredItemsHeight;
+  var header = document.querySelector('header');
+  var logo = header.querySelector('h2');
+  var nav = header.querySelector('.nav');
+  var headline = document.querySelector('header.home + main > h1:first-child');
+  var logoOffsetTop;
+  var navOffsetTop;
+  var headlineOffsetTop;
+  var featuredItemTopPositions = [];
+
+  // Switch the header to position absolute
+  // Calculate the current position of the header elements and apply them as “top” styles
+
+  // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+  function getScrollY() {
+    var supportPageOffset = window.pageXOffset !== undefined;
+    var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+    return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  }
+
+  function getAbsolutePositionY(element) {
+    if (element.parentNode && element.parentNode.offsetTop) {
+      return getAbsolutePositionY(element.parentNode) + element.offsetTop;
+    } else {
+      return element.offsetTop;
+    }
+  }
+
+  function updateContentHeight() {
+    featuredItemsHeight = getAbsolutePositionY(lastFeaturedItem);
+    logo.style.top = null;
+    nav.style.top = null;
+    headline.style.top = null;
+    logoOffsetTop = logo.offsetTop;
+    navOffsetTop = nav.offsetTop;
+    headlineOffsetTop = headline.offsetTop;
+
+    for (var index = 0; index < featuredItems.length; index++) {
+      featuredItemTopPositions[index] = getAbsolutePositionY(featuredItems[index]);
+    }
+  }
+
+  function updatePositions() {
+    var scrollY = getScrollY();
+    if (scrollY > featuredItemsHeight) {
+      header.className = header.className.replace(/fixed/g, '');
+      logo.style.top = (logoOffsetTop + featuredItemsHeight) + 'px';
+      nav.style.top = (navOffsetTop + featuredItemsHeight) + 'px';
+      headline.style.top = (headlineOffsetTop + featuredItemsHeight) + 'px';
+    } else {
+      if (header.className.indexOf('fixed') < 0) header.className += ' fixed';
+      logo.style.top = null;
+      nav.style.top = null;
+      headline.style.top = null;
+    }
+  }
+
+  function updateOpacity() {
+
+    for (var index = 0; index < featuredItems.length; index++) {
+
+      // If the next item is fully visible, show its name
+      var itemHeight = featuredItems[index].offsetHeight;
+      if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
+        featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
+        // document.body.className = featuredItems[index].className;
+
+      // Else hide it
+      } else { // unless this is the last item
+        if (featuredItems[index].className.indexOf('hidden-text') < 0) {
+          //featuredItems[index].className += ' hidden-text';
+        }
+      }
+
+    }
+
+  }
+
+  updateContentHeight();
+  updatePositions();
+  updateOpacity();
+
+  window.addEventListener('scroll', function() {
+    updatePositions();
+    updateOpacity();
+  }, false);
+
+
+
+  // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+  // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+  // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+
+  // MIT license
+
+  (function() {
+      var lastTime = 0;
+      var vendors = ['ms', 'moz', 'webkit', 'o'];
+      for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+          window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+          window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                     || window[vendors[x]+'CancelRequestAnimationFrame'];
+      }
+   
+      if (!window.requestAnimationFrame)
+          window.requestAnimationFrame = function(callback, element) {
+              var currTime = new Date().getTime();
+              var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+              var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+                timeToCall);
+              lastTime = currTime + timeToCall;
+              return id;
+          };
+   
+      if (!window.cancelAnimationFrame)
+          window.cancelAnimationFrame = function(id) {
+              clearTimeout(id);
+          };
+  }());
+
+
+  /*
+  http://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
+  */
+  (function() {
+    var throttle;
+    var scrollTimer;
+    var autoScrolling;
+    var lastScrollPosition = 0;
+    var scrollingDown;
+
+    window.addEventListener('scroll', function() {
+      var scrollY = getScrollY();
+      if (scrollY > lastScrollPosition) scrollingDown = true;
+      else scrollingDown = false;
+      lastScrollPosition = getScrollY();
+    }, false);
+
+    /*
+    http://upshots.org/actionscript/jsas-understanding-easing
+
+    @t is the current time (or position) of the tween. This can be seconds or frames, steps, seconds, ms, whatever –
+       as long as the unit is the same as is used for the total time [3].
+    @b is the beginning value of the property.
+    @c is the change between the beginning and destination value of the property.
+    @d is the total time of the tween.
+    */
+    function noEasing (time, beginningValue, changeInValue, duration) {
+      return changeInValue * (time / duration) + beginningValue;
+    }
+    function cubicEasing (t, b, c, d) {
+      var ts = (t /= d) * t;
+      var tc = ts * t;
+      return b + c * (tc + -3 * ts + 3 * t);
+    }
+
+    var currentValue;
+    function doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback) {
+      if (time >= duration) {
+        //console.log('callback…')
+        if (callback) callback();
+        return;
+      }
+
+      /*
+      console.log('********');
+      console.log('doScroll');
+      console.log('********');
+      console.log('time: ' + time);
+      console.log('beginningValue: ' + beginningValue);
+      console.log('changeInValue: ' + changeInValue);
+      console.log('duration: ' + duration);
+      console.log('targetY: ' + targetY);
+      console.log('scrollY: ' + scrollY);
+      */
+
+      currentValue = Math.round(cubicEasing(time, beginningValue, changeInValue, duration));
+      window.scrollTo(0, currentValue);
+
+      window.requestAnimationFrame(function() {
+        var scrollY = getScrollY();
+
+        // If the user scrolled, stop animating
+        if (scrollY != currentValue) {
+          autoScrolling = false;
+          return;
+        }
+
+        doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback)
+      });
+
+      time++;
+    }
+    window.doScroll = doScroll;
+
+    function scrollToward(targetY, scrollY, callback) {
+
+      var time = 0;
+      var beginningValue = scrollY;
+      var changeInValue = targetY - scrollY;
+      var duration = 30; // number of frames
+
+      /*
+      console.log('********');
+      console.log('scrollToward');
+      console.log('********');
+      console.log('time: ' + time);
+      console.log('beginningValue: ' + beginningValue);
+      console.log('changeInValue: ' + changeInValue);
+      console.log('duration: ' + duration);
+      */
+
+      doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback);
+    }
+    window.scrollToward = scrollToward;
+
+    window.addEventListener('scroll', function() {
+      console.log('scroll detected')
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        if (autoScrolling) return;
+
+        var scrollY = getScrollY();
+
+        // Find the closest featured item
+        var closestItem;
+        for (var index = 0; index < featuredItems.length; index++) {
+
+          //var scrollingDown = lastScrollPosition < scrollY;
+          console.log('scrollingDown: ' + scrollingDown);
+          var factor = scrollingDown ? 1/8 : 3/4;
+          console.log('factor: ' + factor);
+          var midPoint = getAbsolutePositionY(featuredItems[index]) + (featuredItems[index].offsetHeight * factor);
+          //var midPoint = getAbsolutePositionY(featuredItems[index]) + (featuredItems[index].offsetHeight * 1/2);
+          console.log('midPoint: ' + midPoint);
+
+          // If the vertical scroll position is before the mid-point of the current item
+          if (scrollY < midPoint) {
+            closestItem = featuredItems[index];
+            break;
+          }
+        }
+
+        if (closestItem && window.innerHeight >= closestItem.offsetHeight) {
+          var closestItemY = getAbsolutePositionY(closestItem);
+
+          // If we’re not snapped to an item
+          if (scrollY != closestItemY) {
+            autoScrolling = true;
+
+            //console.log('closestItemY: ' + closestItemY);
+            //console.log('scrollY: ' + scrollY);
+
+            scrollToward(closestItemY, scrollY, function() {
+              console.log('done!');
+              console.log('autoScrolling: ' + autoScrolling);
+              autoScrolling = false;
+            });
+
+            updatePositions();
+          }
+        }
+      }, 100);
+    }, false);
+  })();
+
+  /* OPTIONAL: Handle slow loading content and and resizing windows.
+  ----------------------------------------------- */
+  window.addEventListener('load', function() {
+    updateContentHeight();
+    updatePositions();
+    updateOpacity();
+  }, false);
+
+  (function() {
+    var throttle;
+    window.addEventListener('resize', function() {
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        updateContentHeight();
+        updatePositions();
+        updateOpacity();
+      }, 100);
+    }, false);
+  })();
+
+})();
+
+</script>
 
 </body>
 </html>

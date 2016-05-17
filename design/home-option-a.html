@@ -18,6 +18,19 @@
   <!-- for Windows 8 -->
   <meta name="msapplication-TileImage" content="../assets/images/mstile-310x310.png" />
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
+
+  <style>
+    @media (min-width: 70em) {
+      body {
+        -webkit-scroll-snap-type: mandatory;
+        -webkit-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+            -ms-scroll-snap-type: mandatory;
+            -ms-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+                scroll-snap-type: mandatory;
+                scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+      }
+    }
+  </style>
 </head>
 <body class="teal has-header-image">
 
