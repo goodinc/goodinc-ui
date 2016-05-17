@@ -11,7 +11,7 @@
   var header = document.querySelector('header');
   var logo = header.querySelector('h2');
   var nav = header.querySelector('.nav');
-  var headline = document.querySelector('header.home + main > h1:first-child');
+  var headline = document.querySelector('main > h1:first-child');
   var logoOffsetTop;
   var navOffsetTop;
   var headlineOffsetTop;
