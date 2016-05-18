@@ -1187,7 +1187,10 @@
   aside .subscribe h3,
   footer .subscribe h2,
   footer .subscribe h3,
-  footer .map > li {
+  footer .map > li > h4,
+  footer .map > li > a,
+  footer .map > li > p,
+  footer .map > li > ul {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
   }
@@ -1241,11 +1244,11 @@
     margin-top: 0;
   }
   footer .map > li ul {
-    margin-top: 1.2222222222em;
+    margin-top: 1.2222222222em; /* 22px / 18px */
   }
   footer .map > li p,
   footer .map > li li {
-    margin-top: 0.6111111111em;
+    margin-top: 0.6111111111em; /* 11px / 18px */
   }
   footer .map > li {
     margin-bottom: 1.5em;
@@ -1255,7 +1258,7 @@
     margin-top: 0;
     border-top: 1px solid;
     border-top-color: rgba(192, 204, 207, 0.25);
-    padding-top: 0.6111111111em;
+    padding-top: 0.6111111111em; /* 11px / 18px */
     font-weight: bold;
     display: block;
   }
