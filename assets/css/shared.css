@@ -2818,8 +2818,8 @@
 
     font-weight: inherit;
   }
-  .home .intro li span,
-  .project-details .highlights .primary li span {
+  .home .intro li > span,
+  .project-details .highlights .primary li > span {
     display: block;
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
@@ -2828,8 +2828,8 @@
 
   /* SHIM: Don’t let the stats get too small. */
   @media (max-width: 1000px), (max-height: 500px) {
-    .home .intro li span,
-    .project-details .highlights .primary li span {
+    .home .intro li > span,
+    .project-details .highlights .primary li > span {
       font-size: inherit;
       line-height: inherit;
     }

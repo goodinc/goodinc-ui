@@ -466,12 +466,11 @@
     return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
   }
 
+  // KUDOS: http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-11396681
   function getAbsolutePositionY(element) {
-    if (element.parentNode && element.parentNode.offsetTop) {
-      return getAbsolutePositionY(element.parentNode) + element.offsetTop;
-    } else {
-      return element.offsetTop;
-    }
+    var bodyRect = document.body.getBoundingClientRect();
+    var elemRect = element.getBoundingClientRect();
+    return elemRect.top - bodyRect.top;
   }
 
   function updateContentHeight() {
