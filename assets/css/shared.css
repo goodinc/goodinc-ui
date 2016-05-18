@@ -669,6 +669,11 @@
     margin-left: 0;
     padding-left: 0;
   }
+  .articles:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   .articles {
     max-width: none;
     margin-left: -1.5em;
@@ -700,9 +705,8 @@
       }
     }
     .articles li {
-      display: inline-block;
-      vertical-align: top;
-      width: 48%;
+      float: left;
+      width: 50%;
     }
     .articles li.landscape {
       width: auto;
@@ -711,13 +715,13 @@
 
   @media (min-width: 80em) {
     .articles li {
-      width: 32%;
+      width: 33.3333%;
     }
     .articles li.landscape {
-      width: 65%;
+      width: 66.666%;
     }
     .articles li.half {
-      width: 48%;
+      width: 50%;
     }
   }
 
