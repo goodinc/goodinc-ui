@@ -1,7 +1,12 @@
 (function() {
 
+  // Do we have the features we need?
+  if (!document.body.querySelector || !document.body.addEventListener) return;
+
   // Measure the height of the content area (header + main)
-  // As the user scrolls down, adjust the page background color opacity between 0 (scrolled all the way up) and 0.3 (scrolled all the way down)
+  // As the user scrolls down, adjust the page background color opacity between 0 (scrolled all the way up) and 15% (scrolled all the way down)
+  // Stay at opacity 0 until at least one screen height has been scrolled
+  // Increase the opacity by 10% per screen height after that point, until 15% opacity has been reached.
 
 
   // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
@@ -11,14 +16,22 @@
     return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
   }
 
-  var contentHeight;
+  var contentTop;
   function updateContentHeight() {
-    contentHeight = document.getElementsByTagName('header')[0].offsetHeight + document.getElementsByTagName('main')[0].offsetHeight;
+    if (document.querySelector('main.home')) {
+      // The home page has a series of features before the content starts
+      contentTop = document.querySelector('.featured-project-list').offsetHeight;
+    } else {
+      // Most other pages have a header and content that share a background color
+      contentTop = 0;
+    }
   }
 
   function updateBackground() {
     var scrollY = getScrollY();
-    var opacity = (scrollY / contentHeight) * 0.3;
+    var opacity = (((scrollY - contentTop) / window.innerHeight) - 1) * 0.05;
+    if (opacity < 0) opacity = 0;
+    if (opacity > 0.15) opacity = 0.15;
     var rgb = '255, 255, 255';
 
     if (document.body.className.indexOf('tangerine') >= 0) {
