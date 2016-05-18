@@ -4,7 +4,12 @@
   if (!CountUp) return;
 
   var numbersContainer = document.querySelector('.statistics');
+
+  if (!numbersContainer) return;
+
   var numbers = numbersContainer.querySelectorAll('span[data-value]');
+
+  if (numbers.length <= 0) return;
 
   // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
   function getScrollY() {
