@@ -1440,9 +1440,10 @@
     text-transform: lowercase;
   }
   .good-can-help a {
-    color: inherit;
+    color: rgb(41, 53, 57);
     font-style: normal;
   }
+  /*
   .good-can-help a span {
     color: rgb(41, 53, 57);
   }
@@ -1451,6 +1452,7 @@
   .good-can-help a:focus span {
     color: white;
   }
+  */
 
   .home.without-articles .good-can-help {
     margin-bottom: -3em;
