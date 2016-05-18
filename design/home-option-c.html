@@ -266,27 +266,27 @@
 
     <ul>
       <li>
-        <b>550,000</b>
+        <b><data value="550000">550,000</data></b>
         <span>Donors Engaged</span>
       </li>
       <li>
-        <b>3</b>
+        <b><data value="3">3</data></b>
         <span>Oscar nominations</span>
       </li>
       <li>
-        <b>88,631,992 +</b>
+        <b><data value="88631992">88,631,992</data> +</b>
         <span>Dollars raised and given through programs designed and managed by GOOD</span>
       </li>
       <li>
-        <b>9,542,768</b>
+        <b><data value="9542768">9,542,768</data></b>
         <span>People reached per month on good.is</span>
       </li>
       <li>
-        <b>3</b>
+        <b><data value="3">3</data></b>
         <span>National Magazine Nominations</span>
       </li>
       <li>
-        <b>1,987,344</b>
+        <b><data value="1987344">1,987,344</data></b>
         <span>Social media footprint</span>
       </li>
     </ul>
@@ -495,6 +495,8 @@
 
 <script src="../assets/js/color.js"></script>
 
+<script src="../assets/js/countup.js"></script>
+
 <script>
 
 /* OPTIONAL: Make the header sticky as you scroll until the content area is in view */
@@ -676,6 +678,114 @@
         updateContentHeight();
         updatePositions();
         showCurrentItem(true);
+      }, 100);
+    }, false);
+  })();
+
+})();
+
+</script>
+
+<script>
+
+
+/* OPTIONAL: Make the numbers on the home page count up. */
+
+(function() {
+  if (!CountUp) return;
+
+  var numbers = document.querySelectorAll('.intro data[value]');
+  var numbersContainer = document.querySelector('.intro');
+
+  // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+  function getScrollY() {
+    var supportPageOffset = window.pageXOffset !== undefined;
+    var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+    return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+  }
+
+  function getAbsolutePositionY(element) {
+    if (element.parentNode && element.parentNode.offsetTop) {
+      return getAbsolutePositionY(element.parentNode) + element.offsetTop;
+    } else {
+      return element.offsetTop;
+    }
+  }
+
+  function isVisible(element, elementTop, windowTop) {
+    var elementBottom = elementTop + element.offsetHeight;
+    var windowBottom  = windowTop  + window.innerHeight;
+
+    // If the top edge of the window is greater than the top edge of the target
+    if ((elementTop > windowTop && elementTop < windowBottom) || (elementBottom > windowTop && elementBottom < windowBottom)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  var numbersContainerTop;
+  function updatePositions() {
+    numbersContainerTop = getAbsolutePositionY(numbersContainer);
+  }
+
+  function numbersAreVisible() {
+    var scrollY = getScrollY();
+    if (isVisible(numbersContainer, numbersContainerTop, scrollY)) {
+      return true;
+    }
+  }
+
+  function updateNumbers() {
+    // https://inorganik.github.io/countUp.js
+    var options = {
+      useEasing : true, 
+      useGrouping : true
+    };
+
+    var startValue = 0;
+    var duration = 2.5;
+    var decimals = 0;
+    for (var index = 0; index < numbers.length; index++) {
+      (function() {
+        var endValue = Number(numbers[index].getAttribute('value'));
+
+        if (endValue > 200) {
+          var animation = new CountUp(numbers[index], startValue, endValue - 100, decimals, duration / 2, options);
+          animation.start(function() {
+            animation.update(endValue);
+          });
+        } else {
+          var animation = new CountUp(numbers[index], startValue, endValue, decimals, duration, options);
+          animation.start();
+        }
+      })();
+    }
+  }
+
+  updatePositions();
+
+  var numbersUpdated;
+  window.addEventListener('scroll', function() {
+    if (numbersUpdated) return;
+    if (numbersAreVisible()) {
+      updateNumbers();
+      numbersUpdated = true;
+    }
+  }, false);
+
+  /* OPTIONAL: Handle slow loading content and and resizing windows.
+  ----------------------------------------------- */
+  window.addEventListener('load', function() {
+    updatePositions();
+  }, false);
+
+  (function() {
+    var throttle;
+    window.addEventListener('resize', function() {
+      if (throttle) clearTimeout(throttle);
+      throttle = setTimeout(function() {
+        updatePositions();
       }, 100);
     }, false);
   })();

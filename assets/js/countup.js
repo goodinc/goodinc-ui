@@ -1,4 +1,6 @@
 
+// https://inorganik.github.io/countUp.js
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(factory);
