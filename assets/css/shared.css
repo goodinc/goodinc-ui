@@ -2632,6 +2632,9 @@
     .project-details .meta h2:first-child {
       margin-top: 0;
     }
+    .project-details .meta .action {
+      margin-top: 0;
+    }
 
     .project-details .details:after {
       content: "";
