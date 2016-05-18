@@ -1452,6 +1452,15 @@
     color: white;
   }
 
+  .home.without-articles .good-can-help {
+    margin-bottom: -3em;
+  }
+  @media (min-width: 70em) {
+    .home.without-articles .good-can-help {
+      margin-bottom: -8em;
+    }
+  }
+
   @media (min-width: 60em) {
     .good-can-help {
       text-align: center;
@@ -1470,16 +1479,14 @@
     }
 
     /* SHIM: Attempt to line up the two “good can help” sections on the home page. */
-    /*
-    .home .good-can-help h2,
-    .home ~ footer .good-can-help h2 {
+    .home.without-articles .good-can-help h2,
+    .home.without-articles ~ footer .good-can-help h2 {
       min-width: 50%;
     }
-    .home .good-can-help ul,
-    .home ~ footer .good-can-help ul {
+    .home.without-articles .good-can-help ul,
+    .home.without-articles ~ footer .good-can-help ul {
       min-width: 45%;
     }
-    */
   }
 
   /* When “.good-can-help” appears in the footer, change the colors */
@@ -3474,6 +3481,7 @@
     .featured-project-list > li a {
       padding-top: 45vh;
       padding-bottom: 5vh;
+      min-height: 90vh;
     }
   }
   .featured-project-list > li a div {
