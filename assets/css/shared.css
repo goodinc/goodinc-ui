@@ -681,7 +681,7 @@
   }
   .articles li img {
     display: block;
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
     width: 100%;
   }
 
@@ -764,9 +764,12 @@
     content: " /";
   }
   .articles li p {
-    margin: 0.75em 0 0;
     color: rgb(114, 126, 130); /* @nickel */
     color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.5555555556; /* 28px / 18px */ /* (11px * 2.5 ~= 28px) */
+    margin-top: 0.6111111111em; /* 11px / 18px */
+    margin-bottom: 0;
   }
   .articles li a {
     display: block;
