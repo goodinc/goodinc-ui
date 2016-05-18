@@ -589,7 +589,7 @@
 
       // If the user has scrolled to the next item, show it
       if (index === closestItemIndex) {
-        if (featuredItems[index].className.indexOf('animated') < 0 && skipAnimation != true) featuredItems[index].className += ' animated';
+        if (featuredItems[index].className.indexOf('animated') < 0 && featuredItems[index].className.indexOf('active') < 0 && skipAnimation != true) featuredItems[index].className += ' animated';
         if (featuredItems[index].className.indexOf('active') < 0) featuredItems[index].className += ' active';
         featuredItems[index].style.zIndex = ++depth;
 
