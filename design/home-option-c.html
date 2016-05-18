@@ -20,18 +20,59 @@
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
 
   <style>
-    /*
-    @media (min-width: 70em) {
-      body {
-        -webkit-scroll-snap-type: mandatory;
-        -webkit-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
-            -ms-scroll-snap-type: mandatory;
-            -ms-scroll-snap-points-y: repeat(calc(83vh + 4.5em));
-                scroll-snap-type: mandatory;
-                scroll-snap-points-y: repeat(calc(83vh + 4.5em));
+    @-webkit-keyframes fade-in {
+      from {
+       opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
+    @keyframes fade-in {
+      from {
+       opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .featured-project-list.fixed {
+      position: relative;
+      z-index: 1;
+    }
+    .featured-project-list.fixed > li {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      z-index: 0;
+    }
+    .featured-project-list.fixed > li a div {
+      opacity: 0;
+    }
+    .featured-project-list.fixed > li.active a div {
+      opacity: 1;
+    }
+    /*
+    .featured-project-list.fixed.animated > li {
+      transition: opacity 0.2s;
+    }
     */
+    .featured-project-list.fixed > li.active {
+      z-index: 1;
+    }
+    .featured-project-list.fixed > li.active.animated {
+      -webkit-animation : fade-in 0.2s linear;
+              animation : fade-in 0.2s linear;
+    }
+    .featured-project-list.fixed > li.active.animated a div {
+      opacity: 0;
+      /* @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+      -webkit-animation : 0.2s linear 0.4s 1 normal both fade-in;
+              animation : 0.2s linear 0.4s 1 normal both fade-in;
+    }
   </style>
 
 </head>
@@ -431,24 +472,26 @@
 <script src="../assets/js/color.js"></script>
 
 <script>
-  
+
 /* OPTIONAL: Make the header sticky as you scroll until the content area is in view */
 
 (function() {
 
   // If we’ve moved past the featured items
 
+  var featuredList = document.querySelector('.featured-project-list');
   var featuredItems = document.querySelectorAll('.featured-project-list > li');
   var lastFeaturedItem = featuredItems[featuredItems.length - 1];
   var featuredItemsHeight;
   var header = document.querySelector('header');
   var logo = header.querySelector('h2');
   var nav = header.querySelector('.nav');
-  var headline = document.querySelector('header.home + main > h1:first-child');
+  var headline = document.querySelector('main > h1:first-child');
   var logoOffsetTop;
   var navOffsetTop;
   var headlineOffsetTop;
   var featuredItemTopPositions = [];
+  var depth = 1;
 
   // Switch the header to position absolute
   // Calculate the current position of the header elements and apply them as “top” styles
@@ -469,6 +512,8 @@
   }
 
   function updateContentHeight() {
+    featuredList.style.height = null;
+    featuredList.className = featuredList.className.replace(/fixed/g, '');
     featuredItemsHeight = getAbsolutePositionY(lastFeaturedItem);
     logo.style.top = null;
     nav.style.top = null;
@@ -489,230 +534,114 @@
       logo.style.top = (logoOffsetTop + featuredItemsHeight) + 'px';
       nav.style.top = (navOffsetTop + featuredItemsHeight) + 'px';
       headline.style.top = (headlineOffsetTop + featuredItemsHeight) + 'px';
+      featuredList.style.height = null;
+      featuredList.className = featuredList.className.replace(/fixed/g, '');
     } else {
       if (header.className.indexOf('fixed') < 0) header.className += ' fixed';
       logo.style.top = null;
       nav.style.top = null;
       headline.style.top = null;
+
+      if (featuredList.className.indexOf('fixed') < 0) {
+
+        // Measure the height of the .featured-project-list and set the height style property to it.
+        featuredList.style.height = featuredList.offsetHeight + 'px';
+
+        // Fix the position of the <header> elements and .featured-project-list items.
+        if (featuredList.className.indexOf('fixed') < 0) featuredList.className += ' fixed';
+      }
     }
   }
 
-  function updateOpacity() {
+  function showCurrentItem(skipAnimation) {
+    var scrollY = getScrollY();
+    var closestItemIndex;
+    for (var index = 0; index < featuredItems.length; index++) {
+
+      var factor = 1/4; //scrollingDown ? 1/8 : 3/4;
+      console.log('factor: ' + factor);
+      var midPoint = featuredItemTopPositions[index] + (featuredItems[index].offsetHeight * factor);
+
+      if (scrollY < midPoint) {
+        closestItemIndex = index;
+        break;
+      }
+
+      /*
+
+      var beforeFirstItem = scrollY < 0 && index === 0;
+      var isLastItem = index === featuredItems.length - 1;
+
+      // If the user has scrolled to the next item, show it
+      if (
+        (beforeFirstItem || scrollY >= featuredItemTopPositions[index] * 1/2) && 
+        (isLastItem      || scrollY < featuredItemTopPositions[index + 1] * 1/2)) {
+        closestItemIndex = index;
+        break;
+      }
+      */
+    }
 
     for (var index = 0; index < featuredItems.length; index++) {
 
-      // If the next item is fully visible, show its name
-      var itemHeight = featuredItems[index].offsetHeight;
-      if (scrollY > featuredItemTopPositions[index] - (itemHeight / 4) && scrollY < featuredItemTopPositions[index] + (itemHeight / 6)) {
-        featuredItems[index].className = featuredItems[index].className.replace(/hidden-text/g, '');
-        // document.body.className = featuredItems[index].className;
+      var beforeFirstItem = scrollY < 0 && index === 0;
+      var isLastItem = index === featuredItems.length - 1;
+
+      // If the user has scrolled to the next item, show it
+      if (index === closestItemIndex) {
+        if (featuredItems[index].className.indexOf('animated') < 0 && skipAnimation != true) featuredItems[index].className += ' animated';
+        if (featuredItems[index].className.indexOf('active') < 0) featuredItems[index].className += ' active';
+        featuredItems[index].style.zIndex = ++depth;
 
       // Else hide it
-      } else { // unless this is the last item
-        if (featuredItems[index].className.indexOf('hidden-text') < 0) {
-          //featuredItems[index].className += ' hidden-text';
-        }
+      } else {
+        featuredItems[index].className = featuredItems[index].className.replace(/active/g, '');
+        featuredItems[index].className = featuredItems[index].className.replace(/animated/g, '');
       }
-
     }
-
   }
+
+  //featuredItems[0].className += ' active'; // Make the first item active by default
 
   updateContentHeight();
   updatePositions();
-  updateOpacity();
+  showCurrentItem(true);
+
+  /*
+  // Make the items fade in and fade out
+  setTimeout(function() { // SHIM: Wrap this in a timeout, to avoid animating when the page first loads
+    featuredList.className += ' animated';
+  }, 100);
+  */
 
   window.addEventListener('scroll', function() {
     updatePositions();
-    updateOpacity();
+    showCurrentItem();
   }, false);
-
-
-
-  // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-  // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-
-  // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
-
-  // MIT license
-
-  (function() {
-      var lastTime = 0;
-      var vendors = ['ms', 'moz', 'webkit', 'o'];
-      for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-          window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-          window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
-                                     || window[vendors[x]+'CancelRequestAnimationFrame'];
-      }
-   
-      if (!window.requestAnimationFrame)
-          window.requestAnimationFrame = function(callback, element) {
-              var currTime = new Date().getTime();
-              var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-              var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
-                timeToCall);
-              lastTime = currTime + timeToCall;
-              return id;
-          };
-   
-      if (!window.cancelAnimationFrame)
-          window.cancelAnimationFrame = function(id) {
-              clearTimeout(id);
-          };
-  }());
-
 
   /*
   http://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
-  */
   (function() {
     var throttle;
-    var scrollTimer;
-    var autoScrolling;
-    var lastScrollPosition = 0;
-    var scrollingDown;
-
     window.addEventListener('scroll', function() {
-      var scrollY = getScrollY();
-      if (scrollY > lastScrollPosition) scrollingDown = true;
-      else scrollingDown = false;
-      lastScrollPosition = getScrollY();
-    }, false);
-
-    /*
-    http://upshots.org/actionscript/jsas-understanding-easing
-
-    @t is the current time (or position) of the tween. This can be seconds or frames, steps, seconds, ms, whatever –
-       as long as the unit is the same as is used for the total time [3].
-    @b is the beginning value of the property.
-    @c is the change between the beginning and destination value of the property.
-    @d is the total time of the tween.
-    */
-    function noEasing (time, beginningValue, changeInValue, duration) {
-      return changeInValue * (time / duration) + beginningValue;
-    }
-    function cubicEasing (t, b, c, d) {
-      var ts = (t /= d) * t;
-      var tc = ts * t;
-      return b + c * (tc + -3 * ts + 3 * t);
-    }
-
-    var currentValue;
-    function doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback) {
-      if (time >= duration) {
-        //console.log('callback…')
-        if (callback) callback();
-        return;
-      }
-
-      /*
-      console.log('********');
-      console.log('doScroll');
-      console.log('********');
-      console.log('time: ' + time);
-      console.log('beginningValue: ' + beginningValue);
-      console.log('changeInValue: ' + changeInValue);
-      console.log('duration: ' + duration);
-      console.log('targetY: ' + targetY);
-      console.log('scrollY: ' + scrollY);
-      */
-
-      currentValue = Math.round(cubicEasing(time, beginningValue, changeInValue, duration));
-      window.scrollTo(0, currentValue);
-
-      window.requestAnimationFrame(function() {
-        var scrollY = getScrollY();
-
-        // If the user scrolled, stop animating
-        if (scrollY != currentValue) {
-          autoScrolling = false;
-          return;
-        }
-
-        doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback)
-      });
-
-      time++;
-    }
-    window.doScroll = doScroll;
-
-    function scrollToward(targetY, scrollY, callback) {
-
-      var time = 0;
-      var beginningValue = scrollY;
-      var changeInValue = targetY - scrollY;
-      var duration = 20; // number of frames
-
-      /*
-      console.log('********');
-      console.log('scrollToward');
-      console.log('********');
-      console.log('time: ' + time);
-      console.log('beginningValue: ' + beginningValue);
-      console.log('changeInValue: ' + changeInValue);
-      console.log('duration: ' + duration);
-      */
-
-      doScroll(time, beginningValue, changeInValue, duration, targetY, scrollY, callback);
-    }
-    window.scrollToward = scrollToward;
-
-    window.addEventListener('scroll', function() {
-      console.log('scroll detected')
       if (throttle) clearTimeout(throttle);
       throttle = setTimeout(function() {
-        if (autoScrolling) return;
-
-        var scrollY = getScrollY();
-
-        // Find the closest featured item
-        var closestItem;
-        for (var index = 0; index < featuredItems.length; index++) {
-
-          //var scrollingDown = lastScrollPosition < scrollY;
-          console.log('scrollingDown: ' + scrollingDown);
-          var factor = scrollingDown ? 1/8 : 3/4;
-          console.log('factor: ' + factor);
-          var midPoint = getAbsolutePositionY(featuredItems[index]) + (featuredItems[index].offsetHeight * factor);
-          //var midPoint = getAbsolutePositionY(featuredItems[index]) + (featuredItems[index].offsetHeight * 1/2);
-          console.log('midPoint: ' + midPoint);
-
-          // If the vertical scroll position is before the mid-point of the current item
-          if (scrollY < midPoint) {
-            closestItem = featuredItems[index];
-            break;
-          }
-        }
-
-        if (closestItem && window.innerHeight >= closestItem.offsetHeight) {
-          var closestItemY = getAbsolutePositionY(closestItem);
-
-          // If we’re not snapped to an item
-          if (scrollY != closestItemY) {
-            autoScrolling = true;
-
-            //console.log('closestItemY: ' + closestItemY);
-            //console.log('scrollY: ' + scrollY);
-
-            scrollToward(closestItemY, scrollY, function() {
-              console.log('done!');
-              console.log('autoScrolling: ' + autoScrolling);
-              autoScrolling = false;
-            });
-
-            updatePositions();
-          }
-        }
-      }, 300);
+        lastFeaturedItem.scrollIntoView({
+          behavior: "smooth",
+          block:    "end",
+        });
+        updatePositions();
+      }, 100);
     }, false);
   })();
+  */
 
   /* OPTIONAL: Handle slow loading content and and resizing windows.
   ----------------------------------------------- */
   window.addEventListener('load', function() {
     updateContentHeight();
     updatePositions();
-    updateOpacity();
+    showCurrentItem(true);
   }, false);
 
   (function() {
@@ -722,7 +651,7 @@
       throttle = setTimeout(function() {
         updateContentHeight();
         updatePositions();
-        updateOpacity();
+        showCurrentItem();
       }, 100);
     }, false);
   })();
