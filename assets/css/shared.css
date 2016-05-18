@@ -1443,16 +1443,11 @@
     color: rgb(41, 53, 57);
     font-style: normal;
   }
-  /*
-  .good-can-help a span {
-    color: rgb(41, 53, 57);
-  }
-  .good-can-help a:hover span,
-  .good-can-help a:active span,
-  .good-can-help a:focus span {
+  .good-can-help a:hover,
+  .good-can-help a:active,
+  .good-can-help a:focus {
     color: white;
   }
-  */
 
   .home.without-articles .good-can-help {
     margin-bottom: -3em;
