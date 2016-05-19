@@ -651,7 +651,13 @@
 
   window.addEventListener('scroll', function() {
     updatePositions();
-    showCurrentItem();
+
+    var scrollY = getScrollY();
+    if (featuredList.className.indexOf('fixed') < 0) {
+      showCurrentItem(true);
+    } else {
+      showCurrentItem();
+    }
   }, false);
 
   /*
