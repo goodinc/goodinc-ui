@@ -3270,8 +3270,8 @@
     padding-left: 0;
   }
   .client-list {
-    margin-left: -1.5em; /* @tiny-page-margin */
-    margin-right: -1.5em;
+    margin-left: -0.75em; /* item margin */
+    margin-right: -0.75em;
     max-width: none;
 
     /* @flex-box-wrap */
@@ -3282,7 +3282,7 @@
             flex-wrap: wrap;
   }
   .client-list li {
-    margin: 1.5em;
+    margin: 0.75em;
     text-align: center;
   }
 
