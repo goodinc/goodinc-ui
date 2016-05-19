@@ -1962,6 +1962,82 @@
   }
 
 
+  .home .intro p,
+  body > nav p {
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+
+    text-decoration: underline;
+    text-decoration-width: 2px;
+    max-width: 11em;
+    color: rgb(0, 240, 200); /* @teal */
+  }
+  body > nav p {
+    margin: 0;
+    margin-bottom: 0.6111111111em; /* 22px / 36px */
+  }
+
+  @media (min-width: 40em) {
+    .home .intro p,
+    body > nav p {
+      margin-top: 2.25em;
+      max-width: 17em;
+    }
+    body > nav p {
+      margin-top: 0;
+      margin-bottom: 0.6111111111em; /* 22px / 36px */
+    }
+  }
+
+  .home .intro p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    max-width: 22em;
+  }
+  .tangerine .home .intro p,
+  .tangerine > nav p {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .home .intro p,
+  .orange > nav p {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .home .intro p,
+  .purple > nav p {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .home .intro p,
+  .blue > nav p {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .home .intro p,
+  .teal > nav p {
+    color: rgb(0, 240, 200); /* @teal */
+  }
+  .green .home .intro p,
+  .green > nav p {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .home .intro p,
+  .yellow > nav p {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .home .intro p,
+  .red > nav p {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  @media (min-width: 50em) {
+    .projects h1 {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
+    }
+  }
+  .home .intro p span,
+  body > nav p span {
+    color: rgb(41, 53, 57);
+  }
+
 
 
   /* =Pagination & Tags
@@ -2274,8 +2350,6 @@
   }
 
 
-
-
   /* =Projects
   ----------------------------------------------- */
   main.projects {
@@ -2388,81 +2462,7 @@
     text-transform: lowercase;
     opacity: 0.3;
   }
-  .home .intro p,
-  body > nav p {
-    font-size: 1.6363636364em; /* 36px / 22px */
-    line-height: 1.2222222222; /* 44px / 36px */
 
-    text-decoration: underline;
-    text-decoration-width: 2px;
-    max-width: 11em;
-    color: rgb(0, 240, 200); /* @teal */
-  }
-  body > nav p {
-    margin: 0;
-    margin-bottom: 0.6111111111em; /* 22px / 36px */
-  }
-
-  @media (min-width: 40em) {
-    .home .intro p,
-    body > nav p {
-      margin-top: 2.25em;
-      max-width: 17em;
-    }
-    body > nav p {
-      margin-top: 0;
-      margin-bottom: 0.6111111111em; /* 22px / 36px */
-    }
-  }
-
-  .home .intro p {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    max-width: 22em;
-  }
-  .tangerine .home .intro p,
-  .tangerine > nav p {
-    color: rgb(255, 80, 26); /* @tangerine */
-  }
-  .orange .home .intro p,
-  .orange > nav p {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple .home .intro p,
-  .purple > nav p {
-    color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue .home .intro p,
-  .blue > nav p {
-    color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal .home .intro p,
-  .teal > nav p {
-    color: rgb(0, 240, 200); /* @teal */
-  }
-  .green .home .intro p,
-  .green > nav p {
-    color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow .home .intro p,
-  .yellow > nav p {
-    color: rgb(255, 214, 13); /* @yellow */
-  }
-  .red .home .intro p,
-  .red > nav p {
-    color: rgb(239, 20, 93); /* @red */
-  }
-  @media (min-width: 50em) {
-    .projects h1 {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
-    }
-  }
-  .home .intro p span,
-  body > nav p span {
-    color: rgb(41, 53, 57);
-  }
   .projects .intro ul {
     margin-bottom: 0;
   }
