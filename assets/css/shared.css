@@ -3638,8 +3638,8 @@
   @media (min-height: 30em) {
     .featured-project-list > li a {
       padding-top: 45vh;
-      padding-bottom: 5vh;
-      min-height: 90vh;
+      padding-bottom: 0vh;
+      min-height: calc(100vh - 2em);
     }
   }
   .featured-project-list > li a div {

@@ -57,6 +57,9 @@
       margin: 0;
       z-index: 0;
     }
+    .featured-project-list.fixed > li.next {
+      top: 10vh;
+    }
     .featured-project-list.fixed > li.active h2,
     .featured-project-list.fixed > li.active p,
     .featured-project-list.fixed > li.active .meta,
@@ -69,6 +72,7 @@
     }
     */
     .featured-project-list.fixed > li.active {
+      top: 0;
       z-index: 1;
     }
     .featured-project-list.fixed > li.active.animated {
@@ -607,14 +611,22 @@
 
     for (var index = 0; index < featuredItems.length; index++) {
 
-      var beforeFirstItem = scrollY < 0 && index === 0;
-      var isLastItem = index === featuredItems.length - 1;
+      //var beforeFirstItem = scrollY < 0 && index === 0;
+      //var isLastItem = index === featuredItems.length - 1;
 
       // If the user has scrolled to the next item, show it
       if (index === closestItemIndex) {
-        if (featuredItems[index].className.indexOf('animated') < 0 && featuredItems[index].className.indexOf('active') < 0 && skipAnimation != true) featuredItems[index].className += ' animated';
-        if (featuredItems[index].className.indexOf('active') < 0) featuredItems[index].className += ' active';
-        featuredItems[index].style.zIndex = ++depth;
+        if (featuredItems[index].className.indexOf('animated') < 0 && 
+            featuredItems[index].className.indexOf('active') < 0 && 
+            skipAnimation != true) {
+          featuredItems[index].className += ' animated';
+        }
+        if (featuredItems[index].className.indexOf('active') < 0) {
+          featuredItems[index].className += ' active';
+        }
+        featuredItems[index].style.zIndex = depth++;
+        featuredItems[index].className = featuredItems[index].className.replace(/next/g, '');
+        if (index < featuredItems.length - 1 && featuredItems[index + 1].className.indexOf('next') < 0) featuredItems[index + 1].className += ' next';
 
       // Else hide it
       } else {
