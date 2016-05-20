@@ -2478,7 +2478,7 @@
   .projects .list li {
     margin-left: 0;
   }
-  .projects .list li + li {
+  .projects .list li + li a {
     border-top: 2px solid white;
   }
   .projects .list li a {
