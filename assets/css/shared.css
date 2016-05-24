@@ -726,9 +726,6 @@
         height: 15em;
         object-fit: cover;
       }
-      aside.related .articles li img {
-        height: 25em;
-      }
     }
     .articles li:nth-child(n) {
       float: left;
