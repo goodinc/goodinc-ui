@@ -554,27 +554,6 @@
     margin-bottom: 0;
   }
 
-  .success-message {
-    padding: 1.5em;
-    color: white;
-    background-color: rgb(48, 217, 101); /* @green */
-  }
-  .success-message h1 {
-    font-size: inherit;
-    line-height: inherit;
-    margin: 0;
-  }
-  .success-message p:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 70em) {
-    body > .success-message {
-      padding-left: 4em;
-      padding-right: 4em;
-    }
-  }
-
 
   /* =Quote
   ----------------------------------------------- */
@@ -1419,9 +1398,13 @@
     margin: 0;
     display: inline-block;
   }
+  footer .legal {
+    margin-right: -0.375em;
+    margin-left: -0.375em;
+  }
   footer .legal p,
   footer .legal li {
-    margin: 0 0.3125em; /* @line-height / 4 */
+    margin: 0 0.375em; /* @line-height / 4 */
   }
 
 
