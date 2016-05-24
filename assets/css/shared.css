@@ -1236,11 +1236,14 @@
     line-height: 1.2222222222; /* 22px / 18px */
   }
   footer .map > li > p,
-  footer .map > li > ul,
-  footer .legal p,
-  footer .legal ul {
+  footer .map > li > ul {
     font-size: 0.7272727273em; /* 16px / 22px */
     line-height: 1.375; /* 22px / 16px */
+  }
+  footer .legal p,
+  footer .legal ul {
+    font-size: 0.6363636364em; /* 14px / 22px */
+    line-height: 1.5714285714; /* 22px / 14px */
   }
   aside .subscribe h3,
   footer .subscribe h3 {
