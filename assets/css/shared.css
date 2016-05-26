@@ -2554,6 +2554,25 @@
     }
   }
 
+  /* OPTIONAL: Show a background image while hovering over items (this requires JavaScript for positioning) */
+  .projects .list.scripted {
+    position: relative;
+  }
+  .projects .list.scripted li a:hover div,
+  .projects .list.scripted li a:active div,
+  .projects .list.scripted li a:focus div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
 
   /* =Project Details
   ----------------------------------------------- */

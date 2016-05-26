@@ -19,26 +19,6 @@
   <meta name="msapplication-TileImage" content="../assets/images/mstile-310x310.png" />
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
 
-  <style>
-  .projects .list {
-    position: relative;
-  }
-  .projects .list li a:hover div,
-  .projects .list li a:active div,
-  .projects .list li a:focus div {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    opacity: 0.3;
-  }
-  </style>
-
 </head>
 <body class="purple">
 
@@ -722,64 +702,7 @@
 
 <script src="../assets/js/color.js"></script>
 
-<script>
-(function() {
-
-  var projects = document.querySelector('.projects .list');
-  if (!projects) return;
-
-  var images = projects.querySelectorAll('li a div[style]');
-
-  // KUDOS: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
-  function getScrollY() {
-    var supportPageOffset = window.pageXOffset !== undefined;
-    var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-    return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-  }
-
-  // KUDOS: http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element#answer-11396681
-  function getAbsolutePositionY(element) {
-    var bodyRect = document.body.getBoundingClientRect();
-    var elemRect = element.getBoundingClientRect();
-    return elemRect.top - bodyRect.top;
-  }
-
-  var contentTop;
-  function updateContentHeight() {
-    contentTop = getAbsolutePositionY(projects);
-  }
-
-  window.addEventListener('scroll', function() {
-    var scrollY = getScrollY();
-    for (var index = 0; index < images.length; index++) {
-      if (scrollY < contentTop) {
-        images[index].style.position = null;
-      } else {
-        images[index].style.position = "fixed";
-      }
-    }
-  }, false);
-
-  updateContentHeight();
-
-  /* OPTIONAL: Handle slow loading content and and resizing windows.
-  ----------------------------------------------- */
-  window.addEventListener('load', function() {
-    updateContentHeight();
-  }, false);
-
-  (function() {
-    var throttle;
-    window.addEventListener('resize', function() {
-      if (throttle) clearTimeout(throttle);
-      throttle = setTimeout(function() {
-        updateContentHeight();
-      }, 100);
-    }, false);
-  })();
-
-})();
-</script>
+<script src="../assets/js/projects.js"></script>
 
 </body>
 </html>
