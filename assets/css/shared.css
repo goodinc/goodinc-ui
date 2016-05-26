@@ -3240,6 +3240,13 @@
     color: rgb(239, 20, 93); /* @red */
   }
 
+  /* SHIM: The content before the action might be floated. So use padding instead of margin. */
+  .team-member .meta + .action {
+    clear: both;
+    margin-top: 0;
+    padding-top: 1.2222222222em; /* 44px / 36px */
+  }
+
   /* OPTIONAL: Position the image and meta data on the right, on big screens. */
   @media (min-width: 60em) {
     .team-member:after {
