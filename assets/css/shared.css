@@ -2997,17 +2997,7 @@
   aside.related a i {
     font-size: 1.6363636364em; /* 36px / 22px */
   }
-  aside.related ul:before {
-    content: "";
-    display: block;
-    background-color: white;
-    height: 5.5em;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
+
 
   aside.related ul {
     margin-top: -0.5em;
@@ -3018,12 +3008,20 @@
     z-index: 1;
   }
   aside.related ul {
-    background-color: rgb(26, 36, 38); /* @thorium */
+    /* OPTIONAL: Position the background color a short distance from the top of the element. */
+    background-image: linear-gradient(rgb(26, 36, 38), rgb(26, 36, 38)); /* @thorium */
+    background-repeat: no-repeat;
+    background-position: 0 5.5em;
+
     color: rgb(192, 204, 207); /* @silver */
     margin-left: -1.5em;
     margin-right: -1.5em;
     margin-bottom: -8em;
     padding-bottom: 6em;
+  }
+  /* SHIM: In browsers that don’t understand linear-gradient, keep the links readable */
+  aside.related a i {
+    background-color: rgb(26, 36, 38);
   }
 
   @media (min-width: 70em) {
@@ -3650,7 +3648,7 @@
   @media (min-height: 30em) {
     .featured-project-list > li a {
       padding-top: 45vh;
-      padding-bottom: 0vh;
+      padding-bottom: 2em;
       min-height: calc(100vh - 2em);
     }
   }
