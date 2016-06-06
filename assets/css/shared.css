@@ -3124,9 +3124,15 @@
 
   /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
   main .team-member-list img {
+
+    /* Make images shrink or grow to fit the available space */
     width: 100%;
-    max-width: 15em;
     height: auto;
+
+    /* But don’t let them get too large (for the case where there’s only one column) */
+    /*
+    max-width: 15em;
+    */
   }
 
   .team-member-list h4,
@@ -3557,12 +3563,6 @@
   }
 
 
-
-
-
-  /* =Home
-  ----------------------------------------------- */
-
   @media (max-width: 25em), (max-height: 25em) {
     header.home ~ main > h1:first-child {
       top: 2.5em;
@@ -3867,7 +3867,6 @@
   @media (min-width: 50em) {
     .home .intro p {
       margin-left: calc(50% - 5em);
-      padding-top: 1.5em;
     }
     .home .intro ul {
       margin-left: calc(50% - 9em);
@@ -3883,6 +3882,14 @@
     .home .intro li,
     .home .intro li + li {
       margin: 0.75em;
+    }
+
+    /* OPTIONAL: Add more space around the intro text. */
+    .home .intro p:first-child {
+      padding-top: 4.5em;
+    }
+    .home .intro ul:last-child {
+      padding-bottom: 4.5em;
     }
   }
 

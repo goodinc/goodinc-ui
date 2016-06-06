@@ -740,7 +740,6 @@
       }
     }
 
-
     var fixedIndex;
     for (var index = 0; index < featuredItems.length; index++) {
       // If the item top is at or before the top of the viewport, set it to “fixed”
@@ -775,9 +774,11 @@
   */
 
   window.addEventListener('scroll', function() {
+    var scrollY = getScrollY();
+    if (scrollY < 0) return;
+
     updatePositions();
 
-    var scrollY = getScrollY();
     if (featuredList.className.indexOf('fixed') < 0) {
       showCurrentItem(true);
     } else {
