@@ -592,9 +592,6 @@
     margin-top: 1.2222222222em;
     margin-bottom: 1.2222222222em;
   }
-  .quote[style] blockquote + .byline {
-    text-align: right;
-  }
   .standard .quote[style] {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
@@ -626,9 +623,7 @@
   }
   .quote[style] blockquote,
   .quote[style] blockquote + .byline {
-    max-width: 38.25em;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 12.5%;
   }
   .quote[style] .media-kit {
     font-size: 0.8181818182em; /* 18px / 22px */
@@ -717,6 +712,14 @@
       width: auto;
     }
 
+    .articles.text-only li:nth-child(n) {
+      width: 50%;
+      clear: none;
+    }
+    .articles.text-only li:nth-child(2n+1) {
+      clear: both;
+    }
+
     aside.related .articles li {
       width: 50%;
       clear: none;
@@ -754,6 +757,14 @@
     }
     /* After the first seven items, clear after each set of three items */
     .articles li:nth-child(3n+8) { /* (3n + 1 + 7) */
+      clear: both;
+    }
+
+    .articles.text-only li:nth-child(n) {
+      width: 33.3333%;
+      clear: none;
+    }
+    .articles.text-only li:nth-child(3n+1) {
       clear: both;
     }
 
@@ -1314,26 +1325,47 @@
     display: block;
   }
   @media (min-width: 40em) {
+    /*
     footer .subscribe,
-    footer .map,
-    footer .map > li {
+    footer .map {
       display: inline-block;
       vertical-align: top;
     }
-    footer .subscribe {
-      width: 28%;
-    }
-    footer .map {
-      width: 70%;
-      text-align: right;
-    }
+    */
+  }
+  /*
+  @media (min-width: 60em) {
     footer .map > li {
-      text-align: left;
-      width: 46%;
+      width: 29%;
       margin-left: 2%;
     }
   }
-  @media (min-width: 40em) {
+  */
+  /*
+  @media (min-width: 60em) {
+    footer .subscribe {
+      width: 25%;
+    }
+    footer .map {
+      width: 50%;
+    }
+    footer .map.locations {
+      width: 25%;
+    }
+    footer .map > li {
+      width: 50%;
+      margin-left: 0;
+      width: calc(50% - 2em);
+      margin-right: calc(2em);
+    }
+    footer .map.locations > li {
+      width: 100%;
+      width: calc(100% - 2em);
+      margin-right: calc(2em);
+    }
+  }
+  */
+  @media (min-width: 60em) {
     footer div:after {
       content: "";
       display: table;
@@ -1341,28 +1373,31 @@
     }
     footer .subscribe {
       float: left;
-    }
-    footer .map,
-    footer .map.locations {
-      float: right;
-    }
-  }
-  @media (min-width: 60em) {
-    footer .map > li {
-      width: 29%;
-      margin-left: 2%;
-    }
-  }
-  @media (min-width: 80em) {
-    footer .subscribe {
-      width: 18%;
+      width: 25%;
+      margin-bottom: 3em;
     }
     footer .map {
-      width: 80%;
+      float: left;
+      width: 75%;
+      margin-bottom: 0;
+    }
+    footer .map.locations {
+      clear: both;
+      width: 100%;
     }
     footer .map > li {
-      width: 22%;
-      margin-left: 2%;
+      float: left;
+      width: 33.333%;
+      margin-left: 0;
+      width: calc(33.333% - 2em);
+      margin-right: calc(2em);
+    }
+    footer .map.locations > li {
+      float: left;
+      width: 25%;
+      margin-left: 0;
+      width: calc(25% - 2em);
+      margin-right: calc(2em);
     }
   }
 
@@ -1371,11 +1406,11 @@
   ----------------------------------------------- */
   footer .legal {
     clear: both;
-    padding-top: 4em;
+    padding-top: 5.5em; /* Make the space above the .legal element about double the distance beneath it */
   }
   @media (min-width: 40em) {
-    footer .legal {
-      text-align: center;
+    footer .legal p {
+      padding-left: 25%;
     }
   }
   footer .legal ul,
@@ -1399,15 +1434,11 @@
   footer .legal p,
   footer .legal li {
     margin: 0;
-    display: inline-block;
-  }
-  footer .legal {
-    margin-right: -0.375em;
-    margin-left: -0.375em;
+    float: left;
   }
   footer .legal p,
   footer .legal li {
-    margin: 0 0.375em; /* @line-height / 4 */
+    margin-right: 1.5714285714em; /* 22px / 14px */
   }
 
 
@@ -1430,7 +1461,7 @@
       margin-top: 4em;
     }
     .good-can-help {
-      padding: 6em 4em; /* 50px / 22px */     /* 88px / 22px */
+      padding: 7.5em 4em; /* ? / 22px */     /* 88px / 22px */
     }
   }
   .tangerine .good-can-help {
@@ -1522,20 +1553,28 @@
   }
 
   @media (min-width: 60em) {
-    .good-can-help {
-      text-align: center;
+    .good-can-help:after {
+      content: "";
+      display: table;
+      clear: both;
     }
     .good-can-help h2,
     .good-can-help ul {
-      display: inline-block;
-      vertical-align: top;
+      float: left;
     }
     .good-can-help h2 {
-      text-align: right;
+      padding-right: 3%;
+      width: 34.5%; /* 100% x 3/8 - 3% */
     }
     .good-can-help ul {
-      margin-left: 0.75em;
-      text-align: left;
+      width: 62.5%; /* 100% x 5/8 */
+    }
+    footer .good-can-help h2 {
+      padding-right: 3%;
+      width: 22%; /* 100% x 2/8 - 3% */
+    }
+    footer .good-can-help ul {
+      width: 75%; /* 100% x 6/8 */
     }
 
     /* SHIM: Attempt to line up the two “good can help” sections on the home page. */
@@ -1557,8 +1596,8 @@
   }
   @media (min-width: 70em) {
     footer .good-can-help {
-      margin-top: -6em;
-      margin-bottom: -3em;
+      padding-top: 1.5em;
+      padding-bottom: 3em;
     }
   }
   footer .good-can-help a {
@@ -2147,10 +2186,6 @@
   .standard .quote:last-child {
     margin-bottom: 0;
   }
-  .standard .body p,
-  .standard .quote blockquote p {
-    max-width: 28em;
-  }
 
   /* SHIM: For the about page, with no headline */
   .standard .body p:first-child {
@@ -2232,9 +2267,13 @@
     .standard .quote,
     .standard .team-member-list {
       margin-left: calc(50% - 14em);
+      margin-left: 25%;
     }
     .standard .quote {
       margin-left: calc(50% - 20em);
+      margin-left: 12.5%;
+      max-width: none;
+      margin-right: 12.5%;
     }
 
     nav + .standard {
@@ -2259,6 +2298,7 @@
       */
       float: left;
       width: calc(50% - 8em);
+      width: 20%;
     }
     .standard .section:after,
     .standard section:after {
@@ -2266,12 +2306,7 @@
       display: table;
       clear: both;
     }
-    .standard > .header,
-    .standard > p.date {
-      width: calc(50% - 20em);
-    }
     .standard > h3 {
-      width: calc(50% - 9.25em);
       font-style: italic;
     }
   }
@@ -2292,30 +2327,6 @@
     line-height: 1.2em; /* 66px / 55px */
 
     margin-bottom: 0.6em;
-  }
-
-  /* Make headlines in the news section larger (since the content contains a lot of large type) */
-  @media (min-width: 50em) {
-    .standard.news > h1 {
-      /* @header-1 */
-      font-size: 3.6363636364em; /* 80px / 22px */
-      line-height: 1.2375em; /* 99px / 80px */
-
-      margin-bottom: 0.4125em; /* 33px / 80px */
-      width: calc(50% - 5em);
-    }
-  }
-
-  @media (min-width: 110em) {
-    .standard > h1,
-    .standard > .section h1 {
-      /* @header-1 */
-      font-size: 3.6363636364em; /* 80px / 22px */
-      line-height: 1.2375em; /* 99px / 80px */
-
-      margin-bottom: 0.4125em; /* 33px / 80px */
-      width: calc(50% - 5em);
-    }
   }
 
 
@@ -2544,12 +2555,13 @@
         margin: 0;
       }
       .projects .list li a h3 {
-        width: 50%;
+        width: 45%;
+        margin-right: 5%;
       }
       .projects .list li a dl {
         margin-top: 0.25em;
         width: 20%;
-        margin-left: 5%;
+        margin-right: 5%;
       }
     }
   }
@@ -2679,12 +2691,12 @@
       clear: both;
     }
     .project-details .intro > div:first-child {
-      width: 45%;
+      width: 40%;
       float: left;
     }
     .project-details .meta {
       margin-top: 0;
-      width: 45%;
+      width: 50%;
       float: right;
     }
 
@@ -2714,7 +2726,7 @@
       clear: both;
     }
     .project-details .details > div {
-      width: 45%;
+      width: 40%;
     }
     .project-details .details > div p:last-child {
       margin-bottom: 0;
@@ -2724,7 +2736,7 @@
       margin-top: 0;
       float: right;
       clear: right;
-      width: 45%; /* image-width */
+      width: 50%; /* image-width */
     }
     .project-details .details figure ~ figure {
       margin-top: 3em;
@@ -2966,12 +2978,12 @@
     }
     .project-details .highlights .primary {
       margin-bottom: 0;
-      width: 45%;
+      width: 40%;
       float: left;
     }
     .project-details .highlights .primary + .secondary {
       margin-top: 1.5em;
-      width: 45%;
+      width: 50%;
       float: right;
     }
   }
@@ -3286,8 +3298,8 @@
     padding-left: 0;
   }
   .client-list {
-    margin-left: -0.75em; /* item margin */
-    margin-right: -0.75em;
+    margin-left: -1.5em; /* item margin */
+    margin-right: -1.5em;
     max-width: none;
 
     /* @flex-box-wrap */
@@ -3298,7 +3310,7 @@
             flex-wrap: wrap;
   }
   .client-list li {
-    margin: 0.75em;
+    margin: 0.75em 1.5em;
     text-align: center;
   }
 
@@ -3310,16 +3322,33 @@
 
   /* Scale the images to fit the viewport, on small to medium size screens. */
 
-  /* Three columns */
-  @media (max-width: 50em) {
+
+  /* Five columns */
+  @media (max-width: 70em) {
     .client-list li img {
-      width: calc(33.333vw - 3em); /* @tiny-page-margin x 2 = 3em */
+      width: calc(20vw - 3em);
+      height: calc(20vw - 3em);
+    }
+  }
+
+  /* Four columns */
+  @media (max-width: 55em) {
+    .client-list li img {
+      width: calc(25vw - 3em);
+      height: calc(25vw - 3em);
+    }
+  }
+
+  /* Three columns */
+  @media (max-width: 40em) {
+    .client-list li img {
+      width: calc(33.333vw - 3em);
       height: calc(33.333vw - 3em);
     }
   }
 
   /* Two columns */
-  @media (max-width: 30em) {
+  @media (max-width: 25em) {
     .client-list li img {
       width: calc(50vw - 3em);
       height: calc(50vw - 3em);
@@ -3670,38 +3699,38 @@
     color: inherit;
     margin-bottom: 0;
   }
-  .featured-project-list a .more {
+  .featured-project-list .more {
     color: rgb(0, 240, 200); /* @teal */
     text-align: right;
 
     max-width: none;
   }
-  .tangerine .featured-project-list a .more {
+  .tangerine .featured-project-list .more {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .featured-project-list a .more {
+  .orange .featured-project-list .more {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .featured-project-list a .more {
+  .purple .featured-project-list .more {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .featured-project-list a .more {
+  .blue .featured-project-list .more {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .featured-project-list a .more {
+  .teal .featured-project-list .more {
     color: rgb(0, 240, 200); /* @teal */
   }
-  .green .featured-project-list a .more {
+  .green .featured-project-list .more {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .featured-project-list a .more {
+  .yellow .featured-project-list .more {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .featured-project-list a .more {
+  .red .featured-project-list .more {
     color: rgb(239, 20, 93); /* @red */
   }
 
-  .featured-project-list a .more,
+  .featured-project-list .more,
   .featured-project-list a h2,
   .featured-project-list a h2 span {
     transition: color 0.2s;
@@ -3713,7 +3742,7 @@
   }
 
 
-  .featured-project-list a .more span {
+  .featured-project-list .more span {
     display: inline-block;
     border: 2px solid;
     width: 4.375em;
@@ -3723,7 +3752,7 @@
     font-style: normal;
     margin-left: 1em;
   }
-  .featured-project-list a .more span svg {
+  .featured-project-list .more span svg {
     font-size: 0.75em;
     vertical-align: middle;
   }
@@ -3791,12 +3820,14 @@
 
   /* Copied from the projects list */
 
-  @media (min-width: 40em) {
+  @media (min-width: 50em) {
     .featured-project-list .more {
       margin: 0;
       position: absolute;
+      left: 75%;
       top: 0.19em;
-      right: 10%;
+      text-align: left;
+      width: 25%;
     }
   }
   @media (min-width: 70em) {
@@ -3808,8 +3839,10 @@
       left: 50%;
     }
     .featured-project-list .more {
-      right: 10%;
+      left: 75%;
       top: 0.19em;
+      text-align: left;
+      width: 25%;
     }
   }
 
@@ -3866,10 +3899,10 @@
 
   @media (min-width: 50em) {
     .home .intro p {
-      margin-left: calc(50% - 5em);
+      margin-left: 37.5%;
     }
     .home .intro ul {
-      margin-left: calc(50% - 9em);
+      margin-left: 37.5%;
       max-width: 35.5em;
       color: rgb(114, 126, 130); /* @nickel */
       color: rgba(0, 0, 0, 0.65);
@@ -3881,7 +3914,7 @@
     }
     .home .intro li,
     .home .intro li + li {
-      margin: 0.75em;
+      margin: 0.75em 0;
     }
 
     /* OPTIONAL: Add more space around the intro text. */
