@@ -1229,6 +1229,12 @@
     text-decoration: none;
     font-style: inherit;
   }
+
+  /* SHIM: Reduce the space between .subscribe and the “GOOD Can Help” element above it. */
+  footer .subscribe {
+    margin-top: 0;
+  }
+
   aside .subscribe {
     color: inherit;
     margin: 3em 0;
@@ -1305,6 +1311,7 @@
   /* =Map
   ----------------------------------------------- */
   footer .map {
+    margin-top: 3em;
     max-width: none;
   }
   footer .map ul {
@@ -1378,6 +1385,23 @@
     display: table;
     clear: both;
   }
+  @media (min-width: 40em) {
+    footer .map:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer .map > li {
+      float: left;
+      width: 33.333%;
+      margin-left: 0;
+      width: calc(33.333% - 2em);
+      margin-right: calc(2em);
+    }
+    footer .map > li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
   @media (min-width: 60em) {
     footer .subscribe {
       float: left;
@@ -1385,6 +1409,7 @@
       margin-bottom: 3em;
     }
     footer .map {
+      margin-top: 0;
       float: left;
       width: 75%;
       margin-bottom: 0;
@@ -1396,16 +1421,6 @@
       */
       margin-left: 25%;
       margin-top: 0;
-    }
-    footer .map > li {
-      float: left;
-      width: 33.333%;
-      margin-left: 0;
-      width: calc(33.333% - 2em);
-      margin-right: calc(2em);
-    }
-    footer .map > li:nth-child(3n+1) {
-      clear: both;
     }
     /*
     footer .map.locations > li {
