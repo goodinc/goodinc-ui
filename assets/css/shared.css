@@ -592,6 +592,9 @@
     margin-top: 1.2222222222em;
     margin-bottom: 1.2222222222em;
   }
+  blockquote + .byline {
+    max-width: none;
+  }
   .standard .quote[style] {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
@@ -621,9 +624,11 @@
     position: relative;
     z-index: 1;
   }
-  .quote[style] blockquote,
-  .quote[style] blockquote + .byline {
-    margin-left: 12.5%;
+  @media (min-width: 70em) {
+    .quote[style] blockquote,
+    .quote[style] blockquote + .byline {
+      margin-left: 12.5%;
+    }
   }
   .quote[style] .media-kit {
     font-size: 0.8181818182em; /* 18px / 22px */
@@ -1578,21 +1583,8 @@
       width: 62.5%; /* 100% x 5/8 */
     }
     footer .good-can-help h2 {
-      padding-right: 3%;
       width: 22%; /* 100% x 2/8 - 3% */
-    }
-    footer .good-can-help ul {
-      width: 75%; /* 100% x 6/8 */
-    }
-
-    /* SHIM: Attempt to line up the two “good can help” sections on the home page. */
-    .home.without-articles .good-can-help h2,
-    .home.without-articles ~ footer .good-can-help h2 {
-      min-width: 50%;
-    }
-    .home.without-articles .good-can-help ul,
-    .home.without-articles ~ footer .good-can-help ul {
-      min-width: 45%;
+      margin-left: 12.5%;
     }
   }
 
@@ -2203,6 +2195,14 @@
   .quote blockquote {
     margin-left: 0;
     margin-right: 0;
+  }
+  .quote blockquote p:first-child:before {
+    content: "“";
+    position: absolute;
+    margin-left: -0.5em;
+  }
+  .quote blockquote p:last-child:after {
+    content: "”";
   }
   .standard .quote {
     max-width: 40em;
