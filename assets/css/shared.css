@@ -1370,12 +1370,12 @@
     }
   }
   */
+  footer div:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   @media (min-width: 60em) {
-    footer div:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
     footer .subscribe {
       float: left;
       width: 25%;
