@@ -1383,7 +1383,10 @@
     }
     footer .map.locations {
       clear: both;
+      /*
       width: 100%;
+      */
+      margin-left: 25%;
     }
     footer .map > li {
       float: left;
@@ -1392,6 +1395,10 @@
       width: calc(33.333% - 2em);
       margin-right: calc(2em);
     }
+    footer .map > li:nth-child(3n+1) {
+      clear: both;
+    }
+    /*
     footer .map.locations > li {
       float: left;
       width: 25%;
@@ -1399,6 +1406,7 @@
       width: calc(25% - 2em);
       margin-right: calc(2em);
     }
+    */
   }
 
 
