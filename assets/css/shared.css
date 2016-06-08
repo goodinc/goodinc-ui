@@ -3737,9 +3737,9 @@
   @media (min-height: 30em) {
     .featured-project-list > li.introduction a {
       padding-top: 10em;
-      padding-top: 30vh;
+      padding-top: 25vh;
       padding-bottom: 2em;
-      min-height: calc(100vh - 2em);
+      min-height: calc(90vh);
     }
   }
   @media (min-width: 50em) {
