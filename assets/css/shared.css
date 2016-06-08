@@ -2552,6 +2552,8 @@
   }
   .projects .list dd {
     margin-left: 0;
+    font-size: 1.2222222222em; /* 22px / 18px */
+    line-height: 1.5em;
   }
 
   @supports (display: flex) or (display: -webkit-flex) {
