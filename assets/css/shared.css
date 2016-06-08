@@ -1595,15 +1595,11 @@
       float: left;
     }
     .good-can-help h2 {
-      padding-right: 3%;
-      width: 34.5%; /* 100% x 3/8 - 3% */
+      width: 22%; /* 100% x 2/8 - 3% */
+      margin-left: 12.5%;
     }
     .good-can-help ul {
       width: 62.5%; /* 100% x 5/8 */
-    }
-    footer .good-can-help h2 {
-      width: 22%; /* 100% x 2/8 - 3% */
-      margin-left: 12.5%;
     }
   }
 
