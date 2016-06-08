@@ -892,6 +892,20 @@
   }
 
 
+  /* =GOOD Companies
+  ----------------------------------------------- */
+  .good-companies li:nth-child(n) {
+    width: auto;
+    clear: none;
+  }
+  @media (min-width: 60em) {
+    .good-companies li:nth-child(n) {
+      width: 33.3333%;
+      clear: none;
+    }
+  }
+
+
 
   /* =Layout
   -----------------------------------------------
@@ -3543,6 +3557,52 @@
     }
   }
 
+  .featured-project-list .introduction h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+  .featured-project-list .introduction p {
+    max-width: 40em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    line-height: inherit;
+    text-decoration: underline;
+  }
+  @media (min-width: 45em) {
+    .featured-project-list .introduction p {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
+  .tangerine .featured-project-list .introduction p {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .featured-project-list .introduction p {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .featured-project-list .introduction p {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .featured-project-list .introduction p {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .featured-project-list .introduction p {
+    color: rgb(0, 240, 200); /* @teal */
+  }
+  .green .featured-project-list .introduction p {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .featured-project-list .introduction p {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .featured-project-list .introduction p {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  .featured-project-list .introduction p span {
+    color: white;
+  }
 
   .featured-project-list,
   .featured-project-list li {
@@ -3727,7 +3787,7 @@
   }
   .featured-project-list > li a {
     display: block;
-    padding: 15em 1.5em 1.5em;
+    padding: 3em 1.5em;
     box-sizing: border-box;
     position: relative;
 
@@ -3735,10 +3795,23 @@
     color: white;
   }
   @media (min-height: 30em) {
-    .featured-project-list > li a {
-      padding-top: 45vh;
+    .featured-project-list > li.introduction a {
+      padding-top: 10em;
+      padding-top: 30vh;
       padding-bottom: 2em;
       min-height: calc(100vh - 2em);
+    }
+  }
+  @media (min-width: 50em) {
+    .featured-project-list > li a {
+      padding-top: 10em; /* 88px / 22px */
+      padding-bottom: 10em;
+    }
+  }
+  @media (min-width: 70em) {
+    .featured-project-list > li a {
+      padding-left: 4em; /* 50px / 22px */
+      padding-right: 4em;
     }
   }
   .featured-project-list > li a div {
@@ -3849,6 +3922,9 @@
     height: 100%;
     z-index: 0;
   }
+  .featured-project-list > li.introduction a:before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
   .featured-project-list > li a:after {
     content: "";  
     background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40)); /* @tungsten */
@@ -3863,11 +3939,6 @@
     .featured-project-list > li {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
-    }
-    .featured-project-list > li a {
-      padding: 15em 4em; /* 50px / 22px */     /* 88px / 22px */
-      padding-top: 49vh;
-      padding-bottom: 34vh;
     }
   }
 
@@ -3904,7 +3975,6 @@
       width: 25%;
     }
   }
-
 
   .home .intro figure {
     margin: -6em -1.5em -4.5em;
