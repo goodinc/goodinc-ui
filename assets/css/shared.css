@@ -510,6 +510,16 @@
     width: 25em;
     height: 10em;
   }
+
+  /* SHIM: Some forms have the subscribe button next to the label.
+           Move it to the next line on small screens, and add a little space between them. */
+  @media (max-width: 30em) {
+    label {
+      display: block;
+      margin-bottom: 0.375em;
+    }
+  }
+
   label > span:first-child {
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
     font-size: 0.8181818182em; /* 18px / 22px */
@@ -1584,6 +1594,13 @@
     }
   }
 
+  @media (min-width: 30em) {
+    .good-can-help h2,
+    .good-can-help ul {
+      margin-left: 25%;
+    }
+  }
+
   @media (min-width: 60em) {
     .good-can-help:after {
       content: "";
@@ -1593,6 +1610,7 @@
     .good-can-help h2,
     .good-can-help ul {
       float: left;
+      margin-left: 0;
     }
     .good-can-help h2 {
       width: 22%; /* 100% x 2/8 - 3% */
