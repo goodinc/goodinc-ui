@@ -18,6 +18,52 @@
   <!-- for Windows 8 -->
   <meta name="msapplication-TileImage" content="../assets/images/mstile-310x310.png" />
   <meta name="msapplication-TileColor" content="rgb(255, 255, 255)" />
+
+
+  <style>
+    .featured-project-list li:nth-child(1) a {
+      padding-top: 10em;
+      padding-top: 30vh;
+    }
+    .featured-project-list .good h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .featured-project-list .good p {
+      max-width: 40em;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.5em;
+      line-height: inherit;
+      text-decoration: underline;
+      color: rgb(0, 240, 200);
+    }
+    .featured-project-list .good p span {
+      color: white;
+    }
+  </style>
+  <style>
+    .featured-project-list > li:first-child a:before {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .featured-project-list > li:nth-child(2) a,
+    .featured-project-list > li:nth-child(3) a,
+    .featured-project-list > li:nth-child(4) a {
+      padding-top: 10em;
+      padding-bottom: 10em;
+      min-height: 0;
+    }
+
+
+    .good-companies li:nth-child(1),
+    .good-companies li:nth-child(2),
+    .good-companies li:nth-child(3) {
+      width: 33.3333%;
+      clear: none;
+    }
+  </style>
+
 </head>
 <body class="teal has-header-image">
 
@@ -69,9 +115,15 @@
 
 <main class="home">
 
-  <h1>Do good better.</h1>
-
   <ul class="featured-project-list">
+    <li class="good" style="background-image: url(http://assets.goodstatic.com/s3/magazine/assets/558555/original/GOOD037_Hero.jpg=s1600x1600)" class="tangerine">
+      <a href="about.html">
+        <div>
+          <h1>Do good better.</h1>
+          <p><span>GOOD is a global media company and social impact company. We create programs, stories, experiences and tools to push the world forward.</span></p>
+        </div>
+      </a>
+    </li>
     <li style="background-image: url(../assets/images/projects/sports-matter.png)" class="tangerine">
       <a href="project-details.html">
         <div>
@@ -290,6 +342,35 @@
     </ul>
   </div>
 
+  <div class="recent">
+    <h1>GOOD Worldwide</h1>
+    <p>We’re native to the social impact space and make good awesome by elevating creative solutions to real problems.</p>
+
+    <ul class="articles good-companies">
+      <li>
+        <a href="http://good.is">
+          <img src="http://assets.goodstatic.com/s3/magazine/updatable/static-pages/images/good-media-1x.jpg" alt="" />
+          <h3>GOOD Media</h3>
+          <p>Helps readers understand their world, so they are inspired to make it better.</p>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="http://assets.goodstatic.com/s3/magazine/updatable/static-pages/images/good-corps-1x.jpg" alt="" />
+          <h3>GOOD Corps</h3>
+          <p>Helps organizations develop initiatives and powerful calls to action that create social impact.</p>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="http://placehold.it/300x300" alt="" />
+          <h3>GOOD Studio</h3>
+          <p>Helps brands engage people through purpose-driven content and experiences.</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
 </main>
 
 <footer>
@@ -419,8 +500,6 @@
 </footer>
 
 <script src="../assets/js/color.js"></script>
-
-<script src="../assets/js/home.js"></script>
 
 <script src="../assets/js/countup.js"></script>
 
