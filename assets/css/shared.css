@@ -2487,7 +2487,7 @@
     margin-left: 0;
   }
   .projects .list li + li a {
-    border-top: 2px solid white;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
   }
   .projects .list li a {
     display: block;
@@ -2543,6 +2543,7 @@
     font-weight: bold;
     font-size: 2.1818181818em; /* 48px / 22px */
     line-height: 1.1458333333; /* 55px / 48px*/
+    text-decoration: underline;
   }
   .projects .list dl {
     margin-bottom: 0;
