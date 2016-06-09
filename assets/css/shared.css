@@ -957,10 +957,7 @@
   }
 
   /* Make the logo the same color as the text around it */
-  header h2 a,
-  header h2 a[href]:hover,
-  header h2 a[href]:active,
-  header h2 a[href]:focus {
+  header h2 a {
     color: rgb(7, 12, 13) !important; /* @tungsten */ /* !important to override colors like .orange and .purple */
   }
   header h2 a[href]:hover,
@@ -1027,6 +1024,12 @@
   .has-header-image header h2 a,
   body.has-header-image > h3 {
     color: white !important;
+  }
+  .has-header-image header h2 a[href]:hover,
+  .has-header-image header h2 a[href]:active,
+  .has-header-image header h2 a[href]:focus {
+    color: white !important;
+    opacity: 0.6;
   }
   .has-header-image main > .header {
     background-color: rgb(41, 53, 56); /* @tin */
@@ -1582,11 +1585,19 @@
       margin-left: 0;
     }
     .good-can-help h2 {
+      margin-right: 3%;
       width: 22%; /* 100% x 2/8 - 3% */
       margin-left: 12.5%;
     }
     .good-can-help ul {
       width: 62.5%; /* 100% x 5/8 */
+    } 
+  }
+  @media (min-width: 100em) {
+    .home .good-can-help h2 {
+      margin-right: 3%;
+      width: 34.5%; /* 100% x 3/8 - 3% */
+      margin-left: 0;
     }
   }
 
@@ -3746,7 +3757,7 @@
   @media (min-width: 50em) {
     .featured-project-list > li a {
       padding-top: 10em; /* 88px / 22px */
-      padding-bottom: 10em;
+      padding-bottom: 12em;
     }
   }
   @media (min-width: 70em) {
@@ -3808,11 +3819,6 @@
   .featured-project-list a h2 span {
     transition: color 0.2s;
   }
-  .featured-project-list a:hover  .more,
-  .featured-project-list a:active .more,
-  .featured-project-list a:focus  .more {
-    color: white !important;
-  }
 
 
   .featured-project-list .more span {
@@ -3824,11 +3830,29 @@
     text-align: center;
     font-style: normal;
     margin-left: 1em;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   }
   .featured-project-list .more span svg {
     font-size: 0.75em;
     vertical-align: middle;
   }
+
+  .featured-project-list a:hover  .more span,
+  .featured-project-list a:active .more span,
+  .featured-project-list a:focus  .more span {
+    background-color: white;
+    border-color: white;
+    color: rgb(41, 53, 56); /* @tin */
+  }
+
+  /* TODO: Add other colors */
+  .teal .featured-project-list a:hover  .more span,
+  .teal .featured-project-list a:active .more span,
+  .teal .featured-project-list a:focus  .more span {
+    background-color: rgb(0, 240, 200); /* @teal */
+    border-color: transparent;
+  }
+
   .featured-project-list > li {
     position: relative;
     z-index: 1;
