@@ -735,7 +735,9 @@
       clear: both;
     }
 
-    aside.related .articles li {
+    /* The first related article is the “next” article, so position it on the right */
+    aside.related .articles li:nth-child(n) {
+      float: right;
       width: 50%;
       clear: none;
     }
@@ -781,11 +783,6 @@
     }
     .articles.text-only li:nth-child(3n+1) {
       clear: both;
-    }
-
-    aside.related .articles li {
-      width: 50%;
-      clear: none;
     }
   }
 
@@ -3108,7 +3105,7 @@
     margin-top: -2em;
   }
 
-  aside.related li:first-child span:after {
+  aside.related li:last-child span:after {
     /* Flip horizontally */
     -webkit-transform: scale(-1, 1);
        -moz-transform: scale(-1, 1);
