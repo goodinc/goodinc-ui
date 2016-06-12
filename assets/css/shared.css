@@ -3484,7 +3484,7 @@
 
 
   /* =Home
------------------------------------------------ */
+  ----------------------------------------------- */
   main.home > h1:first-child {
     margin-top: 0;
     position: absolute;
@@ -3696,23 +3696,6 @@
   header.home > .nav,
   header.home + main > h1:first-child {
     position: absolute;
-  }
-  header.home.fixed > h2,
-  header.home.fixed > .nav,
-  header.home.fixed + main > h1:first-child {
-    position: fixed;
-  }
-
-  .featured-project-list > li a div {
-    transition: opacity 0.2s;
-  }
-  .featured-project-list > li.hidden-text a div {
-    opacity: 0;
-  }
-  .featured-project-list > li.hidden-text a:hover div,
-  .featured-project-list > li.hidden-text a:active div,
-  .featured-project-list > li.hidden-text a:focus div {
-    opacity: 1;
   }
 
   main.home {
