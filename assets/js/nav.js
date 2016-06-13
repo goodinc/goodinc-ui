@@ -4,25 +4,34 @@
   // Do we have the features we need?
   if (!document.querySelector || !document.addEventListener) return;
 
-  var nav = document.querySelector('header .nav');
-
   // Turn the navigation headline into a toggle button.
 
-  var button = nav.querySelector('h6 a');
+  var button = document.querySelector('header .nav h6 a');
 
-  nav.className += ' hidden';
+  if (!button) return;
+
+  document.body.className += ' hidden-nav';
 
   var visible = false;
 
-  button.addEventListener('click', function(e) {
+  function getAncestor(element, tagName) {
+    var ancestor = element;
+    while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== tagName);
+    if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === tagName) {
+      return ancestor;
+    }
+  }
+
+  document.body.addEventListener('click', function(e) {
+    var targetButton = getAncestor(e.target, 'a');
     if (visible) {
       visible = false;
-      nav.className += ' hidden';
-    } else {
+      document.body.className += ' hidden-nav';
+    } else if (targetButton === button) {
       visible = true;
-      nav.className = nav.className.replace(/hidden/g, '');
+      document.body.className = document.body.className.replace(/hidden-nav/g, '');
     }
-    e.preventDefault();
+    if (targetButton === button) e.preventDefault();
   }, false);
 
   document.body.className += ' scripted-nav';

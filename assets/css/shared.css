@@ -44,25 +44,22 @@
     color: rgba(0, 0, 0, 0.8);
   }
 
+  /* OPTIONAL: Make the type larger as the screen size grows */
   @media (min-width: 200px) and (min-height: 100px) {
     body {
       font-size: 112.5%;
     }
   }
-
   @media (min-width: 500px) and (min-height: 250px) {
     body {
       font-size: 125%;
     }
   }
-
-  /* Type, padding, and margins are based on this screen size. */
-  @media (min-width: 1000px) and (min-height: 500px) {
+  @media (min-width: 1000px) and (min-height: 500px) { /* Type, padding, and margins are based on this screen size. */
     body {
       font-size: 137.5%; /* 22px */
     }
   }
-
   @media (min-width: 1500px) and (min-height: 750px) {
     body {
       font-size: 150%;
@@ -91,9 +88,6 @@
     transition: fill 0.2s;
     fill: currentColor; /* Make the icon the same color as the surrounding text. */
   }
-
-
-
 
   /* =Type
   ----------------------------------------------- */
@@ -132,7 +126,7 @@
     margin-top: 0.6875em; /* 33px / 48px */
     margin-bottom: 0.6875em;
   }
-  h3 {
+  h3, h4 {
     /* @header-3 */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
@@ -143,13 +137,22 @@
     font-family: inherit;
     font-weight: inherit;
   }
-  h4, h5, h6 {
+  h4 {
+    font-style: italic;
+  }
+  h5, h6 {
     font-size: inherit;
+    line-height: inherit;
+  }
+  h6 {
+    font-style: italic;
+    font-family: inherit;
+    font-weight: inherit;
   }
 
-
+  /* Figure */
   figure {
-    margin: 3em 0;
+    margin: 3em 0; /* @line-height x 2 */
   }
   figure img {
     display: block;
@@ -162,6 +165,78 @@
     margin-bottom: 0.6875em;
     color: rgb(114, 126, 130); /* @nickel */
   }
+
+  /* Description list */
+  dl {
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    margin-top: 1.8333333333; /* 33px / 18px */
+    margin-bottom: 1.8333333333; /* 33px / 18px */
+  }
+  dt {
+    /* @small-caps */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 0.6666666667em; /* 12px / 18px */
+    line-height: 1.8333333333; /* 22px / 12px */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  dd + dt {
+    margin-top: 1.5em;
+  }
+  dd {
+    margin-top: 0.3055555556em; /* (22px / 18px) / 4 */
+    margin-left: 0;
+  }
+  dd a {
+    font-style: inherit;
+    text-decoration: inherit;
+  }
+  dd a:hover,
+  dd a:active,
+  dd a:focus {
+    text-decoration: underline;
+  }
+
+  /* SHIM: Don’t let the meta data get too small. */
+  @media (max-width: 500px) {
+    .featured-project-list li p,
+    dl {
+      font-size: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+
+  dd {
+    color: rgb(114, 126, 130); /* @nickel */
+  }
+  .tangerine dd {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange dd {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple dd {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue dd {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal dd {
+    color: rgb(0, 207, 172); /* @dark-teal */
+  }
+  .green dd {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow dd {
+    color: rgb(230, 189, 0); /* @dark-yellow */
+  }
+  .red dd {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
+  /* For content that should stand out, like an introduction or call to action */
   p.primary {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
@@ -179,9 +254,6 @@
     margin-top: 0;
   }
 
-
-
-
   /* =Links
   ----------------------------------------------- */
   a {
@@ -195,7 +267,7 @@
     color: rgb(41, 53, 56); /* @tin */
   }
 
-  /* For Internet Explorer */
+  /* Reset image borders (for Internet Explorer) */
   a img {
     border-width: 0;
   }
@@ -230,8 +302,8 @@
   /* =Buttons
   ----------------------------------------------- */
   button,
-  .action a, /* For emphasized links */
-  a .action span, /* For linked blocks of text, like the .subscribe element */
+    .action a, /* For emphasized links */
+  a .action span, /* For linked blocks of content, with a call to action (like the .subscribe element) */
   header .nav li a {
     display: inline-block;
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
@@ -248,6 +320,14 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
   }
+
+  /* OPTIONAL: Make submit buttons easier to notice. */
+  p.submit button {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  /* OPTIONAL: The main navigation links look a little nicer with more padding. */
   header .nav li a {
     padding: 0.8888888889em 1.5555555556em;  /* 11px / 18px*/     /* 22px / 18px */
   }
@@ -267,7 +347,7 @@
   header .nav li a[href]:hover,
   header .nav li a[href]:active,
   header .nav li a[href]:focus {
-    /* Darken the button color by placing a black, semi-transparent image on top if it. */
+    /* Darken the button color by placing a black, semi-transparent image on top of it. */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill-opacity="0.1"></rect></svg>');
     color: white;
   }
@@ -392,7 +472,7 @@
     background-color: rgba(239, 20, 93, 0.8); /* @red */
   }
 
-  /* For the navigation button on small screens. */
+  /* The navigation has a toggle button on small screens. */
   .tangerine header .nav h6 a {
     background-color: rgb(255, 80, 26); /* @tangerine */
   }
@@ -419,74 +499,6 @@
   .red header .nav h6 a {
     background-color: rgb(239, 20, 93); /* @red */
   }
-
-
-
-  /* =Meta Data
-  ----------------------------------------------- */
-
-  main .meta h2,
-  main.project-details .meta h2 {
-    color: inherit;
-  }
-
-  .projects .list dt {
-    margin-top: 1.5em;
-  }
-
-  .projects .list dl,
-  .meta {
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
-  }
-  .meta li {
-    margin-top: 0.3055555556em; /* (22px / 18px) / 4 */
-  }
-  .meta li a {
-    font-style: inherit;
-    text-decoration: inherit;
-  }
-  .meta li a:hover,
-  .meta li a:active,
-  .meta li a:focus {
-    text-decoration: underline;
-  }
-  blockquote + .byline,
-  .projects .list dt,
-  .meta h2,
-  .meta h3 {
-    /* @small-caps */
-    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
-    font-weight: bold;
-    font-size: 0.6666666667em; /* 12px / 18px */
-    line-height: 1.8333333333; /* 22px / 12px */
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  /* SHIM: Don’t let the meta data get too small. */
-  @media (max-width: 500px) {
-    .featured-project-list li p,
-    .projects .list dl,
-    .meta {
-      font-size: inherit !important;
-      line-height: inherit !important;
-    }
-  }
-
-  .meta {
-    margin-top: 1.8333333333em; /* 1.5 / (18px / 22px) */
-  }
-  .meta h2,
-  .meta h3 {
-    margin-top: 0;
-  }
-
-
-  .meta h2:before {
-    display: none;
-  }
-
 
   /* =Forms
   ----------------------------------------------- */
@@ -537,15 +549,7 @@
     margin-top: 3em;
   }
 
-  /* For the “Ask a Question” page */
-  h1 + form {
-    margin-top: 0;
-  }
-
-  form .error {
-    color: rgb(239, 20, 93); /* @red */
-  }
-
+  form .error,
   .validation-message {
     color: rgb(239, 20, 93); /* @red */
   }
@@ -564,9 +568,40 @@
     margin-bottom: 0;
   }
 
-
   /* =Quote
   ----------------------------------------------- */
+
+  blockquote p {
+    font-size: 1.6363636364em; /* 36px / 22px */
+    line-height: 1.2222222222; /* 44px / 36px */
+    margin-top: 1.2222222222em;
+    margin-bottom: 1.2222222222em;
+  }
+  blockquote + .byline {
+    max-width: none;
+
+    /* @small-caps */
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    font-weight: bold;
+    font-size: 0.6666666667em; /* 12px / 18px */
+    line-height: 1.8333333333; /* 22px / 12px */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .quote blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .quote blockquote p:first-child:before {
+    content: "“";
+    position: absolute;
+    margin-left: -0.5em;
+  }
+  .quote blockquote p:last-child:after {
+    content: "”";
+  }
+
   .tangerine .quote {
     color: rgb(255, 80, 26); /* @tangerine */
   }
@@ -592,33 +627,15 @@
     color: rgb(239, 20, 93); /* @red */
   }
 
-  .quote[style] blockquote,
-  .quote[style] blockquote + .byline {
-    color: inherit;
-  }
-  blockquote p {
-    font-size: 1.6363636364em; /* 36px / 22px */
-    line-height: 1.2222222222; /* 44px / 36px */
-    margin-top: 1.2222222222em;
-    margin-bottom: 1.2222222222em;
-  }
-  blockquote + .byline {
-    max-width: none;
-  }
-  .standard .quote[style] {
-    margin-left: -1.5em; /* main padding */
-    margin-right: -1.5em;
+  /* Quote with a background image */
+  .quote[style] {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
     color: white;
     padding: 1.5em;
-    margin-bottom: -3em;
     max-width: none;
-  }
-  .standard .quote[style]:last-child {
-    margin-bottom: -3em;
   }
   .quote[style]:before {
     content: "";
@@ -634,46 +651,47 @@
     position: relative;
     z-index: 1;
   }
+  .quote[style] blockquote,
+  .quote[style] blockquote + .byline {
+    color: inherit;
+  }
   @media (min-width: 70em) {
     .quote[style] blockquote,
     .quote[style] blockquote + .byline {
       margin-left: 12.5%;
     }
   }
-  .quote[style] .media-kit {
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
-    max-width: 10em;
-  }
-  @media (min-width: 70em) {
-    .standard .quote[style] {
-      margin-left: -4em; /* 88px / 22px */
-      margin-right: -4em;
-      padding: 4em;
-    }
-    .standard .quote[style]:last-child {
-      margin-bottom: -8em;
-    }
-  }
   @media (min-aspect-ratio: 1/1) {
-    .standard .quote[style] {
+    .quote[style] {
       padding-top: 15em;
       padding-bottom: 15em;
       padding-top: 30vh;
       padding-bottom: 30vh;
     }
-    .quote[style] .media-kit {
-      position: absolute;
-      bottom: 4em;
-      left: 4em;
-      margin-bottom: 0;
+  }
+
+  main .quote[style] {
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+  }
+  main          .quote[style]:last-child,
+  main.standard .quote[style]:last-child {
+    margin-bottom: -3em;
+  }
+  @media (min-width: 70em) {
+    main .quote[style] {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+      padding: 4em;
+    }
+    main          .quote[style]:last-child,
+    main.standard .quote[style]:last-child {
+      margin-bottom: -8em;
     }
   }
 
-
   /* =Articles
   ----------------------------------------------- */
-
   .articles,
   .articles li {
     /* @reset-list */
@@ -681,16 +699,16 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .articles:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
   .articles {
     max-width: none;
     margin-left: -1.5em;
     margin-right: -1.5em;
     margin-bottom: -1.5em;
+  }
+  .articles:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   .articles li a {
     display: block;
@@ -702,87 +720,10 @@
     width: 100%;
   }
 
-  /* SHIM: Only show the first few articles on the home page */
-  @media (max-width: 59.9em) {
-    .articles li.hidden-on-small-screens {
-      display: none;
-    }
-  }
-
-  @media (min-width: 60em) {
-    @supports (object-fit: cover) {
-      .articles li img {
-        height: 15em;
-        object-fit: cover;
-      }
-    }
-    .articles li:nth-child(n) {
-      float: left;
-      width: 50%;
-    }
-    .articles li:nth-child(2n) { /* Even numbered elements */
-      clear: both;
-    }
-    .articles li:nth-child(1) {
-      width: auto;
-    }
-
-    .articles.text-only li:nth-child(n) {
-      width: 50%;
-      clear: none;
-    }
-    .articles.text-only li:nth-child(2n+1) {
-      clear: both;
-    }
-
-    /* The first related article is the “next” article, so position it on the right */
-    aside.related .articles li:nth-child(n) {
-      float: right;
-      width: 50%;
-      clear: none;
-    }
-  }
-
-  @media (min-width: 80em) {
-
-    /* reset */
-    .articles li:nth-child(2n) {
-      clear: none;
-    }
-
-    /* In general, items are 1/3 of the available width */
-    .articles li:nth-child(n) {
-      width: 33.3333%;
-    }
-    /* …except for the first item which is 2/3 of the available width */
-    .articles li:nth-child(1) {
-      width: 66.666%;
-    }
-    /* …and the last two items which are 1/2 of the available width */
-    .articles li:nth-child(6),
-    .articles li:nth-child(7) {
-      width: 50%;
-    }
-
-    /* Clear the first two items */
-    .articles li:nth-child(3) {
-      clear: both;
-    }
-    /* Clear the third, fourth and fifth items */
-    .articles li:nth-child(6) {
-      clear: both;
-    }
-    /* After the first seven items, clear after each set of three items */
-    .articles li:nth-child(3n+8) { /* (3n + 1 + 7) */
-      clear: both;
-    }
-
-    .articles.text-only li:nth-child(n) {
-      width: 33.3333%;
-      clear: none;
-    }
-    .articles.text-only li:nth-child(3n+1) {
-      clear: both;
+  @supports (object-fit: cover) {
+    .articles li img {
+      height: 15em;
+      object-fit: cover;
     }
   }
 
@@ -888,20 +829,102 @@
     color: rgb(239, 20, 93); /* @red */
   }
 
-
-  /* =GOOD Companies
-  ----------------------------------------------- */
-  .good-companies li:nth-child(n) {
-    width: auto;
-    clear: none;
-  }
+  /* Two columns */
   @media (min-width: 60em) {
-    .good-companies li:nth-child(n) {
-      width: 33.3333%;
+    .articles li:nth-child(n) {
+      float: left;
+      width: 50%;
+    }
+    .articles li:nth-child(2n) { /* Even numbered elements */
+      clear: both;
+    }
+    .articles li:nth-child(1) {
+      width: auto;
+    }
+
+    /* For the press page */
+    .articles.text-only li:nth-child(n) {
+      width: 50%;
+      clear: none;
+    }
+    .articles.text-only li:nth-child(2n+1) {
+      clear: both;
+    }
+
+    /* For the “related” articles on the project details page (the first one is the “next” article, so position it on the right) */
+    aside.related .articles li:nth-child(n) {
+      float: right;
+      width: 50%;
       clear: none;
     }
   }
 
+  /* Three columns */
+  @media (min-width: 80em) {
+
+    /* reset */
+    .articles li:nth-child(2n) {
+      clear: none;
+    }
+
+    /* In general, items are 1/3 of the available width */
+    .articles li:nth-child(n) {
+      width: 33.3333%;
+    }
+    /* …except for the first item which is 2/3 of the available width */
+    .articles li:nth-child(1) {
+      width: 66.666%;
+    }
+    /* …and the last two items which are 1/2 of the available width */
+    .articles li:nth-child(6),
+    .articles li:nth-child(7) {
+      width: 50%;
+    }
+
+    /* Clear the first two items */
+    .articles li:nth-child(3) {
+      clear: both;
+    }
+    /* Clear the third, fourth and fifth items */
+    .articles li:nth-child(6) {
+      clear: both;
+    }
+    /* After the first seven items, clear after each set of three items */
+    .articles li:nth-child(3n+8) { /* (3n + 1 + 7) */
+      clear: both;
+    }
+
+    /* For the press page */
+    .articles.text-only li:nth-child(n) {
+      width: 33.3333%;
+      clear: none;
+    }
+    .articles.text-only li:nth-child(3n+1) {
+      clear: both;
+    }
+  }
+
+  /* If there are exactly three items, make them the same size. */
+  .articles li:nth-child(1):nth-last-child(3),
+  .articles li:nth-child(2):nth-last-child(2),
+  .articles li:nth-child(3):nth-last-child(1) {
+    width: auto;
+    clear: none;
+  }
+  @media (min-width: 60em) {
+    .articles li:nth-child(1):nth-last-child(3),
+    .articles li:nth-child(2):nth-last-child(2),
+    .articles li:nth-child(3):nth-last-child(1) {
+      width: 33.3333%;
+    }
+  }
+
+  /* SHIM: Only show the first few articles on the home page */
+  @media (max-width: 59.9em) {
+    .articles li.hidden-on-small-screens {
+      display: none;
+    }
+  }
 
 
   /* =Layout
@@ -933,9 +956,7 @@
   }
 
 
-  /* =Header (Site)
-  -----------------------------------------------
-  (logo and navigation)
+  /* =Header (logo and section name)
   ----------------------------------------------- */
 
   header h2 {
@@ -960,7 +981,7 @@
   header h2 a[href]:hover,
   header h2 a[href]:active,
   header h2 a[href]:focus {
-    color: rgb(114, 126, 130) !important; /* @nickel */
+    color: rgb(114, 126, 130); /* @nickel */
   }
   header h2 svg {
     fill: currentColor;
@@ -969,6 +990,10 @@
     width: 4em; /* 88px / 22px */
     height: 2.2727272727em; /* 50px / 22px */
   }
+
+  /* Position the name of the page or section next to the logo */
+
+  /* “h1” is generally used for the name of a page, and an “h3” for a section. The headline might be inside a nav element. */
   header + h1,
   header + h3,
   header + nav h1,
@@ -998,9 +1023,9 @@
   }
 
 
-  /* =Header (Page)
+  /* =Header
   -----------------------------------------------
-  (headline and sub-headline)
+  headline and background image for articles and case studies
   ----------------------------------------------- */
   main > .header {
     background-position: center;
@@ -1012,14 +1037,9 @@
     box-sizing: border-box;
   }
 
-  /* Some pages have a background image behind the header */
-  @supports (min-height: 80vh) { /* SHIM: Hide this rule from older browsers, like Safari on iOS 8 (which has trouble with viewport units). */
-    .has-header-image main > .header {
-      min-height: 80vh;
-    }
-  }
+  /* Logo and section name */
   .has-header-image header h2 a,
-  body.has-header-image > h3 {
+  .has-header-image > h3 {
     color: white !important;
   }
   .has-header-image header h2 a[href]:hover,
@@ -1028,15 +1048,22 @@
     color: white !important;
     opacity: 0.6;
   }
+
+  /* Show a color while the image is loading */
   .has-header-image main > .header {
     background-color: rgb(41, 53, 56); /* @tin */
   }
+
+  /* OPTIONAL: Make the header almost the height of the viewport */
+  @supports (min-height: 80vh) { /* SHIM: Hide this rule from older browsers, like Safari on iOS 8 (which has trouble with viewport units). */
+    .has-header-image main > .header {
+      min-height: 80vh;
+    }
+  }
+
   main > .header[style] {
     color: white;
     padding-bottom: 3em;
-    /*
-    min-height: 80vh;
-    */
   }
   @media (min-width: 70em) {
     main > .header {
@@ -1047,9 +1074,11 @@
       padding-bottom: 4em;
     }
   }
+
   main > .header[style]:before {
+    /* @darken-image */
     content: "";
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 0;
     left: 0;
@@ -1061,6 +1090,7 @@
     position: relative;
     z-index: 1;
   }
+
   main > .header[style] h1 span {
     color: white !important;
   }
@@ -1096,12 +1126,9 @@
     }
   }
 
-  .scripted-nav header > .nav {
-    font-size: inherit;
-  }
-  .scripted-nav main > .header {
-    padding-right: 1.5em;
-  }
+  /* If the toggle navigation on small screens is working… */
+
+  /* Reset the right paddding and margins (since we no longer need extra padding to prevent a collision with the page title) */
   .scripted-nav > nav,
   .scripted-nav main > .header {
     padding-right: 1.5em;
@@ -1121,7 +1148,6 @@
   .scripted-nav > nav p {
     margin-right: 0;
   }
-
 
 
   /* =Footer
@@ -1186,17 +1212,46 @@
     color: white !important;
   }
 
+  footer > div:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media (min-width: 60em) {
+    footer .subscribe {
+      float: left;
+      width: 25%;
+    }
+    footer .map {
+      float: left;
+      width: 75%;
+    }
+  }
+
+
 
   /* =Social
   ----------------------------------------------- */
-  .social {
+  ul.social,
+  .social li {
+
+    /* @reset-list */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .social, {
     margin-top: 0.75em;
   }
+  .social,
+  footer .map ul > li > ul.social {
+    font-size: 0.6363636364em; /* 14px / 22px */
+  }
   .social li {
-    display: inline;
+    display: inline-block;
     margin-right: 0.6111111111em;
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
+    line-height: 1;
   }
 
   .social li a {
@@ -1248,42 +1303,24 @@
   ----------------------------------------------- */
   footer .subscribe {
     display: block;
-    margin: 1.5em 0;
+    margin-bottom: 3em;
     text-decoration: none;
     font-style: inherit;
   }
-
-  /* SHIM: Reduce the space between .subscribe and the “GOOD Can Help” element above it. */
-  footer .subscribe {
-    margin-top: 0;
-  }
-
   footer .subscribe h2,
   footer .subscribe h3,
   footer .subscribe p {
     margin: 0;
   }
   footer .subscribe h2,
-  footer .subscribe h3,
-  footer .map > li > h4,
-  footer .map > li > a {
+  footer .subscribe h3 {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
   }
-  footer .map > li > p,
-  footer .map > li > ul {
-    font-size: 0.7272727273em; /* 16px / 22px */
-    line-height: 1.375; /* 22px / 16px */
-  }
-  footer .legal p,
-  footer .legal ul {
-    font-size: 0.6363636364em; /* 14px / 22px */
-    line-height: 1.5714285714; /* 22px / 14px */
-  }
   footer .subscribe h3 {
-    font-weight: inherit;
-    font-style: italic;
     font-family: "Freight Text W01", Georgia, serif; /* @freight-text */
+    font-style: italic;
+    font-weight: inherit;
   }
   footer .subscribe p {
     margin-top: 0.75em;
@@ -1292,137 +1329,63 @@
 
   /* =Map
   ----------------------------------------------- */
-  footer .map {
-    margin-top: 3em;
+  footer .map ul,
+  footer .map p {
+    margin: 0;
     max-width: none;
   }
-  footer .map ul {
+  footer .map h2 {
     margin-top: 0;
-  }
-  footer .map > li ul {
-    margin-top: 1.2222222222em; /* 22px / 18px */
-  }
-  footer .map > li p,
-  footer .map > li li {
-    margin-top: 0.6111111111em; /* 11px / 18px */
-  }
-  footer .map > li {
-    margin-bottom: 1.5em;
-  }
-  footer .map > li > a,
-  footer .map > li > h4 {
-    margin-top: 0;
+    margin-bottom: 1em;
     border-top: 1px solid;
     border-top-color: rgba(192, 204, 207, 0.25);
     padding-top: 0.6111111111em; /* 11px / 18px */
-    font-weight: bold;
-    display: block;
-  }
-  footer .map > li > h4 {
     max-width: none;
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+  }
+  footer .map p,
+  footer .map li ul,
+  footer .map li li {
+    margin-top: 0.6111111111em; /* 11px / 18px */
+  }
+  footer .map > ul > li {
+    margin-bottom: 1.5em;
+  }
+  footer .map ul > li > p,
+  footer .map ul > li > ul {
+    font-size: 0.7272727273em; /* 16px / 22px */
+    line-height: 1.375; /* 22px / 16px */
   }
   @media (min-width: 40em) {
-    /*
-    footer .subscribe,
-    footer .map {
-      display: inline-block;
-      vertical-align: top;
-    }
-    */
-  }
-  /*
-  @media (min-width: 60em) {
-    footer .map > li {
-      width: 29%;
-      margin-left: 2%;
-    }
-  }
-  */
-  /*
-  @media (min-width: 60em) {
-    footer .subscribe {
-      width: 25%;
-    }
-    footer .map {
-      width: 50%;
-    }
-    footer .map.locations {
-      width: 25%;
-    }
-    footer .map > li {
-      width: 50%;
-      margin-left: 0;
-      width: calc(50% - 2em);
-      margin-right: calc(2em);
-    }
-    footer .map.locations > li {
-      width: 100%;
-      width: calc(100% - 2em);
-      margin-right: calc(2em);
-    }
-  }
-  */
-  footer div:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  @media (min-width: 40em) {
-    footer .map:after {
+    footer .map > ul:after {
       content: "";
       display: table;
       clear: both;
     }
-    footer .map > li {
+    footer .map > ul > li {
       float: left;
       width: 33.333%;
       margin-left: 0;
       width: calc(33.333% - 2em);
       margin-right: calc(2em);
+      margin-bottom: 2em;
     }
-    footer .map > li:nth-child(3n+1) {
+    footer .map > ul > li:nth-child(3n+1) {
       clear: both;
     }
   }
-  @media (min-width: 60em) {
-    footer .subscribe {
-      float: left;
-      width: 25%;
-      margin-bottom: 3em;
-    }
-    footer .map {
-      margin-top: 0;
-      float: left;
-      width: 75%;
-      margin-bottom: 0;
-    }
-
-
-    /*
-    TODO: (Paris or Jim)
-
-    If you add a “news” section to the footer, you’ll want to uncommend these lines.
-
-    footer .map.locations {
-      clear: both;
-      margin-left: 25%;
-      margin-top: 0;
-    }
-    */
-
-  }
-
 
   /* =Legal
   ----------------------------------------------- */
   footer .legal {
     clear: both;
-    padding-top: 5.5em; /* Make the space above the .legal element about double the distance beneath it */
+    padding-top: 4em; /* pseudo margin */
   }
-  @media (min-width: 60em) {
-    footer .legal p {
-      padding-left: 25%;
-    }
+  footer .legal h2 {
+    /* @hidden-accessible */
+    position: absolute;
+    left: -9999px;
   }
   footer .legal ul,
   footer .legal li {
@@ -1430,6 +1393,21 @@
     list-style: none;
     margin-left: 0;
     padding-left: 0;
+  }
+  footer .legal p,
+  footer .legal ul {
+    font-size: 0.6363636364em; /* 14px / 22px */
+    line-height: 1.5714285714; /* 22px / 14px */
+  }
+  footer .legal p,
+  footer .legal ul,
+  footer .legal li {
+    margin: 0;
+    float: left;
+  }
+  footer .legal p,
+  footer .legal li {
+    margin-right: 1.5714285714em; /* 22px / 14px */
   }
   footer .legal a {
     color: inherit;
@@ -1441,21 +1419,16 @@
     color: white;
   }
 
-  footer .legal ul,
-  footer .legal p,
-  footer .legal li {
-    margin: 0;
-    float: left;
-  }
-  footer .legal p,
-  footer .legal li {
-    margin-right: 1.5714285714em; /* 22px / 14px */
+  /* OPTIONAL: Position the copyright statement in the third column. */
+  @media (min-width: 60em) {
+    footer .legal p {
+      padding-left: 25%;
+    }
   }
 
-
-  /* =GOOD can help
+  /* =Option List
   ----------------------------------------------- */
-  .good-can-help {
+  .option-list {
     margin-left: -1.5em; /* main padding */
     margin-right: -1.5em;
     margin-top: 1.5em;
@@ -1464,44 +1437,44 @@
     color: white;
   }
   @media (min-width: 70em) {
-    .good-can-help {
+    .option-list {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
     }
-    .good-can-help {
+    .option-list {
       margin-top: 4em;
     }
-    .good-can-help {
+    .option-list {
       padding: 7.5em 4em; /* ? / 22px */     /* 88px / 22px */
     }
   }
-  .tangerine .good-can-help {
+  .tangerine .option-list {
     background-color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .good-can-help { 
+  .orange .option-list { 
     background-color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .good-can-help {
+  .purple .option-list {
     background-color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .good-can-help {
+  .blue .option-list {
     background-color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .good-can-help {
+  .teal .option-list {
     background-color: rgb(0, 207, 172); /* @dark-teal */
   }
-  .green .good-can-help {
+  .green .option-list {
     background-color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .good-can-help {
+  .yellow .option-list {
     background-color: rgb(230, 189, 0); /* @dark-yellow */
   }
-  .red .good-can-help {
+  .red .option-list {
     background-color: rgb(239, 20, 93); /* @red */
   }
  
-  .good-can-help h2,
-  .good-can-help ul {
+  .option-list h2,
+  .option-list ul {
     font-weight: bold;
     font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
 
@@ -1511,8 +1484,8 @@
   }
 
   @media (min-width: 40em) {
-    .good-can-help h2,
-    .good-can-help ul {
+    .option-list h2,
+    .option-list ul {
       font-weight: bold;
       font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
 
@@ -1522,134 +1495,130 @@
     }
   }
 
-  .good-can-help h2 {
+  .option-list h2 {
     margin-top: 0;
     margin-bottom: 0;
     opacity: 0.8;
   }
-  .good-can-help h2:after {
+  .option-list h2:after {
     content: ":";
   }
-  .good-can-help ul {
+  .option-list ul {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .good-can-help ul,
-  .good-can-help li {
+  .option-list ul,
+  .option-list li {
     /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .good-can-help li {
+  .option-list li {
     text-transform: lowercase;
   }
-  .good-can-help a {
+  .option-list a {
     color: rgb(41, 53, 57);
     font-style: normal;
   }
-  .good-can-help a:hover,
-  .good-can-help a:active,
-  .good-can-help a:focus {
+  .option-list a:hover,
+  .option-list a:active,
+  .option-list a:focus {
     color: white;
   }
 
-  .home.without-articles .good-can-help {
+  .home.without-articles .option-list {
     margin-bottom: -3em;
   }
   @media (min-width: 70em) {
-    .home.without-articles .good-can-help {
+    .home.without-articles .option-list {
       margin-bottom: -8em;
     }
   }
 
   @media (min-width: 30em) {
-    .good-can-help h2,
-    .good-can-help ul {
+    .option-list h2,
+    .option-list ul {
       margin-left: 25%;
     }
   }
 
   @media (min-width: 60em) {
-    .good-can-help:after {
+    .option-list:after {
       content: "";
       display: table;
       clear: both;
     }
-    .good-can-help h2,
-    .good-can-help ul {
+    .option-list h2,
+    .option-list ul {
       float: left;
       margin-left: 0;
     }
-    .good-can-help h2 {
+    .option-list h2 {
       margin-right: 3%;
       width: 22%; /* 100% x 2/8 - 3% */
       margin-left: 12.5%;
     }
-    .good-can-help ul {
+    .option-list ul {
       width: 62.5%; /* 100% x 5/8 */
     } 
   }
   @media (min-width: 100em) {
-    .home .good-can-help h2 {
+    .home .option-list h2 {
       margin-right: 3%;
       width: 34.5%; /* 100% x 3/8 - 3% */
       margin-left: 0;
     }
   }
 
-  /* When “.good-can-help” appears in the footer, change the colors */
-  footer .good-can-help {
+  /* When “.option-list” appears in the footer, change the colors */
+  footer .option-list {
     background-color: transparent !important;
     margin-top: -1.5em;
     margin-bottom: -0em;
   }
-  @media (min-width: 70em) {
-    footer .good-can-help {
+    footer .option-list {
       padding-top: 1.5em;
       padding-bottom: 6em;
     }
-  }
-  footer .good-can-help a {
+  footer .option-list a {
     text-decoration: underline;
     text-transform: none;
     color: inherit !important; /* @green */
   }
-  footer .good-can-help a span {
+  footer .option-list a span {
     color: inherit !important;
   }
-  .tangerine footer .good-can-help a {
+  .tangerine footer .option-list a {
     color: rgb(249, 132, 12) !important; /* @orange */
   }
-  .orange footer .good-can-help a {
+  .orange footer .option-list a {
     color: rgb(249, 132, 12) !important; /* @orange */
   }
-  .purple footer .good-can-help a {
+  .purple footer .option-list a {
     color: rgb(168, 46, 255) !important; /* @purple */
   }
-  .blue footer .good-can-help a {
+  .blue footer .option-list a {
     color: rgb(0, 157, 255) !important; /* @blue */
   }
-  .teal footer .good-can-help a {
+  .teal footer .option-list a {
     color: rgb(0, 207, 172) !important; /* @teal */
   }
-  .green footer .good-can-help a {
+  .green footer .option-list a {
     color: rgb(48, 217, 101) !important; /* @green */
   }
-  .yellow footer .good-can-help a {
+  .yellow footer .option-list a {
     color: rgb(255, 214, 13) !important; /* @yellow */
   }
-  .red footer .good-can-help a {
+  .red footer .option-list a {
     color: rgb(239, 20, 93) !important; /* @red */
   }
 
-  footer .good-can-help a:hover,
-  footer .good-can-help a:active,
-  footer .good-can-help a:focus {
+  footer .option-list a:hover,
+  footer .option-list a:active,
+  footer .option-list a:focus {
     color: white !important;
   }
-
-
 
 
   /* =Navigation
@@ -1678,6 +1647,7 @@
   }
 
   @media (max-width: 30em) {
+    /* If the toggle navigation on small screens is working… */
     .scripted-nav header .nav {
       top: 0;
     }
@@ -1691,19 +1661,30 @@
   header .nav .icon.hide {
     display: inline;
   }
-  header .nav.hidden .icon.show {
+  .hidden-nav header .nav .icon.show {
     display: inline;
   }
-  header .nav.hidden .icon.hide {
+  .hidden-nav header .nav .icon.hide {
     display: none;
   }
   @media (max-width: 30em) {
     .scripted-nav h6 {
       display: block !important;
     }
-    header .nav.hidden ul {
+    .hidden-nav header .nav ul {
       display: none;
     }
+  }
+
+  body.scripted-nav:not(.hidden-nav):before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Just below the navigation */
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   header .nav ul,
@@ -2160,7 +2141,6 @@
     }
   }
 
-
   /* =Standard
   -----------------------------------------------
   Headline on the left, text on the right
@@ -2204,7 +2184,7 @@
       margin-left: 25%;
       max-width: 15.125em; /* 726px / 48px (33rem) */
     }
-    .standard > figure + h2.long + .body {
+    .standard h2.long + .body {
       margin-top: 1.5em;
     }
   }
@@ -2218,22 +2198,6 @@
   /* SHIM: For the about page, with no headline */
   .standard .body p:first-child {
     margin-top: 0;
-  }
-
-  .quote blockquote {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .quote blockquote p:first-child:before {
-    content: "“";
-    position: absolute;
-    margin-left: -0.5em;
-  }
-  .quote blockquote p:last-child:after {
-    content: "”";
-  }
-  .standard .quote {
-    max-width: 40em;
   }
 
   .standard .body figure {
@@ -2294,6 +2258,10 @@
     max-width: 17.111111111em; /* 28em / (36px / 22px) */
   }
 
+  .standard .quote {
+    max-width: 40em;
+  }
+
   @media (min-width: 82.5em) {
     .team-member-list ul {
       margin-top: -1.5em;
@@ -2322,10 +2290,11 @@
 
     .standard > h1,
     .standard > h2,
+    .standard > h3,
+    .standard > h4,
     .standard > .header,
     .standard > .section > h1,
-    .standard > section > h2,
-    .standard > h3 {
+    .standard > section > h2 {
       margin-top: 0;
       margin-bottom: 0;
       /*
@@ -2341,9 +2310,6 @@
       content: "";
       display: table;
       clear: both;
-    }
-    .standard > h3 {
-      font-style: italic;
     }
   }
 
@@ -2364,8 +2330,6 @@
 
     margin-bottom: 0.6em;
   }
-
-
   /* =Projects
   ----------------------------------------------- */
   main.projects {
@@ -2412,6 +2376,11 @@
     opacity: 1;
   }
 
+  .projects .intro dd {
+    color: inherit;
+    opacity: 0.6;
+  }
+
   @media (min-width: 60em) {
     .projects .intro:after {
       content: "";
@@ -2422,7 +2391,7 @@
       width: 70%;
       float: left;
     }
-    .projects .intro .meta {
+    .projects .intro dl {
       width: 25%;
       float: right;
     }
@@ -2560,9 +2529,10 @@
     margin-top: 1.5em;
   }
   .projects .list dd {
-    margin-left: 0;
     font-size: 1.2222222222em; /* 22px / 18px */
     line-height: 1.5em;
+    margin-top: 0.25em; /* (22px / 22px) / 4 */
+    color: inherit;
   }
 
   @supports (display: flex) or (display: -webkit-flex) {
@@ -2607,7 +2577,6 @@
     opacity: 0.3;
   }
 
-
   /* =Project Details
   ----------------------------------------------- */
 
@@ -2617,8 +2586,6 @@
     font-size: 1.0909090909em; /* 24px / 22px */
     line-height: 1.375; /* 33px / 24px  */
   }
-  aside.related h2:before,
-  .project-details .highlights h2:before,
   .project-details .details h2:before {
     content: "";
     display: block;
@@ -2626,56 +2593,39 @@
     width: calc(100% + 4em); /* 88px / 22px */
     margin-left: -4em;
   }
-  .tangerine aside.related h2,
   .tangerine .project-details .details h2,
   .tangerine .project-details .highlights h2 {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange aside.related h2,
   .orange .project-details .details h2,
   .orange .project-details .highlights h2 {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple aside.related h2,
   .purple .project-details .details h2,
   .purple .project-details .highlights h2 {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue aside.related h2,
   .blue .project-details .details h2,
   .blue .project-details .highlights h2 {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal aside.related h2,
   .teal .project-details .details h2,
   .teal .project-details .highlights h2 {
     color: rgb(0, 207, 172); /* @dark-teal */
   }
-  .green aside.related h2,
   .green .project-details .details h2,
   .green .project-details .highlights h2 {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow aside.related h2,
   .yellow .project-details .details h2,
   .yellow .project-details .highlights h2 {
     color: rgb(230, 189, 0); /* @dark-yellow */
   }
-  .red aside.related h2,
   .red .project-details .details h2,
   .red .project-details .highlights h2 {
     color: rgb(239, 20, 93); /* @red */
   }
 
-  aside.related h2,
-  .project-details .highlights h2 {
-    display: block;
-  }
-  .project-details .highlights h2:before,
-  aside.related h2:before {
-    width: auto;
-    margin-left: 0;
-  }
 
   .project-details .details div ~ div {
     margin-top: 3em;
@@ -2698,6 +2648,9 @@
     margin-top: 0;
     max-width: 20em;
   }
+  .project-details .intro > div:last-child {
+    margin-top: 1.5em;
+  }
 
   .project-details .details {
     margin-top: 3em;
@@ -2716,13 +2669,13 @@
       width: 40%;
       float: left;
     }
-    .project-details .meta {
+    .project-details .intro > div:last-child {
       margin-top: 0;
       width: 50%;
       float: right;
     }
 
-    .project-details .meta {
+    .project-details .intro > div:last-child {
       /* @flex-box-wrap */
       display: -webkit-flex;
       display:         flex;
@@ -2730,15 +2683,15 @@
       -webkit-flex-wrap: wrap;
               flex-wrap: wrap;
     }
-    .project-details .meta div,
-    .project-details .meta section {
+    .project-details .intro dl {
+      margin-top: 0;
       width: 50%;
     }
-
-    .project-details .meta h2:first-child {
+    .project-details .intro dt {
       margin-top: 0;
     }
-    .project-details .meta .action {
+
+    .project-details .intro .action {
       margin-top: 0;
     }
 
@@ -2812,89 +2765,30 @@
     }
   }
 
-  .meta ul {
+  dl.skills dd {
     color: rgb(114, 126, 130); /* @nickel */
   }
-  .tangerine .meta ul {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .orange .meta ul {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple .meta ul {
-    color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue .meta ul {
-    color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal .meta ul {
-    color: rgb(0, 207, 172); /* @dark-teal */
-  }
-  .green .meta ul {
-    color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow .meta ul {
-    color: rgb(230, 189, 0); /* @dark-yellow */
-  }
-  .red .meta ul {
-    color: rgb(239, 20, 93); /* @red */
-  }
-  .projects .intro .meta ul {
-    color: inherit;
-    opacity: 0.6;
-  }
-
-  .meta ul.skills {
-    color: rgb(114, 126, 130); /* @nickel */
-  }
-  .meta .skills li {
+  dl.skills dd {
     display: inline;
   }
-  .meta .skills li:after {
+  dl.skills dd:after {
     content: ", ";
   }
-  .meta .skills li:last-child:after {
+  dl.skills dd:last-child:after {
     content: "";
   }
 
-  .meta h2,
-  .meta h3 {
-    border-top-width: 0;
-    font-weight: bold;
-    color: inherit;
-    margin-bottom: 0;
-  }
-  .meta ul {
-    margin-top: 0;
+
+  dl {
     margin-bottom: 2.4444444444em; /* .meta line height x 2 */
   }
 
-  .meta ul,
-  .meta li {
-    /* @reset-list */
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
+
   aside.related h2,
   .project-details .highlights h2 {
+    /* @header-1 */
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
-    font-weight: bold;
-    margin: 0;
-    padding-top: 0.6em; /* 33px / 55px */
-    position: relative;
-  }
-  aside.related h2 span {
-    color: rgb(26, 36, 38); /* @thorium */
-  }
-  aside.related h2:before,
-  .project-details .highlights h2:before {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-top-width: 4px;
   }
   @media (min-width: 50em) {
     aside.related h2,
@@ -2902,7 +2796,6 @@
       /* @header-1 */
       font-size: 3.6363636364em; /* 80px / 22px */
       line-height: 1.2375em; /* 99px / 80px */
-      padding-top: 0.4125em; /* 33px / 80px */
     }
   }
   .home .intro ul,
@@ -3113,96 +3006,6 @@
          -o-transform: scale(-1, 1);
             transform: scale(-1, 1);
   }
-
-
-  /* =Team
-  ----------------------------------------------- */
-
-  .team-member-list ul,
-  .team-member-list li {
-    /* @reset-list */
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .team-member-list ul {
-    max-width: none;
-    font-size: 0.8181818182em; /* 18px / 22px */
-    line-height: 1.2222222222; /* 22px / 18px */
-    margin-left: -1.5em; /* item padding */
-    margin-right: -1.5em;
-
-    /* @flex-box-wrap */
-    display: -webkit-flex;
-    display:         flex;
-
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-  }
-  .team-member-list li {
-    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
-    color: rgb(41, 53, 57);
-    width: 100%;
-    padding: 1.5em;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .team-member-list a {
-    color: inherit;
-    font-style: inherit;
-    text-decoration: inherit;
-  }
-  .team-member-list img {
-    border-radius: 50%;
-  }
-
-  /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
-  main .team-member-list img {
-
-    /* Make images shrink or grow to fit the available space */
-    width: 100%;
-    height: auto;
-
-    /* But don’t let them get too large (for the case where there’s only one column) */
-    /*
-    max-width: 15em;
-    */
-  }
-
-  .team-member-list h4,
-  .team-member-list p {
-    max-width: none;
-  }
-  .team-member-list h4 {
-    margin: 0.75em 0 0 0;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: bold;
-  }
-  .team-member-list p {
-    margin: 0;
-    font-style: italic;
-    opacity: 0.6;
-  }
-
-  @media (min-width: 20em) {
-    .team-member-list li {
-      width: 50%;
-    }
-  }
-  @media (min-width: 40em) {
-    .team-member-list li {
-      width: 33.333%;
-    }
-  }
-  @media (min-width: 60em) {
-    .team-member-list li {
-      width: 25%;
-    }
-  }
-
-
-
   /* =Team Member
   ----------------------------------------------- */
   .team-member .image {
@@ -3299,7 +3102,7 @@
     }
     .team-member .image,
     .team-member .meta {
-      width: 35%;
+      width: 37.5%;
       float: right;
     }
     .team-member .meta {
@@ -3308,6 +3111,88 @@
     }
   }
 
+  /* =Team
+  ----------------------------------------------- */
+
+  .team-member-list ul,
+  .team-member-list li {
+    /* @reset-list */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .team-member-list ul {
+    max-width: none;
+    font-size: 0.8181818182em; /* 18px / 22px */
+    line-height: 1.2222222222; /* 22px / 18px */
+    margin-left: -1.5em; /* item padding */
+    margin-right: -1.5em;
+
+    /* @flex-box-wrap */
+    display: -webkit-flex;
+    display:         flex;
+
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .team-member-list li {
+    font-family: "Proxima Nova W08", "Helvetica Neue", Helvetica, sans-serif; /* @proxima-nova */
+    color: rgb(41, 53, 57);
+    width: 100%;
+    padding: 1.5em;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .team-member-list a {
+    color: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+  }
+  .team-member-list img {
+    border-radius: 50%;
+  }
+
+  /* SHIM: This is prefixed with “main” so IE8 will ignore it (since it doesn’t understand HTML5 elements) */
+  main .team-member-list img {
+
+    /* Make images shrink or grow to fit the available space */
+    width: 100%;
+    height: auto;
+
+    /* But don’t let them get too large (for the case where there’s only one column) */
+    /*
+    max-width: 15em;
+    */
+  }
+
+  .team-member-list h5,
+  .team-member-list p {
+    max-width: none;
+  }
+  .team-member-list h5 {
+    margin: 0.75em 0 0 0;
+  }
+  .team-member-list p {
+    margin: 0;
+    font-style: italic;
+    opacity: 0.6;
+  }
+
+  @media (min-width: 20em) {
+    .team-member-list li {
+      width: 50%;
+    }
+  }
+  @media (min-width: 40em) {
+    .team-member-list li {
+      width: 33.333%;
+    }
+  }
+  @media (min-width: 60em) {
+    .team-member-list li {
+      width: 25%;
+    }
+  }
 
   /* =Clients
   ----------------------------------------------- */
@@ -3342,8 +3227,8 @@
     height: 7.5em;
   }
 
-  /* Scale the images to fit the viewport, on small to medium size screens. */
 
+  /* Scale the images to fit the viewport, on small to medium size screens. */
 
   /* Five columns */
   @media (max-width: 70em) {
@@ -3384,8 +3269,6 @@
       height: calc(100vw - 3em);
     }
   }
-
-
 
   /* =Reports
   ----------------------------------------------- */
@@ -3480,7 +3363,6 @@
   .red .reports a[href]:focus {
     color: rgb(239, 20, 93); /* @red */
   }
-
 
 
   /* =Home
@@ -3621,41 +3503,47 @@
     font-style: inherit;
   }
 
-  /* Recent */
-  .recent {
-    margin-top: 3em;
-    border-top: 0.1818181818em solid;
+  /* Section */
+  .section {
+    margin-top: 3em; /* @line-height x 2 */
+    border-top: 0.1818181818em solid; /* 4px / 22px */
+    padding-top: 1.5em; /* @line-height */
   }
   @media (min-width: 70em) {
-    .recent {
+    .section {
       margin-top: 6em;
     }
   }
-  .recent h1 {
+  .section h1:first-child,
+  .section h2:first-child {
+    margin-top: 0;
     margin-bottom: 0;
   }
-  .tangerine .recent {
+  .section .articles {
+    margin-top: 0;
+  }
+  .tangerine .section {
     border-color: rgb(249, 132, 12); /* @orange */
   }
-  .orange .recent {
+  .orange .section {
     border-color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .recent {
+  .purple .section {
     border-color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .recent {
+  .blue .section {
     border-color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .recent {
+  .teal .section {
     border-color: rgb(0, 240, 200); /* @teal */
   }
-  .green .recent {
+  .green .section {
     border-color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .recent {
+  .yellow .section {
     border-color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .recent {
+  .red .section {
     border-color: rgb(239, 20, 93); /* @red */
   }
 
@@ -3726,7 +3614,17 @@
     z-index: 1;
     color: white;
   }
-  @media (min-height: 30em) {
+  .featured-project-list > li.introduction a {
+    padding-top: 6em;
+    padding-bottom: 3em;
+  }
+  @media (min-height: 40em) {
+    .featured-project-list > li.introduction a {
+      padding-top: 10em;
+      padding-bottom: 10em;
+    }
+  }
+  @media (min-height: 50em) {
     .featured-project-list > li.introduction a {
       padding-top: 10em;
       padding-top: 25vh;
@@ -3759,9 +3657,15 @@
     color: white;
   }
 
-  .featured-project-list a .meta ul {
-    color: inherit;
+  .featured-project-list dl {
+    margin-top: 0;
     margin-bottom: 0;
+  }
+  .featured-project-list dt {
+    margin-top: 0;
+  }
+  .featured-project-list dd {
+    color: inherit;
   }
   .featured-project-list .more {
     color: rgb(0, 240, 200); /* @teal */
@@ -3838,17 +3742,15 @@
     z-index: 1;
   }
   .featured-project-list > li a:before {
+    /* @darken-image */
     content: "";
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-  }
-  .featured-project-list > li.introduction a:before {
-    background-color: rgba(0, 0, 0, 0.4);
   }
   .featured-project-list > li a:after {
     content: "";  
@@ -3886,7 +3788,7 @@
     }
   }
   @media (min-width: 70em) {
-    .featured-project-list .meta,
+    .featured-project-list dl,
     .featured-project-list .more {
       margin: 0;
       position: absolute;
@@ -3908,6 +3810,8 @@
   .home .intro figure svg {
     width: 24em;
     height: 24em;
+    position: relative;
+    z-index: -1;
     /*
     max-width: 100%;
     max-width: calc(100% - 3em);
@@ -3979,5 +3883,3 @@
       padding-bottom: 4.5em;
     }
   }
-
-
