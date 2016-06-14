@@ -201,8 +201,8 @@
 
   /* SHIM: Don’t let the meta data get too small. */
   @media (max-width: 500px) {
-    .featured-project-list li p,
-    dl {
+    dl,
+    .featured-projects li p {
       font-size: inherit !important;
       line-height: inherit !important;
     }
@@ -953,6 +953,51 @@
     main {
       padding-bottom: 6em; /* @page-margin x 3/2 */
     }
+  }
+
+
+  /* Section */
+  .section {
+    margin-top: 3em; /* @line-height x 2 */
+    border-top: 0.1818181818em solid; /* 4px / 22px */
+    padding-top: 1.5em; /* @line-height */
+  }
+  @media (min-width: 70em) {
+    .section {
+      margin-top: 6em;
+    }
+  }
+  .section h1:first-child,
+  .section h2:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .section .articles {
+    margin-top: 0;
+  }
+  .tangerine .section {
+    border-color: rgb(249, 132, 12); /* @orange */
+  }
+  .orange .section {
+    border-color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .section {
+    border-color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .section {
+    border-color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .section {
+    border-color: rgb(0, 240, 200); /* @teal */
+  }
+  .green .section {
+    border-color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .section {
+    border-color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .section {
+    border-color: rgb(239, 20, 93); /* @red */
   }
 
 
@@ -1979,7 +2024,7 @@
   }
 
 
-  .home .intro p,
+  .home .highlights p,
   body > nav p {
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
@@ -1995,7 +2040,7 @@
   }
 
   @media (min-width: 40em) {
-    .home .intro p,
+    .home .highlights p,
     body > nav p {
       margin-top: 2.25em;
       max-width: 17em;
@@ -2006,40 +2051,40 @@
     }
   }
 
-  .home .intro p {
+  .home .highlights p {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     max-width: 22em;
   }
-  .tangerine .home .intro p,
+  .tangerine .home .highlights p,
   .tangerine > nav p {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .home .intro p,
+  .orange .home .highlights p,
   .orange > nav p {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .home .intro p,
+  .purple .home .highlights p,
   .purple > nav p {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .home .intro p,
+  .blue .home .highlights p,
   .blue > nav p {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .home .intro p,
+  .teal .home .highlights p,
   .teal > nav p {
     color: rgb(0, 240, 200); /* @teal */
   }
-  .green .home .intro p,
+  .green .home .highlights p,
   .green > nav p {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .home .intro p,
+  .yellow .home .highlights p,
   .yellow > nav p {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .home .intro p,
+  .red .home .highlights p,
   .red > nav p {
     color: rgb(239, 20, 93); /* @red */
   }
@@ -2050,7 +2095,7 @@
       max-width: 9.1219512197em; /* 22em / 3.7272727273 / 1.5454545455 */
     }
   }
-  .home .intro p span,
+  .home .highlights p span,
   body > nav p span {
     color: rgb(41, 53, 57);
   }
@@ -2799,8 +2844,8 @@
       line-height: 1.2375em; /* 99px / 80px */
     }
   }
-  .home .intro ul,
-  .home .intro li,
+  .home .highlights ul,
+  .home .highlights li,
   .project-details .highlights .primary,
   .project-details .highlights .primary li {
     /* @reset-list */
@@ -2808,25 +2853,25 @@
     margin-left: 0;
     padding-left: 0;
   }
-  .home .intro li + li,
+  .home .highlights li + li,
   .project-details .highlights .primary li + li {
     margin-top: 1.5em;
   }
-  .home .intro li b,
+  .home .highlights li b,
   .project-details .highlights .primary li b {
     display: block;
     font-size: 2.5em; /* 55px / 22px */
     line-height: 1.2em; /* 66px / 55px */
     font-weight: inherit;
   }
-  .home .intro li b {
+  .home .highlights li b {
     /* @header-3 */
     font-size: 1.6363636364em; /* 36px / 22px */
     line-height: 1.2222222222; /* 44px / 36px */
 
     font-weight: inherit;
   }
-  .home .intro li > span,
+  .home .highlights li > span,
   .project-details .highlights .primary li > span {
     display: block;
     font-size: 0.8181818182em; /* 18px / 22px */
@@ -2836,7 +2881,7 @@
 
   /* SHIM: Don’t let the stats get too small. */
   @media (max-width: 1000px), (max-height: 500px) {
-    .home .intro li > span,
+    .home .highlights li > span,
     .project-details .highlights .primary li > span {
       font-size: inherit;
       line-height: inherit;
@@ -3366,87 +3411,103 @@
   }
 
 
-  /* =Home
+  /* =Featured Projects
   ----------------------------------------------- */
-  main.home > h1:first-child {
-    margin-top: 0;
-    position: absolute;
-    top: 2em;
-    z-index: 2; /* Just above the main navigation */
-    color: white;
-  }
-  main.home h1:first-child + p {
-    margin-top: 0;
-  }
-  @media (min-height: 50em) {
-    main.home > h1:first-child {
-      top: 2em;
-    }
-  }
-  @media (min-width: 70em) and (min-aspect-ratio: 1/1) {
-    main.home > h1:first-child {
-      top: 30vh;
-    }
-  }
-
-  .featured-project-list .introduction h1 {
-    margin-top: 0;
-    text-align: center;
-  }
-  .featured-project-list .introduction p {
-    max-width: 40em;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5em;
-    line-height: inherit;
-    text-decoration: underline;
-  }
-  @media (min-width: 45em) {
-    .featured-project-list .introduction p {
-      padding-left: 3em;
-      padding-right: 3em;
-    }
-  }
-  .tangerine .featured-project-list .introduction p {
-    color: rgb(255, 80, 26); /* @tangerine */
-  }
-  .orange .featured-project-list .introduction p {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple .featured-project-list .introduction p {
-    color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue .featured-project-list .introduction p {
-    color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal .featured-project-list .introduction p {
-    color: rgb(0, 240, 200); /* @teal */
-  }
-  .green .featured-project-list .introduction p {
-    color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow .featured-project-list .introduction p {
-    color: rgb(255, 214, 13); /* @yellow */
-  }
-  .red .featured-project-list .introduction p {
-    color: rgb(239, 20, 93); /* @red */
-  }
-  .featured-project-list .introduction p span {
-    color: white;
-  }
-
-  .featured-project-list,
-  .featured-project-list li {
+  .featured-projects,
+  .featured-projects li {
     /* @reset-list */
     list-style: none;
     margin-left: 0;
     padding-left: 0;
   }
-  .featured-project-list {
+  .featured-projects {
+    margin-top: 0;
     margin-bottom: 3em;
+    max-width: none;
   }
-  .featured-project-list li h2 {
+
+  .home .intro,
+  .featured-projects li {
+    background-color: rgb(55, 72, 77); /* @magnesium */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: -1.5em; /* main padding */
+    margin-right: -1.5em;
+    color: white;
+  }
+  .featured-projects li + li {
+    margin-top: 0;
+  }
+  @media (min-width: 70em) {
+    .home .intro,
+    .featured-projects li {
+      margin-left: -4em; /* 88px / 22px */
+      margin-right: -4em;
+    }
+  }
+
+  .home .intro a,
+  .featured-projects a,
+  .featured-projects a[href]:hover,
+  .featured-projects a[href]:active,
+  .featured-projects a[href]:focus {
+    color: inherit;
+  }
+  .home .intro a,
+  .featured-projects a {
+    text-decoration: inherit;
+    font-style: inherit;
+    display: block;
+    padding: 3em 1.5em;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+  @media (min-width: 50em) {
+    .featured-projects a {
+      padding-top: 10em; /* 88px / 22px */
+      padding-bottom: 12em;
+    }
+  }
+  @media (min-width: 70em) {
+    .featured-projects a {
+      padding-left: 4em; /* 50px / 22px */
+      padding-right: 4em;
+    }
+  }
+
+  .home .intro       a:before,
+  .featured-projects a:before {
+    /* @darken-image */
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .home .intro       a:after,
+  .featured-projects a:after {
+    content: "";  
+    background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40)); /* @tungsten */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  /* Position the content above the gradient */
+  .home .intro       div,
+  .featured-projects div {
+    position: relative;
+    z-index: 1;
+  }
+
+  .featured-projects h2 {
     font-family: inherit;
     font-weight: inherit;
     font-style: italic;
@@ -3459,254 +3520,61 @@
     margin: 0;
     text-decoration: underline;
   }
-  .tangerine .featured-project-list li h2 {
+  .tangerine .featured-projects h2 {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .featured-project-list li h2 {
+  .orange .featured-projects h2 {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .featured-project-list li h2 {
+  .purple .featured-projects h2 {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .featured-project-list li h2 {
+  .blue .featured-projects h2 {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .featured-project-list li h2 {
+  .teal .featured-projects h2 {
     color: rgb(0, 240, 200); /* @teal */
   }
-  .green .featured-project-list li h2 {
+  .green .featured-projects h2 {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .featured-project-list li h2 {
+  .yellow .featured-projects h2 {
     color: rgb(255, 214, 13); /* @yellow */
   }
-  .red .featured-project-list li h2 {
+  .red .featured-projects h2 {
     color: rgb(239, 20, 93); /* @red */
   }
-  .featured-project-list li h2 span {
+  .featured-projects h2 span {
     color: white;
   }
 
-  .featured-project-list li p {
+  .featured-projects p {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
     margin-top: 0.375em;
     margin-bottom: 0;
     max-width: 26em;
   }
-  .featured-project-list li .more {
+
+  .featured-projects dl {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .featured-projects dt {
+    margin-top: 0;
+  }
+  .featured-projects dd {
+    color: inherit;
+  }
+
+  .featured-projects .more {
+    color: rgb(0, 240, 200); /* @teal */
+    text-align: right;
+    max-width: none;
     margin-top: 1.2222222222em;
     font-style: italic;
   }
-  .featured-project-list a {
-    color: inherit;
-    text-decoration: inherit;
-    font-style: inherit;
-  }
-
-  /* Section */
-  .section {
-    margin-top: 3em; /* @line-height x 2 */
-    border-top: 0.1818181818em solid; /* 4px / 22px */
-    padding-top: 1.5em; /* @line-height */
-  }
-  @media (min-width: 70em) {
-    .section {
-      margin-top: 6em;
-    }
-  }
-  .section h1:first-child,
-  .section h2:first-child {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .section .articles {
-    margin-top: 0;
-  }
-  .tangerine .section {
-    border-color: rgb(249, 132, 12); /* @orange */
-  }
-  .orange .section {
-    border-color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple .section {
-    border-color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue .section {
-    border-color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal .section {
-    border-color: rgb(0, 240, 200); /* @teal */
-  }
-  .green .section {
-    border-color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow .section {
-    border-color: rgb(255, 214, 13); /* @yellow */
-  }
-  .red .section {
-    border-color: rgb(239, 20, 93); /* @red */
-  }
-
-
-  @media (max-width: 25em), (max-height: 25em) {
-    header.home ~ main > h1:first-child {
-      top: 2.5em;
-      font-size: 2em;
-    }
-  }
-
-  header.home {
-    position: static;
-    height: 0;
-    min-height: 0;
-    padding: 0;
-  }
-  header.home:before {
-    display: none;
-  }
-  header.home > h2 {
-    top: 1.5em;
-    left: 1.5em;
-  }
-  header.home > ul {
-    top: 1.5em;
-  }
-  @media (min-width: 70em) {
-    header.home > h2 {
-      top: 2.2727272727em; /* 50px / 22px */
-      left: 4em; /* 88px / 22px */
-    }
-    header.home > ul {
-      top: 2.2727272727em; /* 50px / 22px */
-    }
-  }
-  header.home > h2,
-  header.home > .nav,
-  header.home + main > h1:first-child {
-    position: absolute;
-  }
-
-  main.home {
-    padding-top: 0;
-    margin-top: 0;
-  }
-  .featured-project-list {
-    margin-top: 0;
-    max-width: none;
-  }
-  .featured-project-list > li {
-    background-color: rgb(55, 72, 77); /* @magnesium */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-left: -1.5em; /* main padding */
-    margin-right: -1.5em;
-  }
-  .featured-project-list > li + li {
-    margin-top: 0;
-  }
-  .featured-project-list > li a {
-    display: block;
-    padding: 3em 1.5em;
-    box-sizing: border-box;
-    position: relative;
-
-    z-index: 1;
-    color: white;
-  }
-  .featured-project-list > li.introduction a {
-    padding-top: 6em;
-    padding-bottom: 3em;
-  }
-  @media (min-height: 40em) {
-    .featured-project-list > li.introduction a {
-      padding-top: 10em;
-      padding-bottom: 10em;
-    }
-  }
-  @media (min-height: 50em) {
-    .featured-project-list > li.introduction a {
-      padding-top: 10em;
-      padding-top: 25vh;
-      padding-bottom: 2em;
-      min-height: calc(90vh);
-    }
-  }
-  @media (min-width: 50em) {
-    .featured-project-list > li a {
-      padding-top: 10em; /* 88px / 22px */
-      padding-bottom: 12em;
-    }
-  }
-  @media (min-width: 70em) {
-    .featured-project-list > li a {
-      padding-left: 4em; /* 50px / 22px */
-      padding-right: 4em;
-    }
-  }
-  .featured-project-list > li a div {
-    position: relative;
-    z-index: 1;
-  }
-  .featured-project-list a h1 {
-    margin-bottom: 0.5em;
-  }
-  .featured-project-list a[href]:hover,
-  .featured-project-list a[href]:active,
-  .featured-project-list a[href]:focus {
-    color: white;
-  }
-
-  .featured-project-list dl {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .featured-project-list dt {
-    margin-top: 0;
-  }
-  .featured-project-list dd {
-    color: inherit;
-  }
-  .featured-project-list .more {
-    color: rgb(0, 240, 200); /* @teal */
-    text-align: right;
-
-    max-width: none;
-  }
-  .tangerine .featured-project-list .more {
-    color: rgb(255, 80, 26); /* @tangerine */
-  }
-  .orange .featured-project-list .more {
-    color: rgb(249, 132, 12); /* @orange */
-  }
-  .purple .featured-project-list .more {
-    color: rgb(168, 46, 255); /* @purple */
-  }
-  .blue .featured-project-list .more {
-    color: rgb(0, 157, 255); /* @blue */
-  }
-  .teal .featured-project-list .more {
-    color: rgb(0, 240, 200); /* @teal */
-  }
-  .green .featured-project-list .more {
-    color: rgb(48, 217, 101); /* @green */
-  }
-  .yellow .featured-project-list .more {
-    color: rgb(255, 214, 13); /* @yellow */
-  }
-  .red .featured-project-list .more {
-    color: rgb(239, 20, 93); /* @red */
-  }
-
-  .featured-project-list .more,
-  .featured-project-list a h2,
-  .featured-project-list a h2 span {
-    transition: color 0.2s;
-  }
-
-
-  .featured-project-list .more span {
+  .featured-projects .more span {
     display: inline-block;
     border: 2px solid;
     width: 4.375em;
@@ -3717,69 +3585,54 @@
     margin-left: 1em;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   }
-  .featured-project-list .more span svg {
+  .featured-projects .more span svg {
     font-size: 0.75em;
     vertical-align: middle;
   }
-
-  .featured-project-list a:hover  .more span,
-  .featured-project-list a:active .more span,
-  .featured-project-list a:focus  .more span {
+  .featured-projects a:hover  .more span,
+  .featured-projects a:active .more span,
+  .featured-projects a:focus  .more span {
     background-color: white;
     border-color: white;
     color: rgb(41, 53, 56); /* @tin */
   }
 
+  .tangerine .featured-projects .more {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .featured-projects .more {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .featured-projects .more {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .featured-projects .more {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .featured-projects .more {
+    color: rgb(0, 240, 200); /* @teal */
+  }
+  .green .featured-projects .more {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .featured-projects .more {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .featured-projects .more {
+    color: rgb(239, 20, 93); /* @red */
+  }
+
   /* TODO: Add other colors */
-  .teal .featured-project-list a:hover  .more span,
-  .teal .featured-project-list a:active .more span,
-  .teal .featured-project-list a:focus  .more span {
+  .teal .featured-projects a:hover  .more span,
+  .teal .featured-projects a:active .more span,
+  .teal .featured-projects a:focus  .more span {
     background-color: rgb(0, 240, 200); /* @teal */
     border-color: transparent;
   }
 
-  .featured-project-list > li {
-    position: relative;
-    z-index: 1;
-  }
-  .featured-project-list > li a:before {
-    /* @darken-image */
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  .featured-project-list > li a:after {
-    content: "";  
-    background-image: linear-gradient(to bottom, transparent, rgba(7, 12, 13, 0.40)); /* @tungsten */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  @media (min-width: 70em) {
-    .featured-project-list > li {
-      margin-left: -4em; /* 88px / 22px */
-      margin-right: -4em;
-    }
-  }
-
-
-  .featured-project-list a {
-    display: block;
-    position: relative;
-  }
-
-  /* Copied from the projects list */
-
+  /* Two columns */
   @media (min-width: 50em) {
-    .featured-project-list .more {
+    .featured-projects .more {
       margin: 0;
       position: absolute;
       left: 75%;
@@ -3788,15 +3641,17 @@
       width: 25%;
     }
   }
+
+  /* Three columns */
   @media (min-width: 70em) {
-    .featured-project-list dl,
-    .featured-project-list .more {
+    .featured-projects dl,
+    .featured-projects .more {
       margin: 0;
       position: absolute;
       top: 1.575em;
       left: 50%;
     }
-    .featured-project-list .more {
+    .featured-projects .more {
       left: 75%;
       top: 0.19em;
       text-align: left;
@@ -3804,11 +3659,90 @@
     }
   }
 
-  .home .intro figure {
+
+
+  /* =Home
+  ----------------------------------------------- */
+  main.home {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .home .intro h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+  .home .intro p {
+    max-width: 40em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    line-height: inherit;
+    text-decoration: underline;
+  }
+  @media (min-width: 45em) {
+    .home .intro p {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
+  .tangerine .home .intro p {
+    color: rgb(255, 80, 26); /* @tangerine */
+  }
+  .orange .home .intro p {
+    color: rgb(249, 132, 12); /* @orange */
+  }
+  .purple .home .intro p {
+    color: rgb(168, 46, 255); /* @purple */
+  }
+  .blue .home .intro p {
+    color: rgb(0, 157, 255); /* @blue */
+  }
+  .teal .home .intro p {
+    color: rgb(0, 240, 200); /* @teal */
+  }
+  .green .home .intro p {
+    color: rgb(48, 217, 101); /* @green */
+  }
+  .yellow .home .intro p {
+    color: rgb(255, 214, 13); /* @yellow */
+  }
+  .red .home .intro p {
+    color: rgb(239, 20, 93); /* @red */
+  }
+  .home .intro p span {
+    color: white;
+  }
+
+  .home .intro a {
+    padding-top: 6em;
+    padding-bottom: 3em;
+  }
+  @media (min-height: 40em) {
+    .home .intro a {
+      padding-top: 10em;
+      padding-bottom: 10em;
+    }
+  }
+  @media (min-height: 50em) {
+    .home .intro a {
+      padding-top: 10em;
+      padding-top: 25vh;
+      padding-bottom: 2em;
+      min-height: calc(90vh);
+    }
+  }
+
+
+
+  /* =Highlights
+  ----------------------------------------------- */
+  .home .highlights figure {
     margin: -6em -1.5em -4.5em;
     overflow: hidden;
   }
-  .home .intro figure svg {
+  .home .highlights figure svg {
     width: 24em;
     height: 24em;
     position: relative;
@@ -3819,68 +3753,68 @@
     */
   }
   @media (min-width: 50em) {
-    .home .intro {
+    .home .highlights {
       position: relative;
     }
-    .home .intro figure {
+    .home .highlights figure {
       margin: 0;
     }
-    .home .intro figure svg {
+    .home .highlights figure svg {
       position: absolute;
       z-index: -1;
       top: 0;
     }
   }
-  .tangerine .home .intro svg {
+  .tangerine .home .highlights svg {
     color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange .home .intro svg {
+  .orange .home .highlights svg {
     color: rgb(249, 132, 12); /* @orange */
   }
-  .purple .home .intro svg {
+  .purple .home .highlights svg {
     color: rgb(168, 46, 255); /* @purple */
   }
-  .blue .home .intro svg {
+  .blue .home .highlights svg {
     color: rgb(0, 157, 255); /* @blue */
   }
-  .teal .home .intro svg {
+  .teal .home .highlights svg {
     color: rgb(0, 207, 172); /* @dark-teal */
   }
-  .green .home .intro svg {
+  .green .home .highlights svg {
     color: rgb(48, 217, 101); /* @green */
   }
-  .yellow .home .intro svg {
+  .yellow .home .highlights svg {
     color: rgb(230, 189, 0); /* @dark-yellow */
   }
-  .red .home .intro svg {
+  .red .home .highlights svg {
     color: rgb(239, 20, 93); /* @red */
   }
 
   @media (min-width: 50em) {
-    .home .intro p {
+    .home .highlights p {
       margin-left: 37.5%;
     }
-    .home .intro ul {
+    .home .highlights ul {
       margin-left: 37.5%;
       max-width: 35.5em;
       color: rgb(114, 126, 130); /* @nickel */
       color: rgba(0, 0, 0, 0.65);
     }
-    .home .intro li {
+    .home .highlights li {
       width: 15em;
       display: inline-block;
       vertical-align: top;
     }
-    .home .intro li,
-    .home .intro li + li {
+    .home .highlights li,
+    .home .highlights li + li {
       margin: 0.75em 0;
     }
 
     /* OPTIONAL: Add more space around the intro text. */
-    .home .intro p:first-child {
+    .home .highlights p:first-child {
       padding-top: 4.5em;
     }
-    .home .intro ul:last-child {
+    .home .highlights ul:last-child {
       padding-bottom: 4.5em;
     }
   }
