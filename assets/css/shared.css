@@ -1798,14 +1798,6 @@
     }
 
     /* Gray out the page behind the navigation */
-    .scripted-nav:not(.hidden-nav) header h2,
-    .scripted-nav:not(.hidden-nav) > h1,
-    .scripted-nav:not(.hidden-nav) > h3,
-    .scripted-nav:not(.hidden-nav) > nav,
-    .scripted-nav:not(.hidden-nav) main,
-    .scripted-nav:not(.hidden-nav) footer {
-      filter: blur(2px);
-    }
     .scripted-nav:not(.hidden-nav) .nav-mask {
       position: fixed;
       top: 0;
@@ -1813,7 +1805,7 @@
       width: 100%;
       height: 100%;
       z-index: 2; /* Just below the navigation */
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
