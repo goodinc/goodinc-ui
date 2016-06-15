@@ -40,6 +40,7 @@
       visible = true;
       if (!mask) {
         mask = document.createElement('a');
+        mask.setAttribute('href', '');
         mask.className = 'nav-mask';
         document.body.appendChild(mask);
       }
