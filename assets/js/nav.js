@@ -14,7 +14,11 @@
 
   var visible = false;
 
-  function getAncestor(element, tagName) {
+  function closest(element, tagName) {
+
+    // If the element is the target
+    if (element.nodeName.toLowerCase() === tagName) return element;
+
     var ancestor = element;
     while ((ancestor = ancestor.parentElement) && ancestor.nodeName && ancestor.nodeName.toLowerCase() !== tagName);
     if (ancestor && ancestor.nodeName && ancestor.nodeName.toLowerCase() === tagName) {
@@ -22,16 +26,30 @@
     }
   }
 
-  document.body.addEventListener('click', function(e) {
-    var targetButton = getAncestor(e.target, 'a');
+  function toggle(e) {
+    var targetButton = closest(e.target, 'a');
+
+    // If the navigation is visible, hide it
     if (visible) {
       visible = false;
-      document.body.className += ' hidden-nav';
+      if (document.body.className.indexOf('hidden-nav') < 0) document.body.className += ' hidden-nav';
+
+    // Else if the button was pressed, show the navigation
     } else if (targetButton === button) {
       visible = true;
       document.body.className = document.body.className.replace(/hidden-nav/g, '');
     }
+
     if (targetButton === button) e.preventDefault();
+  }
+
+  document.body.addEventListener('click', toggle, false);
+  document.body.addEventListener('keypress', function(e) {
+    // If the enter key was pressed
+    if ((e.key && e.key === 'Enter') ||    // Standard
+        (e.keyCode && e.keyCode === 13)) { // For backward compatibility
+      toggle(e);
+    }
   }, false);
 
   document.body.className += ' scripted-nav';
