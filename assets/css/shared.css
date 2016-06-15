@@ -1798,8 +1798,7 @@
     }
 
     /* Gray out the page behind the navigation */
-    .scripted-nav:not(.hidden-nav):before {
-      content: "";
+    .scripted-nav:not(.hidden-nav) .nav-mask {
       position: absolute;
       top: 0;
       left: 0;

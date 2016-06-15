@@ -13,6 +13,7 @@
   document.body.className += ' hidden-nav';
 
   var visible = false;
+  var mask;
 
   function closest(element, tagName) {
 
@@ -37,6 +38,12 @@
     // Else if the button was pressed, show the navigation
     } else if (targetButton === button) {
       visible = true;
+      if (!mask) {
+        mask = document.createElement('div');
+        mask.className = 'nav-mask';
+        document.body.appendChild(mask);
+      }
+
       document.body.className = document.body.className.replace(/hidden-nav/g, '');
     }
 
