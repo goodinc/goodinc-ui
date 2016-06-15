@@ -39,7 +39,7 @@
     } else if (targetButton === button) {
       visible = true;
       if (!mask) {
-        mask = document.createElement('div');
+        mask = document.createElement('a');
         mask.className = 'nav-mask';
         document.body.appendChild(mask);
       }
@@ -53,8 +53,8 @@
   document.body.addEventListener('click', toggle, false);
   document.body.addEventListener('keypress', function(e) {
     // If the enter key was pressed
-    if ((e.key && e.key === 'Enter') ||    // Standard
-        (e.keyCode && e.keyCode === 13)) { // For backward compatibility
+    if ((e.key     && e.key     === 'Enter') || // Standard
+        (e.keyCode && e.keyCode === 13     )) { // For backward compatibility
       toggle(e);
     }
   }, false);
