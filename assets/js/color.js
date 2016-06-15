@@ -18,9 +18,10 @@
 
   var contentTop;
   function updateContentHeight() {
-    if (document.querySelector('main.home')) {
+    var homeProjects = document.querySelector('main.home .featured-projects');
+    if (homeProjects) {
       // The home page has a series of features before the content starts
-      contentTop = document.querySelector('.featured-projects').offsetHeight + document.querySelector('.featured-projects').offsetTop;
+      contentTop = homeProjects.offsetHeight + homeProjects.offsetTop;
     } else {
       // Most other pages have a header and content that share a background color
       contentTop = 0;
