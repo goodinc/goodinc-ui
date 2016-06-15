@@ -1804,7 +1804,7 @@
     .scripted-nav:not(.hidden-nav) > nav,
     .scripted-nav:not(.hidden-nav) main,
     .scripted-nav:not(.hidden-nav) footer {
-      filter: blur(1px);
+      filter: blur(2px);
     }
     .scripted-nav:not(.hidden-nav) .nav-mask {
       position: fixed;
@@ -1813,7 +1813,7 @@
       width: 100%;
       height: 100%;
       z-index: 2; /* Just below the navigation */
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 
