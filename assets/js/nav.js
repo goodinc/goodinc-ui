@@ -39,8 +39,8 @@
     } else if (targetButton === button) {
       visible = true;
       if (!mask) {
-        mask = document.createElement('a');
-        mask.setAttribute('href', '');
+        mask = document.createElement('div');
+        mask.setAttribute('onclick', ''); // SHIM: For Safari on iOS… http://www.quirksmode.org/blog/archives/2010/09/click_event_del.html
         mask.className = 'nav-mask';
         document.body.appendChild(mask);
       }
