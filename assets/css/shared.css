@@ -2272,6 +2272,9 @@
   .standard .quote {
     margin-bottom: 3em;
   }
+  .standard .body + h2 {
+    margin-top: 1.375em; /* 66px / 48px */
+  }
   @media (min-width: 70em) {
     .standard .team-member-list,
     .standard .section,
@@ -2432,24 +2435,6 @@
       display: table;
       clear: both;
     }
-  }
-
-  .standard.news h1 + .body {
-    margin-bottom: 3em;
-  }
-
-  @media (min-width: 70em) {
-    .standard.news h1 + .body {
-      margin-bottom: 8em;
-    }
-  }
-
-  .standard.news > h1 {
-    /* @tiny-header-1 */
-    font-size: 2.5em; /* 55px / 22px */
-    line-height: 1.2em; /* 66px / 55px */
-
-    margin-bottom: 0.6em;
   }
 
 

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GOOD</title>
+
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac7bf746-c451-4b0c-8afc-7e16c3f2c056.css" />
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+
+  <style>
+    pre {
+      font-size: 0.75em;
+    }
+  </style>
+
+</head>
+<body style="margin: 1.5em">
+
+  <h1 style="margin-bottom: 0">Lists</h1>
+
+  <main>
+
+    <h1>Articles</h1>
+    <p>For aesthetic reasons, items in the list sometimes span one, one and half, or two columns, depending on which row they’re in. The sizes are set in the style sheet (using <code>nth-child</code> selectors).</p>
+    <pre><code>&lt;ul class=&quot;<mark>articles</mark>&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;img src=&quot;…&quot; alt=&quot;&quot; /&gt;
+      &lt;h3&gt;The two brands that did something good with their Super Bowl ads&lt;/h3&gt;
+      &lt;p&gt;Here's GOODcorps' round-up of Super Bowl 50 ads that focused on a cause, and a few tips on what to learn form the two companies that did it best.&lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  …
+&lt;/ul&gt;
+    </code></pre> 
+
+    <ul class="articles">
+      <li>
+        <a href="project-details.html">
+          <img src="../assets/images/articles/the-two-brands-that-did-something-good-with-their-super-bowl-ads.png" alt="" />
+          <h3>The two brands that did something good with their Super Bowl ads</h3>
+          <p>Here's GOODcorps' round-up of Super Bowl 50 ads that focused on a cause, and a few tips on what to learn form the two companies that did it best.</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/alphabet-of-illiteracy-pearson.png" alt="" />
+          <h3>Pearson's creative fight against global illiteracy</h3>
+          <p>Pearson is highlighting the impact of illiteracy on issues we are all familiar with.</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/screenshot.png" alt="" />
+          <h3>The Bloody Truth</h3>
+          <p>Entrepreneur Miki Agrawal discusses her “period panties” and menstruation having its moment.</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/article.jpg" alt="" />
+          <h3>Now You Can Watch Earth’s Evolution</h3>
+          <p>An interactive site captures Earth’s evolution in sublime detail.</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/people_joseph-min.jpg" alt="" />
+          <h3>Welcome</h3>
+          <p>We are pleased to announce Joseph Vandenorth joins GOOD as marketing manager.</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/the-new-bottom-line.png" alt="" />
+          <h3>Grace Kim talks with The Guardian about the new bottom line</h3>
+          <p>Grace Kim shared insights from The Brand Goodness Report with The Guardian for their debut post in the column "The New Bottom Line."</p>
+        </a>
+      </li>
+      <li>
+        <a href="article.html">
+          <img src="../assets/images/articles/want-to-meet-us-heres-where-goodcorps-will-be-in-2015.jpeg" alt="" />
+          <h3>Want to meet us? Here’s where GOODcorps will be this spring.</h3>
+          <p>When your work lives at the intersection of business strategy, design and social impact, there are so many (perhaps too many) conferences to be tempted by. Here are a few events where you can catch the GOODcorps team this spring.</p>
+        </a>
+      </li>
+    </ul>
+
+    <p>Add a class name of <code>hidden-on-small-screens</code> to an item, to hide it on small viewports. This is used to shorten the list in cases where important content appears after the list of articles (for example, on the home page).</p>
+    <pre><code>&lt;ul class=&quot;articles&quot;&gt;
+  …
+  &lt;li class=&quot;<mark>hidden-on-small-screens</mark>&quot;&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;img src=&quot;…&quot; alt=&quot;&quot; /&gt;
+      &lt;h3&gt;The two brands that did something good with their Super Bowl ads&lt;/h3&gt;
+      &lt;p&gt;Here's GOODcorps' round-up of Super Bowl 50 ads that focused on a cause, and a few tips on what to learn form the two companies that did it best.&lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  …
+&lt;/ul&gt;
+    </code></pre> 
+
+    <h2>Three articles</h2>
+    <p>If there are only three articles in the list, they’ll all be the same size.</p>
+    <pre><code>&lt;ul class=&quot;articles&quot;&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre> 
+
+    <ul class="articles">
+      <ul class="articles">
+        <li>
+          <a href="http://good.is">
+            <img src="http://assets.goodstatic.com/s3/magazine/updatable/static-pages/images/good-media-1x.jpg" alt="" />
+            <h3>GOOD Media</h3>
+            <p>Helps readers understand their world, so they are inspired to make it better.</p>
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <img src="http://assets.goodstatic.com/s3/magazine/updatable/static-pages/images/good-corps-1x.jpg" alt="" />
+            <h3>GOOD Corps</h3>
+            <p>Helps organizations develop initiatives and powerful calls to action that create social impact.</p>
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <img src="../assets/images/projects/walgreens.png" alt="" />
+            <h3>GOOD Studio</h3>
+            <p>Helps brands engage people through purpose-driven content and experiences.</p>
+          </a>
+        </li>
+      </ul>
+
+    <h1>Text only articles</h1>
+    <p>If the articles don’t have images, add a class name of “text-only” to the list container to make them all the same size.</p>
+    <pre><code>&lt;ul class=&quot;articles <mark>text-only</mark>&quot;&gt;
+  …
+&lt;/ul&gt;
+    </code></pre>
+
+    <ul class="articles text-only">
+      <li>
+        <a href="http://www.nytimes.com/2008/09/08/business/media/08good.html">
+          <h3>Ice-Breaker at Starbucks: The Good Sheet</h3>
+          <p>Order up a double macchiato with a side of debate. On Thursday, Starbucks will begin offering a free paper from the magazine Good in its stores…</p>
+          <p><i>The New York Times</i></p>
+        </a>
+      </li>
+      <li>
+        <a href="http://gizmodo.com/the-soaring-u-s-outbreak-of-vaccine-preventable-diseas-1668670020">
+          <h3>The Soaring U.S. Outbreak of Vaccine-Preventable Disease, Visualized</h3>
+          <p>Mealses, mumps, polio, rubella, whooping cough... All diseases that are eminently preventable by vaccination. But, as this data visualization shows, while their incidence has decreased by 57 percent around the world…</p>
+          <p><i>Gizmodo</i></p>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.inc.com/maureen-kline/brands-are-people-too.html">
+          <h3>Brands are People, Too</h3>
+          <p>"What if the future of business culture is to be more human?" asked Maria Redin, Strategy Lead and General Manager at social impact consultancy GOODcorps…</p>
+          <p><i>Inc.</i></p>
+        </a>
+      </li>
+      <li>
+        <a href="http://ssir.org/articles/entry/making_the_benefits_of_cause_marketing_last">
+          <h3>Making the Benefits of Cause Marketing Last</h3>
+          <p>For a generation now, cause marketing, or cause-related marketing, has paired corporations with nonprofits, directing billions of dollars in fundraising and consumer buying power toward social impact…</p>
+          <p><i>SSIR</i></p>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.slate.com/blogs/outward/2015/09/30/zackary_drucker_hari_nef_in_good_trans_women_today.html">
+          <h3>Transparent’s Zackary Drucker and Hari Nef on the Current Trans Moment</h3>
+          <p>It’s strange to eavesdrop on a conversation between someone of 32 and someone of 22 and realize that they’re speaking as if a vast generational chasm exists between them…</p>
+          <p><i>Slate</i></p>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <h3>Duis aute irure dolor</h3>
+          <p>In reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p><i>Publication Name</i></p>
+        </a>
+      </li>
+    </ul>
+
+    <h1>Related Articles</h1>
+
+    <pre><code>&lt;aside class=&quot;<mark>related</mark>&quot;&gt;
+
+  &lt;ul class=&quot;articles&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;&quot;&gt;
+        <mark>&lt;span&gt;</mark>
+          &lt;img src=&quot;../assets/images/projects/sports-matter.png&quot; width=&quot;500&quot; alt=&quot;&quot; /&gt;
+        <mark>&lt;/span&gt;</mark>
+        <mark>&lt;i&gt;</mark>
+          DICK’s Sports Matter
+        <mark>&lt;/i&gt;</mark>
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;&quot;&gt;
+        &lt;span&gt;
+          &lt;img src=&quot;../assets/images/projects/lululemon.png&quot; width=&quot;500&quot; alt=&quot;&quot; /&gt;
+        &lt;/span&gt;
+        &lt;i&gt;
+          Lululemon
+        &lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/aside&gt;
+</code></pre>
+
+    <aside class="related">
+      <ul class="articles">
+        <li>
+          <a href="">
+            <span>
+              <img src="../assets/images/projects/sports-matter.png" width="500" alt="" />
+            </span>
+            <i>DICK’s Sports Matter</i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span>
+              <img src="../assets/images/projects/lululemon.png" width="500" alt="" />
+            </span>
+            <i>Lululemon</i>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+  </main>
+
+
+
+
+</body>
+</html>
