@@ -1249,7 +1249,11 @@
   /* If the toggle navigation on small screens is working… */
 
   /* Reset the right paddding and margins (since we no longer need extra padding to prevent a collision with the page title) */
-  .scripted-nav > nav,
+  @media(max-width: 30em) { /* @toggle-nav-screen-width */
+    .scripted-nav > nav {
+      padding-right: 1.5em;
+    }
+  }
   .scripted-nav main > .header {
     padding-right: 1.5em;
   }
@@ -1263,9 +1267,6 @@
   .scripted-nav header + h1 + main h1:first-child,
   .scripted-nav header + h3 + main h1:first-child {
     margin-top: 0;
-    margin-right: 0;
-  }
-  .scripted-nav > nav p {
     margin-right: 0;
   }
 
@@ -1821,7 +1822,7 @@
     border-radius: 0;
   }
 
-  @media (max-width: 30em) {
+  @media (max-width: 30em) { /* @toggle-nav-screen-width */
     /* If the toggle navigation on small screens is working… */
     .scripted-nav header .nav {
       top: 0;
@@ -1841,7 +1842,7 @@
     display: none;
   }
 
-  @media (max-width: 30em) {
+  @media (max-width: 30em) { /* @toggle-nav-screen-width */
 
     /* Show the toggle button */
     .scripted-nav header .nav button {
