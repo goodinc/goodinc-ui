@@ -3773,6 +3773,7 @@
   ----------------------------------------------- */
   .home .highlights figure {
     margin: -6em -1.5em -4.5em;
+    min-height: 12em;
     overflow: hidden;
   }
   .home .highlights figure svg {
@@ -3791,6 +3792,7 @@
     }
     .home .highlights figure {
       margin: 0;
+      min-height: 0;
     }
     .home .highlights figure svg {
       position: absolute;
