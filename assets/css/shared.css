@@ -335,15 +335,15 @@
   button:hover,
   button:active,
   button:focus,
+  header .nav button:hover  span,
+  header .nav button:active span,
+  header .nav button:focus  span,
   .action a[href]:hover,
   .action a[href]:active,
   .action a[href]:focus,
   a[href] .action span:hover,
   a[href] .action span:active,
   a[href] .action span:focus,
-  header .nav h6 a[href]:hover,
-  header .nav h6 a[href]:active,
-  header .nav h6 a[href]:focus,
   header .nav li a[href]:hover,
   header .nav li a[href]:active,
   header .nav li a[href]:focus {
@@ -420,9 +420,6 @@
   .yellow a[href] .action span:hover,
   .yellow a[href] .action span:active,
   .yellow a[href] .action span:focus,
-  .yellow header .nav h6 a[href]:hover,
-  .yellow header .nav h6 a[href]:active,
-  .yellow header .nav h6 a[href]:focus,
   .yellow header .nav li a[href]:hover,
   .yellow header .nav li a[href]:active,
   .yellow header .nav li a[href]:focus {
@@ -437,67 +434,72 @@
   .teal a[href] .action span:hover,
   .teal a[href] .action span:active,
   .teal a[href] .action span:focus,
-  .teal header .nav h6 a[href]:hover,
-  .teal header .nav h6 a[href]:active,
-  .teal header .nav h6 a[href]:focus,
   .teal header .nav li a[href]:hover,
   .teal header .nav li a[href]:active,
   .teal header .nav li a[href]:focus {
     color: rgb(41, 53, 56); /* @tin */
   }
 
-  /* The navigation is slightly transparent when it appears above an image. */
-  .has-header-image.tangerine header .nav a {
-    background-color: rgba(255, 80, 26, 0.8); /* @tangerine */
-  }
-  .has-header-image.orange header .nav a {
-    background-color: rgba(249, 132, 12, 0.8); /* @orange */
-  }
-  .has-header-image.purple header .nav a {
-    background-color: rgba(168, 46, 255, 0.8); /* @purple */
-  }
-  .has-header-image.blue header .nav a {
-    background-color: rgba(0, 157, 255, 0.8); /* @blue */
-  }
-  .has-header-image.teal header .nav a {
-    background-color: rgba(0, 240, 200, 0.8); /* @teal */
-  }
-  .has-header-image.green header .nav a {
-    background-color: rgba(48, 217, 101, 0.8); /* @green */
-  }
-  .has-header-image.yellow header .nav a {
-    background-color: rgba(255, 214, 13, 0.8); /* @yellow */
-  }
-  .has-header-image.red header .nav a {
-    background-color: rgba(239, 20, 93, 0.8); /* @red */
-  }
-
   /* The navigation has a toggle button on small screens. */
-  .tangerine header .nav h6 a {
+  .tangerine header .nav button span {
     background-color: rgb(255, 80, 26); /* @tangerine */
   }
-  .orange header .nav h6 a {
+  .orange header .nav button span {
     background-color: rgb(249, 132, 12); /* @orange */
   }
-  .purple header .nav h6 a {
+  .purple header .nav button span {
     background-color: rgb(168, 46, 255); /* @purple */
   }
-  .blue header .nav h6 a {
+  .blue header .nav button span {
     background-color: rgb(0, 157, 255); /* @blue */
   }
-  .teal header .nav h6 a {
+  .teal header .nav button span {
     background-color: rgb(0, 240, 200); /* @teal */
     color: rgb(41, 53, 56); /* @tin */
   }
-  .green header .nav h6 a {
+  .green header .nav button span {
     background-color: rgb(48, 217, 101); /* @green */
   }
-  .yellow header .nav h6 a {
+  .yellow header .nav button span {
     background-color: rgb(255, 214, 13); /* @yellow */
     color: rgb(41, 53, 56); /* @tin */
   }
-  .red header .nav h6 a {
+  .red header .nav button span {
     background-color: rgb(239, 20, 93); /* @red */
+  }
+
+  /* The navigation is slightly transparent when it appears above an image. */
+  .has-header-image.tangerine header .nav a,
+  .has-header-image.tangerine header .nav button span {
+    background-color: rgba(255, 80, 26, 0.8); /* @tangerine */
+  }
+  .has-header-image.orange header .nav a,
+  .has-header-image.orange header .nav button span {
+    background-color: rgba(249, 132, 12, 0.8); /* @orange */
+  }
+  .has-header-image.purple header .nav a,
+  .has-header-image.purple header .nav button span {
+    background-color: rgba(168, 46, 255, 0.8); /* @purple */
+  }
+  .has-header-image.blue header .nav a,
+  .has-header-image.blue header .nav button span {
+    background-color: rgba(0, 157, 255, 0.8); /* @blue */
+  }
+  .has-header-image.teal header .nav a,
+  .has-header-image.teal header .nav button span {
+    background-color: rgba(0, 240, 200, 0.8); /* @teal */
+  }
+  .has-header-image.green header .nav a,
+  .has-header-image.green header .nav button span {
+    background-color: rgba(48, 217, 101, 0.8); /* @green */
+  }
+  .has-header-image.yellow header .nav a,
+  .has-header-image.yellow header .nav button span {
+    background-color: rgba(255, 214, 13, 0.8); /* @yellow */
+  }
+  .has-header-image.red header .nav a,
+  .has-header-image.red header .nav button span {
+    background-color: rgba(239, 20, 93, 0.8); /* @red */
   }
 
   /* =Forms
@@ -682,7 +684,8 @@
     main .quote[style] {
       margin-left: -4em; /* 88px / 22px */
       margin-right: -4em;
-      padding: 4em;
+      padding-left: 4em;
+      padding-right: 4em;
     }
     main          .quote[style]:last-child,
     main.standard .quote[style]:last-child {
@@ -1748,15 +1751,39 @@
   }
 
   /* Toggle button */
-  header .nav h6 {
+  header .nav button {
+    text-align: right;
+    padding: 0;
     margin: 0;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+
+    /* Hide the button by default */
+    display: none;
   }
-  header .nav h6 a {
+
+  /* Reset */
+  header .nav button,
+  header .nav button:hover,
+  header .nav button:active,
+  header .nav button:focus {
+    background: transparent;
+  }
+
+  /* Make the pressable area larger when the button is hidden */
+  .hidden-nav header .nav button {
+    padding-left: 2em;
+    padding-bottom: 2em;
+  }
+
+  header .nav button span {
     display: inline-block;
     background-color: black;
     color: white;
     padding: 0.25em 0.375em;
     margin-bottom: 0.375em;
+    border-radius: 0;
   }
 
   @media (max-width: 30em) {
@@ -1780,16 +1807,10 @@
   }
 
   @media (max-width: 30em) {
-    /* Show the toggle button */
-    .scripted-nav header .nav h6 {
-      display: block !important; /* override the “display: none” inline style */
-    }
 
-    /* SHIM: Create a non-pressable space around the toggle button
-             (for the home page, which has a large button behind the nav) */
-    .scripted-nav header .nav {
-      min-width: 4em;
-      min-height: 4em;
+    /* Show the toggle button */
+    .scripted-nav header .nav button {
+      display: block;
     }
 
     /* Hide the navigation */
@@ -2319,6 +2340,9 @@
 
   .standard .quote {
     max-width: 40em;
+  }
+  .standard .quote[style] {
+    max-width: none;
   }
 
   @media (min-width: 82.5em) {
@@ -2936,7 +2960,7 @@
   .project-details .highlights .secondary li:before {
     content: "—";
     position: absolute;
-    margin-left: -0.75em;
+    margin-left: -1em;
   }
   .project-details .highlights .primary {
     margin-top: 0;

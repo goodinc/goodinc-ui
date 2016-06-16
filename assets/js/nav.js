@@ -2,15 +2,18 @@
 (function() {
 
   // Do we have the features we need?
-  if (!document.querySelector || !document.addEventListener) return;
+  if (!document.querySelector || !document.addEventListener || !document.body.insertAdjacentHTML) return;
 
-  // Turn the navigation headline into a toggle button.
-
-  var button = document.querySelector('header .nav h6 a');
-
-  if (!button) return;
+  var template = document.getElementById('nav-button-template');
+  if (!template) return;
 
   document.body.className += ' hidden-nav';
+
+  var nav = document.querySelector('header .nav');
+
+  nav.insertAdjacentHTML('afterbegin', template.innerHTML);  
+
+  var button = document.querySelector('header .nav button');
 
   var visible = false;
   var mask;
@@ -28,7 +31,7 @@
   }
 
   function toggle(e) {
-    var targetButton = closest(e.target, 'a');
+    var targetButton = closest(e.target, 'button');
 
     // If the navigation is visible, hide it
     if (visible) {
