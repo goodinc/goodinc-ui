@@ -326,6 +326,15 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
   }
+  label + button {
+    vertical-align: top;
+  }
+
+  /* Remove extra space around the button, in Firefox */
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+  }
 
   /* OPTIONAL: Make submit buttons easier to notice. */
   p.submit button {
@@ -520,9 +529,9 @@
     font-size: inherit;
     width: 15em;
     max-width: 100%;
-    padding: 0.1875em 0.5em;
-    line-height: 1.5;
-    min-height: 1.5em;
+    padding: 0.1875em 0.5em; /* @line-height x 1/8 = 0.1875 */
+    line-height: 1.5;        /* @line-height */
+    min-height: 1.875em;
     box-sizing: border-box;
     display: inline-block;
     background: white;
@@ -1793,12 +1802,6 @@
   header .nav button:active,
   header .nav button:focus {
     background: transparent;
-  }
-
-  /* Remove extra space around the button, in Firefox */
-  header .nav button::-moz-focus-inner {
-    padding: 0;
-    border: 0
   }
 
   /* Make the pressable area larger when the button is hidden */
