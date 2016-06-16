@@ -1771,6 +1771,11 @@
     background: transparent;
   }
 
+  header .nav button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+  }
+
   /* Make the pressable area larger when the button is hidden */
   .hidden-nav header .nav button {
     padding-left: 2em;
