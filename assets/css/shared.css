@@ -326,11 +326,13 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
   }
+
+  /* Line up buttons and fields, when they appear next to each other. */
   label + button {
     vertical-align: top;
   }
 
-  /* Remove extra space around the button, in Firefox */
+  /* Remove extra space around the button, in Firefox. */
   button::-moz-focus-inner {
     padding: 0;
     border: 0
@@ -2282,6 +2284,8 @@
     .standard .quote {
       margin-bottom: 6em;
     }
+  }
+  @media (min-width: 82.5em) {
 
     /* SHIM: For the secondary header on the “Labs” page */
     .standard > figure + h2 {
