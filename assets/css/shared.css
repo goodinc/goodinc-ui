@@ -814,6 +814,11 @@
     font-style: inherit;
     text-decoration: inherit;
   }
+  .articles li a[href]:hover,
+  .articles li a[href]:active,
+  .articles li a[href]:focus {
+    color: rgb(114, 126, 130); /* @nickel */
+  }
   .tangerine .articles li a[href]:hover,
   .tangerine .articles li a[href]:active,
   .tangerine .articles li a[href]:focus {
