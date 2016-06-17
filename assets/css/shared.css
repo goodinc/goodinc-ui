@@ -1378,8 +1378,8 @@
   }
 
   .social li a {
-    background-color: rgb(41, 53, 56); /* @tin */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(166, 180, 184); /* @aluminum */
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     display: inline-block;
     padding: 0.25em;
