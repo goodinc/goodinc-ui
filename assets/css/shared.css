@@ -2334,6 +2334,18 @@
     width: 100%;
   }
 
+  .standard .body figure .iframe-container {
+    position: relative;
+  }
+
+  .standard .body figure .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .standard > .header h2.byline {
     font-size: inherit;
     line-height: inherit;
