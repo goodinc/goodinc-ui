@@ -2363,6 +2363,14 @@
     font-style: italic;
     margin: 0;
   }
+  .standard > .header h2.byline a {
+    text-decoration: none;
+  }
+  .standard > .header h2.byline a:hover,
+  .standard > .header h2.byline a:active,
+  .standard > .header h2.byline a:focus {
+    text-decoration: underline;
+  }
   .standard > .header p {
     font-size: 0.8181818182em; /* 18px / 22px */
     line-height: 1.2222222222; /* 22px / 18px */
