@@ -747,10 +747,16 @@
   }
 
   @supports (object-fit: cover) {
-    .articles:not(.companies) li img {
+    .articles li img {
       height: 15em;
       object-fit: cover;
     }
+  }
+
+  /* SHIM: For the GOOD company images on the home page. */
+  .articles.companies li img {
+    max-width: 15em;
+    height: auto;
   }
 
   .articles li h2,
@@ -968,7 +974,7 @@
   body > nav,
   main,
   footer > div {
-    padding: 1.5em; /* @tiny-page-margin */
+    padding: 1.5em 1.5em 3em; /* @tiny-page-margin */
   }
   main {
     padding-bottom: 3em; /* @tiny-page-margin x 2 */
