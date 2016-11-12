@@ -2179,7 +2179,7 @@
   /* =Pagination & Tags
   ----------------------------------------------- */
 
-  /* For the blog and press pages */
+  /* For pagination and tags on the blog and press pages */
   main > nav {
     margin-top: 3em;
   }
@@ -2219,6 +2219,15 @@
   }
 
   /* Tags */
+  main > nav.tags {
+    margin-bottom: 3em;
+  }
+  @media (min-width: 70em) {
+    main > nav.tags {
+      margin-bottom: 6em;
+    }
+  }
+
   main > nav.tags h3 {
     font-style: italic;
     max-width: none;
