@@ -747,7 +747,7 @@
   }
 
   @supports (object-fit: cover) {
-    .articles:not(.organizations) li img {
+    .articles:not(.companies) li img {
       height: 15em;
       object-fit: cover;
     }
