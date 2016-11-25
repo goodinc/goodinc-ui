@@ -814,6 +814,10 @@
     margin-top: 0.6111111111em; /* 11px / 18px */
     margin-bottom: 0;
   }
+  .articles li p.media-outlet {
+    color: rgb(0, 240, 200);
+    font-weight: bold;
+  }
   .articles li a {
     display: block;
     color: inherit;
